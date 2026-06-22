@@ -1,0 +1,150 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    left=2.5cm,
+    right=2.5cm,
+    top=3.8cm,
+    bottom=3cm,
+    headheight=1.8cm,
+}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{xcolor}
+\definecolor{ihealthgreen}{HTML}{00C157}
+\definecolor{ihealthnavy}{HTML}{212155}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+
+% Section title styling: navy bold with green underline rule
+\titleformat{\section}
+    {\Large\bfseries\color{ihealthnavy}}
+    {}
+    {0em}
+    {}
+    [{\color{ihealthgreen}\titlerule[1.5pt]}]
+
+\titleformat{\subsection}
+    {\large\bfseries\color{ihealthnavy}}
+    {}
+    {0em}
+    {}
+
+\titlespacing*{\section}{0pt}{1.8ex plus 0.5ex}{0.8ex}
+\titlespacing*{\subsection}{0pt}{1.2ex plus 0.3ex}{0.5ex}
+
+% Header: logo left, document label right; green rule underneath
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=1.1cm]{logo-ihealth.pdf}}
+\fancyhead[R]{\small\color{ihealthnavy}\textit{Propuesta de Trabajo de Título}}
+\fancyfoot[C]{\small\color{gray}\thepage}
+\renewcommand{\headrulewidth}{1.2pt}
+\renewcommand{\headrule}{{\color{ihealthgreen}\hrule width\headwidth height\headrulewidth}}
+
+% List styling
+\setlist[itemize]{leftmargin=1.5em, itemsep=0.2em}
+\setlist[enumerate]{leftmargin=1.5em, itemsep=0.2em}
+
+\begin{document}
+\thispagestyle{fancy}
+
+% ── Document title block ────────────────────────────────────────────────────
+\vspace*{0.3cm}
+
+{\color{ihealthnavy}\LARGE\bfseries Propuesta de Trabajo de Título}
+
+\smallskip
+{\color{ihealthnavy}\large
+    Implementación de una herramienta de Historial Clínico con IA para la\\
+    gestión eficiente de pacientes en una Unidad de Paciente Crítico
+}
+
+\vspace{0.4cm}
+\noindent{\color{ihealthgreen}\rule{\textwidth}{2pt}}
+\vspace{0.5cm}
+
+% ── Body ───────────────────────────────────────────────────────────────────
+\section*{Datos Generales}
+\begin{itemize}
+    \item \textbf{Estudiante:} Fabián Ignacio Ortega Llantén
+    \item \textbf{Título:} Título Industrial Tecnologías De Información
+    \item \textbf{Institución/Empresa:} iHealth
+    \item \textbf{Supervisores:} Marcelo Edgardo Andia Kohnenkampf y Rafael Augusto Kaempfer
+\end{itemize}
+
+\vspace{0.5cm}
+
+\section*{Objetivos, Metodología y Resultados Esperados}
+
+\subsection*{Objetivo General}
+Implementar un sistema de software clínico que integre inteligencia artificial para el análisis
+automatizado de registros médicos y la predicción de eventos clínicos en pacientes de Unidades
+de Cuidados Intensivos (UCI).
+
+\subsection*{Metodología y Objetivos Específicos}
+El trabajo se divide en tres áreas de desarrollo consecutivas:
+
+\begin{itemize}
+    \item \textbf{Área 1: Software de Extracción (Mayo – Junio)}\\
+    Desarrollo de una herramienta de anotación clínica para generar el \textit{ground truth},
+    respaldada por una base de datos consultable y expuesta mediante una API REST (FastAPI).
+    Se implementará un front-end de evaluación para testear modelos LLM open-source.
+
+    \item \textbf{Área 2: Análisis Predictivo con Machine Learning (Junio – Julio)}\\
+    Generación de análisis predictivo sobre los campos extraídos para predecir
+    \textit{outcomes} clínicos (ej.\ mortalidad, shock séptico). Se compararán diversos
+    algoritmos de clasificación tradicionales versus extracción semántica, aplicando técnicas
+    de interpretabilidad clínica (valores SHAP).
+
+    \item \textbf{Área 3: Modelo Transformer para Predicción (Julio – Septiembre)}\\
+    Estudio de arquitecturas orientadas a predicción de eventos clínicos (Delphi 2M, TFT,
+    Foresight). Se realizará la adaptación y \textit{fine-tuning} del modelo sobre datos
+    reales de la UCI, finalizando con una validación rigurosa mediante métricas de desempeño
+    (AUROC, precisión, recall, F1-score).
+\end{itemize}
+
+\subsection*{Resultados Esperados}
+Un sistema integral funcional que permita la extracción automatizada de texto clínico, análisis
+predictivo interpretable y modelos avanzados de inteligencia artificial ajustados a las
+necesidades reales de gestión de pacientes críticos en la UCI.
+
+\vspace{0.5cm}
+
+\section*{Alineamiento con el Perfil de Egreso}
+
+El proyecto está diseñado para evidenciar las siguientes competencias técnicas del perfil de
+Ingeniería Civil de Industrias y Computación:
+
+\begin{enumerate}
+    \item Desarrollar soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de
+    Computación.
+    \item Aplicar diversos métodos de análisis de datos para la comprensión de los fenómenos abordados.
+    \item Investigar sobre nuevas tecnologías de información existentes en la industria y facilitar
+    su adopción dentro de las organizaciones.
+\end{enumerate}
+
+\subsection*{Evidencias de Ejecución}
+\begin{itemize}
+    \item \textbf{Evidencia ``Desarrollar soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de Computación'' (Área 1):} Diseño, arquitectura e implementación
+    integral de la herramienta de software clínico (API REST, base de datos e interfaz),
+    adaptada a la problemática y requerimientos reales de la Unidad de Paciente Crítico.
+
+    \item \textbf{Evidencia ``Aplicar diversos métodos de análisis de datos para la comprensión de los fenómenos abordados'' (Área 2):} Desarrollo del modelo predictivo de
+    \textit{Machine Learning} para la predicción de eventos clínicos, evaluando comparativamente
+    algoritmos y aplicando métodos de interpretabilidad (valores SHAP) sobre datos médicos.
+
+    \item \textbf{Evidencia ``Investigar sobre nuevas tecnologías de información existentes en la industria y facilitar su adopción dentro de las organizaciones'' (Área 3):} Estudio profundo, adaptación y ejecución
+    del proceso de \textit{fine-tuning} sobre arquitecturas Transformer especializadas
+    (Delphi 2M, TFT, Foresight), facilitando la adopción de estas nuevas tecnologías en la UCI.
+\end{itemize}
+
+\end{document}

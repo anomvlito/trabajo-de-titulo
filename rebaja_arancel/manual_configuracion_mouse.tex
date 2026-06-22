@@ -1,0 +1,170 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{hyperref}
+
+\definecolor{techblue}{RGB}{0,86,179}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{darkgray}{RGB}{80,80,80}
+\definecolor{codegreen}{RGB}{40,120,40}
+
+% Configuración de listings para código
+\lstset{
+  backgroundcolor=\color{lightgray},
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{techblue}\bfseries,
+  commentstyle=\color{darkgray}\itshape,
+  stringstyle=\color{codegreen},
+  numbers=none,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{lightgray!80!black},
+  showstringspaces=false,
+  keepspaces=true
+}
+
+\titleformat{\section}{\bfseries\color{techblue}\large}{}{0em}{}[{\vspace{-3pt}\color{techblue}\hrule height 0.5pt}\vspace{3pt}]
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries\color{techblue}Guía de Configuración: Logitech M720 Triathlon}\\[4pt]
+  {\small Controlador LogiOps (logid) en Ubuntu 24.04 LTS (Wayland)}
+\end{center}
+
+\vspace{5pt}
+
+\begin{mdframed}[backgroundcolor=techblue!5,linecolor=techblue,linewidth=1pt,
+    innertopmargin=6pt,innerbottommargin=6pt,innerleftmargin=8pt,innerrightmargin=8pt]
+  {\small\textbf{Nota del sistema:} Esta guía detalla la instalación, configuración y depuración del daemon de Logitech \texttt{logid} para habilitar funciones especiales en el mouse Logitech M720 Triathlon, tales como gestos con el pulgar y asignaciones de teclado personalizadas.}
+\end{mdframed}
+
+\section{1. Instalación de Dependencias}
+Para poder compilar e instalar el controlador en Ubuntu 24.04, es necesario contar con las siguientes dependencias de desarrollo. Instálalas con el siguiente comando:
+
+\begin{lstlisting}[language=bash]
+sudo apt update && sudo apt install -y build-essential cmake pkg-config libevdev-dev libudev-dev libconfig++-dev libglib2.0-dev
+\end{lstlisting}
+
+\section{2. Compilación e Instalación}
+Una vez obtenidas las dependencias, realiza la compilación del código desde el directorio del repositorio clonado:
+
+\begin{lstlisting}[language=bash]
+cd ~/src/trabajo_de_titulo/rebaja_arancel/logiops
+mkdir -p build && cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make
+sudo make install
+\end{lstlisting}
+
+Este proceso generará el ejecutable binario e instalará el archivo del servicio de systemd para controlar el daemon.
+
+\section{3. Archivo de Configuración}
+El daemon busca su archivo de configuración en la ruta global \texttt{/etc/logid.cfg}. Crea y edita este archivo con privilegios de root:
+
+\begin{lstlisting}[language=bash]
+sudo nano /etc/logid.cfg
+\end{lstlisting}
+
+A continuación se muestra un ejemplo optimizado para el mouse \textbf{Logitech M720 Triathlon}, el cual mapea el botón del pulgar para gestos del sistema y control multimedia:
+
+\begin{lstlisting}
+devices: (
+{
+    name: "Logitech M720 Triathlon";
+    dpi: 1000; // Ajuste de sensibilidad predeterminada
+
+    buttons: (
+        // Boton oculto bajo el pulgar (Gesture button)
+        {
+            cid: 0xc3;
+            action =
+            {
+                type: "Gestures";
+                gestures: (
+                    {
+                        direction: "Up";
+                        mode: "OnRelease";
+                        action = {
+                            type: "Keypress";
+                            keys: ["KEY_PLAYPAUSE"]; // Mover arriba: Play/Pausa
+                        };
+                    },
+                    {
+                        direction: "Down";
+                        mode: "OnRelease";
+                        action = {
+                            type: "Keypress";
+                            keys: ["KEY_MUTE"]; // Mover abajo: Silenciar
+                        };
+                    },
+                    {
+                        direction: "Left";
+                        mode: "OnRelease";
+                        action = {
+                            type: "Keypress";
+                            keys: ["KEY_LEFTMETA", "KEY_LEFT"]; // Mover izq.: Escritorio izquierdo
+                        };
+                    },
+                    {
+                        direction: "Right";
+                        mode: "OnRelease";
+                        action = {
+                            type: "Keypress";
+                            keys: ["KEY_LEFTMETA", "KEY_RIGHT"]; // Mover der.: Escritorio derecho
+                        };
+                    },
+                    {
+                        direction: "None";
+                        mode: "OnRelease";
+                        action = {
+                            type: "Keypress";
+                            keys: ["KEY_LEFTMETA"]; // Clic simple: Vista de Actividades
+                        };
+                    }
+                );
+            };
+        }
+    );
+}
+);
+\end{lstlisting}
+
+\section{4. Habilitar y Controlar el Servicio}
+Para aplicar los cambios e iniciar la ejecución automática del daemon en segundo plano, controla el servicio con los comandos de \texttt{systemctl}:
+
+\begin{lstlisting}[language=bash]
+# Habilitar e iniciar por primera vez
+sudo systemctl enable --now logid
+
+# Detener el servicio (por ejemplo, para pruebas)
+sudo systemctl stop logid
+
+# Reiniciar el servicio (tras hacer cambios en la configuracion)
+sudo systemctl restart logid
+\end{lstlisting}
+
+\section{5. Detección de Botones y Depuración (CIDs)}
+Si deseas mapear otros botones del mouse, debes identificar su identificador numérico o \texttt{cid}. Para hacerlo en tiempo real:
+
+\begin{enumerate}
+    \item Detén el servicio en ejecución: \texttt{sudo systemctl stop logid}.
+    \item Ejecuta el binario manualmente en modo detallado: \texttt{sudo logid -v}.
+    \item Presiona los botones del mouse. La terminal mostrará los eventos con su correspondiente código CID (por ejemplo, \texttt{cid: 0x53} para retroceder).
+    \item Presiona \texttt{Ctrl + C} en la terminal para finalizar las pruebas y reinicia el servicio con \texttt{sudo systemctl start logid}.
+\end{enumerate}
+
+\end{document}

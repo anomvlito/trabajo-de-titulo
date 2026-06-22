@@ -1,0 +1,60 @@
+====================================================================
+DATOS DEL FORMULARIO DE INSCRIPCIÓN - TRABAJO DE TÍTULO
+====================================================================
+
+--- Trabajo de Título ---
+Modalidad de Trabajo: Investigación Aplicada (o Internado Profesional, dependiendo del acuerdo con iHealth)
+Nombre Institucion/Empresa: iHealth
+País: Chile
+
+--- Comisión (Supervisor Directo) ---
+Supervisor Directo
+Nombre: Marcelo Andia
+Profesión: Ingeniero Civil
+Curriculum Vitae: CV Marcelo Andia 2026-1.pdf
+RUN / E-Mail / Teléfono: [Completar con los datos de contacto de Marcelo Andia]
+(Nota: Si no tiene RUN chileno, marcar la casilla correspondiente)
+
+--- Nombre del trabajo de título ---
+Implementación de una herramienta de Historial Clínico con IA para la gestión eficiente de pacientes en una Unidad de Paciente Crítico
+
+--- Objetivos, metodologías y resultados esperados ---
+Objetivo General:
+Implementar un sistema de software clínico que integre inteligencia artificial para el análisis automatizado de registros médicos y la predicción de eventos clínicos en pacientes de Unidades de Cuidados Intensivos (UCI).
+
+Metodología y Objetivos Específicos:
+El trabajo se divide en tres áreas de desarrollo consecutivas:
+- Área 1 (Software de Extracción): Desarrollo de una herramienta de anotación clínica para generar el ground truth, respaldada por una base de datos consultable y expuesta mediante una API REST (FastAPI). Se implementará un front-end de evaluación para testear modelos LLM open-source.
+- Área 2 (Análisis Predictivo con Machine Learning): Generación de análisis predictivo sobre los campos extraídos para predecir outcomes clínicos (ej. mortalidad, shock séptico). Se compararán diversos algoritmos de clasificación tradicionales versus extracción semántica, aplicando técnicas de interpretabilidad clínica (valores SHAP).
+- Área 3 (Modelo Transformer para Predicción): Estudio de arquitecturas orientadas a predicción de eventos clínicos (Delphi 2M, TFT, Foresight). Se realizará la adaptación y fine-tuning del modelo sobre datos reales de la UCI, finalizando con una validación rigurosa mediante métricas de desempeño (AUROC, precisión, recall, F1-score).
+
+Resultados Esperados:
+Un sistema integral funcional que permita la extracción automatizada de texto clínico, análisis predictivo interpretable y modelos avanzados de inteligencia artificial ajustados a las necesidades reales de gestión de pacientes críticos en la UCI.
+
+--- Indicar las competencias del Perfil de Egreso que se evidenciarán en el trabajo de Título ---
+1. Desarrollar soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de Computación.
+2. Aplicar diversos métodos de análisis de datos para la comprensión de los fenómenos abordados.
+3. Investigar sobre nuevas tecnologías de información existentes en la industria y facilitar su adopción dentro de las organizaciones.
+
+--- Identificar las evidencias que permitirán demostrar las competencias del perfil de egreso declaradas anteriormente ---
+Competencia: Desarrollar soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de Computación.
+Evidencia: Diseño, arquitectura e implementación integral de la herramienta de software clínico (API REST, base de datos e interfaz), adaptada a la problemática, necesidades y limitaciones reales de la Unidad de Paciente Crítico para el manejo de ground truth y evaluación de modelos.
+
+Competencia: Aplicar diversos métodos de análisis de datos para la comprensión de los fenómenos abordados.
+Evidencia: Desarrollo del modelo predictivo de Machine Learning para la predicción de eventos clínicos (ej. mortalidad, shock séptico), evaluando comparativamente algoritmos de clasificación y aplicando métodos de interpretabilidad (valores SHAP) sobre datos médicos reales.
+
+Competencia: Investigar sobre nuevas tecnologías de información existentes en la industria y facilitar su adopción dentro de las organizaciones.
+Evidencia: Estudio profundo, adaptación y ejecución del proceso de fine-tuning sobre arquitecturas Transformer especializadas y de vanguardia (Delphi 2M, TFT, Foresight) orientadas a la predicción de secuencias y eventos en la UCI, facilitando la adopción de estas nuevas tecnologías en el entorno hospitalario.
+
+--- Descripción del Trabajo (Tiempos) ---
+[ATENCIÓN: Caso Excepción 2 por ramo pendiente de 10 créditos]
+Jornada: Parcial (y luego Completa)
+N° de semanas de trabajo parcial: 8 semanas
+N° de semanas de trabajo completa: 10 semanas
+Fecha de inicio: 04/05/2026
+Fecha de término: 07/09/2026
+Fecha entrega borrador informe: 14/09/2026
+Fecha estimada de defensa: 05/10/2026
+
+--- Declaración conflicto de interés ---
+NO (Asumiendo que no hay familiares involucrados)
