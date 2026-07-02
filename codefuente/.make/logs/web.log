@@ -1,0 +1,765 @@
+
+> transplan-web-bdac@0.1.0 start
+> react-scripts start
+
+Attempting to bind to HOST environment variable: 0.0.0.0
+If this was unintentional, check that you haven't mistakenly set it in your shell.
+Learn more here: https://cra.link/advanced-config
+
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+(node:294673) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:294673) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view transplan-web-bdac in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://10.20.23.66:3000
+
+Note that the development build is not optimized.
+To create a production build, use yarn build.
+
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used    @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 3:7:   'S3_BUCKET' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 4:7:   'S3_REGION' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used    @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used            @typescript-eslint/no-unused-vars
+  Line 3:7:   'S3_BUCKET' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  Line 4:7:   'S3_REGION' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 140:22:  'DocumentLink' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+WARNING in [eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+ERROR in [eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 140:22:  'DocumentLink' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error and 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+ERROR in src/features/brain-death/brain-death-details.tsx:140:22
+TS2552: Cannot find name 'DocumentLink'. Did you mean 'Document'?
+    138 |                 <Grid container justifyContent="center">
+    139 |                   <div className={classes.itemsDeath}>
+  > 140 |                     <DocumentLink documentUrl={suspicion.brainDeath.document}>
+        |                      ^^^^^^^^^^^^
+    141 |                       <Button disabled={!suspicion.brainDeath.document} style={{ pointerEvents: 'none' }}>
+    142 |                         <DescriptionIcon
+    143 |                           className={
+
+ERROR in src/features/brain-death/brain-death-details.tsx:150:23
+TS2552: Cannot find name 'DocumentLink'. Did you mean 'Document'?
+    148 |                         />
+    149 |                       </Button>
+  > 150 |                     </DocumentLink>
+        |                       ^^^^^^^^^^^^
+    151 |
+    152 |                     <Typography>Documento</Typography>
+    153 |                   </div>
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/features/family-activation/family-activation-details.tsx
+  Line 143:22:  'DocumentLink' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+WARNING in [eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/family-activation/family-activation-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+ERROR in [eslint] 
+src/features/family-activation/family-activation-details.tsx
+  Line 143:22:  'DocumentLink' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error and 1 warning
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/family-activation/family-activation-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/family-activation/family-activation-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/features/inclusion-criteria/inclusion-criteria-details.tsx
+  Line 189:22:  'DocumentLink' is not defined  react/jsx-no-undef
+  Line 203:22:  'DocumentLink' is not defined  react/jsx-no-undef
+  Line 217:22:  'DocumentLink' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+WARNING in [eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/family-activation/family-activation-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/inclusion-criteria/inclusion-criteria-details.tsx
+  Line 2:33:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+ERROR in [eslint] 
+src/features/inclusion-criteria/inclusion-criteria-details.tsx
+  Line 189:22:  'DocumentLink' is not defined  react/jsx-no-undef
+  Line 203:22:  'DocumentLink' is not defined  react/jsx-no-undef
+  Line 217:22:  'DocumentLink' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error and 1 warning
+ERROR in src/features/inclusion-criteria/inclusion-criteria-details.tsx:189:22
+TS2552: Cannot find name 'DocumentLink'. Did you mean 'Document'?
+    187 |                 <div className={classes.itemsBox}>
+    188 |                   <div className={classes.items}>
+  > 189 |                     <DocumentLink documentUrl={suspicion.inclusionCriteria.vih}>
+        |                      ^^^^^^^^^^^^
+    190 |                       <Button disabled={!suspicion.inclusionCriteria.vih} style={{ pointerEvents: 'none', textDecoration: "none" }}>
+    191 |                         <DescriptionIcon
+    192 |                           className={
+
+ERROR in src/features/inclusion-criteria/inclusion-criteria-details.tsx:200:23
+TS2552: Cannot find name 'DocumentLink'. Did you mean 'Document'?
+    198 |                         <Typography>VIH</Typography>
+    199 |                       </Button>
+  > 200 |                     </DocumentLink>
+        |                       ^^^^^^^^^^^^
+    201 |                   </div>
+    202 |                   <div className={classes.items}>
+    203 |                     <DocumentLink documentUrl={suspicion.inclusionCriteria.vhb}>
+
+ERROR in src/features/inclusion-criteria/inclusion-criteria-details.tsx:203:22
+TS2552: Cannot find name 'DocumentLink'. Did you mean 'Document'?
+    201 |                   </div>
+    202 |                   <div className={classes.items}>
+  > 203 |                     <DocumentLink documentUrl={suspicion.inclusionCriteria.vhb}>
+        |                      ^^^^^^^^^^^^
+    204 |                       <Button disabled={!suspicion.inclusionCriteria.vhb} style={{ pointerEvents: 'none', textDecoration: "none" }}>
+    205 |                         <DescriptionIcon
+    206 |                           className={
+
+ERROR in src/features/inclusion-criteria/inclusion-criteria-details.tsx:214:23
+TS2552: Cannot find name 'DocumentLink'. Did you mean 'Document'?
+    212 |                         <Typography>VHB</Typography>
+    213 |                       </Button>
+  > 214 |                     </DocumentLink>
+        |                       ^^^^^^^^^^^^
+    215 |                   </div>
+    216 |                   <div className={classes.items}>
+    217 |                     <DocumentLink documentUrl={suspicion.inclusionCriteria.vhc}>
+
+ERROR in src/features/inclusion-criteria/inclusion-criteria-details.tsx:217:22
+TS2552: Cannot find name 'DocumentLink'. Did you mean 'Document'?
+    215 |                   </div>
+    216 |                   <div className={classes.items}>
+  > 217 |                     <DocumentLink documentUrl={suspicion.inclusionCriteria.vhc}>
+        |                      ^^^^^^^^^^^^
+    218 |                       <Button disabled={!suspicion.inclusionCriteria.vhc} style={{ pointerEvents: 'none', textDecoration: "none" }}>
+    219 |                         <DescriptionIcon
+    220 |                           className={
+
+ERROR in src/features/inclusion-criteria/inclusion-criteria-details.tsx:228:23
+TS2552: Cannot find name 'DocumentLink'. Did you mean 'Document'?
+    226 |                         <Typography>VHC</Typography>
+    227 |                       </Button>
+  > 228 |                     </DocumentLink>
+        |                       ^^^^^^^^^^^^
+    229 |                   </div>
+    230 |
+    231 |                   <div className={classes.checkboxBox}>
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/family-activation/family-activation-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/inclusion-criteria/inclusion-criteria-details.tsx
+  Line 2:33:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/family-activation/family-activation-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/inclusion-criteria/inclusion-criteria-details.tsx
+  Line 2:33:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+No issues found.
+Compiling...
+Failed to compile.
+
+[eslint] 
+src/features/medical-record/medical-record-details.tsx
+  Line 182:26:  'DocumentLink' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+WARNING in [eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/family-activation/family-activation-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/inclusion-criteria/inclusion-criteria-details.tsx
+  Line 2:33:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/medical-record/medical-record-details.tsx
+  Line 2:33:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+ERROR in [eslint] 
+src/features/medical-record/medical-record-details.tsx
+  Line 182:26:  'DocumentLink' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each error.
+
+webpack compiled with 1 error and 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+ERROR in src/features/medical-record/medical-record-details.tsx:182:26
+TS2552: Cannot find name 'DocumentLink'. Did you mean 'Document'?
+    180 |                       >
+    181 |                         <DescriptionIcon />
+  > 182 |                         <DocumentLink documentUrl={item}>
+        |                          ^^^^^^^^^^^^
+    183 |                           <Typography
+    184 |                             className={
+    185 |                               suspicion.medicalRecord.files?.length === 0
+
+ERROR in src/features/medical-record/medical-record-details.tsx:193:27
+TS2552: Cannot find name 'DocumentLink'. Did you mean 'Document'?
+    191 |                             Ver/Descargar
+    192 |                           </Typography>
+  > 193 |                         </DocumentLink>
+        |                           ^^^^^^^^^^^^
+    194 |                       </div>
+    195 |                     );
+    196 |                   })}
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/family-activation/family-activation-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/inclusion-criteria/inclusion-criteria-details.tsx
+  Line 2:33:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/medical-record/medical-record-details.tsx
+  Line 2:33:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/family-activation/family-activation-details.tsx
+  Line 2:28:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/inclusion-criteria/inclusion-criteria-details.tsx
+  Line 2:33:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/features/medical-record/medical-record-details.tsx
+  Line 2:33:  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+src/utils/aws.ts
+  Line 1:10:  'PutObjectCommand' is defined but never used  @typescript-eslint/no-unused-vars
+  Line 1:28:  'S3Client' is defined but never used          @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/utils/aws.ts
+  Line 1:10:  'getSignedUrl' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/utils/aws.ts
+  Line 1:10:  'getSignedUrl' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+ERROR in src/utils/aws.ts:1:30
+TS2307: Cannot find module '@aws-sdk/s3-request-presigner' or its corresponding type declarations.
+  > 1 | import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+      |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    2 |
+    3 |
+    4 |
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+No issues found.
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/features/brain-death/brain-death-details.tsx:143:35
+TS2304: Cannot find name 'isDeleting'.
+    141 |                     <DocumentLink 
+    142 |                       documentUrl={suspicion.brainDeath.document}
+  > 143 |                       isDeleting={isDeleting}
+        |                                   ^^^^^^^^^^
+    144 |                       onDelete={async () => {
+    145 |                         if (!suspicion.brainDeath.document) return;
+    146 |                         try {
+
+ERROR in src/features/brain-death/brain-death-details.tsx:149:33
+TS2304: Cannot find name 'deleteDocument'.
+    147 |                           const urlObj = new URL(suspicion.brainDeath.document);
+    148 |                           const key = urlObj.pathname.slice(1);
+  > 149 |                           await deleteDocument({ variables: { key } });
+        |                                 ^^^^^^^^^^^^^^
+    150 |                           await modifyBrainDeath({
+    151 |                             variables: {
+    152 |                               editBrainDeathInput: {
+
+ERROR in src/features/brain-death/brain-death-details.tsx:150:33
+TS2304: Cannot find name 'modifyBrainDeath'.
+    148 |                           const key = urlObj.pathname.slice(1);
+    149 |                           await deleteDocument({ variables: { key } });
+  > 150 |                           await modifyBrainDeath({
+        |                                 ^^^^^^^^^^^^^^^^
+    151 |                             variables: {
+    152 |                               editBrainDeathInput: {
+    153 |                                 id: suspicion.brainDeath.id,
+
+ERROR in src/features/brain-death/brain-death-details.tsx:153:58
+TS2339: Property 'id' does not exist on type '{ createdAt: string; creator: { firstName: string; lastName: string; }; document: string; comments: string; }'.
+    151 |                             variables: {
+    152 |                               editBrainDeathInput: {
+  > 153 |                                 id: suspicion.brainDeath.id,
+        |                                                          ^^
+    154 |                                 document: null
+    155 |                               }
+    156 |                             }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 16:10:  'useDeleteDocument' is defined but never used    @typescript-eslint/no-unused-vars
+  Line 17:10:  'useModifyBrainDeath' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/features/brain-death/brain-death-details.tsx
+  Line 16:10:  'useDeleteDocument' is defined but never used    @typescript-eslint/no-unused-vars
+  Line 17:10:  'useModifyBrainDeath' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/features/brain-death/brain-death-details.tsx:145:35
+TS2304: Cannot find name 'isDeleting'.
+    143 |                     <DocumentLink 
+    144 |                       documentUrl={suspicion.brainDeath.document}
+  > 145 |                       isDeleting={isDeleting}
+        |                                   ^^^^^^^^^^
+    146 |                       onDelete={async () => {
+    147 |                         if (!suspicion.brainDeath.document) return;
+    148 |                         try {
+
+ERROR in src/features/brain-death/brain-death-details.tsx:151:33
+TS2552: Cannot find name 'deleteDocument'. Did you mean 'useDeleteDocument'?
+    149 |                           const urlObj = new URL(suspicion.brainDeath.document);
+    150 |                           const key = urlObj.pathname.slice(1);
+  > 151 |                           await deleteDocument({ variables: { key } });
+        |                                 ^^^^^^^^^^^^^^
+    152 |                           await modifyBrainDeath({
+    153 |                             variables: {
+    154 |                               editBrainDeathInput: {
+
+ERROR in src/features/brain-death/brain-death-details.tsx:152:33
+TS2552: Cannot find name 'modifyBrainDeath'. Did you mean 'useModifyBrainDeath'?
+    150 |                           const key = urlObj.pathname.slice(1);
+    151 |                           await deleteDocument({ variables: { key } });
+  > 152 |                           await modifyBrainDeath({
+        |                                 ^^^^^^^^^^^^^^^^
+    153 |                             variables: {
+    154 |                               editBrainDeathInput: {
+    155 |                                 id: suspicion.brainDeath.id,
+
+ERROR in src/features/brain-death/brain-death-details.tsx:155:58
+TS2339: Property 'id' does not exist on type '{ createdAt: string; creator: { firstName: string; lastName: string; }; document: string; comments: string; }'.
+    153 |                             variables: {
+    154 |                               editBrainDeathInput: {
+  > 155 |                                 id: suspicion.brainDeath.id,
+        |                                                          ^^
+    156 |                                 document: null
+    157 |                               }
+    158 |                             }
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/features/brain-death/brain-death-details.tsx:157:58
+TS2339: Property 'id' does not exist on type '{ createdAt: string; creator: { firstName: string; lastName: string; }; document: string; comments: string; }'.
+    155 |                             variables: {
+    156 |                               editBrainDeathInput: {
+  > 157 |                                 id: suspicion.brainDeath.id,
+        |                                                          ^^
+    158 |                                 document: null
+    159 |                               }
+    160 |                             }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/features/family-activation/family-activation-details.tsx
+  Line 16:10:  'useDeleteDocument' is defined but never used          @typescript-eslint/no-unused-vars
+  Line 17:10:  'useModifyFamilyActivation' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/features/family-activation/family-activation-details.tsx
+  Line 16:10:  'useDeleteDocument' is defined but never used          @typescript-eslint/no-unused-vars
+  Line 17:10:  'useModifyFamilyActivation' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+ERROR in src/features/brain-death/brain-death-details.tsx:157:58
+TS2339: Property 'id' does not exist on type '{ createdAt: string; creator: { firstName: string; lastName: string; }; document: string; comments: string; }'.
+    155 |                             variables: {
+    156 |                               editBrainDeathInput: {
+  > 157 |                                 id: suspicion.brainDeath.id,
+        |                                                          ^^
+    158 |                                 document: null
+    159 |                               }
+    160 |                             }
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/features/brain-death/brain-death-details.tsx:157:58
+TS2339: Property 'id' does not exist on type '{ createdAt: string; creator: { firstName: string; lastName: string; }; document: string; comments: string; }'.
+    155 |                             variables: {
+    156 |                               editBrainDeathInput: {
+  > 157 |                                 id: suspicion.brainDeath.id,
+        |                                                          ^^
+    158 |                                 document: null
+    159 |                               }
+    160 |                             }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/features/inclusion-criteria/inclusion-criteria-details.tsx
+  Line 19:10:  'useDeleteDocument' is defined but never used           @typescript-eslint/no-unused-vars
+  Line 20:10:  'useModifyInclusionCriteria' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/features/inclusion-criteria/inclusion-criteria-details.tsx
+  Line 19:10:  'useDeleteDocument' is defined but never used           @typescript-eslint/no-unused-vars
+  Line 20:10:  'useModifyInclusionCriteria' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+ERROR in src/features/brain-death/brain-death-details.tsx:157:58
+TS2339: Property 'id' does not exist on type '{ createdAt: string; creator: { firstName: string; lastName: string; }; document: string; comments: string; }'.
+    155 |                             variables: {
+    156 |                               editBrainDeathInput: {
+  > 157 |                                 id: suspicion.brainDeath.id,
+        |                                                          ^^
+    158 |                                 document: null
+    159 |                               }
+    160 |                             }
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/features/brain-death/brain-death-details.tsx:157:58
+TS2339: Property 'id' does not exist on type '{ createdAt: string; creator: { firstName: string; lastName: string; }; document: string; comments: string; }'.
+    155 |                             variables: {
+    156 |                               editBrainDeathInput: {
+  > 157 |                                 id: suspicion.brainDeath.id,
+        |                                                          ^^
+    158 |                                 document: null
+    159 |                               }
+    160 |                             }
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/features/brain-death/brain-death-details.tsx:157:58
+TS2339: Property 'id' does not exist on type '{ createdAt: string; creator: { firstName: string; lastName: string; }; document: string; comments: string; }'.
+    155 |                             variables: {
+    156 |                               editBrainDeathInput: {
+  > 157 |                                 id: suspicion.brainDeath.id,
+        |                                                          ^^
+    158 |                                 document: null
+    159 |                               }
+    160 |                             }
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/features/medical-record/medical-record-details.tsx
+  Line 17:10:  'useDeleteDocument' is defined but never used       @typescript-eslint/no-unused-vars
+  Line 18:10:  'useModifyMedicalRecord' is defined but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/features/medical-record/medical-record-details.tsx
+  Line 17:10:  'useDeleteDocument' is defined but never used       @typescript-eslint/no-unused-vars
+  Line 18:10:  'useModifyMedicalRecord' is defined but never used  @typescript-eslint/no-unused-vars
+
+webpack compiled with 1 warning
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+ERROR in src/features/brain-death/brain-death-details.tsx:157:58
+TS2339: Property 'id' does not exist on type '{ createdAt: string; creator: { firstName: string; lastName: string; }; document: string; comments: string; }'.
+    155 |                             variables: {
+    156 |                               editBrainDeathInput: {
+  > 157 |                                 id: suspicion.brainDeath.id,
+        |                                                          ^^
+    158 |                                 document: null
+    159 |                               }
+    160 |                             }
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/features/brain-death/brain-death-details.tsx:157:58
+TS2339: Property 'id' does not exist on type '{ createdAt: string; creator: { firstName: string; lastName: string; }; document: string; comments: string; }'.
+    155 |                             variables: {
+    156 |                               editBrainDeathInput: {
+  > 157 |                                 id: suspicion.brainDeath.id,
+        |                                                          ^^
+    158 |                                 document: null
+    159 |                               }
+    160 |                             }
+
