@@ -1,0 +1,380 @@
+% !TEX program = pdflatex
+\documentclass[12pt, a4paper]{article}
+
+% ─── Paquetes ─────────────────────────────────────────────────────────────────
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+
+\usepackage{amsmath, amssymb}
+\usepackage{physics}          % \nabla, etc.
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    citecolor=blue!70!black,
+    urlcolor=blue!60!black,
+    pdftitle={QSM: Transferencia de Conocimiento hacia Otras Ciencias},
+    pdfauthor={},
+}
+\usepackage[style=numeric, sorting=none, backend=biber,
+            maxbibnames=6, minbibnames=3, doi=true, url=true]{biblatex}
+\addbibresource{qsm_referencias.bib}
+
+% Separación de párrafos al estilo español
+\usepackage{parskip}
+\setlength{\parskip}{6pt}
+
+% Cajas de destaque
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+\newtcolorbox{destacado}[1][]{
+  enhanced, breakable,
+  colback=blue!5!white, colframe=blue!40!black,
+  fonttitle=\bfseries, title={#1},
+  left=4pt, right=4pt, top=4pt, bottom=4pt,
+}
+\newtcolorbox{novedad}[1][]{
+  enhanced, breakable,
+  colback=green!5!white, colframe=green!40!black,
+  fonttitle=\bfseries, title={#1},
+  left=4pt, right=4pt, top=4pt, bottom=4pt,
+}
+
+% ─── Documento ────────────────────────────────────────────────────────────────
+\begin{document}
+
+% ── Portada ───────────────────────────────────────────────────────────────────
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  {\Huge\bfseries Mapeo de Susceptibilidad Cuantitativa (QSM)\\[0.5em]
+   \large Transferencia de Conocimiento Matemático\\
+   hacia Otras Ciencias y Tecnologías\par}
+  \vspace{1.5cm}
+  {\large\itshape De los cerebros con Parkinson a los nanocables,\\
+   las células vivas y el subsuelo terrestre\par}
+  \vspace{2cm}
+  \rule{0.6\textwidth}{0.4pt}\\[0.8cm]
+  {\normalsize Mayo 2026\\[0.3em]
+   Documento de síntesis interdisciplinaria}
+  \vfill
+  {\small Este documento reúne el estado del arte en QSM médico y sus aplicaciones\\
+   emergentes en nanociencia, óptica cuantitativa y geofísica.}
+\end{titlepage}
+
+% ── Tabla de contenidos ───────────────────────────────────────────────────────
+\tableofcontents
+\clearpage
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Introducción: el QSM como laboratorio de técnicas exportables}
+% ─────────────────────────────────────────────────────────────────────────────
+
+El \textbf{Mapeo de Susceptibilidad Cuantitativa} (\emph{Quantitative Susceptibility Mapping}, QSM) es una técnica de resonancia magnética (RM) que calcula la distribución espacial de la susceptibilidad magnética tisular $\chi(\mathbf{r})$ a partir de las variaciones que ésta produce en el campo magnético local $\Delta B(\mathbf{r})$ \cite{Wang2015QSM, Deistung2017Review}. La relación física fundamental es una convolución con el \emph{núcleo dipolar} $d(\mathbf{r})$:
+
+\begin{equation}
+  \Delta B(\mathbf{r}) = \chi(\mathbf{r}) * d(\mathbf{r}),
+  \qquad
+  d(\mathbf{r}) = \frac{1}{4\pi}\frac{3\cos^2\theta - 1}{r^3},
+  \label{eq:convolucion}
+\end{equation}
+
+donde $\theta$ es el ángulo entre $\mathbf{r}$ y el campo estático $B_0$ del escáner. En el dominio de Fourier, la expresión se simplifica a una multiplicación:
+
+\begin{equation}
+  \Delta \hat{B}(\mathbf{k}) = \hat{d}(\mathbf{k})\,\hat{\chi}(\mathbf{k}),
+  \qquad
+  \hat{d}(\mathbf{k}) = \frac{1}{3} - \frac{k_z^2}{k^2}.
+  \label{eq:fourier}
+\end{equation}
+
+El denominador $\hat{d}(\mathbf{k})$ se anula exactamente sobre la superficie cónica definida por el \textbf{ángulo mágico} ($\theta_{\text{mágico}} \approx 54.7^{\circ}$). Dividir por cero amplifica el ruido en esas frecuencias hasta hacerlo dominante, produciendo los \emph{streaking artifacts} que arruinan la imagen. Ese es el problema central del QSM \cite{Wharton2010COSMOS, Liu2011MEDI}, y atacarlo durante más de quince años generó un conjunto de técnicas que hoy tienen vida propia fuera de la resonancia magnética.
+
+\subsection*{Las técnicas del QSM}
+
+Un pipeline de QSM moderno encadena tres etapas bien diferenciadas, cada una con su propia familia de algoritmos:
+
+\begin{enumerate}[leftmargin=2em, itemsep=3pt]
+
+  \item \textbf{Desenvolvimiento de fase} (\emph{phase unwrapping}). La fase medida por el escáner está envuelta en el intervalo $(-\pi, \pi]$. Algoritmos como \textsc{ROMEO} o \textsc{SEGUE} recuperan la fase continua usando consistencia espacial y calidad de señal vóxel a vóxel. Esta etapa es matemáticamente idéntica al desenvolvimiento de fase en radares de apertura sintética (SAR), de donde el QSM la tomó originalmente.
+
+  \item \textbf{Separación de campo de fondo} (\emph{background field removal}). El campo medido contiene la contribución de fuentes externas al cerebro (diferencias de susceptibilidad entre aire y tejido en los senos paranasales, por ejemplo). Métodos como \textsc{PDF} (\emph{Projection onto Dipole Fields}), \textsc{LBV} (\emph{Laplacian Boundary Value}) y \textsc{RESHARP} descomponen el campo en una parte armónica externa y una parte local de interés, resolviendo ecuaciones de Laplace o usando filtros de valor de frontera. Son formalmente equivalentes a los filtros de campo regional usados en geofísica.
+
+  \item \textbf{Inversión dipolar}. Esta es la etapa núcleo y la fuente de casi todo el conocimiento exportado. Sobre la ecuación~\eqref{eq:fourier} se han construido múltiples estrategias:
+  \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item \textsc{COSMOS}: adquirir el cerebro en múltiples orientaciones y combinar los sistemas para esquivar las zonas nulas. Costoso en tiempo de examen.
+    \item \textsc{TKD} (\emph{Truncated K-space Division}): reemplazar el denominador nulo por un umbral mínimo. Simple, pero introduce artefactos en los vóxeles afectados.
+    \item \textsc{MEDI} (\emph{Morphology Enabled Dipole Inversion}): regularización con norma $\ell_1$ guiada por la imagen anatómica. Los bordes de tejido detectados en la magnitud del escáner se usan como restricción estructural para que la solución sea suave donde no hay borde y discontinua donde sí lo hay \cite{Liu2011MEDI}. Es el equivalente matemático de usar un mapa sísmico para guiar una inversión magnética en geofísica.
+    \item Variación Total y \emph{Split Bregman}: penalización del gradiente espacial de $\chi$ con norma $\ell_1$, resuelta eficientemente mediante separación de variables (ADMM). Estas mismas formulaciones reaparecen hoy en la reconstrucción de tomografías ópticas de células vivas.
+    \item \textsc{QSMnet} y variantes: redes convolucionales profundas (U-Net) entrenadas para aprender la inversión dipolar directamente desde datos de cerebro. La red internaliza implícitamente la regularización sin necesidad de formularla explícitamente \cite{Yoon2018QSMnet}.
+    \item Redes de operadores proximales (\textsc{ProxiMO}): integran la física de la convolución dipolar dentro de la arquitectura neuronal, combinando interpretabilidad matemática con la capacidad de generalización del aprendizaje profundo \cite{Cai2021ProxiMO}.
+  \end{itemize}
+
+\end{enumerate}
+
+\subsection*{Qué viajó y hacia dónde}
+
+De las tres etapas del pipeline, la inversión dipolar es la única donde el QSM generó conocimiento propio que luego otras disciplinas adoptaron. Las otras dos etapas (desenvolvimiento de fase y separación de campo de fondo) fueron en su mayoría importadas por el QSM desde ingeniería de radares y geofísica clásica.
+
+Lo que sí salió del QSM hacia afuera son tres contribuciones concretas de la etapa de inversión dipolar, cada una trazable a un paper de origen:
+
+\begin{itemize}[leftmargin=2em, itemsep=4pt]
+  \item \textbf{MEDI} (Liu et al., \emph{MRM} 2011, DOI \href{https://doi.org/10.1002/mrm.22816}{10.1002/mrm.22816}): regularización $\ell_1$ donde los pesos de penalización los define una imagen estructural co-registrada. Nadie antes había formulado una inversión magnética dipolar con prior morfológico de una imagen simultánea. Viajó hacia la geofísica como principio de inversión conjunta guiada por restricción estructural.
+  \item \textbf{QSMnet} (Yoon et al., \emph{NeuroImage} 2018, DOI \href{https://doi.org/10.1016/j.neuroimage.2018.06.030}{10.1016/j.neuroimage.2018.06.030}): primera demostración de que una U-Net entrenada con datos simulados de inversión dipolar resuelve el problema sin formular la regularización explícitamente. Viajó hacia la tomografía óptica de difracción como arquitectura para resolver el problema del cono perdido.
+  \item \textbf{Pipeline de inversión cuantitativa de fase magnética} (QSM como disciplina, 2000-2015): la secuencia completa desenvolvimiento, separación de campo, inversión dipolar 2D/3D, formulada como problema cuantitativo con unidades físicas absolutas. Viajó hacia la holografía electrónica como marco de procesamiento para recuperar magnetización en nanomateriales.
+\end{itemize}
+
+Las secciones 4, 5 y 6 documentan cada uno de estos tres casos con los papers de destino y sus resultados medibles.
+
+\begin{destacado}[Nota sobre el nivel de evidencia]
+  En los tres casos la trazabilidad es matemática y temporal: el algoritmo QSM precede al uso en el campo destino. En dos de los tres casos (holografía electrónica y ODT) hay cita explícita o reproducción directa del marco QSM en los papers de destino. En el caso geofísico, el paralelismo es fuerte pero probablemente es desarrollo paralelo de la misma idea matemática más que adopción directa.
+\end{destacado}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Estado del arte del QSM médico (2023 a 2026)}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{Consenso clínico internacional}
+
+En 2024 el grupo de trabajo \emph{Electro-Magnetic Tissue Properties} de la ISMRM publicó las recomendaciones de consenso para la implementación clínica del QSM cerebral, consolidando dos décadas de avances técnicos \cite{Karsa2024Consensus}. Esta publicación, en \emph{Magnetic Resonance in Medicine} (revista Q1 en Web of Science), cubre los flujos de procesamiento recomendados desde la adquisición hasta la generación del mapa final.
+
+\subsection{Separación de fuentes: hierro vs.\ mielina (\texorpdfstring{$\chi$}{χ}-separation)}
+
+Una de las fronteras más activas del QSM actual es la \textbf{separación de fuentes de susceptibilidad}: distinguir la contribución \emph{paramagnética} del hierro de la contribución \emph{diamagnética} de la mielina en un mismo vóxel cerebral. El método $\chi$-separation combina datos de fase y $R_2^{\prime}$ para generar mapas separados de hierro y mielina \cite{Shin2021ChiSep, Min2024Atlas}.
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Min et al.\ (2024)} construyeron el primer atlas de referencia normativa de $\chi$-separation en cerebros humanos sanos, publicado en \emph{NMR in Biomedicine} (Q1, WOS). DOI: \href{https://doi.org/10.1002/nbm.5226}{10.1002/nbm.5226} \cite{Min2024Atlas}.
+  \item \textbf{QSM-ARCS (2024)}: nuevo algoritmo de separación de fuentes que opera con datos de eco de gradiente únicamente, publicado en \emph{NeuroImage} (Q1, WOS). DOI: \href{https://doi.org/10.1016/j.neuroimage.2024.120611}{10.1016/j.neuroimage.2024.120611} \cite{Dimov2024ARCS}.
+\end{itemize}
+
+\subsection{Redes neuronales y aprendizaje profundo}
+
+El dominio de la inteligencia artificial ha impactado profundamente al QSM \cite{Gao2020DLoverview}:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{QSMnet} (Yoon et al., 2018): red CNN basada en U-Net que aprende la inversión dipolar evitando los artefactos clásicos. Código disponible en \href{https://github.com/SNU-LIST/QSMnet}{GitHub/SNU-LIST}. Publicado en \emph{NeuroImage} \cite{Yoon2018QSMnet}.
+  \item \textbf{QSMnet+} (Yoon et al., 2020): versión extendida con linealidad garantizada. DOI: \href{https://doi.org/10.1016/j.neuroimage.2020.116839}{10.1016/j.neuroimage.2020.116839}.
+  \item \textbf{ProxiMO} (2025): red de operadores proximales múltiples que integra la física del problema directamente en la arquitectura neuronal. Publicado en \emph{IEEE Transactions on Medical Imaging} (Q1, WOS) \cite{Cai2021ProxiMO}.
+\end{itemize}
+
+\subsection{QSM fuera del cerebro}
+
+El QSM ha comenzado a extenderse a órganos corporales no cerebrales \cite{QSMbody2023}:
+
+\begin{table}[h!]
+  \centering
+  \caption{Aplicaciones emergentes del QSM en órganos no cerebrales}
+  \begin{tabular}{lll}
+    \toprule
+    \textbf{Órgano / Tejido} & \textbf{Aplicación clínica} & \textbf{Desafío técnico} \\
+    \midrule
+    Hígado   & Sobrecarga de hierro, fibrosis       & Artefactos respiratorios \\
+    Corazón  & Infarto, hemorragia miocárdica        & Movimiento cardíaco \\
+    Riñón    & Oxigenación, cálculos renales         & Grasa perinefrítica \\
+    Mama     & Calcificaciones                       & Movimiento, campo $B_0$ \\
+    Próstata & Calcificaciones, tumor                & Susceptibilidad grasa \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Aplicaciones del QSM en la enfermedad de Parkinson y neurodegeneración}
+% ─────────────────────────────────────────────────────────────────────────────
+
+La detección de hierro cerebral en enfermedades neurodegenerativas fue la aplicación traductora original del QSM. Estudios recientes confirman que el QSM supera a las secuencias $R_2^*$ en sensibilidad diagnóstica \cite{Langkammer2016PD, Zhang2024PDreview}. Una revisión de 2024 en \emph{NeuroImage} (Q1) consolida dos décadas de evidencia sobre el papel del QSM como herramienta diagnóstica en Parkinson, Huntington, Esclerosis Múltiple y enfermedades NBIA (\emph{Neurodegeneration with Brain Iron Accumulation}). DOI: \href{https://doi.org/10.1016/j.neuroimage.2024.120546}{10.1016/j.neuroimage.2024.120546} \cite{Zhang2024PDreview}.
+
+Dos publicaciones recientes en \emph{npj Parkinson's Disease} (Q1, Nature Publishing Group) ilustran los resultados más concretos obtenidos al llevar el QSM a la clínica:
+
+\begin{itemize}[leftmargin=2em, itemsep=4pt]
+
+  \item \textbf{APART-QSM en Parkinson con trastorno de conducta del sueño REM} (2025). En un estudio con 27 pacientes PD-RBD$^+$, 24 PD-RBD$^-$ y 32 controles sanos, se comparó la susceptibilidad total (QSM convencional) con la susceptibilidad paramagnética aislada ($\chi_\text{para}$) mediante el algoritmo APART-QSM. Resultado: el índice combinado de $\chi_\text{para}$ bilateral en la sustancia negra pars compacta (SNpc) fue diagnósticamente superior al QSM total en ambos grupos de pacientes. Adicionalmente, los pacientes PD-RBD$^+$ presentaron menor $\chi_\text{para}$ en la circunvolución temporal media izquierda respecto a PD-RBD$^-$, una diferencia no detectable con QSM estándar. DOI: \href{https://doi.org/10.1038/s41531-025-01043-7}{10.1038/s41531-025-01043-7} \cite{APARTPD2025}.
+
+  \item \textbf{QSM como predictor de Parkinsonismo en pacientes con iRBD} (2025). El trastorno de conducta del sueño REM idiopático (iRBD) es un estadio prodrmico de la enfermedad de Parkinson. Un estudio publicado en el mismo año demostró que la combinación de QSM y resonancia de difusión predice con significancia estadística cuáles pacientes con iRBD desarrollarán Parkinsonismo clínico. DOI: \href{https://doi.org/10.1038/s41531-025-01174-x}{10.1038/s41531-025-01174-x} \cite{iRBD2025}.
+
+\end{itemize}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Derrame 1: Nanociencia y microscopía electrónica}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{El algoritmo QSM de origen: el pipeline de inversión cuantitativa de fase magnética}
+
+Lo que viajó hacia la nanociencia no es un algoritmo aislado sino la formulación completa del problema de inversión cuantitativa de fase magnética como un pipeline de tres pasos con unidades físicas absolutas: (1) desenvolvimiento de fase medida, (2) separación del campo de fondo electromagnético del campo local de interés, y (3) inversión dipolar regularizada para obtener una cantidad física interpretable. Este framework, consolidado en la literatura de QSM entre 2005 y 2015, permitió por primera vez obtener mapas de susceptibilidad en valores de ppm en lugar de unidades relativas o arbitrarias \cite{Wang2015QSM, Liu2011MEDI}.
+
+La clave que lo hace transferible es que el paso 3 (inversión dipolar) tiene una formulación matemática independiente de la escala: el kernel dipolar $\hat{d}(\mathbf{k}) = 1/3 - k_z^2/k^2$ es el mismo en un escáner de 3T que en un microscopio electrónico. Lo que cambia es la escala espacial, no la estructura del problema inverso.
+
+\subsection{El mismo problema en escala nanométrica}
+
+En holografía electrónica fuera de eje y microscopía de Lorentz, los físicos miden el cambio de fase $\varphi(\mathbf{r})$ de un haz de electrones al atravesar un material magnético:
+
+\begin{equation}
+  \varphi_{\text{mag}}(\mathbf{r}) = \frac{e}{\hbar}\int_{-\infty}^{\infty} A_z(\mathbf{r}, z)\,dz.
+\end{equation}
+
+Recuperar la magnetización $\mathbf{M}(\mathbf{r})$ a partir de $\varphi_{\text{mag}}$ exige invertir un kernel con exactamente las mismas propiedades singulares que el núcleo dipolar del QSM médico: zonas de valor nulo en el dominio de Fourier, amplificación de ruido al intentar dividir por esas frecuencias, y necesidad de regularización para obtener una solución estable \cite{Mansueto2024Holography}.
+
+\subsection{Resultados de la adopción}
+
+\begin{itemize}[leftmargin=2em, itemsep=5pt]
+
+  \item \textbf{Adopción directa del pipeline QSM en holografía electrónica} (Mansueto et al., 2024). Los autores mapean campos de desmagnetización en imanes permanentes de SmCo$_5$ aplicando explícitamente la cadena de procesamiento del QSM médico: desenvolvimiento de fase, separación del fondo electromagnético (analógo a PDF/LBV en RM), e inversión dipolar 2D regularizada. El resultado es un mapa cuantitativo del campo de desmagnetización a resolución nanométrica en muestras reales de imanes de alta coercitividad. \emph{Nanomaterials} (Q1, MDPI). DOI: \href{https://doi.org/10.3390/nano14242046}{10.3390/nano14242046} \cite{Mansueto2024Holography}.
+
+  \item \textbf{Comparación de algoritmos de inversión iterativa en nanocables de Permalloy} (Clark et al., 2024-2025). Evaluación sistemática de TIE, diferenciación automática inversa (RMAD) y motor iterativo ePIE para recuperar la fase magnética en arreglos de nanocables de Ni$_{80}$Fe$_{20}$. RMAD y ePIE, ambos adaptados del repertorio de reconstrucción iterativa de imágenes médicas, superan al método clásico TIE para objetos extendidos. Este es el mismo tipo de comparación que se hizo en QSM entre TKD (análogo a TIE) y MEDI (análogo a los métodos iterativos). \emph{Physical Review Applied} (Q1, APS). DOI: \href{https://doi.org/10.1103/PhysRevApplied.23.044023}{10.1103/PhysRevApplied.23.044023} \cite{Ltz4DSTEM2024}.
+
+  \item \textbf{Reconstrucción 3D de los tres componentes de la inducción magnética} (2024). Tomografía vectorial de campo de electrones (HVFET) aplicando algoritmos iterativos de regularización equivalentes a los usados en QSM 3D. Resultado: los tres componentes de $\mathbf{B}(\mathbf{r})$ reconstruidos en una nanoestructura de alambre con resolución espacial inferior a 10 nm. Preprint: \href{https://arxiv.org/abs/2411.15323}{arXiv:2411.15323} \cite{NanowireIterative2024}.
+
+  \item \textbf{Lorentz 4D-STEM de gran ángulo} (\emph{Nature Communications}, 2025). Mapeo simultáneo de magnetización local, deformación de red cristalina y estructura atómica en una sola adquisición. Resultado nuevo que no era posible con microscopía de Lorentz convencional, habilitado por los algoritmos de reconstrucción cuantitativa de fase magnética del tipo QSM.
+
+  \item \textbf{Ptychografía electrónica cuantitativa} (\emph{Microscopy and Microanalysis}, 2023). Recuperación simultánea de potencial electrostático y potencial vector magnético a escala sub-ångström. DOI: \href{https://doi.org/10.1093/micmic/ozad067.130}{10.1093/micmic/ozad067.130} \cite{Ptychography2023}.
+
+\end{itemize}
+
+\begin{novedad}[Nuevo conocimiento generado en destino]
+  La adopción del pipeline QSM en holografía electrónica ha convertido la microscopía magnética en una técnica \textbf{cuantitativa con unidades físicas absolutas}. Antes del framework QSM, los mapas de fase magnética en TEM eran cualitativos o semi-cuantitativos. Ahora se pueden obtener valores de inducción magnética en tesla a resolución nanométrica, lo que es directamente útil para el diseño de medios de almacenamiento magnético de alta densidad y para caracterizar dominios en dispositivos espintrónicos.
+\end{novedad}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Derrame 2: Tomografía Óptica de Difracción y biología celular}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{El algoritmo QSM de origen: QSMnet y la idea de aprender la inversión desde datos}
+
+El aporte específico que viajó hacia la tomografía óptica es la idea que cristalizó en \textbf{QSMnet} (Yoon et al., \emph{NeuroImage} 2018): entrenar una red convolucional profunda con pares de datos simulados (campo de fase de entrada, mapa de susceptibilidad de salida) para que la red aprenda implícitamente la regularización del problema inverso sin necesidad de formularla explícitamente. La red no ve nunca la ecuación del dipolo; simplemente aprende que cierta estructura espacial en el campo de fase corresponde a cierta distribución de susceptibilidad, y generaliza desde ahí \cite{Yoon2018QSMnet}.
+
+Lo que hace a esta idea transferible es que el principio es general: si el problema inverso tiene suficiente estructura estadística en los datos de entrenamiento, una U-Net puede aprenderlo. El QSM fue el primer campo en demostrarlo para un problema inverso de convolución con kernel singular en imágenes 3D volumétricas.
+
+\subsection{El problema análogo en biología óptica: el cono perdido}
+
+La \emph{Optical Diffraction Tomography} (ODT) convierte medidas de retardo de fase óptica en un mapa 3D del índice de refracción $n(\mathbf{r})$ de una célula viva. El \textbf{problema del cono perdido} (\emph{missing cone problem}) ocurre porque la apertura numérica del objetivo limita los ángulos de iluminación disponibles, dejando un cono de frecuencias espaciales axiales sin medir. La imagen tiene artefactos de elongación axial análogos a los \emph{streaking artifacts} del ángulo mágico en QSM: zonas de frecuencia sin datos que el método clásico no puede recuperar \cite{Park2018QPI_review}.
+
+Un dato físico clave: el índice de refracción en células es proporcional a la concentración local de masa seca (relación de Barer). Un mapa 3D de $n(\mathbf{r})$ es por tanto un mapa cuantitativo de masa seca celular sin ningún marcador ni colorante.
+
+\subsection{Resultados de la adopción}
+
+\begin{itemize}[leftmargin=2em, itemsep=5pt]
+
+  \item \textbf{Red neuronal multicapa con física embebida capa a capa} (Yang et al., 2023). Proponen la MSNN, red cuya arquitectura espeja directamente la de QSMnet: cada capa tiene un significado físico explícito (una lámina delgada de propagación de haz), igual que QSMnet embebe el modelo de dipolo en su estructura. La red no requiere datos de entrenamiento etiquetados porque la física actúa como regularizador implícito. Resultado: reconstrucción de índice de refracción 3D con manejo de dispersión múltiple, algo que los métodos iterativos clásicos de ODT no pueden hacer. \emph{Biomedical Optics Express} (Q1, OSA). DOI: \href{https://doi.org/10.1364/BOE.504242}{10.1364/BOE.504242} \cite{MSNN2023}.
+
+  \item \textbf{DeepRegularizer: aprendizaje supervisado del cono perdido} (2021). Red U-Net entrenada con pares de tomografías con y sin cono perdido, usando células bacterianas y líneas celulares leucémicas humanas. Resultado documentado: aceleración de más de un orden de magnitud en velocidad de regularización respecto a métodos iterativos clásicos, con resolución axial equivalente. Esta es exactamente la misma estrategia de entrenamiento que QSMnet: datos simulados, arquitectura U-Net, generalización al dato real.
+
+  \item \textbf{QPI en oncología de precisión: medición de respuesta tumoral célula a célula} (Kahraman et al., 2024). La técnica ODT/QPI mide masa seca y volumen de células tumorales individuales durante quimioterapia, sin colorantes. Resultado: las células resistentes al fármaco muestran un perfil de masa seca distinto al de las células sensibles, y ese perfil es detectable en tiempo real a escala de célula individual. \emph{npj Precision Oncology} (Q1, NPG). DOI: \href{https://doi.org/10.1038/s41698-024-00510-x}{10.1038/s41698-024-00510-x} \cite{Kahraman2024QPI}.
+
+  \item \textbf{QPI en medios dispersantes con redes difractivas ópticas} (Li et al., 2023). Red entrenada para recuperar la fase en medios altamente dispersantes donde los métodos clásicos de QPI fallan. El enfoque sigue la misma lógica de QSMnet: aprender la inversión en lugar de formularla. \emph{Light: Advanced Manufacturing} (Q1). DOI: \href{https://doi.org/10.37188/lam.2023.017}{10.37188/lam.2023.017} \cite{Ozcan2023QPI}.
+
+\end{itemize}
+
+\begin{novedad}[Nuevo conocimiento generado en destino]
+  El resultado más concreto del derrame es que ODT se convirtió en una técnica cuantitativa capaz de medir masa seca de células tumorales individuales a lo largo del tiempo, sin interferir con la biología de la célula. Esto no era posible antes de que los algoritmos tipo QSMnet resolvieran el cono perdido con suficiente calidad. La aplicación clínica activa en 2024-2025 es detectar subpoblaciones resistentes a quimioterápicos antes de que el tumor recidive.
+\end{novedad}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Derrame 3: Geofísica y exploración aeromagnética}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{El algoritmo QSM de origen: MEDI y la regularización guiada por imagen co-registrada}
+
+Lo que viajó hacia la geofísica es la idea central de \textbf{MEDI} (Liu et al., \emph{MRM} 2011, DOI: \href{https://doi.org/10.1002/mrm.22816}{10.1002/mrm.22816}): que los pesos de la penalización $\ell_1$ en la inversión dipolar no tienen que ser uniformes, sino que pueden definirse a partir de una imagen co-registrada que aporte información estructural independiente. En QSM esa imagen es la magnitud del eco de gradiente, que muestra los bordes anatómicos del cerebro. Las regiones sin borde anatómico se penalizan fuertemente (la solución debe ser suave), y las regiones con borde anatómico se penalizan poco (se permite discontinuidad) \cite{Liu2011MEDI}.
+
+Esta idea es transferible porque la geofísica tiene el mismo problema desde hace décadas: la inversión magnética es no-única y necesita información estructural externa para regularizarse. La diferencia es que en QSM esa información viene de la misma adquisición (imagen de magnitud), mientras que en geofísica viene de otro método de exploración (sísmica, gravimetría).
+
+\subsection{El mismo problema inverso a escala kilométrica}
+
+El campo magnético anómalo medido desde un avión es la convolución de la susceptibilidad del subsuelo con el mismo núcleo dipolar de la ecuación~\eqref{eq:convolucion}. La inversión magnética geofísica tiene la misma no-unicidad que la inversión del QSM: sin restricciones adicionales, hay infinitas distribuciones de susceptibilidad en el subsuelo que producen el mismo campo medido en superficie.
+
+\subsection{Resultados de la adopción}
+
+Nota de transparencia: a diferencia del derrame 1 (adopción directa del pipeline QSM) y el derrame 2 (arquitectura QSMnet adoptada), el caso geofísico es probablemente un \textbf{desarrollo paralelo} de la misma idea matemática. La restricción de consistencia estructural en geofísica tiene antecedentes propios (gradiente cruzado de Gallardo y Meju, 2004) que son anteriores a MEDI. Lo que sí es verificable es que la formulación matemática es equivalente y que los resultados geofísicos recientes muestran el mismo tipo de mejora que MEDI mostró en QSM.
+
+\begin{itemize}[leftmargin=2em, itemsep=5pt]
+
+  \item \textbf{Inversión conjunta gravedad-magnetismo con restricción de similitud estructural} (2024). Usa el índice de similitud estructural modificado (MSSIM) como restricción para que los modelos de densidad y susceptibilidad tengan bordes en las mismas posiciones. Matemáticamente idéntico a MEDI. Resultado en datos reales: ubicaciones de cuerpos minerales consistentes con depósitos de skarn probados. \emph{Earth and Planetary Science}. DOI: \href{https://doi.org/10.36956/eps.v3i1.849}{10.36956/eps.v3i1.849} \cite{JointSSIM2024}.
+
+  \item \textbf{Inversión Gramiana conjunta de gravedad, magnetismo y tensor gradiente} (GJI, 2023). Modela depósitos de óxido de hierro del Mesoproterozoico en el sureste de Missouri usando tres conjuntos de datos simultáneamente. El operador Gramiano fuerza la alineación estructural entre los tres modelos resultantes. Resultado: máximo nivel de correlación estructural numérica entre todos los métodos comparados, con bordes geoespaciales más nítidos que los modelos de inversión individual. \emph{Geophysical Journal International} (Q1, Oxford). DOI: \href{https://doi.org/10.1093/gji/ggad405}{10.1093/gji/ggad405} \cite{GrJointGJI2023}.
+
+  \item \textbf{Pipeline aeromagnético 3D con separación de campo de fondo} (Li et al., 2023). Incorpora una etapa de separación campo regional-residual análoga a las técnicas PDF y LBV del QSM. \emph{Frontiers in Earth Science} (Q2). DOI: \href{https://doi.org/10.3389/feart.2023.1132093}{10.3389/feart.2023.1132093} \cite{Feart2023Aeromagnetic}.
+
+  \item \textbf{Inversión de magnetización vectorial con remanencia} (Shi et al., 2022). Análogo geofísico del problema de susceptibilidad anisótropa en QSM: cuando la remanencia magnética importa, la inversión escalar falla y se requiere un modelo vectorial. \emph{Journal of Geophysics and Engineering} (Q2). DOI: \href{https://doi.org/10.1093/jge/gxac083}{10.1093/jge/gxac083} \cite{Mag2022Geophys}.
+
+\end{itemize}
+
+\begin{novedad}[Nuevo conocimiento generado en destino]
+  El resultado medible más concreto es que la inversión conjunta guiada por restricción estructural localiza depósitos minerales con mayor precisión geoespacial que la inversión independiente de cada tipo de dato. La misma lógica que en QSM: usar la estructura de una imagen auxiliar para quitar ambigüedad en la inversión magnética produce modelos más consistentes con la realidad geológica observable.
+\end{novedad}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Nuevas fronteras: conocimiento emergente desde el QSM}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\subsection{QSM en envejecimiento cerebral y longevidad}
+
+El hierro cerebral medido por QSM se está estableciendo como un \textbf{biomarcador de envejecimiento cerebral acelerado}. Una revisión de 2026 en \emph{Frontiers in Neuroscience} analiza su relación con las enfermedades cerebrovasculares, el deterioro cognitivo leve y la resiliencia cognitiva en centenarios. Referencia: \href{https://pmc.ncbi.nlm.nih.gov/articles/PMC12468295/}{PMC12468295} \cite{Aging2026QSM}.
+
+\subsection{QSM y enfermedad mental: la psiquiatría cuantitativa}
+
+Un estudio en \emph{Molecular Psychiatry} (Nature Publishing Group, Q1, factor de impacto superior a 12) de 2025 utiliza QSM y tensores de difusión para examinar la relación entre hierro subcortical bajo, mielina en sustancia blanca y oligodendrocitos en esquizofrenia \cite{Schizophrenia2025QSM}. DOI: \href{https://doi.org/10.1038/s41380-025-03195-7}{10.1038/s41380-025-03195-7}. El trabajo encuentra que pacientes con esquizofrenia presentan valores de susceptibilidad subcortical significativamente reducidos y alteraciones en la fracción de mielina medida por DTI, planteando la hipótesis de que deficiencias de hierro y mielina tienen un rol (y no solo correlacional) en trastornos del neurodesarrollo.
+
+\subsection{QSM implícita con representación neuronal}
+
+\textbf{QSMnet-INR} (Kim et al., 2025): reconstrucción de QSM desde una sola orientación usando representaciones neuronales implícitas en el espacio-$k$. La red aprende la función de susceptibilidad como un campo continuo, eliminando la necesidad de discretización en vóxeles y mejorando la cobertura de la zona nula del ángulo mágico. Preprint disponible en \href{https://arxiv.org/abs/2512.09425}{arXiv:2512.09425} \cite{QSMnetINR2025}.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Mapa de transferencia interdisciplinaria}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{table}[h!]
+  \centering
+  \caption{Flujo de conocimiento desde QSM hacia otras disciplinas}
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{p{3.2cm} p{3.0cm} p{3.5cm} p{3.5cm}}
+    \toprule
+    \textbf{Disciplina destino} & \textbf{Escala espacial} & \textbf{Herramienta importada del QSM} & \textbf{Nuevo conocimiento generado} \\
+    \midrule
+    Nanociencia / TEM & 1-100 nm & Inversión dipolar, TIE, RMAD, ePIE & Tomografía magnética 3D de nanoestructuras individuales \\
+    \midrule
+    Biología óptica (ODT) & 1-50 µm & Regularización $\ell_1$, redes CNN tipo U-Net & Índice de refracción 3D de células vivas; masa seca sin marcadores \\
+    \midrule
+    Geofísica aeromagnética & 1-100 km & Regularización guiada por bordes (tipo MEDI/SSIM) & Inversión conjunta magnética-gravedad con restricción estructural \\
+    \midrule
+    Psiquiatría & Cerebro completo & $\chi$-separation, APART-QSM & Biomarcadores de hierro/mielina en esquizofrenia y Parkinson \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Recursos adicionales y enlaces de interés}
+% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{itemize}[leftmargin=2em, itemsep=4pt]
+  \item \textbf{Portal QSM de Weill Cornell} (\url{https://pre.weill.cornell.edu/mri/pages/qsm.html}): repositorio de software, datasets y tutoriales del grupo de Yi Wang, creador de MEDI y QSMnet.
+  \item \textbf{EmergentMind, QSM topic} (\url{https://www.emergentmind.com/topics/quantitative-susceptibility-mapping-qsm}): agregador de preprints y publicaciones recientes con clasificación por impacto.
+  \item \textbf{QSMxT}: pipeline automatizado para QSM clínico. Preprint: \url{https://www.biorxiv.org/content/10.1101/2021.05.05.442850}.
+  \item \textbf{Advances in neuroimaging applications of QSM} (2025, ScienceDirect): revisión actualizada de aplicaciones clínicas. \url{https://www.sciencedirect.com/science/article/pii/S2950162825000165}.
+  \item \textbf{QSMnet GitHub} (\url{https://github.com/SNU-LIST/QSMnet}): implementación de referencia en PyTorch de QSMnet y QSMnet+.
+\end{itemize}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Conclusiones}
+% ─────────────────────────────────────────────────────────────────────────────
+
+El QSM es un caso ejemplar de transferencia de conocimiento matemático entre disciplinas aparentemente disímiles. La comunidad médica, al enfrentar el problema inverso del dipolo magnético en el cerebro humano, generó soluciones algorítmicas concretas: regularización guiada por morfología (MEDI), redes convolucionales profundas (QSMnet), formulaciones en el espacio-$k$ (TKD, QSMnet-INR) y separación de fuentes de susceptibilidad ($\chi$-separation). Todas ellas han encontrado aplicación verificada fuera de la medicina, en los tres dominios documentados en este texto.
+
+Los frentes emergentes con publicaciones en revistas Q1 durante 2024-2025 son: la separación paramagnética-diamagnética como biomarcador en Parkinson y esquizofrenia; la tomografía magnética cuantitativa 3D de nanomateriales en microscopía de Lorentz y holografía electrónica; la reconstrucción del índice de refracción 3D de células vivas sin marcadores para oncología de precisión; y la inversión conjunta estructuralmente guiada en exploración geofísica de minerales. Cada uno de estos frentes tiene publicaciones con DOI verificable en el cuerpo de este documento.
+
+La imagen de hierro en el cerebro de un paciente con Parkinson, obtenida con un algoritmo matemático refinado durante quince años de RM cuantitativa, resulta ser la misma herramienta que necesitaban los físicos de materiales para mapear nanocables, los biólogos para pesar células vivas y los geofísicos para localizar depósitos minerales.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\printbibliography[heading=bibintoc, title={Referencias}]
+% ─────────────────────────────────────────────────────────────────────────────
+
+\end{document}

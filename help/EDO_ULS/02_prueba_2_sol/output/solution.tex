@@ -1,0 +1,286 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{mathpazo}
+\usepackage{fontspec}
+\setmainfont{PatrickHand-Regular.ttf}[Path=./]
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+
+% Color de fondo estilo GoodNotes (blanco hueso muy suave)
+\definecolor{gnbg}{HTML}{FDFDFD}
+\pagecolor{gnbg}
+
+% Color de "tinta" (un gris azulado oscuro para que parezca lápiz de tablet)
+\definecolor{ink}{HTML}{2C3E50}
+\color{ink}
+
+% Dibujar cuadrícula estilo GoodNotes
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw[step=6mm, color=gray!20, thin] (current page.south west) grid (current page.north east);
+  \end{tikzpicture}
+}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+% ============================================================
+\textbf{Problema 2.1}
+% ============================================================
+
+\medskip
+Si el producto de las distancias de los puntos $(-a, 0)$, $(a, 0)$, con $a > 0$, a la tangente a una curva $\mathcal{C}$, es igual a una constante $k > 0$, determinar:
+\begin{enumerate}[label=\roman*.-]
+  \item La ecuación diferencial lineal ordinaria (EDO) asociada a la curva $\mathcal{C}$.
+  \item La solución general de la EDO.
+  \item La solución singular de la EDO.
+\end{enumerate}
+
+\medskip
+\textit{Solución.}
+
+\textbf{i)} Sea $P(\xi, \eta)$ un punto genérico de la curva $\mathcal{C}$. La recta tangente a la curva en el punto $P$ tiene por ecuación:
+\[
+  y - \eta = y'(\xi)(x - \xi) \implies y'(\xi)x - y + (\eta - y'(\xi)\xi) = 0
+\]
+Haciendo el cambio de variables general $\xi \to x$ e $\eta \to y$, y denotando $y' = p$, la ecuación de la recta tangente en un punto $(x,y)$ de la curva es:
+\[
+  px - Y + (y - px) = 0
+\]
+donde $(X,Y)$ son las coordenadas de los puntos sobre la recta tangente.
+
+Sean $d_1$ y $d_2$ las distancias desde los puntos $(-a,0)$ y $(a,0)$ a esta recta tangente, respectivamente. Usando la fórmula de la distancia de un punto a una recta:
+\begin{align*}
+  d_1 &= \frac{|p(-a) - 0 + (y - px)|}{\sqrt{1 + p^2}} = \frac{|y - px - ap|}{\sqrt{1 + p^2}} \\
+  d_2 &= \frac{|p(a) - 0 + (y - px)|}{\sqrt{1 + p^2}} = \frac{|y - px + ap|}{\sqrt{1 + p^2}}
+\end{align*}
+Por enunciado, el producto de estas distancias es igual a una constante $k > 0$:
+\[
+  d_1 \cdot d_2 = k \implies \frac{|(y - px) - ap| \cdot |(y - px) + ap|}{1 + p^2} = k
+\]
+\[
+  \frac{|(y - px)^2 - a^2 p^2|}{1 + p^2} = k \implies (y - px)^2 - a^2 p^2 = \pm k(1 + p^2)
+\]
+Tomando el caso en que la expresión dentro del valor absoluto es positiva (que corresponde a la familia geométrica estándar):
+\[
+  (y - px)^2 = a^2 p^2 + k(1 + p^2) \implies y - px = \pm \sqrt{(a^2 + k)p^2 + k}
+\]
+Restituyendo $p = y'$, obtenemos la EDO asociada a la curva $\mathcal{C}$:
+\[
+  y = xy' \pm \sqrt{(a^2 + k)(y')^2 + k}
+\]
+Esta es una ecuación diferencial de Clairaut.
+
+\medskip
+\textbf{ii)} Para resolver la ecuación de Clairaut, diferenciamos respecto a $x$ utilizando $y' = p$:
+\[
+  p = p + x \frac{dp}{dx} \pm \frac{(a^2 + k)p}{\sqrt{(a^2 + k)p^2 + k}} \frac{dp}{dx}
+\]
+\[
+  \left( x \pm \frac{(a^2 + k)p}{\sqrt{(a^2 + k)p^2 + k}} \right) \frac{dp}{dx} = 0
+\]
+De aquí se obtienen dos ramas de soluciones. La primera corresponde a:
+\[
+  \frac{dp}{dx} = 0 \implies p = C \quad (\text{constante})
+\]
+Sustituyendo $y' = C$ en la EDO de Clairaut, obtenemos la \textbf{solución general}:
+\[
+  y = Cx \pm \sqrt{(a^2 + k)C^2 + k}
+\]
+
+\medskip
+\textbf{iii)} La segunda rama corresponde a anular el factor entre paréntesis, lo que nos da la \textbf{solución singular}:
+\[
+  x = \mp \frac{(a^2 + k)p}{\sqrt{(a^2 + k)p^2 + k}}
+\]
+Elevando al cuadrado:
+\[
+  x^2 = \frac{(a^2 + k)^2 p^2}{(a^2 + k)p^2 + k} \implies x^2 (a^2 + k)p^2 + k x^2 = (a^2 + k)^2 p^2
+\]
+Despejando $p^2$:
+\[
+  p^2 (a^2 + k)[(a^2 + k) - x^2] = k x^2 \implies p^2 = \frac{k x^2}{(a^2 + k)(a^2 + k - x^2)}
+\]
+Por otro lado, a partir de la relación de la EDO de Clairaut:
+\[
+  (y - px)^2 = (a^2 + k)p^2 + k
+\]
+Sustituyendo $px$ y elevando al cuadrado la relación de $x$:
+\[
+  y = px - \frac{(a^2 + k)p}{x} = p \left( \frac{x^2 - (a^2 + k)}{x} \right) = -p \left( \frac{a^2 + k - x^2}{x} \right)
+\]
+\[
+  y^2 = p^2 \frac{(a^2 + k - x^2)^2}{x^2}
+\]
+Sustituyendo $p^2$:
+\[
+  y^2 = \left( \frac{k x^2}{(a^2 + k)(a^2 + k - x^2)} \right) \frac{(a^2 + k - x^2)^2}{x^2} = \frac{k(a^2 + k - x^2)}{a^2 + k}
+\]
+Dividiendo por $k$:
+\[
+  \frac{y^2}{k} = 1 - \frac{x^2}{a^2 + k} \implies \frac{x^2}{a^2 + k} + \frac{y^2}{k} = 1
+\]
+La solución singular de la EDO es la familia de elipses:
+\[
+  \frac{x^2}{a^2 + k} + \frac{y^2}{k} = 1
+\]
+
+\bigskip
+
+% ============================================================
+\textbf{Problema 2.2}
+% ============================================================
+
+\medskip
+Resolver la ecuación diferencial lineal no homogénea:
+\[
+  \left(D^2 - \frac{3}{x}D + \frac{3}{x^2}I\right)y = \frac{2}{x} - \frac{1}{x^2}
+\]
+
+\medskip
+\textit{Solución.}
+
+Multiplicamos toda la ecuación por $x^2$ para darle la forma clásica de una ecuación de Cauchy-Euler:
+\[
+  x^2 y'' - 3xy' + 3y = 2x - 1
+\]
+Consideramos la ecuación homogénea asociada:
+\[
+  x^2 y'' - 3xy' + 3y = 0
+\]
+Haciendo el cambio de variable independiente $x = e^t \implies t = \ln x$ (con $x > 0$), y denotando las derivadas respecto a $t$ con un punto ($\dot{y}$), tenemos:
+\[
+  xy' = \dot{y}, \quad x^2 y'' = \ddot{y} - \dot{y}
+\]
+Sustituyendo estos términos en la ecuación homogénea:
+\[
+  (\ddot{y} - \dot{y}) - 3\dot{y} + 3y = 0 \implies \ddot{y} - 4\dot{y} + 3y = 0
+\]
+La ecuación auxiliar es $r^2 - 4r + 3 = 0 \implies (r-1)(r-3) = 0$, cuyas raíces son $r_1 = 1$ y $r_2 = 3$. Las soluciones linealmente independientes en la variable $t$ son $y_1(t) = e^t$ e $y_2(t) = e^{3t}$.
+El Wronskian es:
+\[
+  W[y_1, y_2](t) = \begin{vmatrix} e^t & e^{3t} \\ e^t & 3e^{3t} \end{vmatrix} = 3e^{4t} - e^{4t} = 2e^{4t}
+\]
+Definimos la función de Green $K(t, z)$ para construir la solución particular:
+\[
+  K(t, z) = \frac{y_1(z)y_2(t) - y_1(t)y_2(z)}{W[y_1, y_2](z)} = \frac{e^z e^{3t} - e^t e^{3z}}{2e^{4z}} = \frac{1}{2}\left(e^{3(t-z)} - e^{t-z}\right)
+\]
+El término no homogéneo en la variable $t$ es $b(t) = 2e^t - 1$. La solución particular $y_p(t)$ es:
+\begin{align*}
+  y_p(t) &= \int_0^t K(t, z) b(z) \, dz \\
+  &= \frac{1}{2} \int_0^t \left(e^{3(t-z)} - e^{t-z}\right)(2e^z - 1) \, dz \\
+  &= \frac{1}{2} \int_0^t \left( 2e^{3t-2z} - e^{3t-3z} - 2e^t + e^{t-z} \right) \, dz \\
+  &= \int_0^t \left(e^{3t-2z} - e^t\right)dz - \frac{1}{2} \int_0^t \left(e^{3t-3z} - e^{t-z}\right)dz \\
+  &= e^{3t} \left[ \frac{e^{-2z}}{-2} \right]_0^t - e^t [z]_0^t - \frac{1}{2} e^{3t} \left[ \frac{e^{-3z}}{-3} \right]_0^t + \frac{1}{2} e^t \left[ \frac{e^{-z}}{-1} \right]_0^t \\
+  &= -\frac{1}{2} e^{3t}\left(e^{-2t} - 1\right) - te^t + \frac{1}{6} e^{3t}\left(e^{-3t} - 1\right) - \frac{1}{2}e^t \left(e^{-t} - 1\right) \\
+  &= -\frac{1}{2}e^t + \frac{1}{2}e^{3t} - te^t + \frac{1}{6} - \frac{1}{6}e^{3t} - \frac{1}{2} + \frac{1}{2}e^t \\
+  &= -te^t + \frac{1}{3}e^{3t} - \frac{1}{3}
+\end{align*}
+Volviendo a la variable original $x = e^t$:
+\[
+  y_p(x) = -x\ln x + \frac{1}{3}x^3 - \frac{1}{3}
+\]
+Por lo tanto, la solución general de la ecuación diferencial es:
+\[
+  y(x) = C_1 x + C_2 x^3 - x\ln x - \frac{1}{3}
+\]
+*(Nota: El término $\frac{1}{3}x^3$ se ha absorbido en la constante $C_2$ de la solución homogénea).*
+
+\bigskip
+
+% ============================================================
+\textbf{Problema 2.3}
+% ============================================================
+
+\medskip
+\textbf{i)} Resolver la ecuación diferencial ordinaria:
+\[
+  y'' + 4xy' + (4x^2 + 2)y = 0
+\]
+sabiendo que una solución $y_1$ de ella satisface una ecuación diferencial del tipo:
+\[
+  y' = y(2ax + b), \quad \text{donde } a, b \in \mathbb{R}
+\]
+
+\medskip
+\textit{Solución.}
+
+Resolvemos primero la ecuación propuesta para la solución particular $y_1$:
+\[
+  \frac{y_1'}{y_1} = 2ax + b \implies \ln|y_1| = ax^2 + bx \implies y_1(x) = e^{ax^2 + bx}
+\]
+Calculamos sus derivadas:
+\begin{align*}
+  y_1' &= (2ax + b) e^{ax^2 + bx} \\
+  y_1'' &= 2a e^{ax^2 + bx} + (2ax + b)^2 e^{ax^2 + bx}
+\end{align*}
+Reemplazando $y_1$, $y_1'$ e $y_1''$ en la EDO original:
+\[
+  \left[ 2a + (2ax + b)^2 + 4x(2ax + b) + (4x^2 + 2) \right] e^{ax^2 + bx} = 0
+\]
+Dado que $e^{ax^2 + bx} \neq 0$, la expresión dentro de los corchetes debe anularse para todo $x$:
+\[
+  (4a^2 + 8a + 4)x^2 + (4ab + 4b)x + (b^2 + 2a + 2) = 0
+\]
+Como el conjunto $\{x^2, x, 1\}$ es linealmente independiente, cada coeficiente del polinomio debe ser cero:
+\begin{enumerate}
+  \item $4a^2 + 8a + 4 = 0 \implies (a + 1)^2 = 0 \implies a = -1$
+  \item $4b(a + 1) = 0$ (se satisface de manera trivial para $a = -1$)
+  \item $b^2 + 2a + 2 = 0 \implies b^2 + 2(-1) + 2 = 0 \implies b^2 = 0 \implies b = 0$
+\end{enumerate}
+Así, los parámetros son $a = -1$ y $b = 0$, lo que nos da la solución particular:
+\[
+  y_1(x) = e^{-x^2}
+\]
+Utilizamos el método de reducción de orden (Abel) para encontrar la segunda solución linealmente independiente $y_2(x)$:
+\[
+  y_2(x) = y_1(x) \int \frac{e^{-\int P(x)\,dx}}{y_1^2(x)}\,dx = e^{-x^2} \int \frac{e^{-\int 4x\,dx}}{e^{-2x^2}}\,dx = e^{-x^2} \int \frac{e^{-2x^2}}{e^{-2x^2}}\,dx = x e^{-x^2}
+\]
+La solución general es:
+\[
+  y(x) = C_1 e^{-x^2} + C_2 x e^{-x^2}
+\]
+
+\medskip
+\textbf{ii)} Sea la EDO:
+\[
+  y'' + 4xy' + Q(x)y = 0
+\]
+Se tienen dos soluciones $y_1$, $y_2$, linealmente independientes entre sí, de esta ecuación homogénea, dadas por:
+\[
+  y_1(x) = u(x), \quad y_2(x) = xu(x)
+\]
+donde $u$ es una función tal que $u(0) = 1$. Determinar $u$ y $Q$.
+
+\medskip
+\textit{Solución.}
+
+El Wronskiano de las soluciones $y_1$ e $y_2$ es:
+\[
+  W[y_1, y_2](x) = \begin{vmatrix} u(x) & xu(x) \\ u'(x) & u(x) + xu'(x) \end{vmatrix} = u^2(x) + x u(x)u'(x) - x u(x)u'(x) = u^2(x)
+\]
+Por la identidad de Abel, el Wronskiano también satisface:
+\[
+  W(x) = W(0) e^{-\int_0^x 4s\,ds} = u^2(0) e^{-2x^2} = e^{-2x^2}
+\]
+Igualando ambas expresiones para el Wronskiano:
+\[
+  u^2(x) = e^{-2x^2} \implies u(x) = e^{-x^2} \quad (\text{dado que } u(0) = 1)
+\]
+Para encontrar $Q(x)$, sustituimos la solución $y_1(x) = e^{-x^2}$ en la EDO original:
+\[
+  y_1'' + 4x y_1' + Q(x)y_1 = 0
+\]
+Como $y_1' = -2x e^{-x^2}$ e $y_1'' = (4x^2 - 2) e^{-x^2}$:
+\[
+  \left( 4x^2 - 2 - 8x^2 + Q(x) \right) e^{-x^2} = 0 \implies Q(x) = 4x^2 + 2
+\]
+
+\end{document}

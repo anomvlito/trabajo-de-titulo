@@ -1,0 +1,3944 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Propuesta La Reina",
+          "address": "Carlos Silva Vildosola, La Reina, Región Metropolitana",
+          "type": "local-propuesto"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53161287793333, -33.440726804868184]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Propuesta Las Condes",
+          "address": "Avenida Las Condes, Las Condes, Región Metropolitana",
+          "type": "local-propuesto"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51884503197762, -33.37379230724533]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Propuesta Providencia",
+          "address": "Avenida Pocuro, Providencia, Región Metropolitana",
+          "type": "local-propuesto"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58695402567658, -33.430125362591866]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Opera Liquor Store Los Trapenses",
+          "address": "Camino Los Trapenses 3200, Local 03, Lo Barnechea, Región Metropolitana",
+          "type": "local-actual"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54422165582771, -33.342492972826804]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Opera Liquor Store Pie Andino",
+          "address": "Pie Andino 4850, Local S-122, Lo Barnechea, Región Metropolitana",
+          "type": "local-actual"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5193546584534, -33.31778736191975]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Opera Liquor Store San Carlos",
+          "address": "Camino El Alba 12620, Local 03, Las Condes, Región Metropolitana",
+          "type": "local-actual"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.50847693912813, -33.393305601884734]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Local El Golf",
+          "type": "local-prox"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.592747, -33.414246]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Local Chamisero",
+          "type": "local-prox"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.637378, -33.324229]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Cavas de La Reina",
+          "address": "Carlos Silva Vildósola 9323, La Reina, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53318827490591, -33.4407502714448]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Cavas de Chicureo",
+          "address": "Av. Chicureo 1700, Chicureo, Colina, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [70.68444791908878, -33.2850456794313]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Supermercado Diez",
+          "address": "Av. La Dehesa 3265, Lo Barnechea, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.52204114729831, -33.33533029102053]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Supermercado Diez",
+          "address": "Luis Carrera 2231, Vitacura, Santiago, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5863774132147, -33.384455602761534]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Supermercado Diez",
+          "address": "Los Conquistadores 2230, Providencia, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61273068113871, -33.40736394647686]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Vinoteca",
+          "address":"Av. La Dehesa 1500, local 16B, Santiago, Lo Barnechea, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51756737301177, -33.358095395137354]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Vinoteca",
+          "address": "Av. Nueva Costanera 3955, Vitacura, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59733425397648, -33.397537141176684]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Vinoteca",
+          "address": "Manuel Montt 1452, Providencia, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61491337301177, -33.44071089086032]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "El Mundo del Vino",
+          "address": "Av. Pdte. Kennedy 5413, 379, Santiago, Las Condes, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57832656386334, -33.40006098465334]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "El Mundo del Vino",
+          "address": "Isidora Goyenechea 2939, Las Condes, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60055671059263, -33.41259979494337]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "El Mundo del Vino",
+          "address": "Av. Andrés Bello 2425, Local 1162, Providencia, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60598897490685, -33.418147427151354]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "El Mundo del Vino",
+          "address": "Camino el Alba 11969, Local 307 A, Las Condes, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51433141908402, -33.40191373862513]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "El Mundo del Vino",
+          "address": "Av. la Dehesa 1445, Local 1058, Lo Barnechea, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51543791908587, -33.3575608246574]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "The Wine Room",
+          "address": "Av. Pedro de Valdivia 069, Providencia, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61296034791849, -33.422702763151285]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Tienda de Vinos La Reina",
+          "address": "Monseñor Edwards 1393, Santiago, La Reina, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56195150374123, -33.44129493052412]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Vinoteca Italia",
+          "address": "Condell 1575, Local 1, Ñuñoa, Región Metropolitana",
+          "type": "competencia"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62528243072916, -33.44884687222908]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "La Aurora 1630, Vitacura, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54280696141417, -33.381080348971615]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Irarrázaval 082, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.6296126325761, -33.45191049017938]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Alameda Libertador Bernardo O'Higgins 2835, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.67359967675264, -33.44887493548638]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Moneda 1798, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.66177926141177, -33.44289511314078]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Apoquindo 2869, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59963890374212, -33.41758831582851]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Francisco Bilbao 1097, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61844249024706, -33.439797128051765]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Francisco Bilbao 3978, Santiago, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58083489024756, -33.43109405251889]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Chamisero 10290, local 10, Chicureo, Colina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.66458780374673, -33.3055380401803]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Avenida Chicureo Km 2, Los Ingleses de, Chicureo, Colina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.68013057306528, -33.28493778807144]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Cristóbal Colón 6412, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56185591723637, -33.41642715808212]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Ricardo Cumming 143, Local 1, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.66771046141172, -33.44309463349483]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Ejército Libertador 321, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.66086779464015, -33.45083329720023]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Gerónimo de Alderete 925, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56108084791957, -33.39497270734765]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Pedro Fontova 6251, Huechuraba, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.67002276732887, -33.36507411650603]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Irarrázaval 2690, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60351786141128, -33.45384109162061]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Presidente José Batlle Y Ordóñez 4616, 7790799 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58244108839956, -33.452711840427625]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. La Dehesa 1464, Lo Barnechea, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5174517884034, -33.358515565620834]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Vicuña Mackenna 10310, La Florida, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58664773441907, -33.55121191653764]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Padre Sergio Correa 14500, 9361323 Colina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62353273445704, -33.2668149348771]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Príncipe de Gales 6893, local A, La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56080940374127, -33.43871101451214]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Las Condes 7789, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55302151723701, -33.40008521945971]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Las Hualtatas 6275, Vitacura, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5699025902491, -33.39371259445192]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Latadía 5060, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57124300374176, -33.42760575384794]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Lo Errazuriz 2100, Cerrillos, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.72329467490395, -33.49006167290416]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Loreto 93, 8420510 Recoleta, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.64217634607093, -33.432604955480016]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Los Leones 2769, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59974619559264, -33.44442505769569]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Del Monje 10547, Lo Barnechea, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54292202973802, -33.344151605280246]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Macul 3225, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59926211615354, -33.483881942626965]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Central Gonzalo Pérez Llona 1102, Santiago, Maipú, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.74512407675057, -33.50067804247392]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Camino A Rinconada 740, Maipú, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.76859043257373, -33.509175368724755]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Manuel Montt 2243, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61374814791745, -33.44805524168417]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Manuel Montt 211, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61938834727286, -33.4302123718527]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Obispo Orrego 498, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61935907490518, -33.45723684866237]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Tobalaba 2047, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58580645956515, -33.43078069815129]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Providencia 2575, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.6032013595657, -33.418880993536895]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Las Condes 14141, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.50228608840304, -33.36844980949897]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Rondizzoni 2690, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.67008835956351, -33.470519030518716]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Francisco Bulnes Correa 1208, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5158130902491, -33.39232086113564]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Departamental 955, San Miguel, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.65164884844084, -33.50382337931993]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Vicuña Mackenna 8046, La Florida, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59551494791408, -33.5284754689633]
+        }
+      }, 
+
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av Vitacura 9185, Vitacura, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54815984422596, -33.38268651642699]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Liquidos",
+          "address": "Av. Tobalaba 911, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59448117490655, -33.423757638142924]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "MG Drinks",
+          "address": "Av. Grecia 6131, Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5713523460694, -33.470300829393395]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "MG Drinks",
+          "address": "Pucará 5110, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57855257181632, -33.44328058989916]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "MG Drinks",
+          "address": "Portugal 190, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.63656908209843, -33.444704458271985]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "MG Drinks",
+          "address": "Pucará 4265, Santiago, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58642105956459, -33.444465960023]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Licorería El Huinganal",
+          "address": "Camino El Huinganal 2020, Lo Barnechea, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51003884183169, -33.34978458359221]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería el Punto Fijo",
+          "address": "Vecinal 13900, Lo Barnechea, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.50504064654183, -33.356655469988624]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Almacén Botillería Fuenza",
+          "address": "Lo Barnechea 940, Lo Barnechea, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.50577567949334, -33.35924463727881]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Don Antonio",
+          "address": "Padre Alfredo Arteaga Barros 1035, Lo Barnechea, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.50916042843475, -33.35940169687063]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Cool Drinks",
+          "address": "Av. La Dehesa 541, Lo Barnechea, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51530312277858, -33.36091992531137]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria lo Barnechea",
+          "address": "Av. José Alcalde Délano 10.425, local 5, Santiago, Lo Barnechea, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54352120589823, -33.3588412394844]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Licor Express",
+          "address": "Av. Las Condes 12751, Local 5 Local 5, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51344626905951, -33.36966764717428]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Minimarket & Botillería Colón Paul Harris",
+          "address": "Av. Cristóbal Colón 9193, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53479623345298, -33.41461911896035]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria The Frog",
+          "address": "Av. Alejandro Fleming 9164, 7600573 Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5340980998664, -33.423357864611795]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Corchos",
+          "address": "Abadía 14, 7550000 Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54165517957655, -33.388685830917225]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Don Fritz",
+          "address": "Av Vitacura 8939, Vitacura, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55063614311979, -33.383775238814266]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Licorería Nacional",
+          "address": "Av. Las Condes 9144, Local 4, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54350624609285, -33.392182988972294]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "La Botillería",
+          "address": "Av. Pdte. Kennedy Lateral 7933, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55384258668445, -33.39235355353458]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería MONDO LBR",
+          "address": "Gerónimo de Alderete 1522, Vitacura, Local 1, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56430984182946, -33.3888465285149]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Moscu Vitacura",
+          "address": "Av. Luis Pasteur 6420, Vitacura, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57304761885864, -33.3827589650204]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Bonmesón",
+          "address": "Los Militares 6880, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56063287167748, -33.40132156984146]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Bonmesón",
+          "address": "Av. Cristóbal Colón 5959, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56552301638365, -33.41706789429847]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Tomorrow",
+          "address": "Av. Las Condes 7480, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55584788321843, -33.40210551292247]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "COPETEXPRES",
+          "address": "Av. Las Condes 7162, 7560678 Las Condes, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55723860518606, -33.40429164838857]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "LOS TRES REYES",
+          "address": "Hernando de Magallanes 36, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55560841245817, -33.40823243163432]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería los Dominicos",
+          "address": "Los Dominicos 8134, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54598712763473, -33.41100137630019]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Licorería Nueva Modelo",
+          "address": "Avda. Pdte. Sebastían Piñera E. 702, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55834642432687, -33.413537486416985]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Full Apoquindo",
+          "address": "Av. Apoquindo 6266, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5657978652673, -33.40816107678105]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria El Español",
+          "address": "Av. Manquehue Sur 994, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56462340195303, -33.41625831975334]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "La Esquina Minimarket Botillería",
+          "address": "Los Militares 6050, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56902734271947, -33.405051061334774]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Minimarket & Botilleria Mercar",
+          "address": "Cerro Colorado 5898, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57250624229354, -33.40082773560658]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Chiledrink",
+          "address": "Av. Apoquindo 5098, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57552155044758, -33.41088238729496]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Botimarket J&R",
+          "address": "Av. Apoquindo 4900, local 50, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57809305762702, -33.41150261615494]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "KAMADI Vitacura",
+          "address": "Av Vitacura 5374, Vitacura, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58080081504094, -33.395677505575875]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Al Toque",
+          "address": "Pernambuco 4910, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57788205622508, -33.41122808814647]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Marbella",
+          "address": "Av. Tobalaba 1505, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58981624888033, -33.42752539728512]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Minimarket y Botilleria Arturo",
+          "address": "Francisco Bilbao 2946, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58871469138455, -33.43481544126665]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "La Botillería",
+          "address": "Francisco Bilbao 2715, Providencia, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59499876024958, -33.436202161341946]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Licoreria Nacional",
+          "address": "Francisco Bilbao 2383, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60110265505065, -33.43713253750567]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería tres hielos",
+          "address": "Av. Providencia 2575, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60322865799388, -33.41906910601757]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería La Esquina",
+          "address": "Av. Los Leones 30, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60556400784415, -33.42022319278805]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Palamar",
+          "address": "Av. Providencia 2358, Santiago, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60683001049978, -33.42011573439481]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Suecia",
+          "address": "Suecia 0119, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60863245496421, -33.41972171914977]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "BOTILLERIA EL CHAGUITO",
+          "address": "Guardia Vieja, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61102377548751, -33.42288583234106]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria El Tata",
+          "address": "Dr. Luis Middleton 1730, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61471649742064, -33.42665695294286]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Marbella",
+          "address": "Alcalde Rafael Vives 60-70, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.61687249657157, -33.4277097746283]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria TUPROMO",
+          "address": "Gral del Canto 36, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61829453856373, -33.42837974541073]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria El Chaguito",
+          "address": "Manuel Montt 12, of 501, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62008355911999, -33.42899228564424]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Moscú",
+          "address": "Av. Providencia 1045, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62277635828886, -33.43064321827401]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Moscu",
+          "address": "Huelén 4, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62331543737015, -33.431069837274684]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Bonnus Market",
+          "address": "Román Díaz 599, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62050982683256, -33.435711650417254]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería 518",
+          "address": "Manuel Montt 755, 7500977 Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61666839376252, -33.435052150555464]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Ancona",
+          "address": "Av. Pedro de Valdivia 939, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60948841205436, -33.43182122632425]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Entre Dos Rios",
+          "address": "Diag. Ote. 1990, 7501351 Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60653145328118, -33.44531089445164]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería y Confitería",
+          "address": "Coventry 1172, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58137972167226, -33.44409574636969]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Exito",
+          "address": "Av. Simón Bolívar 4731, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58140472956568, -33.444088008603785]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Tío Miguel",
+          "address": "Hamburgo 675, 7790447 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57665733850372, -33.44802244222148]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Spirit",
+          "address": "Hamburgo 1047, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.5771070366033, -33.44471337183321]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Echenique",
+          "address": "Av. Echeñique 5810, 7870025 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57140117946929, -33.445256306236935]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria LA PREVIA",
+          "address": "Hamburgo 1372, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57769245590141, -33.44186684577509]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Abarrotes botillería",
+          "address": "Diego de Almagro 4947, 7790096 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57893876504868, -33.43824883214965]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria y almacen Too el Rato",
+          "address": "Av. Irarrázaval 4562, 7790829 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58231277703779, -33.45459781307858]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Chiledrink",
+          "address": "Av. Irarrázaval 3997, 7760080 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58786133385799, -33.45570123620922]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Silvano",
+          "address": "Los Tres Antonios 928, 7750477 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60357859225692, -33.46239440462914]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Top Drinks botilleria",
+          "address": "Av. Irarrázaval 1007, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62034725527727, -33.45344439055213]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Rincón",
+          "address": "Román Díaz 2235, 7770243 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61675522696639, -33.451598382210726]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Lincoyan",
+          "address": "Lincoyán 1252, 7770416 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61801844920645, -33.45202402358511]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Me Lancé",
+          "address": "Manuel Montt 2786, 7770550 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61228601413299, -33.4530752690099]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria El Viejo Almacén",
+          "address": "Av. Salvador 2602, 7750228 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.620696660922, -33.45697354095135]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Madero",
+          "address": "Av. Grecia 1008, 7750412 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62125833392915, -33.46048599297528]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Salvador",
+          "address": "Av. Grecia 1007, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62180390391651, -33.460820125920996]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Rotisería y Botillería Mariluz",
+          "address": "Av. Campos de Deportes 343, 7750207 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.6097068679722, -33.45687443420912]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Unicornio Azul",
+          "address": "Juan Moya Morales 784, 7760438 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58729764446392, -33.46241727736922]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Carimboz",
+          "address": "C. 7 4593, 7800048 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58249445616966, -33.46811131731326]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería M&O",
+          "address": "Alcalde Jorge Monckeberg 1884, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5868722189188, -33.47206941329327]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria La Perla",
+          "address": "Av. Rodrigo de Araya 4197, Ñuñoa, Macul, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58828942051633, -33.474546812967]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Matieli",
+          "address": "Alejandro Avalos Davidson 2061, Macul, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5845788412958, -33.47415884579758]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Salfi",
+          "address": "Fernando Massiff de La Fuente, 7810022 Macul, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58042488027489, -33.4731442873908]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Tio Willy",
+          "address": "Av. Pedro de Valdivia 5415, 7780289 Ñuñoa, Macul, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60649269165272, -33.47354134001864]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Mi Whisky",
+          "address": "7780335 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.6099350039941, -33.474152268187225]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Minimarket & Botilleria Dagus",
+          "address": "Av. Rodrigo de Araya 1990, 7780334 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61085051260271, -33.47412172188147]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilerría Santa Ana",
+          "address": "Guillermo Mann 1550, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.6157942590892, -33.47057827733821]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Makita Botillería",
+          "address": "Av. Pedro de Valdivia 5134, 7780226 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60630958989263, -33.47042553940229]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería y almacen Don Samuel",
+          "address": "Vía Siete 1455, 7780111 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61630694389866, -33.46639316053339]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería La Plop",
+          "address": "Los Jazmines 1780, 7780113 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61821120179302, -33.467737307661636]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria mencheda",
+          "address": "Via 11 1154, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.61914771880647, -33.46920848480308]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Meilchea",
+          "address": "Vía Trece 1084, Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61910868185144, -33.46936044970899]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "River's Market",
+          "address": "Condell 1807, 7770331 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62464672159564, -33.4513778662716]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "BOTILLERIA LOS MOSQUETEROS LA REINA",
+          "address": "Loreley 825, La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56435935706918, -33.44499170787129]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Fenix",
+          "address": "Lynch Nte. 190, 7870104 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56560268136619, -33.45103861979097]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Tayron",
+          "address": "Av. Larraín 6101, La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56674102325293, -33.45333806561123]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Reserva Imperial",
+          "address": "Nuncio Laghi 6527, 7870338 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56149446705327, -33.456860892415264]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Greco",
+          "address": "El Greco 6672, 7870323 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55986305892066, -33.456961713523775]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Minimarket y Botillería Boss",
+          "address": "Av. Larraín 6785, 7870160 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5594199604121, -33.45245825666916]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Muro",
+          "address": "Leonardo Da Vinci 6845, 7870494 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55818805344465, -33.460923566861545]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Licorería Hieloso",
+          "address": "Av. Simón Bolívar 6376, 7870055 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56500886845696, -33.447138477988986]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "La Oca",
+          "address": "Vicente Pérez Rosales 913, 7860256 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5518863205122, -33.44458476462404]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería y Minimarket Stop",
+          "address": "Vicente Pérez Rosales 554, 7850429 Santiago, La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5518310676363, -33.44578034355711]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Don Justo",
+          "address": "Alcalde Alejandro Chadwick 2177, 7850202 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5573632523343, -33.43475085290992]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Los Leoneses",
+          "address": "Francisco Bilbao 7525, 7850026 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55314490954659, -33.43071160566707]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Plaza La Reina",
+          "address": "Valenzuela Llanos 1314, 7860075 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53357551255363, -33.439987224762675]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Parque",
+          "address": "Av. Alcalde Fernando Castillo Velasco 8485, 7880679 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54330140346379, -33.45148636226764]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Santa Margarita",
+          "address": "Quinchamalí 35, 7880046 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53827935020894, -33.452398624764825]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería La Fortuna",
+          "address": "Valenzuela Llanos 9018, 7860315 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53851559391491, -33.44740879664827]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Villa La Reina",
+          "address": "Iván Galdámez Montiel 9091, 7880745 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53942770119562, -33.45671927264002]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Manquehue",
+          "address": "Isabel La Católica 6105, 7571213 Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56343326362052, -33.425362588385354]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Los Molinos",
+          "address": "Avda. Pdte. Sebastían Piñera E. 999, Santiago, Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55383276651065, -33.41762211748125]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Top Drinks botilleria",
+          "address": "Av. Apoquindo 5871, Local 6, 7560930 Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56909610001375, -33.40980021258918]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Minimarket y Botillería CFJ",
+          "address": "Av. Apoquindo 5871, 7580012 Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56941002604502, -33.40949527291065]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "De Cavas",
+          "address": "Av. Luis Pasteur 6587, 7, 7640167 Vitacura, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57112584787527, -33.38153921206994]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Cuatro Estaciones",
+          "address": "Av Vitacura 7196, 7640560 Vitacura, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56420778397643, -33.386296303636975]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "COPETEXPRES",
+          "address": "Av Vitacura 5480, Local 74 y 75, 7630628 Santiago, Vitacura, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57897324094577, -33.39430839715662]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Copete Al Amanecer",
+          "address": "Las Hualtatas 5650, 7630000 Vitacura, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57600157663887, -33.39629838325053]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Vitacura",
+          "address": "Av Vitacura 3324, 7630547 Vitacura, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.59844714878116, -33.405852356955215]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Botimarket J&R",
+          "address": "Av. Apoquindo 4900, local 50, 7550000 Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57808905602039, -33.411478736595484]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería La Despensa",
+          "address": "Cerro La Parva 980, 7560801 Las Condes, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58392925144281, -33.40586718013881]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Donde Isolina",
+          "address": "Av. José Arrieta 9441, 7910484 Peñalolén, La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53159340589782, -33.465522315993965]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería San Sebastián",
+          "address": "Av. José Arrieta 9119, 7910366 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5350852714963, -33.464633986028254]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Rinconsito",
+          "address": "Valle Hermoso 8524, 7910000 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54139485389403, -33.464912551355965]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Al Final",
+          "address": "Pje. Lago Rosselot 1110, 7910289 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54372366226426, -33.46812523173063]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Cala",
+          "address": "Lago Huillinco 1231, 7910000 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.54157674283273, -33.46971716786462]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Umallani",
+          "address": "Quebrada de Umallani 966, 7910582 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53593836856592, -33.46855939907005]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Barbara",
+          "address": "Av. Sta. Isabel 311, 7501482 Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62661832038177, -33.44681894566308]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Agrado",
+          "address": "490, Emilio Vaisse 448, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.6272651397754, -33.44668090800487]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Too El Rato",
+          "address": "Av. Gral. Bustamante 911, 7750554 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62919669132029, -33.45315963897902]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Jasima",
+          "address": "Av. Vicuña Mackenna 624, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.63138829772139, -33.44930107855335]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Los Alpes",
+          "address": "Av. Vicuña Mackenna 798, 7770458 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.63063051791788, -33.45186680592314]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería La Genovesa",
+          "address": "Seminario 197, Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.6294015460924, -33.44368206678684]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Licorería Black and White",
+          "address": "Av. Gral. Bustamante 520, 7501501 Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.6300658628214, -33.447234709667214]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería del Parque Bustamante",
+          "address": "Av. Gral. Bustamante 128b, 130 interior, 7500000 Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.63079302941131, -33.44214333261534]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Bad botty",
+          "address": "Álvarez Condarco 947, 7501304 Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61898035075627, -33.44457837521371]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Osiris",
+          "address": "Av. Italia 1654, 7770179 Ñuñoa, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.6238321210467, -33.44963089585803]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Punto Clave",
+          "address": "Av. Sucre 1421, 7770290 Ñuñoa, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.61657327091689, -33.44953675220373]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Paucla",
+          "address": "Francisco Bilbao 422, 7501113 Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62691619208633, -33.44178524077484]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Bilbao",
+          "address": "Francisco Bilbao 936, 7500000 Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62064199827398, -33.44006316948821]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería La Esquina",
+          "address": "Manuel Montt 1518, 7501149 Providencia, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61485199254173, -33.44162270447175]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "El Bodegón de Bellavista",
+          "address": "Bellavista 0856 , Providencia, 7500908 Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62596174704318, -33.42898130151985]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Los Primos",
+          "address": "Amanda Labarca Huberston 4947, 7810143 Macul, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57854575330695, -33.475216136922825]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Valentina",
+          "address": "Capitán Ignacio Carrera Pinto 4981, 7810000 Macul, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57964455357643, -33.48145163467592]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Trujillo",
+          "address": "Av, Capitán Ignacio Carrera Pinto 5003, Local 9, Macul, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57944994820367, -33.48155984355555]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería La Frontera",
+          "address": "Venezuela 6182, 7921271 Peñalolén, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57186033866594, -33.47804298577851]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Lorena",
+          "address": "El Lago 5903, 7920147 Santiago, Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57432534006189, -33.472388661280235]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Moncho",
+          "address": "El Lago 6002, 7920058 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5732550105117, -33.47241571634276]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Vasco",
+          "address": "El Desierto 1993, Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57049810106425, -33.473849622568366]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Dany",
+          "address": "Av. El Valle 6496, 7921106 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56595730905416, -33.47777245230523]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería La Cabaña",
+          "address": "Lago Rupanco 2810, 7921004 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56598974329488, -33.48280423592096]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Tetera",
+          "address": "Av. Coronel Alejandro Sepúlveda 7169, 7910000 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56010872168099, -33.47733724500997]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilería Don Lalo",
+          "address": "El Continente 7296, 7920263 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55782766568737, -33.474566199929946]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Roca",
+          "address": "Av. Coronel Alejandro Sepúlveda 1936, 7920052 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56805014607345, -33.47209281510085]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Martillo",
+          "address": "Av. Grecia 6432, 7910999 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56762099262953, -33.470625083472626]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Ivan 2",
+          "address": "Av. Grecia 6531, 7920067 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56665539738071, -33.47137685155845]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería La Modelo",
+          "address": "Av. Grecia 6793, 7920114 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56316468649644, -33.47201019426152]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Prontocopet",
+          "address": "Diputada Laura Rodríguez 7309, 7911221 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55629823139382, -33.47095414495743]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Imperio",
+          "address": "C. 117 1171, 7911977 Peñalolén, Santiago, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55275097248831, -33.46905346594753]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Liquids",
+          "address": "Av. Grecia 7678, 7911338 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55070307059579, -33.47412589931445]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Almendra",
+          "address": "Ictinos 1410, 7910960 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56159434416584, -33.46949506606987]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Licores Sempai",
+          "address": "C. Doce A 1311, 7910000 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55745866318733, -33.46930688947093]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Diego Rojas",
+          "address": "Diego Rojas 1103, 7911754 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55806021677182, -33.46689192024703]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Patito Modelo",
+          "address": "Av. José Arrieta 6788, 7870512 Santiago, La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55888502229399, -33.4623573904964]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Jose Arrieta",
+          "address": "Av. José Arrieta 7058, 7870524 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55594545646959, -33.46233587884802]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Punta Arenas 2",
+          "address": "Av. José Arrieta 7340, 7870533 La Reina, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55254174868374, -33.46246494865781]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Costa Brava",
+          "address": "Las Parcelas 8852, Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53917732663346, -33.472081628067826]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería de Turno",
+          "address": "Los Baqueanos 9558, 0000002 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53292565054748, -33.473308144041546]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Sol",
+          "address": "Jacaranda 1721, Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53697706027937, -33.47489462956608]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Entre Copas",
+          "address": "Las Parcelas 9059, 7910000 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53773518889236, -33.47256554383659]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería San Sebastián",
+          "address": "Av. José Arrieta 9119, 7910366 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.53498850657859, -33.46455909876121]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería el Campito",
+          "address": "El Abanico 9601, 7940259 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53084628531224, -33.47870946427807]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Abanico",
+          "address": "El Abanico 2190, 7940472 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53134702764926, -33.4810159266802]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Control Botillería",
+          "address": "Riñihue, 7920917 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56533336199342, -33.48106539061032]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería El Negro",
+          "address": "Río gol gol 6608, 1910000 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56629104471331, -33.48040998491908]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Las Torres",
+          "address": "Av. Las Torres 6261, 7930709 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56773972850623, -33.504156685299264]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botilleria Barrio",
+          "address": "C. 465 5448, Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56793408028086, -33.50331165714422]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Cinco Estrellas",
+          "address": "Av. Departamental 4924, 7931081 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58298384352564, -33.51000931833294]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Escobar",
+          "address": "Los Jardineros 6239, 7931192 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5732995460029, -33.51010654192409]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería San Luis",
+          "address": "San Luis de Macúl 5328, 7930770 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5785682303743, -33.50595752811939]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Botillería Santa Ana",
+          "address": "Nevado Incahuasi 5549, 7930554 Peñalolén, Región Metropolitana",
+          "type": "competencia-secundaria"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57953415584073, -33.50261376640751]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Jumbo",
+          "address": "P.º Pie Andino 4850, Lo Barnechea, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51662290703584, -33.326234975242926]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Jumbo",
+          "address": "Camino Los Trapenses 3515, 7700148 Lo Barnechea, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54445706058856, -33.34389845204549]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Jumbo",
+          "address": "Av. La Dehesa 1445, 8320000 Lo Barnechea, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51446851356438, -33.35709812211531]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Jumbo",
+          "address": "Cam. El Alba 11969, Local 101, Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51442942770258, -33.40191899782655]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Jumbo",
+          "address": "Av. Pdte. Kennedy 9001, 7591567 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54597917573041, -33.391704662164244]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Jumbo",
+          "address": "Eduardo Marquina 3412, Vitacura, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59214769263978, -33.40005712049818]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Jumbo",
+          "address": "Francisco Bilbao 8750, 7571699 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54079692754289, -33.42793824872421]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Jumbo",
+          "address": "Av. Andrés Bello 2465, Piso 1, 7510689 Providencia, Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60641898453574, -33.41801573518948]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Jumbo",
+          "address": "Francisco Bilbao 4144, 7550568 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57881009316145, -33.430144872415056]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Jumbo",
+          "address": "Av. Mariano Sánchez Fontecilla 12000, 12000 Peñalolén, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55674973539654, -33.488125492912125]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Jumbo",
+          "address": "Av. José Pedro Alessandri 1166, 7800002 Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59790163699587, -33.46494120138209]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Paseo Pie Andino 5835, 7690000 Lo Barnechea, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5382459620354, -33.32397856277651]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "El Rodeo 12850, 7690000 Lo Barnechea, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5207841655165, -33.352412311662995]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Lo Barnechea 1000, Lo Barnechea, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.50588250417516, -33.36011111320373]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Lider",
+          "address": "Av. Las Condes 12916, 7690000 Lo Barnechea, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51225968937551, -33.37071189379309]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av Plaza 590, 7610687 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.4987058841065, -33.39023833486093]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Lider",
+          "address": "Cam. El Alba 11865, 7550000 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51598541148664, -33.40194758426941]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Las Condes 10295, 7550000 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53344360593638, -33.384953458726145]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Lider",
+          "address": "Buenaventura 1770, 7640607 Vitacura, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56800826012538, -33.38692565988093]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "",
+          "address": "Av Vitacura 5322, 7630230 Vitacura, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58202001608565, -33.39626337267463]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Lider",
+          "address": "Av Vitacura 4100, 7630327 Vitacura, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59057476013488, -33.3993808849912]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Apoquindo 4400, 7580613 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58395635232812, -33.41372435594123]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Manquehue Sur 841, 7580137 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56595628069796, -33.41421928019109]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Avda. Pdte. Sebastían Piñera E. 1016, 7570672 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55163358214409, -33.41827179271846]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Avenida Tomás Moro 1590, 7571136 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55369087788023, -33.42456914811409]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Américo Vespucio 1790, 7550000 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57429402504299, -33.42846827378229]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Isabel La Católica 4394, Of 421, 7550465 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57781551089293, -33.426018781544265]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Tobalaba 1177, 7500000 Providencia, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59258727360147, -33.42545527717734]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Las Camelias 2875, 7510144 Providencia, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59657400184669, -33.42281562310423]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Coventry 601, 7790565 Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58041932790722, -33.44862431794229]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Irarrázaval 5353, 2820562 Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57474686715773, -33.453677624736514]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Lider",
+          "address": "Av. Príncipe de Gales 9140, 7850000 La Reina, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53498381534231, -33.440563495600415]
+        }
+      }, {
+        "type": "Feature",
+        "properties": {
+          "name": "Lider",
+          "address": "Jorge Alessandri 1131, 7880511 La Reina, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.54371059990739, -33.4604011730423]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Lider",
+          "address": "Av. Américo Vespucio 881, Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57489726667946, -33.463310851552265]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Alcalde Jorge Monckeberg 1911, 7800217 Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58732852081444, -33.47231420369485]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Lider",
+          "address": "Av. Irarrázaval 2928, Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60076772566457, -33.453077230717064]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Gral. José Artigas 2877, Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5993981150465, -33.44514952997506]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. José Pedro Alessandri 2127, 7810060 Macul, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5995452627939, -33.47441420378847]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Providencia 2249, Providencia, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.60879501770576, -33.422764294218965]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Los Leones 1875, 7500000 Providencia, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60129392403749, -33.436730801117314]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Pedro de Valdivia 1885, 7511020 Providencia, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60824175582567, -33.43992066413953]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Eliodoro Yáñez 1185, 7510247 Providencia, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61657720962043, -33.43322932323293]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Manuel Montt 80, 7500000 Providencia, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61980309267294, -33.429302288872684]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Rancagua 0180, 7500919 Providencia, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.63055120832121, -33.44077425898747]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Sta. Isabel 170, Providencia, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.62901865765882, -33.44666348119921]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Salvador 1822, 7750000 Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.6211945831923, -33.44942286486117]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Irarrázaval 710, 7750201 Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62244482189571, -33.45332623327645]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "José Domingo Cañas 1580, 7510122 Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.614837244639, -33.4556689977829]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Irarrázaval 2401, 7770539 Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.6062912737755, -33.454191957102665]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Express de Lider",
+          "address": "Av. Consistorial 3349, 7941365 Peñalolén, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54956525843444, -33.48766172709622]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Lider",
+          "address": "Av. Américo Vespucio 3100, Peñalolén, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57812410525595, -33.486382595038634]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "El Gabino 13551, 7690141 Lo Barnechea, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51019249833527, -33.35320905559915]
+        }
+      }, 
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Av. Las Condes 12207, Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.51878723299737, -33.37413629458536]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Av. Apoquindo 8450, Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5456078343473, -33.40770141670148]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Av. Apoquindo 7200, 7571731 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55367885354377, -33.40796807101473]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Av. Manquehue Sur 329, 7580023 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56671252740603, -33.41087093155123]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Av Vitacura 6255, 7630000 Vitacura, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57109450277345, -33.390606874207116]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Av. Padre Hurtado Sur 1621, Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.53874088958605, -33.42327629312204]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Francisco Bilbao 2855, Providencia, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59139930510821, -33.43570844651612]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Av. Larraín 6677, 7870165 La Reina, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56076034866373, -33.452779524173664]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Carlos Ossandón 1301, La Reina, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54263484843418, -33.44080059907203]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Av. Larrain 8751, Diputada Laura Rodríguez 2, La Reina, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5404828402563, -33.45211249605506]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Av. Consistorial 2100, 7940080 Peñalolén, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54404133862006, -33.479359654113445]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Av. Tobalaba 13949, 7930458 Peñalolén, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56142636901049, -33.50307965800008]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Mar Tirreno 3360, 7921383 Peñalolén, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57720144701698, -33.48847193541479]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Santa Isabel",
+          "address": "Av. Grecia 5791, 7921422 Ñuñoa, Peñalolén, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57578542621954, -33.47052671026426]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Av. Las Condes 14791, 7710053 Lo Barnechea, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.49455295082839, -33.36436462641936]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Av. José Alcalde Délano 10497, 7691231 Lo Barnechea, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5398051439944, -33.35712553856578]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Sta. María 6940, 7660237 Vitacura, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56885344666293, -33.37661213197135]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Av Vitacura 8400, Vitacura, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55416584440312, -33.3842422109954]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Av Vitacura 4607, Vitacura, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58659862306558, -33.398640539910716]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Av. Manquehue Nte. 457, 7560745 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56848659697809, -33.40388909364874]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Av. Apoquindo 4335, 7550149 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.58527522207133, -33.415301364822724]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Av. Manquehue Sur 1700, 7571212 Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56359307425055, -33.426613754916495]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Av. Príncipe de Gales 7271, 7850592 La Reina, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5558667338794, -33.43999514433575]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Francisco Bilbao 2050, 7510973 Providencia, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.60640054388844, -33.437874333141615]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Gral. José Artigas 3250, 7770148 Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.59815600425893, -33.44843666000453]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Av. Irarrázaval 4354, Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5830574681426, -33.45433329212389]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Av. Grecia 320, 7750201 Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.6258939553618, -33.45548374526568]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Obispo Orrego 1250, 7780483 Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.62012554444988, -33.463201811165085]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Capitán Ignacio Carrera Pinto 3857, 7800084 Ñuñoa, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5910967687735, -33.47139398716457]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Manuel Montt 1097, Providencia, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.61614406627031, -33.43817534991208]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Unimarc",
+          "address": "Av. Consistorial 2701, 7940624 Peñalolén, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.5478376154227, -33.483757055252035]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Tottus",
+          "address": "Av Vitacura 9019, Santiago, Vitacura, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-33.38377831427731, -70.54944492417908]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Tottus",
+          "address": "Av. Pdte. Kennedy 5601, 7560356 Santiago, Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.57498982703095, -33.40119665947342]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Tottus",
+          "address": "Av. Padre Hurtado Sur 875, 7571626 Santiago, Las Condes, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.54015398776838, -33.41577158827315]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Tottus",
+          "address": "Av. Larraín 5861, 7870154 La Reina, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.56945562293787, -33.45246036422746]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Tottus",
+          "address": "Altos del Parque Sur 5800, local 1, Peñalolén, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.55517578102506, -33.499249657495746]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Tottus",
+          "address": "Av. Bilbao 451, Providencia, 7501159 Santiago, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -70.62604701451235, -33.44187639567715]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Tottus",
+          "address": "Av. Vicuña Mackenna 665, 8330435 Santiago, Región Metropolitana",
+          "type": "supermercados"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-70.63200135560508, -33.4504566068717]
+        }
+      }
+    ]
+  }

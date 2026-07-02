@@ -1,0 +1,367 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{mathpazo}
+\usepackage{fontspec}
+\setmainfont{PatrickHand-Regular.ttf}[Path=./]
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+
+% Color de fondo estilo GoodNotes (blanco hueso muy suave)
+\definecolor{gnbg}{HTML}{FDFDFD}
+\pagecolor{gnbg}
+
+% Color de "tinta" (un gris azulado oscuro para que parezca lápiz de tablet)
+\definecolor{ink}{HTML}{2C3E50}
+\color{ink}
+
+% Dibujar cuadrícula estilo GoodNotes
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw[step=6mm, color=gray!20, thin] (current page.south west) grid (current page.north east);
+  \end{tikzpicture}
+}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+% ============================================================
+\textbf{Problema 2.1}
+% ============================================================
+
+\medskip
+\textbf{i)} Determinar la familia de curvas para las cuales los puntos de intersección de las tangentes a ellas con los ejes coordenados $X$ e $Y$ se encuentran entre sí a una distancia constante igual a $k$. Encontrar también una solución singular de la ecuación diferencial asociada a dicha familia. Interprete su sentido geométrico.
+
+\medskip
+\textit{Solución.}
+
+Sea $P(x, y)$ un punto genérico en el primer cuadrante de una curva. La ecuación de la recta tangente a la curva en el punto $P$ es:
+\[
+  Y - y = y'(X - x)
+\]
+Determinamos los puntos de intersección de esta tangente con los ejes coordenados:
+\begin{itemize}
+  \item Intersección con el eje $Y$ (haciendo $X = 0$), obteniendo el punto $A(0, y_A)$:
+  \[
+    y_A - y = y'(0 - x) \implies y_A = y - x y'
+  \]
+  \item Intersección con el eje $X$ (haciendo $Y = 0$), obteniendo el punto $B(x_B, 0)$:
+  \[
+    0 - y = y'(x_B - x) \implies x_B = x - \frac{y}{y'}
+  \]
+\end{itemize}
+La condición geométrica del problema establece que la distancia entre los puntos de intersección $A$ y $B$ es constante e igual a $k$, es decir, $\overline{AB}^2 = k^2$:
+\[
+  (x_B - 0)^2 + (0 - y_A)^2 = k^2 \implies \left( x - \frac{y}{y'} \right)^2 + (y - x y')^2 = k^2
+\]
+Reescribiendo algebraicamente el primer término:
+\[
+  \frac{(x y' - y)^2}{y'^2} + (y - x y')^2 = k^2 \implies (x y' - y)^2 \left[ 1 + \frac{1}{y'^2} \right] = k^2
+\]
+\[
+  (x y' - y)^2 \left( \frac{1 + y'^2}{y'^2} \right) = k^2 \implies (x y' - y)^2 = \frac{k^2 y'^2}{1 + y'^2}
+\]
+Aplicando la raíz cuadrada a ambos lados, obtenemos:
+\[
+  x y' - y = \pm \frac{k y'}{\sqrt{1 + y'^2}} \implies y = x y' \mp \frac{k y'}{\sqrt{1 + y'^2}}
+\]
+Dado que el signo $\pm$ o $\mp$ representa la misma familia de curvas al variar los parámetros, reescribimos la ecuación en su forma de Clairaut estándar utilizando $y' = p$:
+\[
+  y = x p \pm \frac{k p}{\sqrt{1 + p^2}}
+\]
+La \textbf{solución general} se obtiene de manera directa sustituyendo $p = C$ (donde $C$ es una constante real):
+\[
+  y = x C \pm \frac{k C}{\sqrt{1 + C^2}}
+\]
+
+Para encontrar la \textbf{solución singular} (o envolvente de la familia), derivamos la ecuación paramétrica con respecto a $p$:
+\[
+  \frac{\partial y}{\partial p} = x \pm k \frac{\sqrt{1+p^2} - p \left( \frac{p}{\sqrt{1+p^2}} \right)}{1+p^2} = x \pm \frac{k}{(1+p^2)^{3/2}} = 0
+\]
+Lo cual nos proporciona la parametrización de la coordenada $x$:
+\[
+  x = \mp \frac{k}{(1+p^2)^{3/2}}
+\]
+Sustituyendo esta expresión de $x$ en la ecuación original de $y$:
+\[
+  y = \left( \mp \frac{k}{(1+p^2)^{3/2}} \right) p \pm \frac{k p}{\sqrt{1+p^2}} = \pm k p \left( \frac{1}{\sqrt{1+p^2}} - \frac{1}{(1+p^2)^{3/2}} \right)
+\]
+\[
+  y = \pm k p \left( \frac{(1+p^2) - 1}{(1+p^2)^{3/2}} \right) = \pm \frac{k p^3}{(1+p^2)^{3/2}}
+\]
+Tenemos así la parametrización de la curva:
+\[
+  x = \mp \frac{k}{(1+p^2)^{3/2}}, \quad y = \pm \frac{k p^3}{(1+p^2)^{3/2}}
+\]
+Elevando ambos lados a la potencia $2/3$:
+\[
+  x^{2/3} = \frac{k^{2/3}}{1+p^2}, \quad y^{2/3} = \frac{k^{2/3} p^2}{1+p^2}
+\]
+Sumando ambas expresiones miembro a miembro:
+\[
+  x^{2/3} + y^{2/3} = \frac{k^{2/3} (1 + p^2)}{1+p^2} = k^{2/3}
+\]
+Por lo tanto, la solución singular de la ecuación diferencial corresponde a la curva asteroide:
+\[
+  x^{2/3} + y^{2/3} = k^{2/3}
+\]
+\textit{Interpretación Geométrica:} Físicamente, esta curva representa la envolvente generada por un segmento (como una escalera) de longitud constante $k$ que se desliza apoyándose simultáneamente sobre los ejes coordenados $X$ e $Y$.
+
+\medskip
+\textbf{ii)} Determinar la familia de curvas tales que la distancia entre el origen y cada tangente a un miembro de ella es igual al valor absoluto de la pendiente en el punto de tangencia.
+
+\medskip
+\textit{Solución.}
+
+La recta tangente a la curva en el punto $P(x,y)$ es $Y - y = y'(X - x)$, lo cual se puede escribir en su forma general como:
+\[
+  y' X - Y + (y - x y') = 0
+\]
+La distancia $d$ desde el origen $(0,0)$ a esta recta tangente está dada por:
+\[
+  d = \frac{|y' (0) - (0) + (y - x y')|}{\sqrt{y'^2 + (-1)^2}} = \frac{|y - x y'|}{\sqrt{1 + y'^2}}
+\]
+La condición del problema indica que esta distancia es igual a la magnitud de la pendiente, es decir, $d = |y'|$:
+\[
+  \frac{|y - x y'|}{\sqrt{1 + y'^2}} = |y'| \implies |y - x y'| = |y'| \sqrt{1 + y'^2}
+\]
+Eliminando los valores absolutos, se obtiene la ecuación diferencial:
+\[
+  y - x y' = \pm y' \sqrt{1 + y'^2} \implies y = x y' \pm y' \sqrt{1 + y'^2}
+\]
+Esta es una ecuación diferencial de Clairaut. Sustituyendo $y' = C$, la solución general de la familia de curvas es:
+\[
+  y = x C \pm C \sqrt{1 + C^2}
+\]
+
+\bigskip
+
+% ============================================================
+\textbf{Problema 2.2}
+% ============================================================
+
+\medskip
+Sin usar transformada de Laplace, resolver las siguientes ecuaciones diferenciales ordinarias:
+
+\medskip
+\textbf{i)}
+\begin{equation}
+  \frac{1}{2} y'(x) = -\int_1^x \frac{y'(\tau)}{\tau} \, d\tau, \quad \forall x \in [1, b]
+\end{equation}
+suponiendo que $y'$ es continua en $[1, b]$. Con este resultado, encontrar la solución general de la ecuación diferencial:
+\begin{equation}
+  \frac{1}{2} y'(x) = -\frac{1}{6x^3} - \int_1^x \frac{y'(\tau)}{\tau} \, d\tau, \quad \forall x \in [1, b]
+\end{equation}
+
+\medskip
+\textit{Solución.}
+
+Para la primera ecuación:
+\[
+  y'(x) = -2\int_1^x \frac{y'(\tau)}{\tau} \, d\tau
+\]
+Dado que $y'$ es continua, aplicando el Teorema Fundamental del Cálculo al derivar ambos lados de la igualdad con respecto a $x$:
+\[
+  y''(x) = -2 \frac{y'(x)}{x} \implies y'' + \frac{2}{x} y' = 0
+\]
+Multiplicando por $x^2$ (donde $x \ge 1 > 0$):
+\[
+  x^2 y'' + 2x y' = 0
+\]
+Esta es una ecuación de Cauchy-Euler homogénea. Proponemos $y = x^r$, de donde se deriva la ecuación auxiliar:
+\[
+  r(r - 1) + 2r = 0 \implies r^2 + r = 0 \implies r(r + 1) = 0
+\]
+Las raíces son $r_1 = 0$ y $r_2 = -1$. Así, las soluciones linealmente independientes son $y_1(x) = 1$ y $y_2(x) = \frac{1}{x}$. La solución general de la ecuación homogénea es:
+\[
+  y_H(x) = C_1 + \frac{C_2}{x}
+\]
+
+Para la segunda ecuación:
+\[
+  y'(x) = -\frac{1}{3x^3} - 2\int_1^x \frac{y'(\tau)}{\tau} \, d\tau
+\]
+Derivando con respecto a $x$ utilizando el Teorema Fundamental del Cálculo:
+\[
+  y''(x) = \frac{1}{x^4} - \frac{2 y'(x)}{x} \implies y'' + \frac{2}{x} y' = \frac{1}{x^4}
+\]
+Multiplicando por $x^2$:
+\[
+  x^2 y'' + 2x y' = \frac{1}{x^2}
+\]
+Para resolver esta ecuación no homogénea de Cauchy-Euler, podemos emplear el método del factor integrante en la variable $v = y'$:
+\[
+  v' + \frac{2}{x} v = \frac{1}{x^4}
+\]
+El factor integrante es $\mu(x) = e^{\int \frac{2}{x} \, dx} = x^2$. Multiplicando toda la ecuación por $x^2$:
+\[
+  (x^2 v)' = \frac{1}{x^2}
+\]
+Integrando a ambos lados:
+\[
+  x^2 v = -\frac{1}{x} + C_2 \implies v(x) = -\frac{1}{x^3} + \frac{C_2}{x^2}
+\]
+Dado que $v = y'$, integramos nuevamente para encontrar $y(x)$:
+\[
+  y(x) = \int \left( -x^{-3} + C_2 x^{-2} \right) \, dx = \frac{1}{2x^2} - \frac{C_2}{x} + C_1
+\]
+Redefiniendo la constante $-C_2$ como $C_2$, la solución general de la ecuación diferencial es:
+\[
+  y(x) = C_1 + \frac{C_2}{x} + \frac{1}{2x^2}
+\]
+
+\medskip
+\textbf{ii)}
+\begin{equation}
+  y''(x) + \frac{2y(x)}{x^2} = \frac{\sin x}{x^2} + 2 \lim_{n \to \infty} n \int_x^{x + 1/n} \frac{y'(\tau)}{\tau} \, d\tau, \quad \forall x \in [1, \infty)
+\end{equation}
+Asumir que $y'(x)/x$ es continua y Riemann integrable sobre $[1, \infty)$.
+
+\medskip
+\textit{Solución.}
+
+Analizamos primero el término del límite en el lado derecho de la ecuación. Sea $h = 1/n$. Cuando $n \to \infty$, $h \to 0^+$. Reescribimos el límite como:
+\[
+  \lim_{n \to \infty} n \int_x^{x + 1/n} \frac{y'(\tau)}{\tau} \, d\tau = \lim_{h \to 0^+} \frac{1}{h} \int_x^{x + h} \frac{y'(\tau)}{\tau} \, d\tau
+\]
+Por el Teorema Fundamental del Cálculo, dado que la función integrando $\frac{y'(\tau)}{\tau}$ es continua, el límite del promedio temporal converge precisamente al valor de la función en el extremo izquierdo del intervalo $x$:
+\[
+  \lim_{h \to 0^+} \frac{1}{h} \int_x^{x + h} \frac{y'(\tau)}{\tau} \, d\tau = \frac{y'(x)}{x}
+\]
+Sustituyendo este resultado en la ecuación diferencial original:
+\[
+  y'' + \frac{2y}{x^2} = \frac{\sin x}{x^2} + \frac{2 y'}{x} \implies y'' - \frac{2}{x} y' + \frac{2}{x^2} y = \frac{\sin x}{x^2}
+\]
+Multiplicando la ecuación por $x^2$:
+\[
+  x^2 y'' - 2x y' + 2y = \sin x
+\]
+Esta es una ecuación diferencial de Cauchy-Euler no homogénea.
+Primero resolvemos la ecuación homogénea asociada:
+\[
+  x^2 y'' - 2x y' + 2y = 0
+\]
+Proponiendo una solución de la forma $y = x^r$, se obtiene la ecuación característica:
+\[
+  r(r - 1) - 2r + 2 = 0 \implies r^2 - 3r + 2 = 0 \implies (r - 1)(r - 2) = 0
+\]
+Las raíces son reales y distintas: $r_1 = 1$, $r_2 = 2$. Así, la solución homogénea es:
+\[
+  y_H(x) = C_1 x + C_2 x^2
+\]
+El Wronskiano de estas dos soluciones linealmente independientes $y_1(x) = x$ y $y_2(x) = x^2$ es:
+\[
+  W[y_1, y_2](x) = \begin{vmatrix} x & x^2 \\ 1 & 2x \end{vmatrix} = 2x^2 - x^2 = x^2
+\]
+Escribiendo la ecuación diferencial no homogénea en su forma estándar:
+\[
+  y'' - \frac{2}{x} y' + \frac{2}{x^2} y = \frac{\sin x}{x^2}
+\]
+Identificamos la función no homogénea en la forma estándar como $f(x) = \frac{\sin x}{x^2}$. Aplicando el método de variación de parámetros, la solución particular $y_p(x)$ es:
+\begin{align*}
+  y_p(x) &= \int_1^x \frac{y_1(z) y_2(x) - y_1(x) y_2(z)}{W(z)} f(z) \, dz \\
+  &= \int_1^x \frac{z x^2 - x z^2}{z^2} \left( \frac{\sin z}{z^2} \right) \, dz \\
+  &= \int_1^x \frac{x^2 z - x z^2}{z^4} \sin z \, dz \\
+  &= x^2 \int_1^x \frac{\sin z}{z^3} \, dz - x \int_1^x \frac{\sin z}{z^2} \, dz
+\end{align*}
+Por lo tanto, la solución general de la ecuación diferencial está dada por:
+\[
+  y(x) = C_1 x + C_2 x^2 + x^2 \int_1^x \frac{\sin z}{z^3} \, dz - x \int_1^x \frac{\sin z}{z^2} \, dz
+\]
+
+\bigskip
+
+% ============================================================
+\textbf{Problema 2.3}
+% ============================================================
+
+\medskip
+Sean las ecuaciones:
+\begin{align}
+  -y'' &= f(x)y \\
+  -z'' &= g(x)z
+\end{align}
+siendo $f$ y $g$ funciones continuas definidas sobre $[a, b]$, tales que $f(x) \ge g(x)$, $\forall x \in [a, b]$.
+Sean $y_1(x)$ y $z_1(x)$, soluciones de (4) y (5) en $[a, b]$, respectivamente. Asumir que $z_1$ es tal que: $z_1(a) = z_1(b) = 0$ y $z_1(x) \neq 0$, $\forall x \in (a, b)$.
+Sin intentar resolver las ecuaciones, probar que, o bien existe $x_0 \in (a, b)$ tal que $y_1(x_0) = 0$, o bien $f(x) = g(x)$, $\forall x \in [a, b]$ e $y_1(x) = C z_1(x)$, donde $C$ es una constante.
+
+\medskip
+\textit{Solución.}
+
+Supongamos sin pérdida de generalidad que $z_1(x) > 0$ para todo $x \in (a, b)$. Como $z_1(a) = z_1(b) = 0$, por continuidad de la derivada en los extremos, se debe cumplir que $z_1'(a) \ge 0$ y $z_1'(b) \le 0$. De hecho, dado que $z_1$ no es idénticamente nula y es positiva en el interior, se tiene de forma estricta que $z_1'(a) > 0$ y $z_1'(b) < 0$.
+
+Razonando por contradicción, supongamos que la primera alternativa no ocurre, es decir, que no existe ningún punto $x_0 \in (a, b)$ tal que $y_1(x_0) = 0$. Como $y_1$ es una función continua, esto implica que $y_1$ debe mantener un signo constante en todo el intervalo abierto $(a, b)$. Sin pérdida de generalidad, asumamos que $y_1(x) > 0$ para todo $x \in (a, b)$. Por continuidad, en los extremos se cumple que $y_1(a) \ge 0$ e $y_1(b) \ge 0$.
+
+Consideramos el Wronskiano de las funciones $y_1(x)$ y $z_1(x)$:
+\[
+  W(x) = W[y_1, z_1](x) = y_1(x) z_1'(x) - z_1(x) y_1'(x)
+\]
+Derivando el Wronskiano con respecto a $x$:
+\[
+  W'(x) = y_1 z_1'' + y_1' z_1' - z_1' y_1' - z_1 y_1'' = y_1 z_1'' - z_1 y_1''
+\]
+Utilizando las ecuaciones diferenciales $-y_1'' = f(x)y_1 \implies y_1'' = -f(x)y_1$ y $-z_1'' = g(x)z_1 \implies z_1'' = -g(x)z_1$, sustituimos en la derivada del Wronskiano:
+\[
+  W'(x) = y_1 (-g(x)z_1) - z_1 (-f(x)y_1) = (f(x) - g(x)) y_1(x) z_1(x)
+\]
+Por hipótesis, sabemos que $f(x) \ge g(x) \implies f(x) - g(x) \ge 0$ en $[a, b]$. Además, hemos asumido que tanto $y_1(x)$ como $z_1(x)$ son estrictamente positivas en $(a, b)$. Por lo tanto:
+\[
+  W'(x) = (f(x) - g(x)) y_1(x) z_1(x) \ge 0, \quad \forall x \in (a, b)
+\]
+Esto nos indica que el Wronskiano $W(x)$ es una función no decreciente en el intervalo $[a, b]$.
+
+\medskip
+Procedemos a integrar $W'(x)$ en el intervalo $[a, b]$:
+\begin{equation}
+  \int_a^b W'(x) \, dx = W(b) - W(a) = \int_a^b (f(x) - g(x)) y_1(x) z_1(x) \, dx \ge 0
+\end{equation}
+Evaluemos el Wronskiano directamente en los extremos utilizando las condiciones de frontera $z_1(a) = z_1(b) = 0$:
+\[
+  W(a) = y_1(a) z_1'(a) - z_1(a) y_1'(a) = y_1(a) z_1'(a)
+\]
+\[
+  W(b) = y_1(b) z_1'(b) - z_1(b) y_1'(b) = y_1(b) z_1'(b)
+\]
+Analizando los signos en los extremos:
+\begin{itemize}
+  \item En $x = a$: como $y_1(a) \ge 0$ y $z_1'(a) > 0$, se tiene que $W(a) \ge 0$.
+  \item En $x = b$: como $y_1(b) \ge 0$ y $z_1'(b) < 0$, se tiene que $W(b) \le 0$.
+\end{itemize}
+Calculando la diferencia $W(b) - W(a)$:
+\[
+  W(b) - W(a) \le 0 - 0 \implies W(b) - W(a) \le 0
+\]
+Sin embargo, por la ecuación (8) sabemos que $W(b) - W(a) \ge 0$. Por lo tanto, la única forma en que ambas desigualdades se cumplan simultáneamente es si la diferencia es exactamente cero:
+\[
+  W(b) - W(a) = 0
+\]
+Esto exige que $W(b) = 0$ y $W(a) = 0$.
+Dado que $z_1'(a) > 0$ y $z_1'(b) < 0$, la única posibilidad para que $W(a) = y_1(a) z_1'(a) = 0$ y $W(b) = y_1(b) z_1'(b) = 0$ es que:
+\[
+  y_1(a) = 0 \quad \text{y} \quad y_1(b) = 0
+\]
+Al ser la integral de la función no negativa en (8) igual a cero:
+\[
+  \int_a^b (f(x) - g(x)) y_1(x) z_1(x) \, dx = 0
+\]
+Dado que el integrando $(f(x) - g(x))y_1(x)z_1(x) \ge 0$ y es una función continua, la integral nula implica que el integrando debe ser idénticamente cero en todo el intervalo $[a, b]$. Como $y_1(x) > 0$ y $z_1(x) > 0$ en el abierto $(a, b)$, la única opción posible es que:
+\[
+  f(x) - g(x) = 0 \implies f(x) = g(x), \quad \forall x \in [a, b]
+\]
+En este caso, $y_1(x)$ y $z_1(x)$ satisfacen la misma ecuación diferencial lineal de segundo orden:
+\[
+  -w'' = f(x) w
+\]
+Además, ambas soluciones cumplen con las mismas condiciones de frontera homogéneas en los extremos, $y_1(a) = y_1(b) = 0$ y $z_1(a) = z_1(b) = 0$. Por ende, por el teorema de unicidad de soluciones de ecuaciones diferenciales ordinarias, ambas soluciones son linealmente dependientes (proporcionales), existiendo una constante $C \in \mathbb{R}$ tal que:
+\[
+  y_1(x) = C z_1(x)
+\]
+Esto demuestra completamente lo solicitado.
+
+\end{document}

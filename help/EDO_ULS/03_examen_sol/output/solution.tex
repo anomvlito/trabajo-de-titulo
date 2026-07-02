@@ -1,0 +1,403 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{mathpazo}
+\usepackage{fontspec}
+\setmainfont{PatrickHand-Regular.ttf}[Path=./]
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+
+% Color de fondo estilo GoodNotes (blanco hueso muy suave)
+\definecolor{gnbg}{HTML}{FDFDFD}
+\pagecolor{gnbg}
+
+% Color de "tinta" (un gris azulado oscuro para que parezca lápiz de tablet)
+\definecolor{ink}{HTML}{2C3E50}
+\color{ink}
+
+% Dibujar cuadrícula estilo GoodNotes
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw[step=6mm, color=gray!20, thin] (current page.south west) grid (current page.north east);
+  \end{tikzpicture}
+}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+% ============================================================
+\textbf{Problema 2.1}
+% ============================================================
+
+\medskip
+Sea el sistema de ecuaciones diferenciales:
+\begin{equation}
+  \mathbf{x}''(t) = A^2 \mathbf{x}(t)
+\end{equation}
+con condiciones de frontera:
+\[
+  \mathbf{x}(0) = \mathbf{x}_0, \quad \mathbf{x}(1) = \mathbf{x}_1
+\]
+donde $A$ es una matriz cuadrada de orden $n$, simétrica, de entradas reales constantes, con valores propios $\lambda_j > 0$ distintos entre sí para todo $j = 1, \dots, n$ (y por ende diagonalizable). Encontrar la solución del sistema en términos de dicha matriz.
+
+\medskip
+\textit{Solución.}
+
+Dado que la matriz $A$ es diagonalizable, existe una matriz invertible $P$ (cuyas columnas son vectores propios linealmente independientes de $A$) tal que:
+\[
+  A = P D P^{-1}, \quad \text{donde } D = \text{diag}(\lambda_1, \lambda_2, \dots, \lambda_n)
+\]
+Como consecuencia, la matriz $A^2$ se expresa como:
+\[
+  A^2 = (P D P^{-1})(P D P^{-1}) = P D^2 P^{-1}
+\]
+donde $D^2 = \text{diag}(\lambda_1^2, \lambda_2^2, \dots, \lambda_n^2)$. Reemplazando esto en el sistema de ecuaciones diferenciales:
+\[
+  \mathbf{x}'' - P D^2 P^{-1} \mathbf{x} = 0
+\]
+Premultiplicamos toda la ecuación por $P^{-1}$ y definimos la nueva variable vectorial $\mathbf{u}(t) = P^{-1} \mathbf{x}(t)$ (lo cual implica que $\mathbf{u}'' = P^{-1} \mathbf{x}''$):
+\[
+  P^{-1} \mathbf{x}'' - D^2 (P^{-1} \mathbf{x}) = 0 \implies \mathbf{u}''(t) - D^2 \mathbf{u}(t) = 0
+\]
+Este cambio de variable desacopla el sistema original en $n$ ecuaciones diferenciales lineales de segundo orden independientes:
+\[
+  u_i''(t) - \lambda_i^2 u_i(t) = 0, \quad i = 1, \dots, n
+\]
+Para cada componente, la ecuación auxiliar es $r^2 - \lambda_i^2 = 0 \implies r = \pm \lambda_i$. Dado que $\lambda_i > 0$, la solución general para cada componente es:
+\[
+  u_i(t) = \alpha_i e^{-\lambda_i t} + \beta_i e^{\lambda_i t}, \quad \text{con } \alpha_i, \beta_i \in \mathbb{R}
+\]
+Expresando esto en forma vectorial, tenemos:
+\[
+  \mathbf{u}(t) = e^{-tD} \boldsymbol{\alpha} + e^{tD} \boldsymbol{\beta}
+\]
+donde $\boldsymbol{\alpha} = (\alpha_1, \dots, \alpha_n)^T$, $\boldsymbol{\beta} = (\beta_1, \dots, \beta_n)^T$ y los términos matriciales exponenciales corresponden a las matrices diagonales $e^{\pm tD} = \text{diag}(e^{\pm \lambda_1 t}, \dots, e^{\pm \lambda_n t})$.
+
+Para regresar a la variable original, multiplicamos por $P$:
+\[
+  \mathbf{x}(t) = P \mathbf{u}(t) = P e^{-tD} \boldsymbol{\alpha} + P e^{tD} \boldsymbol{\beta}
+\]
+Recordando la relación de semejanza entre la exponencial de matrices, se tiene que $e^{tA} = P e^{tD} P^{-1} \implies e^{tD} = P^{-1} e^{tA} P$ y $e^{-tD} = P^{-1} e^{-tA} P$. Sustituyendo esto:
+\[
+  \mathbf{x}(t) = P (P^{-1} e^{-tA} P) \boldsymbol{\alpha} + P (P^{-1} e^{tA} P) \boldsymbol{\beta}
+\]
+\[
+  \mathbf{x}(t) = e^{-tA} (P \boldsymbol{\alpha}) + e^{tA} (P \boldsymbol{\beta})
+\]
+Definiendo las nuevas constantes vectoriales $\boldsymbol{\bar{\alpha}} = P \boldsymbol{\alpha}$ y $\boldsymbol{\bar{\beta}} = P \boldsymbol{\beta}$ (las cuales son vectores columnas con entradas constantes), la solución general en términos de la matriz $A$ es:
+\[
+  \mathbf{x}(t) = e^{-tA} \boldsymbol{\bar{\alpha}} + e^{tA} \boldsymbol{\bar{\beta}}
+\]
+Ahora aplicamos las condiciones de frontera para determinar los vectores $\boldsymbol{\bar{\alpha}}$ y $\boldsymbol{\bar{\beta}}$:
+\begin{enumerate}
+  \item En $t = 0$:
+  \[
+    \mathbf{x}(0) = \boldsymbol{\bar{\alpha}} + \boldsymbol{\bar{\beta}} = \mathbf{x}_0 \implies \boldsymbol{\bar{\alpha}} = \mathbf{x}_0 - \boldsymbol{\bar{\beta}}
+  \]
+  \item En $t = 1$:
+  \[
+    \mathbf{x}(1) = e^{-A} \boldsymbol{\bar{\alpha}} + e^A \boldsymbol{\bar{\beta}} = \mathbf{x}_1
+  \]
+\end{enumerate}
+Sustituyendo $\boldsymbol{\bar{\alpha}}$ en la segunda condición:
+\[
+  e^{-A} (\mathbf{x}_0 - \boldsymbol{\bar{\beta}}) + e^A \boldsymbol{\bar{\beta}} = \mathbf{x}_1 \implies e^{-A} \mathbf{x}_0 + (e^A - e^{-A}) \boldsymbol{\bar{\beta}} = \mathbf{x}_1
+\]
+Premultiplicando toda la ecuación por $e^A$ (notando que $e^A e^{-A} = I$):
+\[
+  \mathbf{x}_0 + e^A(e^A - e^{-A}) \boldsymbol{\bar{\beta}} = e^A \mathbf{x}_1 \implies (e^{2A} - I) \boldsymbol{\bar{\beta}} = e^A \mathbf{x}_1 - \mathbf{x}_0
+\]
+Multiplicando por $-1$:
+\[
+  (I - e^{2A}) \boldsymbol{\bar{\beta}} = \mathbf{x}_0 - e^A \mathbf{x}_1
+\]
+Como todos los valores propios $\lambda_j$ de $A$ son estrictamente mayores que cero, los valores propios de $e^{2A}$ son $e^{2\lambda_j} \neq 1$. Esto garantiza que la matriz $(I - e^{2A})$ es invertible, por lo que podemos despejar $\boldsymbol{\bar{\beta}}$:
+\[
+  \boldsymbol{\bar{\beta}} = (I - e^{2A})^{-1} [ \mathbf{x}_0 - e^A \mathbf{x}_1 ]
+\]
+Una vez determinado $\boldsymbol{\bar{\beta}}$, podemos encontrar $\boldsymbol{\bar{\alpha}}$:
+\begin{align*}
+  \boldsymbol{\bar{\alpha}} &= \mathbf{x}_0 - (I - e^{2A})^{-1} [ \mathbf{x}_0 - e^A \mathbf{x}_1 ] \\
+  &= (I - e^{2A})^{-1} [ (I - e^{2A}) \mathbf{x}_0 - (\mathbf{x}_0 - e^A \mathbf{x}_1) ] \\
+  &= (I - e^{2A})^{-1} [ -e^{2A} \mathbf{x}_0 + e^A \mathbf{x}_1 ] \\
+  &= (I - e^{2A})^{-1} e^A [ \mathbf{x}_1 - e^A \mathbf{x}_0 ]
+\end{align*}
+Por lo tanto, la solución del sistema queda completamente determinada por:
+\[
+  \mathbf{x}(t) = e^{-tA} \boldsymbol{\bar{\alpha}} + e^{tA} \boldsymbol{\bar{\beta}}
+\]
+con $\boldsymbol{\bar{\alpha}}$ y $\boldsymbol{\bar{\beta}}$ dados por las expresiones anteriores.
+
+\bigskip
+
+% ============================================================
+\textbf{Problema 2.2}
+% ============================================================
+
+\medskip
+\textbf{i)} Encontrar la familia de curvas tal que para cada tangente a un miembro de la familia, el segmento de tangente que se encuentra sobre el primer cuadrante es bisectado por el punto de tangencia. Encuentre también las curvas ortogonales a la familia.
+
+\medskip
+\textit{Solución.}
+
+Consideremos una curva en el primer cuadrante y sea $P(\xi, \eta)$ un punto sobre ella. La recta tangente en $P$ tiene por ecuación:
+\[
+  y - \eta = y'(\xi)(x - \xi)
+\]
+Determinamos las intersecciones de esta recta con los ejes coordenados:
+\begin{itemize}
+  \item Intersección con el eje $Y$ ($x = 0$):
+  \[
+    y_A - \eta = -y'(\xi)\xi \implies y_A = \eta - \xi y'(\xi)
+  \]
+  \item Intersección con el eje $X$ ($y = 0$):
+  \[
+    -\eta = y'(\xi)(x_B - \xi) \implies x_B = \xi - \frac{\eta}{y'(\xi)}
+  \]
+\end{itemize}
+La condición de que el segmento de recta tangente que une $A(0, y_A)$ y $B(x_B, 0)$ sea bisectado por el punto de tangencia $P(\xi, \eta)$ equivale a que las distancias cumplan $\overline{AP}^2 = \overline{PB}^2$:
+\[
+  (\xi - 0)^2 + (\eta - y_A)^2 = (0 - \xi)^2 + (y_A - 0)^2 \implies \text{no, planteado directamente:}
+\]
+\[
+  (\xi - 0)^2 + (\eta - (\eta - \xi y'(\xi)))^2 = (x_B - \xi)^2 + (0 - \eta)^2
+\]
+Sustituyendo $x_B$:
+\[
+  \xi^2 + (\xi y'(\xi))^2 = \left( \xi - \frac{\eta}{y'(\xi)} - \xi \right)^2 + \eta^2 \implies \xi^2 + (y'(\xi)\xi)^2 = \left( \frac{\eta}{y'(\xi)} \right)^2 + \eta^2
+\]
+Haciendo el cambio de notación $\xi \to x$ e $\eta \to y$:
+\[
+  x^2 y'^2 + x^2 = \frac{y^2}{y'^2} + y^2 \implies x^2(1 + y'^2) = \frac{y^2}{y'^2}(1 + y'^2)
+\]
+Como $1 + y'^2 \ge 1 > 0$, dividimos por este factor:
+\[
+  x^2 = \frac{y^2}{y'^2} \implies y'^2 = \frac{y^2}{x^2} \implies y' = \pm \frac{y}{x}
+\]
+Esto nos da dos familias de curvas:
+\begin{enumerate}[label=\alph*)]
+  \item Caso $y' = \frac{y}{x}$:
+  \[
+    \frac{dy}{y} = \frac{dx}{x} \implies \ln|y| = \ln|x| + \ln C \implies y = Cx \quad (\text{rectas})
+  \]
+  \item Caso $y' = -\frac{y}{x}$:
+  \[
+    \frac{dy}{y} = -\frac{dx}{x} \implies \ln|y| = -\ln|x| + \ln C \implies y = \frac{C}{x} \quad (\text{hipérbolas})
+  \]
+\end{enumerate}
+
+Para obtener las \textbf{trayectorias ortogonales}, reemplazamos $y'$ por $-\frac{1}{y'}$ en la EDO obtenida $y'^2 = \frac{y^2}{x^2}$:
+\[
+  \left( -\frac{1}{y'} \right)^2 = \frac{y^2}{x^2} \implies y'^2 = \frac{x^2}{y^2} \implies y' = \pm \frac{x}{y}
+\]
+Separando variables e integrando:
+\[
+  y\,dy = \pm x\,dx \implies \frac{y^2}{2} = \pm \frac{x^2}{2} + C \implies y^2 \mp x^2 = 2C
+\]
+Esto nos da dos familias de trayectorias ortogonales:
+\begin{itemize}
+  \item $y^2 - x^2 = 2C$ (hipérbolas).
+  \item $y^2 + x^2 = 2C$ (circunferencias si $C > 0$).
+\end{itemize}
+
+\medskip
+\textbf{ii)} Encontrar la familia de curvas, tal que para cada normal a una de ellas, el segmento que descansa entre la curva y el eje $X$ es bisectado por el eje $Y$. Determinar también, la familia de curvas ortogonales.
+
+\medskip
+\textit{Solución.}
+
+Sea $P(\xi, \eta)$ un punto de la curva. La recta normal en $P$ tiene por ecuación:
+\[
+  y - \eta = -\frac{1}{y'(\xi)}(x - \xi)
+\]
+Determinamos sus intersecciones:
+\begin{itemize}
+  \item Con el eje $Y$ ($x = 0$), obteniendo el punto $A(0, y_A)$:
+  \[
+    y_A - \eta = \frac{\xi}{y'(\xi)} \implies y_A = \eta + \frac{\xi}{y'(\xi)}
+  \]
+  \item Con el eje $X$ ($y = 0$), obteniendo el punto $B(x_B, 0)$:
+  \[
+    -\eta = -\frac{1}{y'(\xi)}(x_B - \xi) \implies x_B = \xi + \eta y'(\xi)
+  \]
+\end{itemize}
+El enunciado exige que el segmento de normal entre la curva (punto $P$) y el eje $X$ (punto $B$) sea bisectado por el eje $Y$ (punto $A$), lo que equivale a $\overline{PA}^2 = \overline{AB}^2$:
+\[
+  (\xi - 0)^2 + (\eta - y_A)^2 = (0 - x_B)^2 + (y_A - 0)^2
+\]
+Sustituyendo los valores de $y_A$ y $x_B$:
+\[
+  \xi^2 + \left( \frac{\xi}{y'(\xi)} \right)^2 = (\xi + \eta y'(\xi))^2 + \left( \eta + \frac{\xi}{y'(\xi)} \right)^2
+\]
+\[
+  \xi^2 \left( 1 + \frac{1}{y'^2(\xi)} \right) = (\eta y'(\xi) + \xi)^2 \left( 1 + \frac{1}{y'^2(\xi)} \right)
+\]
+Dividiendo por el término común (que es estrictamente positivo):
+\[
+  \xi^2 = (\eta y'(\xi) + \xi)^2 \implies \xi = \pm (\eta y'(\xi) + \xi)
+\]
+Haciendo el cambio de notación $\xi \to x$ e $\eta \to y$:
+\[
+  \pm x = y y' + x
+\]
+Esto nos da dos casos a analizar:
+\begin{enumerate}[label=\alph*)]
+  \item Si tomamos el signo positivo:
+  \[
+    x = y y' + x \implies y y' = 0 \implies y\,dy = 0 \implies y = C \quad (\text{rectas horizontales})
+  \]
+  \item Si tomamos el signo negativo:
+  \[
+    -x = y y' + x \implies y y' = -2x \implies y\,dy = -2x\,dx
+  \]
+  Integrando en ambos lados:
+  \[
+    \frac{y^2}{2} = -x^2 + C \implies y^2 + 2x^2 = 2C \quad (\text{elipses})
+  \]
+\end{enumerate}
+
+Para encontrar las \textbf{trayectorias ortogonales}, reemplazamos $y'$ por $-\frac{1}{y'}$ en la relación original $\pm x = y y' + x$:
+\[
+  \pm x = -\frac{y}{y'} + x
+  \]
+  Analizamos las dos ramas correspondientes:
+  \begin{itemize}
+    \item Para la rama de las elipses (donde $y y' = -2x$):
+    \[
+      y \left( -\frac{1}{y'} \right) = -2x \implies \frac{y}{y'} = 2x \implies \frac{y'}{y} = \frac{1}{2x}
+    \]
+    Integrando:
+    \[
+      \ln|y| = \frac{1}{2}\ln|x| + \ln C \implies y = C\sqrt{|x|} \quad (\text{parábolas})
+    \]
+    \item Para la rama de las rectas horizontales ($y y' = 0$):
+    \[
+      y \left( -\frac{1}{y'} \right) = 0 \implies y' = \infty \quad (\text{rectas verticales, } x = C)
+    \]
+  \end{itemize}
+
+\bigskip
+
+% ============================================================
+\textbf{Problema 2.3}
+% ============================================================
+
+\medskip
+Sea la ecuación diferencial:
+\begin{equation}
+  -y'' + 2y' = \lambda y, \quad \lambda \ge 0
+\end{equation}
+donde $y$ es una función definida en $[0, 1]$ tal que cumple las condiciones de frontera:
+\[
+  y(0) = 0, \quad y'(1) = 0
+\]
+Determinar si la ecuación tiene o no soluciones no triviales en $[0, 1]$. Si las hay, encontrarlas y hallar los valores de $\lambda$ para los cuales existen.
+
+\medskip
+\textit{Solución.}
+
+Escribimos la ecuación diferencial en su forma homogénea estándar:
+\[
+  y'' - 2y' + \lambda y = 0
+\]
+La ecuación auxiliar o característica asociada es:
+\[
+  r^2 - 2r + \lambda = 0 \implies r = 1 \pm \sqrt{1 - \lambda}
+\]
+Dependiendo del discriminante, analizamos los siguientes casos:
+
+\medskip
+\textbf{Caso 1: $0 \le \lambda < 1$}
+
+En este caso el discriminante es positivo. Definimos $\theta = \sqrt{1 - \lambda}$, por lo que $0 < \theta \le 1$. Las raíces de la ecuación característica son reales y distintas:
+\[
+  r_1 = 1 + \theta, \quad r_2 = 1 - \theta
+\]
+La solución general es:
+\[
+  y(x) = C_1 e^{(1+\theta)x} + C_2 e^{(1-\theta)x}
+\]
+Su derivada respecto a $x$ es:
+\[
+  y'(x) = C_1 (1+\theta) e^{(1+\theta)x} + C_2 (1-\theta) e^{(1-\theta)x}
+\]
+Aplicamos las condiciones de frontera:
+\begin{enumerate}
+  \item $y(0) = 0 \implies C_1 + C_2 = 0 \implies C_1 = -C_2$.
+  \item $y'(1) = 0 \implies C_1 (1+\theta) e^{1+\theta} + C_2 (1-\theta) e^{1-\theta} = 0$.
+\end{enumerate}
+Sustituyendo $C_1 = -C_2$:
+\[
+  C_2 \left[ (1-\theta) e^{1-\theta} - (1+\theta) e^{1+\theta} \right] = 0
+\]
+Para que exista una solución no trivial, requerimos $C_2 \neq 0$, lo que implica:
+\[
+  (1-\theta) e^{1-\theta} = (1+\theta) e^{1+\theta} \implies \frac{1-\theta}{1+\theta} = e^{2\theta}
+\]
+Definimos las funciones $h(\theta) = \frac{1-\theta}{1+\theta}$ y $g(\theta) = e^{2\theta}$. Para $\theta > 0$:
+\begin{itemize}
+  \item $g(\theta) = e^{2\theta}$ es estrictamente creciente con $g(0) = 1$.
+  \item $h(\theta) = \frac{1-\theta}{1+\theta}$ es estrictamente decreciente, ya que su derivada es $h'(\theta) = \frac{-2}{(1+\theta)^2} < 0$, con $h(0) = 1$.
+\end{itemize}
+Por lo tanto, para cualquier $\theta > 0$, se cumple que $h(\theta) < 1 < g(\theta)$, imposibilitando que las curvas se intersecten en este intervalo (la única intersección posible es en el origen, $\theta = 0$, lo que no pertenece al rango analizado).
+En consecuencia, en este caso solo existe la solución trivial $y(x) = 0$.
+
+\medskip
+\textbf{Caso 2: $\lambda = 1$}
+
+El discriminante es nulo, obteniéndose la raíz real repetida $r_1 = r_2 = 1$. La solución general es:
+\[
+  y(x) = C_1 e^x + C_2 x e^x
+\]
+Su derivada es:
+\[
+  y'(x) = C_1 e^x + C_2(e^x + x e^x)
+\]
+Aplicamos las condiciones de frontera:
+\begin{enumerate}
+  \item $y(0) = 0 \implies C_1 = 0$.
+  \item $y'(1) = 0 \implies C_2 (e + e) = 2e C_2 = 0 \implies C_2 = 0$.
+\end{enumerate}
+Por ende, solo se obtiene la solución trivial $y(x) = 0$.
+
+\medskip
+\textbf{Caso 3: $\lambda > 1$}
+
+En este caso el discriminante es negativo. Definimos $\theta = \sqrt{\lambda - 1}$, por lo que $\theta > 0$. Las raíces características son complejas conjugadas $r = 1 \pm i\theta$, y la solución general es:
+\[
+  y(x) = e^x [ C_1 \cos(\theta x) + C_2 \sin(\theta x) ]
+\]
+Aplicamos la primera condición de frontera:
+\[
+  y(0) = 0 \implies C_1 = 0 \implies y(x) = C_2 e^x \sin(\theta x)
+\]
+Calculamos la derivada de la solución simplificada:
+\[
+  y'(x) = C_2 e^x \sin(\theta x) + C_2 \theta e^x \cos(\theta x) = C_2 e^x [ \sin(\theta x) + \theta \cos(\theta x) ]
+\]
+Aplicamos la segunda condición de frontera en $x = 1$:
+\[
+  y'(1) = C_2 e [ \sin\theta + \theta \cos\theta ] = 0
+\]
+Dado que $e \neq 0$, para obtener soluciones no triviales ($C_2 \neq 0$), se debe cumplir:
+\[
+  \sin\theta + \theta \cos\theta = 0 \implies \tan\theta = -\theta
+\]
+Gráficamente, al intersectar la función $f(\theta) = -\theta$ con las infinitas ramas de $g(\theta) = \tan\theta$ para $\theta > 0$, se comprueba la existencia de infinitas soluciones reales $\theta_n$ ($n = 1, 2, \dots$).
+Por lo tanto, existen infinitos valores de $\lambda_n > 1$ dados por:
+\[
+  \lambda_n = 1 + \theta_n^2
+\]
+donde $\theta_n$ son las raíces de la ecuación trascendente $\tan\theta = -\theta$.
+Las soluciones correspondientes (autofunciones) están dadas por:
+\[
+  y_n(x) = C e^x \sin(\theta_n x), \quad C \in \mathbb{R}
+\]
+
+\end{document}

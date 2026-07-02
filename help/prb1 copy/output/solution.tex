@@ -1,0 +1,220 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{mathpazo}
+\usepackage{fontspec}
+\setmainfont{PatrickHand-Regular.ttf}[Path=./]
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+
+\definecolor{gnbg}{HTML}{FDFDFD}
+\pagecolor{gnbg}
+
+\definecolor{ink}{HTML}{2C3E50}
+\color{ink}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw[step=6mm, color=gray!20, thin]
+      (current page.south west) grid (current page.north east);
+  \end{tikzpicture}
+}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+
+%--------------------------------------------------------------
+\textbf{Pregunta 1} \textit{[35 puntos].}
+
+Dada la EDO de Cauchy-Euler $x^2y''+xy'-y=f(x)$.
+
+\begin{enumerate}[label=\alph*)]
+  \item Pruebe que $y_1(x)=x$ es solución de la EDO homogénea $x^2y''+xy'-y=0$.
+  \item Usando $y_1$, encuentre otra solución de la EDO homogénea por reducción de orden.
+  \item Determine la solución general (encontrando una particular) con $f(x)=18x\sqrt{2}$.
+\end{enumerate}
+
+\medskip
+
+\textbf{a)} Sea $y_1=x$, entonces $y_1'=1$ e $y_1''=0$. Reemplazando en la ecuación homogénea:
+\[
+  x^2(0)+x(1)-x = 0
+\]
+por lo tanto $y_1=x$ es solución de la EDO homogénea.
+
+\medskip
+
+\textbf{b)} Proponemos $y_2=v(x)\cdot x$, con $y_2'=v'x+v$ e $y_2''=v''x+2v'$.
+Reemplazando en $x^2y''+xy'-y=0$:
+\begin{align*}
+  x^2(v''x+2v')+x(v'x+v)-vx &= 0 \\
+  x^3v''+2x^2v'+x^2v'+xv-xv &= 0 \\
+  x^3v''+3x^2v' &= 0
+\end{align*}
+Haciendo $w=v'$:
+\[
+  x^3w'+3x^2w=0 \implies \frac{w'}{w}=-\frac{3}{x}
+\]
+Integrando: $\ln|w|=-3\ln|x|+C$, entonces $w=Cx^{-3}$. Tomando $C=-2$: $v'=-2x^{-3}$, integrando $v=x^{-2}$, por lo tanto:
+\[
+  y_2 = x\cdot x^{-2} = \frac{1}{x}
+\]
+Verificamos independencia lineal con el Wronskiano:
+\[
+  W\!\left(x,\,\frac{1}{x}\right)
+  = \begin{vmatrix} x & x^{-1} \\ 1 & -x^{-2} \end{vmatrix}
+  = -x^{-1}-x^{-1} = -\frac{2}{x} \neq 0
+\]
+La solución general de la homogénea es $y_h = c_1 x + \dfrac{c_2}{x}$.
+
+\medskip
+
+\textbf{c)} Con $f(x)=18x\sqrt{2}$. Dividiendo por $x^2$ queda la forma estándar:
+\[
+  y''+\frac{1}{x}y'-\frac{1}{x^2}y=\frac{18\sqrt{2}}{x}
+\]
+Aplicamos variación de parámetros con $y_1=x$, $y_2=x^{-1}$ y $W=-2/x$:
+\[
+  y_p = -y_1\int\frac{y_2\cdot g}{W}\,dx + y_2\int\frac{y_1\cdot g}{W}\,dx
+\]
+Calculamos cada integral con $g(x)=18\sqrt{2}\,x^{-1}$:
+\begin{align*}
+  \frac{y_2\cdot g}{W} &= \frac{x^{-1}\cdot 18\sqrt{2}\,x^{-1}}{-2/x} = 9\sqrt{2}\,x^{-1}
+  &\implies \int 9\sqrt{2}\,x^{-1}\,dx &= 9\sqrt{2}\ln|x| \\[4pt]
+  \frac{y_1\cdot g}{W} &= \frac{x\cdot 18\sqrt{2}\,x^{-1}}{-2/x} = -9\sqrt{2}\,x
+  &\implies \int(-9\sqrt{2}\,x)\,dx &= -\frac{9\sqrt{2}}{2}x^2
+\end{align*}
+Entonces:
+\[
+  y_p = -x\bigl(9\sqrt{2}\ln|x|\bigr) + x^{-1}\!\left(-\frac{9\sqrt{2}}{2}x^2\right)
+      = 9\sqrt{2}\,x\ln|x| - \frac{9\sqrt{2}}{2}x
+\]
+El término $-\tfrac{9\sqrt{2}}{2}x$ es proporcional a $y_1=x$, por lo que se absorbe en $c_1$. La solución general es:
+\[
+  y = c_1 x + \frac{c_2}{x} + 9\sqrt{2}\,x\ln|x|
+\]
+
+\bigskip
+
+%--------------------------------------------------------------
+\textbf{Pregunta 2} \textit{[35 puntos].}
+
+Un módulo de calibración óptica de masa $m=5$ kg está suspendido de un resorte que
+se estira 2 m al colocar la masa en equilibrio. El amortiguador tiene coeficiente
+$\beta=20$ kg/s. El módulo se libera desde 0.5 m sobre el equilibrio con velocidad
+inicial descendente de 3 m/s.
+
+\begin{enumerate}[label=\alph*)]
+  \item Plantee la ecuación diferencial que modela esta situación.
+  \item Resuelva la EDO de movimiento libre amortiguado.
+  \item Calcule la posición al tiempo $t=\pi/8$ s e interprete el signo.
+\end{enumerate}
+
+\medskip
+
+\textbf{a)} En equilibrio la fuerza del resorte equilibra el peso:
+\[
+  k\cdot 2 = mg = 5(10) = 50\text{ N} \implies k = 25\text{ N/m}
+\]
+Sea $y(t)$ el desplazamiento desde el equilibrio (positivo hacia abajo).
+La ecuación de movimiento libre amortiguado es:
+\[
+  my'' + \beta y' + ky = 0 \implies 5y'' + 20y' + 25y = 0
+\]
+Dividiendo por 5:
+\[
+  y'' + 4y' + 5y = 0
+\]
+
+\textbf{b)} Ecuación característica: $r^2+4r+5=0$. Discriminante $\Delta = 16-20 = -4 < 0$:
+\[
+  r = \frac{-4 \pm 2i}{2} = -2 \pm i
+\]
+El sistema es subamortiguado ($\alpha=-2$, $\omega=1$). Solución general:
+\[
+  y(t) = e^{-2t}(c_1\cos t + c_2\sin t)
+\]
+Condiciones iniciales: $y(0)=-\tfrac{1}{2}$ (sobre el equilibrio) e $y'(0)=3$ (descendente).
+
+De $y(0)=c_1 = -\tfrac{1}{2}$. Derivando:
+\[
+  y'(t) = e^{-2t}\bigl[(-2c_1+c_2)\cos t + (-c_1-2c_2)\sin t\bigr]
+\]
+entonces $y'(0) = -2c_1 + c_2 = 1 + c_2 = 3 \implies c_2 = 2$. La ecuación del movimiento es:
+\[
+  y(t) = e^{-2t}\!\left(-\frac{1}{2}\cos t + 2\sin t\right)
+\]
+
+\textbf{c)} Evaluando en $t=\pi/8$:
+\[
+  y\!\left(\frac{\pi}{8}\right)
+  = e^{-\pi/4}\!\left(-\frac{1}{2}\cos\frac{\pi}{8}+2\sin\frac{\pi}{8}\right)
+  \approx 0.4559\cdot(-0.4619 + 0.7654)
+  \approx 0.138\text{ m}
+\]
+El signo positivo indica que el módulo se encuentra 0.138 m \textbf{por debajo}
+de la posición de equilibrio al tiempo $t=\pi/8$ s.
+
+\bigskip
+
+%--------------------------------------------------------------
+\textbf{Pregunta 3} \textit{[30 puntos].}
+
+Considere $y''+by'+cy=f(x)$ con coeficientes constantes. Una solución de la homogénea
+es $y_1(x)=e^{-3x}$ y la ecuación característica posee raíces reales repetidas.
+
+\begin{enumerate}[label=\alph*)]
+  \item Determine la otra solución y construya la EDO homogénea.
+  \item Con $f(x)=xe^{-3x}$, resuelva usando coeficientes indeterminados.
+        Justifique el factor de modificación.
+\end{enumerate}
+
+\medskip
+
+\textbf{a)} Como $y_1=e^{-3x}$ es solución, $r_1=-3$ es raíz. Al ser raíces reales
+repetidas, $r_1=r_2=-3$. La ecuación característica es:
+\[
+  (r+3)^2=0 \implies r^2+6r+9=0
+\]
+por lo tanto $b=6$, $c=9$, y la EDO homogénea es:
+\[
+  y''+6y'+9y=0
+\]
+La segunda solución linealmente independiente es $y_2=xe^{-3x}$, con solución
+general de la homogénea:
+\[
+  y_h = c_1 e^{-3x} + c_2 x e^{-3x}
+\]
+
+\textbf{b)} Para $f(x)=xe^{-3x}$, la propuesta inicial sería $y_p=(Ax+B)e^{-3x}$.
+Esta forma ya está contenida en $y_h$ (tanto $e^{-3x}$ como $xe^{-3x}$ son soluciones
+homogéneas). Como $r=-3$ es raíz de multiplicidad 2, se debe multiplicar por $x^2$:
+\[
+  y_p = x^2(Ax+B)e^{-3x} = (Ax^3+Bx^2)e^{-3x}
+\]
+Calculamos las derivadas:
+\begin{align*}
+  y_p'  &= e^{-3x}\!\left(-3Ax^3+(3A-3B)x^2+2Bx\right) \\
+  y_p'' &= e^{-3x}\!\left(9Ax^3+(-18A+9B)x^2+(6A-12B)x+2B\right)
+\end{align*}
+Reemplazando en $y''+6y'+9y=xe^{-3x}$ y colectando por potencia:
+\begin{align*}
+  x^3: &\quad 9A-18A+9A = 0 \\
+  x^2: &\quad (-18A+9B)+6(3A-3B)+9B = 0 \\
+  x^1: &\quad (6A-12B)+6(2B) = 6A = 1 \implies A=\tfrac{1}{6} \\
+  x^0: &\quad 2B = 0 \implies B=0
+\end{align*}
+Por lo tanto $y_p=\dfrac{x^3}{6}e^{-3x}$ y la solución general es:
+\[
+  y = e^{-3x}\!\left(c_1 + c_2 x + \frac{x^3}{6}\right)
+\]
+
+\end{document}

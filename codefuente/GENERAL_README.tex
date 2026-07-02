@@ -1,0 +1,401 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=2.2cm,
+    bottom=2.2cm,
+    left=2cm,
+    right=2cm,
+    headheight=14pt
+}
+
+% Font setup: Helvetica
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Packages
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\setlist{nosep}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{listings}
+\usepackage[many]{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Colors based on GOP style
+\definecolor{DeepBlue}{HTML}{003B5C}
+\definecolor{BrightBlue}{HTML}{007ACC}
+\definecolor{Emerald}{HTML}{00A388}
+\definecolor{WarningOrange}{HTML}{D97706}
+\definecolor{Sunset}{HTML}{EF4444}
+\definecolor{LightGray}{HTML}{F3F4F6}
+\definecolor{TitleBlue}{HTML}{005096}
+
+% Listings setup (Code blocks)
+\lstset{
+  backgroundcolor=\color{LightGray},
+  basicstyle=\ttfamily\small,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{gray},
+  keepspaces=true,
+  keywordstyle=\color{DeepBlue}\bfseries,
+  numbers=none,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stringstyle=\color{Sunset},
+  tabsize=2,
+  frame=single,
+  rulecolor=\color{gray!30},
+  xleftmargin=10pt,
+  xrightmargin=10pt
+}
+
+% Heading formatting
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries\color{TitleBlue}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{TitleBlue!80!black}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bfseries\color{DeepBlue}}{\thesubsubsection}{1em}{}
+
+% Custom header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{gray} Trasplan --- Guía de Referencia}
+\fancyhead[R]{\small\sffamily\color{gray} \leftmark}
+\fancyfoot[C]{\small\sffamily\color{gray} \thepage}
+\fancyfoot[R]{\small\sffamily\color{gray} Documento de Coordinación}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Custom boxes (tcolorbox) mimicking GOP boxes (removed breakable to avoid ugly splits)
+\newtcolorbox{temariobox}[2][]{
+    enhanced,
+    colback=BrightBlue!5!white,
+    colframe=DeepBlue,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    sharp corners,
+    boxrule=0.8pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    #1
+}
+
+\newtcolorbox{conceptobox}[2][]{
+    enhanced,
+    colback=WarningOrange!5!white,
+    colframe=WarningOrange,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    sharp corners,
+    boxrule=0.8pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    #1
+}
+
+\newtcolorbox{reglabox}[2][]{
+    enhanced,
+    colback=Emerald!5!white,
+    colframe=Emerald,
+    coltitle=white,
+    fonttitle=\bfseries\sffamily,
+    title={#2},
+    sharp corners,
+    boxrule=0.8pt,
+    left=8pt, right=8pt, top=8pt, bottom=8pt,
+    #1
+}
+
+% Hyperref
+\usepackage[colorlinks=true, linkcolor=DeepBlue, citecolor=Emerald, urlcolor=BrightBlue]{hyperref}
+
+\begin{document}
+
+% Preamble title block mimicking GOP-1 layout
+\begin{center}
+    {\color{TitleBlue}\LARGE\sffamily Trasplan}\\[0.3cm]
+    {\Huge\bfseries Sistema de Gestión y Coordinación}\\[0.2cm]
+    {\Large Procuramiento y Trasplante de Órganos en Tiempo Real}\\[0.6cm]
+    \rule{\textwidth}{0.8pt}\\[0.4cm]
+    {\large\sffamily Sábado 29 de Mayo 2026}\\[0.2cm]
+    {\large\sffamily Red de Salud Pública y Clínicas Coordinadas}\\[0.2cm]
+    {\large\sffamily Autor: Fabián Ignacio Ortega Llantén}\\[0.4cm]
+    \rule{\textwidth}{0.8pt}\\[0.8cm]
+\end{center}
+
+\section{Introducción}
+Trasplan es una plataforma web y móvil diseñada para coordinar y gestionar el proceso de procuramiento y trasplante de órganos en tiempo real. Facilita la comunicación entre los centros médicos, los médicos de la Unidad de Cuidados Intensivos (UCI), los coordinadores de trasplantes y los procuradores para optimizar la detección, evaluación, activación familiar, asignación y cirugía de órganos de donantes potenciales.
+
+\section{Arquitectura y Estructura del Proyecto}
+El repositorio está dividido en cuatro componentes principales:
+\begin{enumerate}
+    \item \textbf{backend/}: Servidor de base de datos y API GraphQL (Node.js + Express + Apollo Server v4 + Sequelize + TypeScript).
+    \item \textbf{web/}: Panel administrativo y operacional web (React + Material-UI v4 + Apollo Client v3 + TypeScript).
+    \item \textbf{App/}: Aplicación móvil nativa moderna (React Native CLI + TypeScript).
+    \item \textbf{mobile/}: Versión móvil antigua/legada basada en Expo (Expo SDK 37 + JavaScript).
+\end{enumerate}
+
+\section{Historial de Desarrollo}
+El desarrollo de la plataforma Trasplan ha seguido un proceso interdisciplinario y colaborativo entre las Facultades de Medicina e Ingeniería de la Pontificia Universidad Católica de Chile:
+\begin{itemize}
+    \item \textbf{Etapa I (2020) --- Concurso Interdisciplina VRI UC}: Conceptualización inicial y codiseño del proyecto liderado por el Dr. Briceño, Dr. Achurra, Dr. Neyem y S. Riveros.
+    \item \textbf{Etapa II (2021) --- Curso Capstone UC}: Diseño e implementación de las funcionalidades esenciales de \textbf{Sospecha} y \textbf{Activación de donante}.
+    \item \textbf{Etapa III (2022) --- Curso Capstone UC}: Expansión del sistema para incorporar la \textbf{Alocación de órganos} y la \textbf{Gestión de procura}.
+    \item \textbf{Etapa IV (2022) --- Postulaciones FONIS}: Postulación a fondos concursables FONIS 2022 y FONIS 2023 (no adjudicados).
+    \item \textbf{Etapa V (2023--2024) --- Consolidación}: Finalización del desarrollo informático y estabilización de la plataforma.
+\end{itemize}
+
+\newpage
+
+\section{Dominio de Negocio y Flujo de Procuramiento}
+El sistema modela el ciclo de vida completo de un potencial donante de órganos, desde la sospecha inicial hasta el trasplante definitivo. El diseño de Trasplan aborda de forma directa los problemas históricos detectados en el proceso de procuramiento en Chile:
+\begin{itemize}
+    \item \textbf{Fase de Detección}: Retraso u omisión en la notificación. Para mitigar esto, según la Ley de notificación obligatoria de potencial donante, el sistema permite que cualquier médico inicie una alerta de \textbf{Sospecha} en terreno al detectar un paciente con daño neurológico severo y puntaje de Glasgow $<$ 8.
+    \item \textbf{Fase de Mantenimiento}: Falta de coordinación de equipos de procura, logística de traslado y control del tiempo de isquemia fría. Trasplan centraliza la información para eliminar la ``información limitada'' durante la cirugía de procura y optimiza la comunicación.
+    \item \textbf{Fase de Trasplante}: Pérdida de órganos viables debido a expiración de tiempos de isquemia o ineficiencias en la asignación.
+\end{itemize}
+
+El flujo de procuramiento modelado en el sistema se describe a continuación:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.55\textheight,keepaspectratio]{mermaid.pdf}
+    \caption{Flujo de Procuramiento de Órganos}
+    \label{fig:flujo}
+\end{figure}
+
+\newpage
+
+\subsection{Módulos y Modelos de Datos}
+
+\begin{temariobox}{Resumen de Módulos Clínicos y Operacionales}
+\begin{itemize}
+    \item \textbf{User / Workplace / MedicalCenter}: Gestión de usuarios (médicos, coordinadores, procuradores), sus lugares de trabajo y los centros de salud asociados.
+    \item \textbf{Suspicion (Sospecha)}: Registro inicial de un donante potencial en el hospital de origen (identificado por su RUT único y sexo). Habilitado por el botón de pánico en la app móvil.
+    \item \textbf{InclusionCriteria}: Cuestionario para verificar si el paciente cumple los requisitos médicos y legales para ser donante (descarte de infecciones como VIH, VHB, VHC, o condiciones como Sepsis y Cáncer).
+    \item \textbf{MedicalRecord / Background}: Ficha médica con características físicas básicas (peso, estatura, grupo sanguíneo) y antecedentes de salud (enfermedades crónicas, infecciones, hábitos).
+    \item \textbf{BrainDeath}: Registro de pruebas clínicas (como test de apnea, reflejos del tronco encefálico y electroencefalograma) para verificar formalmente la muerte cerebral por parte de 2 médicos (uno de ellos neurólogo/neurocirujano).
+    \item \textbf{FamilyActivation / Confirmation / Negation}: Registro de la entrevista familiar, capturando el consentimiento (detallando qué órganos se autoriza donar) o la denegación (con motivos como motivos religiosos, culturales, etc.).
+    \item \textbf{Organ / OrganType}: Órganos del donante aptos para procuramiento (corazón, hígado, riñones, etc.), con su tiempo de isquemia específico.
+    \item \textbf{Offering (Oferta)}: Oferta de un órgano a centros médicos receptores compatibles de manera secuencial y priorizada.
+    \item \textbf{Surgery (Cirugía)}: Planificación de la extracción en pabellón, coordinando el equipo quirúrgico y la hora crítica de clampeo.
+    \item \textbf{HistoryItem / ExpoDeviceToken}: Auditoría de cada acción ejecutada en las sospechas y tokens para notificaciones push en dispositivos móviles.
+    \item \textbf{Statistics}: Módulo de analítica que proporciona visualizaciones y métricas regionales demográficas, rendimiento e indicadores de donantes y traslados por centro asistencial.
+    \item \textbf{ClinicalSupport \& EducationalTools}: Herramientas complementarias para el personal clínico que incluyen guías clínicas de mantención de donantes (preservación en UCI), educación interactiva sobre donación para profesionales y guías de apoyo familiar para entrevistas sensibles.
+\end{itemize}
+\end{temariobox}
+
+\newpage
+
+\section{Ciclo de Vida y Transiciones de Estado}
+Tanto las sospechas de donantes (Suspicion) como los órganos (Organ) y las ofertas (Offering) poseen flujos de estado rigurosos:
+
+\subsection{1. Estados de una Sospecha (Suspicion)}
+\begin{itemize}
+    \item \textbf{Sospecha}: Registro inicial. Se crea de manera predeterminada junto con formularios vacíos de criterios, antecedentes, ficha médica, muerte cerebral y activación familiar.
+    \item \textbf{Activo}: El donante potencial cumple con los criterios iniciales.
+    \item \textbf{Confirmado}: Tras completar y validar todos los formularios obligatorios, la sospecha es confirmada por el coordinador de trasplantes.
+    \item \textbf{Alocación}: Se han registrado órganos disponibles y se han abierto ofertas a otros hospitales.
+    \item \textbf{Cirugía}: Se ha programado la cirugía de extracción en pabellón.
+    \item \textbf{Trasplantado}: Cierre del ciclo de procuramiento (cuando todos los órganos de la sospecha han sido trasplantados o desestimados).
+    \item \textbf{Desestimado / Descartado}: El caso es cancelado o rechazado debido a razones médicas o por denegación familiar.
+\end{itemize}
+
+\subsection{2. Estados de un Órgano (Organ)}
+\begin{itemize}
+    \item \textbf{Pendiente}: Registrado pero sin ofertas activas.
+    \item \textbf{Alocando}: Ofertas activas en curso hacia hospitales receptores.
+    \item \textbf{Asignado}: Una oferta fue aceptada por un hospital receptor y asignada por el sistema.
+    \item \textbf{InicioProcura}: Comienzo del procedimiento quirúrgico específico para este órgano.
+    \item \textbf{CrossClamp / En isquemia}: Clampeo aórtico aplicado; comienza a correr el tiempo de isquemia fría.
+    \item \textbf{FinalProcura}: Extracción quirúrgica finalizada.
+    \item \textbf{Trasplantado}: Trasplantado exitosamente en el receptor en el hospital destino.
+    \item \textbf{Desestimado}: Órgano descartado durante el proceso debido a inviabilidad médica sobrevenida u otros problemas técnicos.
+\end{itemize}
+
+\subsection{3. Estados de una Oferta (Offering)}
+\begin{itemize}
+    \item \textbf{Pendiente}: Esperando respuesta del centro receptor prioritario.
+    \item \textbf{Aceptada}: El centro receptor aceptó la oferta del órgano.
+    \item \textbf{Rechazada}: El centro receptor rechazó el órgano (lo que activa automáticamente al siguiente centro en la cola de prioridad).
+    \item \textbf{Expirada}: El tiempo de espera límite del centro receptor expiró sin una respuesta.
+\end{itemize}
+
+\newpage
+
+\section{Reglas de Negocio Clave}
+
+\begin{reglabox}{Criterios de Confirmación de Sospecha}
+Para que una sospecha (Suspicion) pueda ser confirmada (habilitando la oferta de sus órganos), debe cumplir con cinco requisitos obligatorios que deben estar presentes y formalmente confirmados por personal autorizado:
+\begin{enumerate}
+    \item \textbf{Antecedentes Médicos (Background)}: Confirmado.
+    \item \textbf{Criterios de Inclusión (InclusionCriteria)}: Confirmado.
+    \item \textbf{Ficha Médica (MedicalRecord)}: Confirmado.
+    \item \textbf{Muerte Cerebral (BrainDeath)}: Confirmado.
+    \item \textbf{Activación Familiar (FamilyActivation)}: Confirmado (con consentimiento positivo de donación).
+\end{enumerate}
+El backend expone \texttt{enableToConfirm} que valida que estas 5 relaciones tengan \texttt{confirmation.status === true}.
+\end{reglabox}
+
+\vspace{0.3cm}
+
+\begin{reglabox}{Cola de Ofertas y Expiración Automatizada}
+Cuando se ofrece un órgano (\texttt{createOffering}), se puede ingresar una lista priorizada de hasta 5 centros médicos (\texttt{medicalCenterIds}):
+\begin{itemize}
+    \item La oferta número 1 de la lista se activa inmediatamente (\texttt{activeDate = new Date()}).
+    \item El backend utiliza un job programado (\texttt{node-schedule}) con una expiración de 1 hora por defecto.
+    \item Si el centro médico actual no responde a tiempo, la oferta expira y el sistema activa de forma secuencial la siguiente oferta (prioridad \texttt{priority + 1}) actualizando su \texttt{activeDate}.
+    \item Si un centro Acepta, se cancelan (expiran) el resto de las ofertas y el órgano pasa a estar Asignado al hospital que aceptó.
+    \item Si todas las ofertas de la cola son Rechazadas o Expiran, el estado del órgano regresa a Pendiente y se eliminan las ofertas activas para permitir una nueva ronda de asignación.
+\end{itemize}
+\end{reglabox}
+
+\newpage
+
+\begin{conceptobox}{Control del Tiempo de Isquemia Fría}
+Cuando se efectúa el clampeo aórtico (\texttt{crossClamp} en \texttt{Surgery}), se propaga este timestamp a todos los órganos asociados:
+\begin{itemize}
+    \item Cada tipo de órgano (\texttt{OrganType}) posee un límite de isquemia máximo permitido (\texttt{ischemiaTime} en horas; ej. el corazón tiene pocas horas de viabilidad, mientras que los riñones tienen mayor margen).
+    \item El sistema calcula el tiempo límite de viabilidad: \texttt{crossClamp + ischemiaTime}.
+    \item Utilizando la librería \texttt{countdown}, el panel web muestra un reloj regresivo dinámico formateado en español (ej. ``2 horas, 14 minutos'') indicando el tiempo de isquemia fría restante.
+    \item Si el tiempo actual sobrepasa el límite calculado, el estado del temporizador se muestra como ``Tiempo de isquemia finalizado''.
+\end{itemize}
+\end{conceptobox}
+
+\vspace{0.3cm}
+
+\begin{conceptobox}{Notificaciones Push en Dispositivos Móviles}
+El backend integra el SDK de Expo (\texttt{expo-server-sdk}) para enviar alertas push automáticas a coordinadores y procuradores:
+\begin{itemize}
+    \item \textbf{Creación de sospecha}: Cuando se levanta una sospecha en un hospital, el sistema busca a todos los usuarios con rol \texttt{procurer} asociados a ese hospital (\texttt{Workplace}) y les envía una notificación push instantánea: ``Nueva sospecha levantada. Presione aquí para ver en aplicación''.
+    \item \textbf{Actualizaciones de Criterios y Fichas}: Alerta a los coordinadores y médicos de la UCI involucrados para dar seguimiento al estado del donante.
+\end{itemize}
+\end{conceptobox}
+
+\newpage
+
+\section{Roles y Reglas de Acceso (RBAC)}
+El acceso a los recursos está restringido según el rol asignado al usuario en el sistema.
+
+\begin{table}[H]
+\centering
+\sffamily\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash\hsize=1.5\hsize}X *{5}{>{\centering\arraybackslash\hsize=0.9\hsize}X}}
+\toprule
+\textbf{Permiso / Capacidad} & \textbf{admin} & \textbf{coordinator} & \textbf{procurer} & \textbf{uciMedic} & \textbf{user} \\
+\midrule
+Crear Sospechas & Sí & No & Sí & Sí & Sí \\
+Ver Sospechas & Sí & Sí & Sí & Sí & No \\
+Confirmar Sospechas & Sí & Sí & No & No & No \\
+Gestionar Criterios & Sí (C/Conf) & No & Sí (C/Conf) & Sí (Solo C) & No \\
+Confirmar Muerte Cerebral & Sí & No & Sí & No & No \\
+Registrar Activación Fam. & Sí & No & Sí & No & No \\
+Administrar Ficha Médica & Sí & No & Sí & Sí & No \\
+Crear/Asignar Órganos & Sí & Sí & Sí & No & No \\
+Ofrecer Órganos & Sí & No & No & No & No \\
+Programar Cirugía & Sí & Sí & Sí (V/Clamp) & No & No \\
+Ver Usuarios/Hospitales & Sí & No & No & No & No \\
+\bottomrule
+\end{tabularx}
+\caption{Matriz de Roles y Permisos (RBAC). C: Crear, Conf: Confirmar, V: Ver, Clamp: Clampeo.}
+\label{tab:rbac}
+\end{table}
+
+\section{Tecnologías Utilizadas}
+\subsection{Backend (backend/)}
+Node.js, Express, Apollo Server v4 (GraphQL API), Sequelize ORM (PostgreSQL), TypeScript, Jest, Node Schedule.
+
+\subsection{Frontend Web (web/)}
+React (CRA), Material-UI (v4), Apollo Client v3, Redux Toolkit, Formik + Yup, Cypress (E2E testing).
+
+\subsection{Aplicaciones Móviles (App/ y mobile/)}
+React Native CLI (App/ con TypeScript), Expo SDK 37 (mobile/ con JavaScript).
+
+\newpage
+
+\section{Mapeo de Vistas del Frontend Web (web/src/pages)}
+\begin{itemize}
+    \item \textbf{\texttt{/} (Inicio - home-page.tsx)}: Botón de pánico "Activar donante".
+    \item \textbf{\texttt{/login} (Login - login-page.tsx)}: Formulario de ingreso de credenciales.
+    \item \textbf{\texttt{/suspicions} (Sospechas - suspicions-page.tsx)}: Tabla global de sospechas.
+    \item \textbf{\texttt{/suspicions/:id} (Ficha Sospecha - suspicion-details-page.tsx)}: Detalle de caso con formularios clínicos y confirmación de donante.
+    \item \textbf{\texttt{/organs} (Órganos - organs-page.tsx)}: Visualización de órganos listos para alocación.
+    \item \textbf{\texttt{/offerings} (Ofertas - offerings-page.tsx)}: Pestañas de ofertas en curso, aceptadas, y rechazadas/expiradas.
+    \item \textbf{\texttt{/surgeries} (Cirugías - surgeries-page.tsx)}: Lista de cirugías programadas.
+    \item \textbf{\texttt{/surgeries/:id} (Ficha Cirugía - surgery-details-page.tsx)}: Control de tiempo de isquemia y registro de clampeo.
+    \item \textbf{\texttt{/users} (Usuarios - users-list-page.tsx)}: Alta y administración de usuarios.
+    \item \textbf{\texttt{/medical-centers} (Hospitales - medical-centers-page.tsx)}: Mapa y listado de centros de salud.
+\end{itemize}
+
+\section{Mapeo de Pantallas Móviles (App/screens)}
+\begin{itemize}
+    \item \textbf{auth/}: Autenticación del usuario.
+    \item \textbf{suspicions/}: Reportar sospechas de muerte encefálica en terreno.
+    \item \textbf{inclusionCriteria/}: Checklists rápidos a pie de cama.
+    \item \textbf{medicalRecord/ \& background/}: Características antropométricas y antecedentes.
+    \item \textbf{brainDeath/}: Registro clínico de cese de funciones cerebrales.
+    \item \textbf{familyActivation/}: Entrevista familiar y acta de consentimiento.
+    \item \textbf{organs/}: Órganos disponibles.
+    \item \textbf{offers/}: Aceptación de ofertas en trayecto.
+    \item \textbf{surgery/}: Registro de clampeo in-situ.
+\end{itemize}
+
+\newpage
+
+\section{Guía de Instalación y Ejecución Local}
+
+\subsection{1. Prerrequisitos en el Sistema}
+Node.js (v18.x), PostgreSQL con usuario/contraseña \texttt{iic2154}/\texttt{iic2154} y bases de datos \texttt{backend\_grupo\_2} y \texttt{backend\_grupo\_2\_test}.
+
+\subsection{2. Configurar y Levantar el Backend}
+\begin{enumerate}
+    \item Instalar dependencias e inicializar variables en el archivo \texttt{.env}:
+\begin{lstlisting}[language=bash]
+cd backend
+npm install --legacy-peer-deps
+\end{lstlisting}
+    \item Ejecutar las migraciones y seeders para poblar la base de datos local:
+\begin{lstlisting}[language=bash]
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+\end{lstlisting}
+    \item Iniciar el servidor:
+\begin{lstlisting}[language=bash]
+npm run dev
+\end{lstlisting}
+\end{enumerate}
+
+\subsection{3. Configurar y Levantar el Frontend Web}
+\begin{enumerate}
+    \item Instalar dependencias en \texttt{web/}:
+\begin{lstlisting}[language=bash]
+cd ../web
+npm install --legacy-peer-deps
+\end{lstlisting}
+    \item Levantar el panel web React:
+\begin{lstlisting}[language=bash]
+npm start
+\end{lstlisting}
+\end{enumerate}
+
+\begin{center}
+    \vspace{2cm}
+    \small\color{gray}
+    Documento generado para la gestión de procuramiento y trasplantes --- Red Trasplan 2026.
+\end{center}
+
+\end{document}

@@ -1,0 +1,302 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{mathpazo}
+\usepackage{fontspec}
+\setmainfont{PatrickHand-Regular.ttf}[Path=./]
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+
+% Color de fondo estilo GoodNotes (blanco hueso muy suave)
+\definecolor{gnbg}{HTML}{FDFDFD}
+\pagecolor{gnbg}
+
+% Color de "tinta" (un gris azulado oscuro para que parezca lápiz de tablet)
+\definecolor{ink}{HTML}{2C3E50}
+\color{ink}
+
+% Dibujar cuadrícula estilo GoodNotes
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw[step=6mm, color=gray!20, thin] (current page.south west) grid (current page.north east);
+  \end{tikzpicture}
+}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+% ============================================================
+\textbf{Problema 2.1}
+% ============================================================
+
+\medskip
+Sea $A$ el punto de intersección de la tangente a la curva $\mathcal{C}$, en un punto $P$, y el eje $OY$. Si la circunferencia, cuyo diámetro es $AP$, pasa por el punto fijo $(a, 0)$, hallar la ecuación de la curva.
+
+\medskip
+\textit{Solución.}
+
+Consideremos un punto genérico de la curva $P(\xi, \eta)$. La ecuación de la recta tangente a la curva en el punto $P$ es:
+\[
+  y - \eta = y'(\xi)(x - \xi)
+\]
+El punto $A$ es la intersección de esta tangente con el eje $OY$ ($x = 0$):
+\[
+  y_A = \eta - \xi y'(\xi)
+\]
+Haciendo el cambio de variables general $\xi \to x$ e $\eta \to y$, obtenemos la coordenada del punto $A(0, y_A)$ donde:
+\[
+  y_A = y - x y'
+\]
+Por geometría, el punto $Q(a,0)$ pertenece a la circunferencia de diámetro $AP$. Como el segmento $AP$ es el diámetro, el ángulo $\angle AQP$ inscrito en la semicircunferencia es un ángulo recto ($90^\circ$). Por lo tanto, los segmentos $AQ$ y $PQ$ son perpendiculares:
+\[
+  \overline{PQ} \perp \overline{AQ}
+\]
+Esto significa que el producto de las pendientes de las rectas que contienen a estos segmentos es $-1$:
+\[
+  m_{AQ} \cdot m_{PQ} = -1
+\]
+Calculamos las pendientes:
+\begin{align*}
+  m_{AQ} &= \frac{0 - y_A}{a - 0} = -\frac{y_A}{a} = \frac{xy' - y}{a} \\
+  m_{PQ} &= \frac{y - 0}{x - a} = \frac{y}{x - a}
+\end{align*}
+Multiplicando las pendientes e igualando a $-1$:
+\[
+  \left(\frac{xy' - y}{a}\right)\left(\frac{y}{x - a}\right) = -1
+\]
+Despejando y ordenando la ecuación:
+\begin{align*}
+  y(xy' - y) &= -a(x - a) \\
+  xyy' - y^2 &= a(a - x) \\
+  xyy' &= y^2 + a(a - x) \\
+  y' - \frac{y}{x} &= \frac{a(a-x)}{x}y^{-1}
+\end{align*}
+Esta última corresponde a una ecuación diferencial de Bernoulli con $n = -1$. Multiplicamos la ecuación por $(1-n)y^{-n} = 2y$:
+\[
+  2yy' - \frac{2}{x}y^2 = 2\frac{a(a-x)}{x}
+\]
+Hacemos la sustitución $z = y^2 \implies z' = 2yy'$, con lo cual la ecuación se transforma en una lineal de primer orden para $z$:
+\[
+  z' - \frac{2}{x}z = \frac{2a(a-x)}{x}
+\]
+El factor integrante es:
+\[
+  \mu(x) = e^{\int -\frac{2}{x}\,dx} = e^{-2\ln|x|} = \frac{1}{x^2}
+\]
+Multiplicamos la ecuación lineal por el factor integrante:
+\[
+  \frac{d}{dx}\left(\frac{z}{x^2}\right) = \frac{2a(a-x)}{x^3} = 2a^2 x^{-3} - 2a x^{-2}
+\]
+Integrando a ambos lados respecto a $x$:
+\begin{align*}
+  \frac{z}{x^2} &= \int (2a^2 x^{-3} - 2a x^{-2})\,dx \\
+  \frac{z}{x^2} &= 2a^2 \left(\frac{x^{-2}}{-2}\right) - 2a \left(\frac{x^{-1}}{-1}\right) + C \\
+  \frac{z}{x^2} &= -a^2 x^{-2} + 2a x^{-1} + C
+\end{align*}
+Multiplicando por $x^2$ y restituyendo $z = y^2$:
+\[
+  y^2 = C x^2 + 2ax - a^2
+\]
+
+\bigskip
+
+% ============================================================
+\textbf{Problema 2.2}
+% ============================================================
+
+\medskip
+\textbf{a)} Resuelva mediante factor integrante la ecuación diferencial:
+\[
+  (y + 2xy^2)dx + (x - x^2y)dy = 0
+\]
+sabiendo que existe un factor $\lambda$ que depende del producto $x^\alpha y^\beta$, con $\alpha, \beta \in \mathbb{Z}$.
+
+\medskip
+\textit{Solución.}
+
+Identificamos $M(x,y) = y + 2xy^2$ y $N(x,y) = x - x^2y$. Multiplicamos la ecuación por el factor integrante propuesto $\lambda = x^\alpha y^\beta$:
+\[
+  (x^\alpha y^{\beta+1} + 2x^{\alpha+1} y^{\beta+2})dx + (x^{\alpha+1} y^\beta - x^{\alpha+2} y^{\beta+1})dy = 0
+\]
+Para que la ecuación sea exacta, se debe cumplir la condición de simetría de las derivadas cruzadas:
+\[
+  \frac{\partial}{\partial y}(\lambda M) = \frac{\partial}{\partial x}(\lambda N)
+\]
+Calculamos las derivadas parciales:
+\begin{align*}
+  \frac{\partial}{\partial y}(\lambda M) &= (\beta + 1)x^\alpha y^\beta + 2(\beta + 2)x^{\alpha+1} y^{\beta+1} \\
+  \frac{\partial}{\partial x}(\lambda N) &= (\alpha + 1)x^\alpha y^\beta - (\alpha + 2)x^{\alpha+1} y^{\beta+1}
+\end{align*}
+Igualando término a término los coeficientes de las potencias de $x$ e $y$:
+\begin{align*}
+  \beta + 1 &= \alpha + 1 \implies \alpha = \beta \\
+  2(\beta + 2) &= -(\alpha + 2)
+\end{align*}
+Reemplazando $\beta = \alpha$ en la segunda ecuación:
+\[
+  2(\alpha + 2) = -(\alpha + 2) \implies 3(\alpha + 2) = 0 \implies \alpha = -2
+\]
+Como $\alpha = \beta$, tenemos que $\alpha = -2$ y $\beta = -2$. Por lo tanto, el factor integrante es:
+\[
+  \lambda = x^{-2} y^{-2} = \frac{1}{x^2 y^2}
+\]
+Multiplicando la ecuación diferencial original por $\lambda$:
+\[
+  \left(\frac{1}{x^2 y} + \frac{2}{x}\right)dx + \left(\frac{1}{xy^2} - \frac{1}{y}\right)dy = 0
+\]
+Ahora la ecuación es exacta. Buscamos una función potencial $U(x,y) = C$ tal que $\frac{\partial U}{\partial x} = M'$ y $\frac{\partial U}{\partial y} = N'$. Integrando la primera respecto a $x$:
+\[
+  U(x,y) = \int \left(\frac{1}{x^2 y} + \frac{2}{x}\right)dx = -\frac{1}{xy} + 2\ln|x| + \varphi(y)
+\]
+Derivando $U(x,y)$ respecto a $y$ e igualando a $N'$:
+\[
+  \frac{\partial U}{\partial y} = \frac{1}{xy^2} + \varphi'(y) = \frac{1}{xy^2} - \frac{1}{y} \implies \varphi'(y) = -\frac{1}{y} \implies \varphi(y) = -\ln|y|
+\]
+Por lo tanto, la solución general implícita de la ecuación diferencial es:
+\[
+  2\ln|x| - \ln|y| - \frac{1}{xy} = C
+\]
+
+\medskip
+\textbf{b)} Proponga una sustitución adecuada y resuelva la ecuación diferencial:
+\[
+  y' = \frac{x^2+y^2}{x^2} + \frac{y}{x}
+\]
+
+\medskip
+\textit{Solución.}
+
+Reescribimos la ecuación dividiendo el primer término por $x^2$:
+\[
+  y' = 1 + \left(\frac{y}{x}\right)^2 + \frac{y}{x}
+\]
+Como la ecuación es homogénea, proponemos la sustitución $z = \frac{y}{x} \implies y = zx \implies y' = z + xz'$. Reemplazando en la ecuación diferencial:
+\begin{align*}
+  z + xz' &= 1 + z^2 + z \\
+  xz' &= 1 + z^2 \\
+  x \frac{dz}{dx} &= 1 + z^2
+\end{align*}
+Separando las variables:
+\[
+  \frac{dz}{1+z^2} = \frac{dx}{x}
+\]
+Integrando a ambos lados:
+\begin{align*}
+  \int \frac{dz}{1+z^2} &= \int \frac{dx}{x} \\
+  \arctan(z) &= \ln|x| + C_1 \\
+  z &= \tan(\ln|x| + C_1)
+\end{align*}
+Volviendo a la variable original $z = \frac{y}{x}$:
+\[
+  y(x) = x \tan(\ln|x| + C_1)
+\]
+
+\bigskip
+
+% ============================================================
+\textbf{Problema 2.3}
+% ============================================================
+
+\medskip
+\textbf{a)} Determinar qué relación debe existir entre los parámetros $a$ y $b$ para que las siguientes curvas sean ortogonales:
+\[
+  \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1, \quad xy = c
+\]
+
+\medskip
+\textit{Solución.}
+
+Para la primera familia de curvas (hipérbolas):
+\[
+  \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1
+\]
+Derivando implícitamente respecto a $x$:
+\[
+  \frac{2x}{a^2} - \frac{2yy'}{b^2} = 0 \implies y'_1 = \frac{b^2 x}{a^2 y}
+\]
+Para la segunda familia de curvas:
+\[
+  xy = c
+\]
+Derivando implícitamente respecto a $x$:
+\[
+  y + xy' = 0 \implies y'_2 = -\frac{y}{x}
+\]
+Para que ambas familias sean ortogonales, en cualquier punto de intersección el producto de sus pendientes debe ser $-1$:
+\begin{align*}
+  y'_1 \cdot y'_2 &= -1 \\
+  \left(\frac{b^2 x}{a^2 y}\right) \cdot \left(-\frac{y}{x}\right) &= -1 \\
+  -\frac{b^2}{a^2} &= -1 \implies a^2 = b^2
+\end{align*}
+La relación que debe existir es $a^2 = b^2$.
+
+\medskip
+\textbf{b)} Encontrar las trayectorias ortogonales a la familia de curvas:
+\[
+  \left(\rho + \frac{k^2}{\rho}\right) \cos\theta = C
+\]
+dada en coordenadas polares y donde $C$ es el parámetro de la familia.
+
+\medskip
+\textit{Solución.}
+
+Reescribimos la ecuación de la familia:
+\[
+  \rho + \frac{k^2}{\rho} = C\sec\theta
+\]
+Derivando implícitamente respecto a $\theta$:
+\[
+  \left(1 - \frac{k^2}{\rho^2}\right)\frac{d\rho}{d\theta} = C\sec\theta\tan\theta
+\]
+Dado que $C\sec\theta = \rho + \frac{k^2}{\rho} = \frac{\rho^2+k^2}{\rho}$, reemplazamos en la ecuación de la derivada para eliminar el parámetro $C$:
+\begin{align*}
+  \left(\frac{\rho^2-k^2}{\rho^2}\right)\frac{d\rho}{d\theta} &= \left(\frac{\rho^2+k^2}{\rho}\right)\tan\theta \\
+  \frac{1}{\rho}\left(\frac{\rho^2-k^2}{\rho^2+k^2}\right)\frac{d\rho}{d\theta} &= \tan\theta
+\end{align*}
+Para obtener la ecuación diferencial de la familia ortogonal, reemplazamos $\frac{d\rho}{d\theta}$ por $-\rho^2 \frac{d\theta}{d\rho}$:
+\begin{align*}
+  \frac{1}{\rho}\left(\frac{\rho^2-k^2}{\rho^2+k^2}\right)\left(-\rho^2 \frac{d\theta}{d\rho}\right) &= \tan\theta \\
+  -\rho\left(\frac{\rho^2-k^2}{\rho^2+k^2}\right)\frac{d\theta}{d\rho} &= \tan\theta
+\end{align*}
+Separando las variables $\theta$ y $\rho$:
+\[
+  -\cot\theta\,d\theta = \frac{\rho^2+k^2}{\rho(\rho^2-k^2)}\,d\rho
+\]
+Integrando a ambos lados:
+\[
+  \int -\cot\theta\,d\theta = \int \frac{\rho^2+k^2}{\rho(\rho^2-k^2)}\,d\rho
+\]
+La integral del lado izquierdo es $-\ln|\sin\theta|$. Para la integral del lado derecho, realizamos una descomposición en fracciones parciales para el integrando:
+\[
+  \frac{\rho^2+k^2}{\rho(\rho-k)(\rho+k)} = \frac{A}{\rho} + \frac{B}{\rho-k} + \frac{C_0}{\rho+k}
+\]
+Determinando las constantes mediante el método de residuos:
+\begin{align*}
+  A &= \lim_{\rho\to 0} \frac{\rho^2+k^2}{\rho^2-k^2} = \frac{k^2}{-k^2} = -1 \\
+  B &= \lim_{\rho\to k} \frac{\rho^2+k^2}{\rho(\rho+k)} = \frac{2k^2}{2k^2} = 1 \\
+  C_0 &= \lim_{\rho\to -k} \frac{\rho^2+k^2}{\rho(\rho-k)} = \frac{2k^2}{2k^2} = 1
+\end{align*}
+Entonces:
+\begin{align*}
+  \int \frac{\rho^2+k^2}{\rho(\rho^2-k^2)}\,d\rho &= \int \left(-\frac{1}{\rho} + \frac{1}{\rho-k} + \frac{1}{\rho+k}\right)d\rho \\
+  &= -\ln|\rho| + \ln|\rho-k| + \ln|\rho+k| + \ln C_1 \\
+  &= \ln\left|\frac{\rho^2-k^2}{\rho}\right| + \ln C_1
+\end{align*}
+Igualando ambas integrales:
+\begin{align*}
+  -\ln|\sin\theta| &= \ln\left|\frac{\rho^2-k^2}{\rho}\right| - \ln C_1 \\
+  \ln\left|\frac{C_1}{\sin\theta}\right| &= \ln\left|\frac{\rho^2-k^2}{\rho}\right| \\
+  \frac{C_1}{\sin\theta} &= \frac{\rho^2-k^2}{\rho}
+\end{align*}
+Finalmente, despejando la constante $C_1$:
+\[
+  \left(\rho - \frac{k^2}{\rho}\right)\sin\theta = C_1
+\]
+
+\end{document}

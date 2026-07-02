@@ -1,0 +1,1767 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Wang2015QSM}{article}{}
+      \name{author}{2}{}{%
+        {{hash=141a1e7404c5b53546fb09821c56717a}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=4e64e6d580d246c262e8ee86ea082dde}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Tian},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{d2d0ee346591c615d15f1158b3b8bf85}
+      \strng{fullhash}{d2d0ee346591c615d15f1158b3b8bf85}
+      \strng{bibnamehash}{d2d0ee346591c615d15f1158b3b8bf85}
+      \strng{authorbibnamehash}{d2d0ee346591c615d15f1158b3b8bf85}
+      \strng{authornamehash}{d2d0ee346591c615d15f1158b3b8bf85}
+      \strng{authorfullhash}{d2d0ee346591c615d15f1158b3b8bf85}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Magnetic Resonance in Medicine}
+      \field{note}{Q1 WOS — Magnetic Resonance in Medicine}
+      \field{number}{1}
+      \field{title}{Quantitative susceptibility mapping ({QSM}): Decoding {MRI} data for a tissue magnetic biomarker}
+      \field{volume}{73}
+      \field{year}{2015}
+      \field{pages}{82\bibrangedash 101}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1002/mrm.25358
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.25358
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/full/10.1002/mrm.25358
+      \endverb
+    \endentry
+    \entry{Deistung2017Review}{article}{}
+      \name{author}{3}{}{%
+        {{hash=8a9d725150d0ca54e41881f9483c069c}{%
+           family={Deistung},
+           familyi={D\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c8fb16f26e96c4908a6eef67ea1b3bc5}{%
+           family={Schweser},
+           familyi={S\bibinitperiod},
+           given={Ferdinand},
+           giveni={F\bibinitperiod}}}%
+        {{hash=f9801e296a77f8b8b1816d89e64e9ee1}{%
+           family={Reichenbach},
+           familyi={R\bibinitperiod},
+           given={Jürgen\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{0599468ef9d4647b687973f4ca98da2d}
+      \strng{fullhash}{0599468ef9d4647b687973f4ca98da2d}
+      \strng{bibnamehash}{0599468ef9d4647b687973f4ca98da2d}
+      \strng{authorbibnamehash}{0599468ef9d4647b687973f4ca98da2d}
+      \strng{authornamehash}{0599468ef9d4647b687973f4ca98da2d}
+      \strng{authorfullhash}{0599468ef9d4647b687973f4ca98da2d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NMR in Biomedicine}
+      \field{note}{Q1 WOS}
+      \field{number}{4}
+      \field{title}{Overview of quantitative susceptibility mapping}
+      \field{volume}{30}
+      \field{year}{2017}
+      \field{pages}{e3569}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1002/nbm.3569
+      \endverb
+    \endentry
+    \entry{Wharton2010COSMOS}{article}{}
+      \name{author}{3}{}{%
+        {{hash=a9b21427c4b16e57d6884c047f1e0647}{%
+           family={Wharton},
+           familyi={W\bibinitperiod},
+           given={Samuel},
+           giveni={S\bibinitperiod}}}%
+        {{hash=49393f066cb117d9d12852535e570ee2}{%
+           family={Schäfer},
+           familyi={S\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b67f730b46c0f12bc333b50816161ce4}{%
+           family={Bowtell},
+           familyi={B\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{e29f580ae1059501dbfb02562b39a622}
+      \strng{fullhash}{e29f580ae1059501dbfb02562b39a622}
+      \strng{bibnamehash}{e29f580ae1059501dbfb02562b39a622}
+      \strng{authorbibnamehash}{e29f580ae1059501dbfb02562b39a622}
+      \strng{authornamehash}{e29f580ae1059501dbfb02562b39a622}
+      \strng{authorfullhash}{e29f580ae1059501dbfb02562b39a622}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Magnetic Resonance in Medicine}
+      \field{note}{Q1 WOS}
+      \field{number}{5}
+      \field{title}{Susceptibility mapping in the human brain using threshold-based k-space division}
+      \field{volume}{63}
+      \field{year}{2010}
+      \field{pages}{1292\bibrangedash 1304}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1002/mrm.22334
+      \endverb
+    \endentry
+    \entry{Liu2011MEDI}{article}{}
+      \name{author}{11}{}{%
+        {{hash=83f95dca7c81df3fe67380769eb0321c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jing},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4e64e6d580d246c262e8ee86ea082dde}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Tian},
+           giveni={T\bibinitperiod}}}%
+        {{hash=80f3ea0b07e5d61b43331dc3a1061eab}{%
+           family={Rochefort},
+           familyi={R\bibinitperiod},
+           given={Ludovic},
+           giveni={L\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=552692c0fa228cdc69ed32b660baa582}{%
+           family={Ledoux},
+           familyi={L\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7038d567a4b22e793a3b2da3b48ebad1}{%
+           family={Khalidov},
+           familyi={K\bibinitperiod},
+           given={Ildar},
+           giveni={I\bibinitperiod}}}%
+        {{hash=06debc36f6b61a405e8f0da1c7ccd6ca}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=ab7fbe9ce84027688dbc6c1c2bdb5127}{%
+           family={Tsiouris},
+           familyi={T\bibinitperiod},
+           given={Andrew\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=2a1a048338c3f7721f3ece01822bac77}{%
+           family={Wisnieff},
+           familyi={W\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6ca22dbdebfb05d22f0281324498df9d}{%
+           family={Spincemaille},
+           familyi={S\bibinitperiod},
+           given={Pascal},
+           giveni={P\bibinitperiod}}}%
+        {{hash=1161061bf45bfe50e99a9e12c0708329}{%
+           family={Prince},
+           familyi={P\bibinitperiod},
+           given={Martin\bibnamedelima R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=141a1e7404c5b53546fb09821c56717a}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{e5bd7c7d70238c2c10b0a197391b05cd}
+      \strng{fullhash}{27adbccdf129537dda1ff6bb72df4fb9}
+      \strng{bibnamehash}{ba9de7bab4bd6fb2a56075419a3a72ad}
+      \strng{authorbibnamehash}{ba9de7bab4bd6fb2a56075419a3a72ad}
+      \strng{authornamehash}{e5bd7c7d70238c2c10b0a197391b05cd}
+      \strng{authorfullhash}{27adbccdf129537dda1ff6bb72df4fb9}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Magnetic Resonance in Medicine}
+      \field{note}{Q1 WOS — Algoritmo MEDI original}
+      \field{number}{3}
+      \field{title}{Morphology enabled dipole inversion ({MEDI}) from a single-angle acquisition: Comparison with {COSMOS} in human brain imaging}
+      \field{volume}{66}
+      \field{year}{2011}
+      \field{pages}{777\bibrangedash 783}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1002/mrm.22816
+      \endverb
+    \endentry
+    \entry{Yoon2018QSMnet}{article}{}
+      \name{author}{13}{}{%
+        {{hash=a8da6ed5d12dea5eb750c7ea5972d9ea}{%
+           family={Yoon},
+           familyi={Y\bibinitperiod},
+           given={Jaeyeon},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7c7678abcb37febc71d5e82a3d4b80bf}{%
+           family={Gong},
+           familyi={G\bibinitperiod},
+           given={Enhao},
+           giveni={E\bibinitperiod}}}%
+        {{hash=70837e60a5e38f19aac5b89c96c886ca}{%
+           family={Chatnuntawech},
+           familyi={C\bibinitperiod},
+           given={Itthi},
+           giveni={I\bibinitperiod}}}%
+        {{hash=53785fe643b5350e7fe760f44bc6bbcc}{%
+           family={Bilgic},
+           familyi={B\bibinitperiod},
+           given={Berkin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=27159c15e6c7bd69a9b4c66206d2d292}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jingu},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9409b0c6c1fc71074aa9e541adb2d465}{%
+           family={Jung},
+           familyi={J\bibinitperiod},
+           given={Woncheol},
+           giveni={W\bibinitperiod}}}%
+        {{hash=1806cf2ca2d8d9616259c4ac1db76784}{%
+           family={Ko},
+           familyi={K\bibinitperiod},
+           given={Jingyu},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4de03f10998ff210452399d54a3dfe3f}{%
+           family={Jung},
+           familyi={J\bibinitperiod},
+           given={Hyunsung},
+           giveni={H\bibinitperiod}}}%
+        {{hash=40738f74f3359442eb7cd059e203fe7d}{%
+           family={Setsompop},
+           familyi={S\bibinitperiod},
+           given={Kawin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=53f066cadd6590f0c9cab64d6847ece0}{%
+           family={Zaharchuk},
+           familyi={Z\bibinitperiod},
+           given={Greg},
+           giveni={G\bibinitperiod}}}%
+        {{hash=ac1e8b73795d824380f725fa5d6c3302}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Eung\bibnamedelima Yeop},
+           giveni={E\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=75fa0c21fc046bd8846e342f7e3a933e}{%
+           family={Pauly},
+           familyi={P\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f8891d3496fd2b41f0caf714fea946f1}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jongho},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a49762163bb072002adcd404b3ad051f}
+      \strng{fullhash}{599fa47a17f8f9d554d298a71420c558}
+      \strng{bibnamehash}{6711c27e0a0cf79a73891fe156ff0a04}
+      \strng{authorbibnamehash}{6711c27e0a0cf79a73891fe156ff0a04}
+      \strng{authornamehash}{a49762163bb072002adcd404b3ad051f}
+      \strng{authorfullhash}{599fa47a17f8f9d554d298a71420c558}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NeuroImage}
+      \field{note}{Q1 WOS — Red QSMnet original}
+      \field{title}{Quantitative susceptibility mapping using deep neural network: {QSMnet}}
+      \field{volume}{179}
+      \field{year}{2018}
+      \field{pages}{199\bibrangedash 206}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/j.neuroimage.2018.06.030
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/pdf/1803.05627
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/pdf/1803.05627
+      \endverb
+    \endentry
+    \entry{Cai2021ProxiMO}{article}{}
+      \name{author}{9}{}{%
+        {{hash=39e110f39f03d205f9e38e190b88783b}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Chenglong},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9e73bc01610cf5c214895f05456ae613}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Weijie},
+           giveni={W\bibinitperiod}}}%
+        {{hash=102e6f052873ef52848149a142994ceb}{%
+           family={Weng},
+           familyi={W\bibinitperiod},
+           given={Xiuli},
+           giveni={X\bibinitperiod}}}%
+        {{hash=5a3550d859144ceddbcce03e22873413}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Guoqiang},
+           giveni={G\bibinitperiod}}}%
+        {{hash=19de238b796b164102a0541b378c621a}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jiashuo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=41028368e6169b6177f4b66947f5eed0}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Tong},
+           giveni={T\bibinitperiod}}}%
+        {{hash=2fc5b39bcbec66e73ae74866056b0b5c}{%
+           family={Cai},
+           familyi={C\bibinitperiod},
+           given={Daoqing},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2e0e336fca966f90e64dea2d47de91ec}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Muyuan},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9eb602ba798f0d45076f9113b702dae5}{%
+           family={Ying},
+           familyi={Y\bibinitperiod},
+           given={Leslie},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{16457e02e473aaf57fe65d9f384e0472}
+      \strng{fullhash}{2cc61c4c5492cf4f0d9ba4a583603005}
+      \strng{bibnamehash}{e1df17745d6e937c924204daf04769fa}
+      \strng{authorbibnamehash}{e1df17745d6e937c924204daf04769fa}
+      \strng{authornamehash}{16457e02e473aaf57fe65d9f384e0472}
+      \strng{authorfullhash}{2cc61c4c5492cf4f0d9ba4a583603005}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Medical Imaging}
+      \field{note}{Q1 WOS}
+      \field{title}{{ProxiMO}: Proximal Multi-operator Networks for Quantitative Susceptibility Mapping}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1109/TMI.2024.3523456
+      \endverb
+      \verb{urlraw}
+      \verb https://pubmed.ncbi.nlm.nih.gov/39776602/
+      \endverb
+      \verb{url}
+      \verb https://pubmed.ncbi.nlm.nih.gov/39776602/
+      \endverb
+    \endentry
+    \entry{Karsa2024Consensus}{article}{}
+      \name{author}{3}{}{%
+        {{hash=989e9a23808271a755c7519007d8a89f}{%
+           family={Karsa},
+           familyi={K\bibinitperiod},
+           given={Anita},
+           giveni={A\bibinitperiod}}}%
+        {{hash=80ca3dacd9f717534a9474a55fa718f1}{%
+           family={Shmueli},
+           familyi={S\bibinitperiod},
+           given={Karin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=e10a8d27ec58e149ac8194107128a290}{%
+           family={{ISMRM Electro-Magnetic Tissue Properties Study Group}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{0b1f0a456a1f1715cf6b348e040398e8}
+      \strng{fullhash}{0b1f0a456a1f1715cf6b348e040398e8}
+      \strng{bibnamehash}{0b1f0a456a1f1715cf6b348e040398e8}
+      \strng{authorbibnamehash}{0b1f0a456a1f1715cf6b348e040398e8}
+      \strng{authornamehash}{0b1f0a456a1f1715cf6b348e040398e8}
+      \strng{authorfullhash}{0b1f0a456a1f1715cf6b348e040398e8}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Magnetic Resonance in Medicine}
+      \field{note}{Q1 WOS — Consenso ISMRM 2024}
+      \field{title}{Recommended implementation of quantitative susceptibility mapping for clinical research in the brain: A consensus of the {ISMRM} electro-magnetic tissue properties study group}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1002/mrm.30006
+      \endverb
+      \verb{urlraw}
+      \verb https://pubmed.ncbi.nlm.nih.gov/38247051/
+      \endverb
+      \verb{url}
+      \verb https://pubmed.ncbi.nlm.nih.gov/38247051/
+      \endverb
+    \endentry
+    \entry{Shin2021ChiSep}{article}{}
+      \name{author}{11}{}{%
+        {{hash=9424507bb8551a470c516adb456b230c}{%
+           family={Shin},
+           familyi={S\bibinitperiod},
+           given={Hyeong-Geol},
+           giveni={H\bibinithyphendelim G\bibinitperiod}}}%
+        {{hash=27159c15e6c7bd69a9b4c66206d2d292}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jingu},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f3403b5a6ea1410851e95191aab4029a}{%
+           family={Youn},
+           familyi={Y\bibinitperiod},
+           given={Yoon\bibnamedelima Hwa},
+           giveni={Y\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=3a1eb032010820015c38a8442cb0af99}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Sooyeon},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b678e94d9e3fbcb710a8305f5bbe5415}{%
+           family={Lim},
+           familyi={L\bibinitperiod},
+           given={Seongeun},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0b2b2378011efeb52df13d3489c9764c}{%
+           family={Oh},
+           familyi={O\bibinitperiod},
+           given={Se-Hong},
+           giveni={S\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=3c1144f67eb27dd8394945a663b7d27c}{%
+           family={Nam},
+           familyi={N\bibinitperiod},
+           given={Yoonho},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9409b0c6c1fc71074aa9e541adb2d465}{%
+           family={Jung},
+           familyi={J\bibinitperiod},
+           given={Woncheol},
+           giveni={W\bibinitperiod}}}%
+        {{hash=d9afab65b59410d698652e896e4337cc}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Seon},
+           giveni={S\bibinitperiod}}}%
+        {{hash=eef4f316a63768c48c46f99c63d605fd}{%
+           family={Moon},
+           familyi={M\bibinitperiod},
+           given={Won-Jin},
+           giveni={W\bibinithyphendelim J\bibinitperiod}}}%
+        {{hash=f8891d3496fd2b41f0caf714fea946f1}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jongho},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{167a05f5ebfd14da245ee0e3f97e19a2}
+      \strng{fullhash}{9b2626e4dca1873d0f76a3e393df7c97}
+      \strng{bibnamehash}{abbb1d3c1684f20245e51fcfb53bfc54}
+      \strng{authorbibnamehash}{abbb1d3c1684f20245e51fcfb53bfc54}
+      \strng{authornamehash}{167a05f5ebfd14da245ee0e3f97e19a2}
+      \strng{authorfullhash}{9b2626e4dca1873d0f76a3e393df7c97}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NeuroImage}
+      \field{note}{Q1 WOS — Método chi-separation}
+      \field{title}{$\chi$-separation: Magnetic susceptibility source separation toward iron and myelin mapping in the brain}
+      \field{volume}{240}
+      \field{year}{2021}
+      \field{pages}{118371}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.neuroimage.2021.118371
+      \endverb
+    \endentry
+    \entry{Min2024Atlas}{article}{}
+      \name{author}{4}{}{%
+        {{hash=6bbeb523db7018bc4990db701c28a119}{%
+           family={Min},
+           familyi={M\bibinitperiod},
+           given={Kyeongseon},
+           giveni={K\bibinitperiod}}}%
+        {{hash=9424507bb8551a470c516adb456b230c}{%
+           family={Shin},
+           familyi={S\bibinitperiod},
+           given={Hyeong-Geol},
+           giveni={H\bibinithyphendelim G\bibinitperiod}}}%
+        {{hash=0b2b2378011efeb52df13d3489c9764c}{%
+           family={Oh},
+           familyi={O\bibinitperiod},
+           given={Se-Hong},
+           giveni={S\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=f8891d3496fd2b41f0caf714fea946f1}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jongho},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{961d06c69ea0c5b77604366590743206}
+      \strng{fullhash}{ca735e41402fd6c9c22b2d319f3dc0d4}
+      \strng{bibnamehash}{ca735e41402fd6c9c22b2d319f3dc0d4}
+      \strng{authorbibnamehash}{ca735e41402fd6c9c22b2d319f3dc0d4}
+      \strng{authornamehash}{961d06c69ea0c5b77604366590743206}
+      \strng{authorfullhash}{ca735e41402fd6c9c22b2d319f3dc0d4}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NMR in Biomedicine}
+      \field{note}{Q1 WOS — Atlas normativo hierro/mielina}
+      \field{title}{A human brain atlas of $\chi$-separation for normative iron and myelin distributions}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1002/nbm.5226
+      \endverb
+      \verb{urlraw}
+      \verb https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/nbm.5226
+      \endverb
+      \verb{url}
+      \verb https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/nbm.5226
+      \endverb
+    \endentry
+    \entry{Dimov2024ARCS}{article}{}
+      \name{author}{5}{}{%
+        {{hash=cf9b58b352662e0fc02dc32dbb60bfe2}{%
+           family={Dimov},
+           familyi={D\bibinitperiod},
+           given={Alexey\bibnamedelima V.},
+           giveni={A\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=92db6a9ee780709d45f7b132fac9beec}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Thanh\bibnamedelima D.},
+           giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=6ca22dbdebfb05d22f0281324498df9d}{%
+           family={Spincemaille},
+           familyi={S\bibinitperiod},
+           given={Pascal},
+           giveni={P\bibinitperiod}}}%
+        {{hash=1161061bf45bfe50e99a9e12c0708329}{%
+           family={Prince},
+           familyi={P\bibinitperiod},
+           given={Martin\bibnamedelima R.},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=141a1e7404c5b53546fb09821c56717a}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{840d186bed33715f0fc0432a4b56061a}
+      \strng{fullhash}{8d9fa9dc66963bafb0b9d7698ab426c5}
+      \strng{bibnamehash}{8d9fa9dc66963bafb0b9d7698ab426c5}
+      \strng{authorbibnamehash}{8d9fa9dc66963bafb0b9d7698ab426c5}
+      \strng{authornamehash}{840d186bed33715f0fc0432a4b56061a}
+      \strng{authorfullhash}{8d9fa9dc66963bafb0b9d7698ab426c5}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NeuroImage}
+      \field{note}{Q1 WOS}
+      \field{title}{Quantitative susceptibility mapping for susceptibility source separation with adaptive relaxometric constant estimation ({QSM-ARCS}) from solely gradient-echo data}
+      \field{volume}{293}
+      \field{year}{2024}
+      \field{pages}{120611}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.neuroimage.2024.120611
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S105381192400171X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S105381192400171X
+      \endverb
+    \endentry
+    \entry{Gao2020DLoverview}{article}{}
+      \name{author}{7}{}{%
+        {{hash=9225199772ac7b71107e9178bd4c66f8}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Yuchou},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=dc8b270f7706dc59f24e900f91faafef}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xucheng},
+           giveni={X\bibinitperiod}}}%
+        {{hash=13dcee2222ca813b6876374fe6502726}{%
+           family={Moffat},
+           familyi={M\bibinitperiod},
+           given={Bradford\bibnamedelima A.},
+           giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=0f0d583db709e2ac6fedc6935b7d5467}{%
+           family={Glarin},
+           familyi={G\bibinitperiod},
+           given={Rebecca},
+           giveni={R\bibinitperiod}}}%
+        {{hash=fa5bf0ba8ace64033117cb926eca44b6}{%
+           family={Wilman},
+           familyi={W\bibinitperiod},
+           given={Alan\bibnamedelima H.},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=f99b1510a5d610331097e43bcf5aae31}{%
+           family={Pike},
+           familyi={P\bibinitperiod},
+           given={G.\bibnamedelimi Bruce},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=b40b2483bdd51bc12ff6a254ec3953d3}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{18e0d2d95a4ac1231dd001df6005ab95}
+      \strng{fullhash}{03542da12864be2ea73dc2099d342aa4}
+      \strng{bibnamehash}{2e429baec07ec21f183935419095f616}
+      \strng{authorbibnamehash}{2e429baec07ec21f183935419095f616}
+      \strng{authornamehash}{18e0d2d95a4ac1231dd001df6005ab95}
+      \strng{authorfullhash}{03542da12864be2ea73dc2099d342aa4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NMR in Biomedicine}
+      \field{note}{Q1 WOS — Revisión aprendizaje profundo en QSM}
+      \field{number}{4}
+      \field{title}{Overview of quantitative susceptibility mapping using deep learning: Current status, challenges and opportunities}
+      \field{volume}{35}
+      \field{year}{2022}
+      \field{pages}{e4292}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1002/nbm.4292
+      \endverb
+      \verb{urlraw}
+      \verb https://pubmed.ncbi.nlm.nih.gov/32207195/
+      \endverb
+      \verb{url}
+      \verb https://pubmed.ncbi.nlm.nih.gov/32207195/
+      \endverb
+    \endentry
+    \entry{QSMbody2023}{article}{}
+      \name{author}{9}{}{%
+        {{hash=b8fd3689a23a29b6cd4b349a058018f3}{%
+           family={Straub},
+           familyi={S\bibinitperiod},
+           given={Sina},
+           giveni={S\bibinitperiod}}}%
+        {{hash=dc7f76263ae79c9a5983840b1f2449c2}{%
+           family={Laun},
+           familyi={L\bibinitperiod},
+           given={Frederik\bibnamedelima Bernd},
+           giveni={F\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=a606a9783e6bd389f37326226778b9dd}{%
+           family={Emmerich},
+           familyi={E\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+        {{hash=54af9f8096c4aa80deef887d39f7cf99}{%
+           family={Kopp-Schneider},
+           familyi={K\bibinithyphendelim S\bibinitperiod},
+           given={Annette},
+           giveni={A\bibinitperiod}}}%
+        {{hash=75913bd426561c8de263f9b2e4cbbb19}{%
+           family={Schlemmer},
+           familyi={S\bibinitperiod},
+           given={Heinz-Peter},
+           giveni={H\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=385402a644ea718fbefa94a662d819bc}{%
+           family={Ladd},
+           familyi={L\bibinitperiod},
+           given={Mark\bibnamedelima E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=bd8048dfae86152f2e6781f0fa9a1a29}{%
+           family={Ziener},
+           familyi={Z\bibinitperiod},
+           given={Christian\bibnamedelima H.},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=e111a6f496137793882dd240f9d9b7bf}{%
+           family={Bonekamp},
+           familyi={B\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0b872bb6a6b5c2162fd858e99529a2c2}{%
+           family={Nagel},
+           familyi={N\bibinitperiod},
+           given={Armin\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{e75d9fd6c9862aaf4af1e18da0226a92}
+      \strng{fullhash}{22131aee7c3ac5592b8dfd7121b485f5}
+      \strng{bibnamehash}{51ed376bbb2a59e56f54d4ded3a4d77d}
+      \strng{authorbibnamehash}{51ed376bbb2a59e56f54d4ded3a4d77d}
+      \strng{authornamehash}{e75d9fd6c9862aaf4af1e18da0226a92}
+      \strng{authorfullhash}{22131aee7c3ac5592b8dfd7121b485f5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Magnetic Resonance Imaging}
+      \field{note}{Q1 WOS — QSM en órganos no cerebrales}
+      \field{number}{5}
+      \field{title}{{QSM} throughout the body}
+      \field{volume}{57}
+      \field{year}{2023}
+      \field{pages}{1365\bibrangedash 1385}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1002/jmri.28612
+      \endverb
+      \verb{urlraw}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC10192074/
+      \endverb
+      \verb{url}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC10192074/
+      \endverb
+    \endentry
+    \entry{Langkammer2016PD}{article}{}
+      \name{author}{11}{}{%
+        {{hash=545f4874cd0f254b7f741b9b276d0cef}{%
+           family={Langkammer},
+           familyi={L\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f3a6216a9196cdf813b1205a58219af0}{%
+           family={Pirpamer},
+           familyi={P\bibinitperiod},
+           given={Lukas},
+           giveni={L\bibinitperiod}}}%
+        {{hash=e8250b4c786cf2d0cb1c13ab243081c2}{%
+           family={Seiler},
+           familyi={S\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=8a9d725150d0ca54e41881f9483c069c}{%
+           family={Deistung},
+           familyi={D\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c8fb16f26e96c4908a6eef67ea1b3bc5}{%
+           family={Schweser},
+           familyi={S\bibinitperiod},
+           given={Ferdinand},
+           giveni={F\bibinitperiod}}}%
+        {{hash=a3d04719bc3262c09a4de244fbd98cb0}{%
+           family={Franthal},
+           familyi={F\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=bed06e0f1fa43382289452b14f02af3d}{%
+           family={Kovacs},
+           familyi={K\bibinitperiod},
+           given={Gabor\bibnamedelima G.},
+           giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=3c47afe2a1512cc26c61c67637e8f315}{%
+           family={Ropele},
+           familyi={R\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c58d375ba6b16cfa082c924295bcd6db}{%
+           family={Fazekas},
+           familyi={F\bibinitperiod},
+           given={Franz},
+           giveni={F\bibinitperiod}}}%
+        {{hash=1f0645ba7b2f10e41c84717714bfd41a}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Reinhold},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f9801e296a77f8b8b1816d89e64e9ee1}{%
+           family={Reichenbach},
+           familyi={R\bibinitperiod},
+           given={Jürgen\bibnamedelima R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{d87fcbf7aac465614645b3e99fa93a90}
+      \strng{fullhash}{91305f54f6d0d350f11f53b5bec34a02}
+      \strng{bibnamehash}{d0bcf6be79fec30ff2a59e8a40c233b6}
+      \strng{authorbibnamehash}{d0bcf6be79fec30ff2a59e8a40c233b6}
+      \strng{authornamehash}{d87fcbf7aac465614645b3e99fa93a90}
+      \strng{authorfullhash}{91305f54f6d0d350f11f53b5bec34a02}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PLOS ONE}
+      \field{note}{Q1 WOS}
+      \field{number}{9}
+      \field{title}{Quantitative susceptibility mapping in {Parkinson's} disease}
+      \field{volume}{11}
+      \field{year}{2016}
+      \field{pages}{e0162460}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0162460
+      \endverb
+    \endentry
+    \entry{Zhang2024PDreview}{article}{}
+      \name{author}{5}{}{%
+        {{hash=d51b9e73f3798574b24799116c78dca2}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yuyao},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=266e165e4c89fcc7e031315b125de43c}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Zonglei},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=0338e44fb07048b2fd1216c1ce3c745a}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Lijun},
+           giveni={L\bibinitperiod}}}%
+        {{hash=eb8a42d0f340b5937ffababc92a7d4ae}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={Hongjiang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=ea2acbfa454e023189d3a6658b8b0e2a}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a72d4fbae7117ae10c692557849fa50e}
+      \strng{fullhash}{fa326a63efb59b6f3e9cdfbc77b995d3}
+      \strng{bibnamehash}{fa326a63efb59b6f3e9cdfbc77b995d3}
+      \strng{authorbibnamehash}{fa326a63efb59b6f3e9cdfbc77b995d3}
+      \strng{authornamehash}{a72d4fbae7117ae10c692557849fa50e}
+      \strng{authorfullhash}{fa326a63efb59b6f3e9cdfbc77b995d3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NeuroImage}
+      \field{note}{Q1 WOS — Revisión completa QSM en Parkinson 2024}
+      \field{title}{Neuroimaging of {Parkinson's} disease by quantitative susceptibility mapping}
+      \field{volume}{288}
+      \field{year}{2024}
+      \field{pages}{120546}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.neuroimage.2024.120546
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1053811924000429
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1053811924000429
+      \endverb
+    \endentry
+    \entry{APARTPD2025}{article}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{npj Parkinson's Disease}
+      \field{note}{Q1 WOS (Nature Publishing Group) — APART-QSM superior a QSM total en PD-RBD}
+      \field{title}{Paramagnetic susceptibility mapping better quantifies brain iron content in {Parkinson's} disease with {RBD}}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1038/s41531-025-01043-7
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41531-025-01043-7
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41531-025-01043-7
+      \endverb
+    \endentry
+    \entry{iRBD2025}{article}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{npj Parkinson's Disease}
+      \field{note}{Q1 WOS (Nature Publishing Group) — QSM predice conversion de iRBD a Parkinson}
+      \field{title}{Susceptibility and diffusion {MRI} biomarkers predict development of {Parkinsonism} in {iRBD}}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1038/s41531-025-01174-x
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41531-025-01174-x
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41531-025-01174-x
+      \endverb
+    \endentry
+    \entry{Mansueto2024Holography}{article}{}
+      \name{author}{11}{}{%
+        {{hash=2f9d70e072618d5e4f810f9677f16854}{%
+           family={Mansueto},
+           familyi={M\bibinitperiod},
+           given={Giancarlo},
+           giveni={G\bibinitperiod}}}%
+        {{hash=3f4777428234ec412e93d0ea7edf1715}{%
+           family={Spasojevic},
+           familyi={S\bibinitperiod},
+           given={Milos},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1bd9fed547614818343b4efd15b559fb}{%
+           family={Tran},
+           familyi={T\bibinitperiod},
+           given={Manh-Huong},
+           giveni={M\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=cc6795f826e886370f566e5aa8a5e7d3}{%
+           family={Dumas},
+           familyi={D\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=afc2904989ae8dd46ea18be861a2facd}{%
+           family={Trouilloud},
+           familyi={T\bibinitperiod},
+           given={Dave},
+           giveni={D\bibinitperiod}}}%
+        {{hash=7f506bc17bc14e8a20cde2ab1f9ed05f}{%
+           family={Baltz},
+           familyi={B\bibinitperiod},
+           given={Vincent},
+           giveni={V\bibinitperiod}}}%
+        {{hash=841861766d0492292095d4bd6283e6b9}{%
+           family={Joumard},
+           familyi={J\bibinitperiod},
+           given={Isabelle},
+           giveni={I\bibinitperiod}}}%
+        {{hash=f27ac22373d74a801ffa36eacea7af21}{%
+           family={Bayle-Guillemaud},
+           familyi={B\bibinithyphendelim G\bibinitperiod},
+           given={Patricia},
+           giveni={P\bibinitperiod}}}%
+        {{hash=18f210a8f224f3bf3f0ff7a6c5435240}{%
+           family={Courtois},
+           familyi={C\bibinitperiod},
+           given={Hervé},
+           giveni={H\bibinitperiod}}}%
+        {{hash=073b37dc3e242245db58cee11081c7df}{%
+           family={Alemány},
+           familyi={A\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=36c1e3105e6aebb098ff2fd04b7e9603}{%
+           family={Vogel},
+           familyi={V\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{264d3e7eee550a067faaa3317447b24a}
+      \strng{fullhash}{d02f466fd739cb3ae305c5d7c30d52d6}
+      \strng{bibnamehash}{8a7dc0ddf76f8fea9092e20f81df3f82}
+      \strng{authorbibnamehash}{8a7dc0ddf76f8fea9092e20f81df3f82}
+      \strng{authornamehash}{264d3e7eee550a067faaa3317447b24a}
+      \strng{authorfullhash}{d02f466fd739cb3ae305c5d7c30d52d6}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nanomaterials}
+      \field{note}{Q1 WOS — Holografía electrónica para imanes permanentes}
+      \field{number}{24}
+      \field{title}{Electron Holography for Advanced Characterization of Permanent Magnets: Demagnetization Field Mapping and Enhanced Precision in Phase Analysis}
+      \field{volume}{14}
+      \field{year}{2024}
+      \field{pages}{2046}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/nano14242046
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2079-4991/14/24/2046
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2079-4991/14/24/2046
+      \endverb
+    \endentry
+    \entry{Ltz4DSTEM2024}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=623f9f977cbe447c31e2355037bce65f}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Lucas},
+           giveni={L\bibinitperiod}}}%
+        {{hash=0d70c9869dd01ff64164c36e29054b97}{%
+           family={Kohtz},
+           familyi={K\bibinitperiod},
+           given={Sarah\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ee08d1820627986964f42d576c8af06e}{%
+           family={Manna},
+           familyi={M\bibinitperiod},
+           given={Swastik},
+           giveni={S\bibinitperiod}}}%
+        {{hash=dbfb6a0df920c15bdd133a16f14f7525}{%
+           family={Turnbull},
+           familyi={T\bibinitperiod},
+           given={Mason\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=274188d0be0a514149e9d2502d571d30}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Yimei},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{a3190b91d3e314e417bf41e1a7480bea}
+      \strng{fullhash}{fd8aefc9f1a5606e76ce9a9469fa3750}
+      \strng{bibnamehash}{fd8aefc9f1a5606e76ce9a9469fa3750}
+      \strng{authorbibnamehash}{fd8aefc9f1a5606e76ce9a9469fa3750}
+      \strng{authornamehash}{a3190b91d3e314e417bf41e1a7480bea}
+      \strng{authorfullhash}{fd8aefc9f1a5606e76ce9a9469fa3750}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cond-mat.mtrl-sci}
+      \field{eprinttype}{arXiv}
+      \field{note}{Preprint arXiv 2024; publicado en Physical Review Applied 2025. DOI: 10.1103/PhysRevApplied.23.044023}
+      \field{title}{Quantitative Phase Retrieval and Characterization of Magnetic Nanostructures via {Lorentz (Scanning) Transmission Electron Microscopy}}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.48550/arXiv.2412.21005
+      \endverb
+      \verb{eprint}
+      \verb 2412.21005
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2412.21005
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2412.21005
+      \endverb
+    \endentry
+    \entry{NanowireIterative2024}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{note}{Preprint 2024, enviado a Microscopy and Microanalysis}
+      \field{title}{Model-Based Iterative Reconstruction of Three-Dimensional Magnetisation in a Nanowire Structure Using Electron Holographic Vector Field Tomography}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2411.15323
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2411.15323
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2411.15323
+      \endverb
+    \endentry
+    \entry{Ptychography2023}{article}{}
+      \name{author}{5}{}{%
+        {{hash=4e8cd13c4f093a0e3984ab6a31fb3f77}{%
+           family={Pelz},
+           familyi={P\bibinitperiod},
+           given={Philipp\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=0e543c3a8c3d80ca9c6d2c1d0357563e}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Isaac},
+           giveni={I\bibinitperiod}}}%
+        {{hash=e2c953f9deb094057183c4576b6492d0}{%
+           family={Ophus},
+           familyi={O\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod}}}%
+        {{hash=16dae7687df2ea65791a694dd141b514}{%
+           family={Ercius},
+           familyi={E\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=73d110fe5bfa79960bb35337c121771e}{%
+           family={Scott},
+           familyi={S\bibinitperiod},
+           given={Mary\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{76e6c5f96921baea7d4822dcffeb491f}
+      \strng{fullhash}{c1c490c0c05e44279eb8c277ec4657ee}
+      \strng{bibnamehash}{c1c490c0c05e44279eb8c277ec4657ee}
+      \strng{authorbibnamehash}{c1c490c0c05e44279eb8c277ec4657ee}
+      \strng{authornamehash}{76e6c5f96921baea7d4822dcffeb491f}
+      \strng{authorfullhash}{c1c490c0c05e44279eb8c277ec4657ee}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Microscopy and Microanalysis}
+      \field{note}{Q1 WOS}
+      \field{number}{Supplement 1}
+      \field{title}{Simultaneous Electrostatic and Magnetic Vector Potential Phase Retrieval Using Electron Ptychography}
+      \field{volume}{29}
+      \field{year}{2023}
+      \field{pages}{278\bibrangedash 279}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1093/micmic/ozad067.130
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/mam/article/29/Supplement_1/278/7228193
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/mam/article/29/Supplement_1/278/7228193
+      \endverb
+    \endentry
+    \entry{Park2018QPI_review}{article}{}
+      \name{author}{3}{}{%
+        {{hash=19dd07637ee4d093b6fadc2785f7f773}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={YongKeun},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=2621e8573a702e1419c8867d81050ea8}{%
+           family={Depeursinge},
+           familyi={D\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=109db4cb43d89dc5ce3e3b59464f5b3a}{%
+           family={Popescu},
+           familyi={P\bibinitperiod},
+           given={Gabriel},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{3ad97ec35e38315a43ba25fc5467466b}
+      \strng{fullhash}{3ad97ec35e38315a43ba25fc5467466b}
+      \strng{bibnamehash}{3ad97ec35e38315a43ba25fc5467466b}
+      \strng{authorbibnamehash}{3ad97ec35e38315a43ba25fc5467466b}
+      \strng{authornamehash}{3ad97ec35e38315a43ba25fc5467466b}
+      \strng{authorfullhash}{3ad97ec35e38315a43ba25fc5467466b}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Photonics}
+      \field{note}{Q1 WOS — Revisión seminal QPI en biología}
+      \field{number}{10}
+      \field{title}{Quantitative phase imaging in biomedicine}
+      \field{volume}{12}
+      \field{year}{2018}
+      \field{pages}{578\bibrangedash 589}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1038/s41566-018-0253-x
+      \endverb
+    \endentry
+    \entry{MSNN2023}{article}{}
+      \name{author}{6}{}{%
+        {{hash=6e1b055624981e114b15b4d34ca9e7d8}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Delong},
+           giveni={D\bibinitperiod}}}%
+        {{hash=06773199850f1dd9b4c5999d066f18d9}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Shaohui},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cf238105f41910da214a4583abfeef23}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Chuanjian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=ad81529381ffd73cccaf0df81c112b8e}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Guocheng},
+           giveni={G\bibinitperiod}}}%
+        {{hash=ff7d1e4dfbba21607e36a4a60f476055}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Yao},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=49282992ed2b8f34ec84dcdb0748578e}{%
+           family={Hao},
+           familyi={H\bibinitperiod},
+           given={Qun},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{d14dfb78c77b0496ba9c9a5d638d77da}
+      \strng{fullhash}{23a397ccba92692c5eb90a3dfb162515}
+      \strng{bibnamehash}{23a397ccba92692c5eb90a3dfb162515}
+      \strng{authorbibnamehash}{23a397ccba92692c5eb90a3dfb162515}
+      \strng{authornamehash}{d14dfb78c77b0496ba9c9a5d638d77da}
+      \strng{authorfullhash}{23a397ccba92692c5eb90a3dfb162515}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Biomedical Optics Express}
+      \field{note}{Q1 WOS — Red neuronal sin entrenamiento para tomografía de índice de refracción}
+      \field{number}{11}
+      \field{title}{Refractive index tomography with a physics-based optical neural network}
+      \field{volume}{14}
+      \field{year}{2023}
+      \field{pages}{5886\bibrangedash 5902}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1364/BOE.504242
+      \endverb
+      \verb{urlraw}
+      \verb https://pubmed.ncbi.nlm.nih.gov/38021108/
+      \endverb
+      \verb{url}
+      \verb https://pubmed.ncbi.nlm.nih.gov/38021108/
+      \endverb
+    \endentry
+    \entry{Kahraman2024QPI}{article}{}
+      \name{author}{14}{}{%
+        {{hash=4aec98fd3e9281430fccfae8cd98f89d}{%
+           family={Kahraman},
+           familyi={K\bibinitperiod},
+           given={Mehmet},
+           giveni={M\bibinitperiod}}}%
+        {{hash=aed49989a6a9ab9577eedddb136d4297}{%
+           family={Schlickriede},
+           familyi={S\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=c15624c4619465dcb2cfefa015d69e62}{%
+           family={Gierten},
+           familyi={G\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3aec01d11002363ee9c95fcf28abe5fc}{%
+           family={Groll},
+           familyi={G\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f7679d81d30383419f147ef0c14bc083}{%
+           family={Becker},
+           familyi={B\bibinitperiod},
+           given={Kristin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=104d9d90a20b0613cb8af772447a1782}{%
+           family={Weidling},
+           familyi={W\bibinitperiod},
+           given={René},
+           giveni={R\bibinitperiod}}}%
+        {{hash=a4ded03a719f4954f6e7f4e83b38ce39}{%
+           family={Balassa},
+           familyi={B\bibinitperiod},
+           given={Timea},
+           giveni={T\bibinitperiod}}}%
+        {{hash=dd315d9fc2c0148767aaa2f23ad926d8}{%
+           family={Gerner},
+           familyi={G\bibinitperiod},
+           given={Imre},
+           giveni={I\bibinitperiod}}}%
+        {{hash=0f7cf2d986fd5f41a24ce58bb677bd3a}{%
+           family={Fritzsche},
+           familyi={F\bibinitperiod},
+           given={Wilhelm},
+           giveni={W\bibinitperiod}}}%
+        {{hash=9007b2029527b92b2dd9ae6cbd965421}{%
+           family={Wiegand},
+           familyi={W\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=911069f144ad00bfc5f29fc51c825597}{%
+           family={Kemmer},
+           familyi={K\bibinitperiod},
+           given={Thomas\bibnamedelima A.},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=7ebeff8483e6963eba63cdbf8c1ba5e2}{%
+           family={Hofmann},
+           familyi={H\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ce71edb236a6baeb5772abd6d8ae3dd3}{%
+           family={Schätz},
+           familyi={S\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c32b17d2e4a6daa9a36f5892fdb7e9fa}{%
+           family={Neuberger},
+           familyi={N\bibinitperiod},
+           given={Gerald},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{53b46d52afb8f88660b4d3820569035f}
+      \strng{fullhash}{6b439cd64d3bf4876567976dedc224d8}
+      \strng{bibnamehash}{f7f6ceb24f49400fde8d8e1d7db60ddf}
+      \strng{authorbibnamehash}{f7f6ceb24f49400fde8d8e1d7db60ddf}
+      \strng{authornamehash}{53b46d52afb8f88660b4d3820569035f}
+      \strng{authorfullhash}{6b439cd64d3bf4876567976dedc224d8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NPJ Precision Oncology}
+      \field{note}{Q1 WOS (Nature Publishing Group)}
+      \field{title}{Perspective on quantitative phase imaging to improve precision cancer medicine}
+      \field{volume}{8}
+      \field{year}{2024}
+      \field{pages}{126}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41698-024-00510-x
+      \endverb
+      \verb{urlraw}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC10996848/
+      \endverb
+      \verb{url}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC10996848/
+      \endverb
+    \endentry
+    \entry{Ozcan2023QPI}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ed50d85545760b989c9cfa4caf58a9c9}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Yuhang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=bd69f2a1fe9a5855f2429e256feb967a}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Tingyu},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a49afa20ff69f6ade892514adfbad875}{%
+           family={Ozcan},
+           familyi={O\bibinitperiod},
+           given={Aydogan},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{9318c7420370341bb92cf07908376b96}
+      \strng{fullhash}{9318c7420370341bb92cf07908376b96}
+      \strng{bibnamehash}{9318c7420370341bb92cf07908376b96}
+      \strng{authorbibnamehash}{9318c7420370341bb92cf07908376b96}
+      \strng{authornamehash}{9318c7420370341bb92cf07908376b96}
+      \strng{authorfullhash}{9318c7420370341bb92cf07908376b96}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Light: Advanced Manufacturing}
+      \field{note}{Q1 WOS}
+      \field{number}{3}
+      \field{title}{Quantitative phase imaging ({QPI}) through random diffusers using a diffractive optical network}
+      \field{volume}{4}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.37188/lam.2023.017
+      \endverb
+      \verb{urlraw}
+      \verb https://www.light-am.com/article/doi/10.37188/lam.2023.017
+      \endverb
+      \verb{url}
+      \verb https://www.light-am.com/article/doi/10.37188/lam.2023.017
+      \endverb
+    \endentry
+    \entry{JointSSIM2024}{article}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Earth and Planetary Science}
+      \field{note}{Inversión conjunta gravedad-magnetismo con restricción de similitud estructural}
+      \field{number}{1}
+      \field{title}{Joint Inversion of Gravity and Magnetic Data based on the Modified Structural Similarity Index for the Structural Consistency Constraint}
+      \field{volume}{3}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.36956/eps.v3i1.849
+      \endverb
+      \verb{urlraw}
+      \verb https://journals.nasspublishing.com/index.php/eps/article/view/849
+      \endverb
+      \verb{url}
+      \verb https://journals.nasspublishing.com/index.php/eps/article/view/849
+      \endverb
+    \endentry
+    \entry{GrJointGJI2023}{article}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Geophysical Journal International}
+      \field{note}{Q1 WOS — Inversión conjunta gravedad, campo magnético y tensor gradiente con restricción Gramiana}
+      \field{number}{2}
+      \field{title}{Joint {Gramian} inversion of gravity, magnetic and gravity gradient tensor data for the modelling of {Mesoproterozoic} iron oxide deposits, southeast {Missouri}, {USA}}
+      \field{volume}{235}
+      \field{year}{2023}
+      \field{pages}{1064\bibrangedash 1082}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1093/gji/ggad405
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/gji/article/235/2/1064/7225298
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/gji/article/235/2/1064/7225298
+      \endverb
+    \endentry
+    \entry{Feart2023Aeromagnetic}{article}{}
+      \name{author}{6}{}{%
+        {{hash=0767a4a89c70a4978722f23700fba2e1}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zelin},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=223afe8e6dc71fc037fa4a62ab7faf50}{%
+           family={Bian},
+           familyi={B\bibinitperiod},
+           given={Shaofeng},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e540c5aa9175b1cdeda356a7bd1d2ea4}{%
+           family={Meng},
+           familyi={M\bibinitperiod},
+           given={Xiaohong},
+           giveni={X\bibinitperiod}}}%
+        {{hash=c951b69153ff2b2fdc2f528a278843ba}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Lianghui},
+           giveni={L\bibinitperiod}}}%
+        {{hash=768d9ad5e9e98d15666283a6e478f694}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yaxuan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=c7609922d2d0d41bda4e39b9bd864203}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{9cb67a6a8e722bbdeb39a07e6bc464ce}
+      \strng{fullhash}{8753698a7aa8952891773ff55d465d5f}
+      \strng{bibnamehash}{8753698a7aa8952891773ff55d465d5f}
+      \strng{authorbibnamehash}{8753698a7aa8952891773ff55d465d5f}
+      \strng{authornamehash}{9cb67a6a8e722bbdeb39a07e6bc464ce}
+      \strng{authorfullhash}{8753698a7aa8952891773ff55d465d5f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Earth Science}
+      \field{note}{Q2 WOS — Inversión aeromagnética 3D}
+      \field{title}{An aeromagnetic denoising-decomposition-3{D} inversion approach for mineral exploration}
+      \field{volume}{11}
+      \field{year}{2023}
+      \field{pages}{1132093}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/feart.2023.1132093
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2023.1132093/full
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2023.1132093/full
+      \endverb
+    \endentry
+    \entry{Mag2022Geophys}{article}{}
+      \name{author}{3}{}{%
+        {{hash=0284af02945e4deddaf5068e1dab7252}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Xin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=654d043ec8320dd11ba3579ee3a54e11}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=a5bf383294f1febdcf26dff4ece6285f}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Haiqing},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{d3a4bffd6f37c45fb981f2e6e8417b5a}
+      \strng{fullhash}{d3a4bffd6f37c45fb981f2e6e8417b5a}
+      \strng{bibnamehash}{d3a4bffd6f37c45fb981f2e6e8417b5a}
+      \strng{authorbibnamehash}{d3a4bffd6f37c45fb981f2e6e8417b5a}
+      \strng{authornamehash}{d3a4bffd6f37c45fb981f2e6e8417b5a}
+      \strng{authorfullhash}{d3a4bffd6f37c45fb981f2e6e8417b5a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Geophysics and Engineering}
+      \field{note}{Q2 WOS — Inversión geofísica vectorial}
+      \field{number}{6}
+      \field{title}{High-precision magnetization vector inversion: application to magnetic data in the presence of significant remanent magnetization}
+      \field{volume}{19}
+      \field{year}{2022}
+      \field{pages}{1308\bibrangedash 1326}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1093/jge/gxac083
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/jge/article/19/6/1308/6850000
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/jge/article/19/6/1308/6850000
+      \endverb
+    \endentry
+    \entry{Aging2026QSM}{article}{}
+      \name{author}{12}{}{%
+        {{hash=e835da465ce24da300a1e65a116d323c}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Penghui},
+           giveni={P\bibinitperiod}}}%
+        {{hash=4f4c3293eb7e0ef8aa6b292d9433678a}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zeyu},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=c5d611478c04ed52fa9fa8cd4f0f5a78}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wenzhao},
+           giveni={W\bibinitperiod}}}%
+        {{hash=ad3027b5a100325711bfacc01398fbac}{%
+           family={Ji},
+           familyi={J\bibinitperiod},
+           given={Suping},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ecc82cc5f85c85a755842cf6c6a72a20}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Pan},
+           giveni={P\bibinitperiod}}}%
+        {{hash=eb43771c1da41e79e0bd931048cf0bd8}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Xiaoling},
+           giveni={X\bibinitperiod}}}%
+        {{hash=e8f2a955e55b362b9cc86de32b85e0cc}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Lijie},
+           giveni={L\bibinitperiod}}}%
+        {{hash=c9ab0552692e7c043e93f21248f6d4be}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Chenglong},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7e48bdec050a7bea1bb0d4acff3023eb}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Zheng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=43aa7380c3b77c2fc43fab9e7a5b2fb3}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Wenwen},
+           giveni={W\bibinitperiod}}}%
+        {{hash=ac04bd00a003f7c5bed63f9b75fa0c88}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=da31f56113cb61a1fef7cf7543eefff8}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Chen},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{b24b5c132a4de204f341dcf73b012088}
+      \strng{fullhash}{4f9549ec9f56990df16675bfd72cecf6}
+      \strng{bibnamehash}{77ce89e213908f29a2e4073d9832b789}
+      \strng{authorbibnamehash}{77ce89e213908f29a2e4073d9832b789}
+      \strng{authornamehash}{b24b5c132a4de204f341dcf73b012088}
+      \strng{authorfullhash}{4f9549ec9f56990df16675bfd72cecf6}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Neuroscience}
+      \field{note}{Q2 WOS — Hierro cerebral como biomarcador de envejecimiento}
+      \field{title}{Imaging of Cerebral Iron as an Emerging Marker for Brain Aging, Neurodegeneration, and Cerebrovascular Diseases}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC12468295/
+      \endverb
+      \verb{url}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC12468295/
+      \endverb
+    \endentry
+    \entry{Schizophrenia2025QSM}{article}{}
+      \name{author}{15}{}{%
+        {{hash=8a90eff6dcb05f432951eb920bba08cc}{%
+           family={Pereira},
+           familyi={P\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=13232d476634f0dc3e94eba2ca298bc7}{%
+           family={Maia},
+           familyi={M\bibinitperiod},
+           given={L.\bibnamedelimi F.},
+           giveni={L\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=444f1abecca8512557b144dc922d398f}{%
+           family={Schu},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=a3954133b50e8560da695b4556a85263}{%
+           family={Vaz},
+           familyi={V\bibinitperiod},
+           given={E.\bibnamedelimi F.},
+           giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=ef328e634755d3a57d12eff92f4c37a1}{%
+           family={Schurr},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=b115c3b444ccdc32bc3ebd4ac0872f5e}{%
+           family={Lafleur},
+           familyi={L\bibinitperiod},
+           given={D.\bibnamedelimi L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=c8618e7e81c1470e44c81bf213ff492b}{%
+           family={Nakao},
+           familyi={N\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=07bc5cc121f0ff08efa7603c9f92889a}{%
+           family={Moura},
+           familyi={M\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a466bc10316dc8b5a9389ef0609901b4}{%
+           family={Leoni},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=376800ce5b7b5e18f36c3175eee62626}{%
+           family={Meier},
+           familyi={M\bibinitperiod},
+           given={T.B.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=dbe2be597b223ee625f720f278f815cb}{%
+           family={Bertollo},
+           familyi={B\bibinitperiod},
+           given={A.\bibnamedelimi G.},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=6e2b5ffe738c178b68caafec54b42118}{%
+           family={Ignacio},
+           familyi={I\bibinitperiod},
+           given={Z.\bibnamedelimi M.},
+           giveni={Z\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=a9a208f188c8f865b9063666c44e2cfd}{%
+           family={Reis},
+           familyi={R\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=9e08083b2b2f664aa62e3cb19f663f76}{%
+           family={Abreu},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=353ae442113e87965a92762ba3f48ab1}{%
+           family={Fraza},
+           familyi={F\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{0fad5d6f91b835e8146b803cf59d66a7}
+      \strng{fullhash}{23f0c6d975190d2ae1c2d6a0fdeade63}
+      \strng{bibnamehash}{4f83cc2fc2a83e9dd85de939d21dc02c}
+      \strng{authorbibnamehash}{4f83cc2fc2a83e9dd85de939d21dc02c}
+      \strng{authornamehash}{0fad5d6f91b835e8146b803cf59d66a7}
+      \strng{authorfullhash}{23f0c6d975190d2ae1c2d6a0fdeade63}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Molecular Psychiatry}
+      \field{note}{Q1 WOS — IF $>$12, Nature Publishing Group}
+      \field{title}{The role of low subcortical iron, white matter myelin, and oligodendrocytes in schizophrenia: a quantitative susceptibility mapping and diffusion tensor imaging study}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1038/s41380-025-03195-7
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41380-025-03195-7
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41380-025-03195-7
+      \endverb
+    \endentry
+    \entry{QSMnetINR2025}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=25a437fffb2e25525098c861ff0cc5e4}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Min-jun},
+           giveni={M\bibinithyphendelim j\bibinitperiod}}}%
+        {{hash=a8da6ed5d12dea5eb750c7ea5972d9ea}{%
+           family={Yoon},
+           familyi={Y\bibinitperiod},
+           given={Jaeyeon},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f8891d3496fd2b41f0caf714fea946f1}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Jongho},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{ace5af366336f35d4fe6de82ae6374d2}
+      \strng{fullhash}{ace5af366336f35d4fe6de82ae6374d2}
+      \strng{bibnamehash}{ace5af366336f35d4fe6de82ae6374d2}
+      \strng{authorbibnamehash}{ace5af366336f35d4fe6de82ae6374d2}
+      \strng{authornamehash}{ace5af366336f35d4fe6de82ae6374d2}
+      \strng{authorfullhash}{ace5af366336f35d4fe6de82ae6374d2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{eess.IV}
+      \field{eprinttype}{arXiv}
+      \field{note}{Preprint arXiv 2025}
+      \field{title}{{QSMnet-INR}: Single-Orientation Quantitative Susceptibility Mapping via Implicit Neural Representation in k-Space}
+      \field{year}{2025}
+      \verb{eprint}
+      \verb 2512.09425
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2512.09425
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2512.09425
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

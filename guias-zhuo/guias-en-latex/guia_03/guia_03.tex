@@ -1,0 +1,338 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{mathpazo}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\begin{center}
+  {\large \textbf{Prueba de Práctica 3: Conceptos Generales de Programación Avanzada}} \\
+  \medskip
+  {Programación Avanzada --- Evaluación Autocontenida Integrada}
+\end{center}
+
+\bigskip
+
+\section*{Parte 1: Preguntas de Selección Múltiple}
+
+\textbf{Pregunta 1.} \textit{Iterable vs Iterador en Python.} \\
+¿Cuál de las siguientes afirmaciones describe con precisión la diferencia teórica y práctica entre un objeto \textit{iterable} y un objeto \textit{iterador} en Python?
+\begin{enumerate}[label=\alph*)]
+  \item Un iterable implementa obligatoriamente el método \texttt{\_\_next\_\_()}, mientras que un iterador solo implementa \texttt{\_\_iter\_\_()}.
+  \item Cualquier objeto sobre el cual se pueda llamar \texttt{iter()} es un iterable, el cual retorna un objeto iterador. El iterador es el encargado de mantener el estado de la iteración y entregar los elementos uno a uno mediante \texttt{next()}.
+  \item Un iterador puede ser reiniciado y recorrido múltiples veces desde el principio en cualquier momento, mientras que un iterable se consume y queda inutilizable tras el primer ciclo.
+  \item El intérprete de Python no permite convertir un iterable en un iterador en tiempo de ejecución.
+  \item No existe diferencia práctica ni semántica entre ambos conceptos en Python 3.
+\end{enumerate}
+
+\bigskip
+
+\textbf{Pregunta 2.} \textit{Comportamiento de la función incorporada \texttt{zip()}.} \\
+Considere la función integrada de Python \texttt{zip(*iterables)}. Si le entregamos como parámetros dos iterables de tamaños significativamente distintos (por ejemplo, una lista de 100 elementos y otra de 3 elementos), ¿cuál es el comportamiento por defecto de la función?
+\begin{enumerate}[label=\alph*)]
+  \item Lanza una excepción de tipo \texttt{ValueError} debido a la inconsistencia de dimensiones.
+  \item Rellena automáticamente el iterable más corto con valores \texttt{None} hasta alcanzar el tamaño del más largo.
+  \item Retorna un iterador de tuplas que se detiene de forma limpia tan pronto como el iterable más corto se agota, ignorando los elementos restantes del más largo.
+  \item Entra en un bucle infinito intentando calcular la correspondencia de índices virtuales.
+  \item Levanta la excepción \texttt{IndexError} en la última tupla generada.
+\end{enumerate}
+
+\bigskip
+
+\textbf{Pregunta 3.} \textit{Coordinación mediante Eventos.} \\
+El objeto \texttt{threading.Event} permite sincronizar hilos en base a banderas booleanas internas gestionadas de forma segura. ¿Qué ocurre con un hilo que invoca el método \texttt{evento.wait()} si la bandera interna del evento se encuentra actualmente en estado \texttt{False}?
+\begin{enumerate}[label=\alph*)]
+  \item El método retorna inmediatamente \texttt{False} y el hilo continúa ejecutándose de manera asíncrona.
+  \item El hilo levanta de forma inmediata un error del tipo \texttt{TimeoutException}.
+  \item El hilo se suspende y se bloquea de forma indefinida en esa línea de instrucción hasta que otro hilo llame a \texttt{evento.set()}.
+  \item El sistema operativo elimina el hilo bloqueado para liberar recursos.
+  \item La bandera interna del evento cambia automáticamente a \texttt{True} para evitar que el hilo espere.
+\end{enumerate}
+
+\bigskip
+
+\textbf{Pregunta 4.} \textit{Uso correcto de \texttt{QThread} para tareas concurrentes.} \\
+¿Cuál es la forma recomendada en PyQt5 para estructurar una tarea concurrente que reporta avances intermedios a la interfaz usando la clase \texttt{QThread}?
+\begin{enumerate}[label=\alph*)]
+  \item Sobrescribir el método \texttt{run()} de una subclase de \texttt{QThread}, definir allí señales como atributos de clase y emitir dichas señales con los progresos intermedios para que la GUI los conecte a sus widgets.
+  \item Invocar directamente a \texttt{QThread.start()} pasándole una función lambda con la lógica de dibujo de los widgets.
+  \item Ejecutar un bucle \texttt{while} infinito dentro de la GUI y llamar a \texttt{QThread.sleep()} para forzar la actualización gráfica.
+  \item Instanciar \texttt{QThread} y modificar los atributos privados de la ventana principal de forma directa en el código del hilo.
+  \item El uso de \texttt{QThread} está obsoleto en PyQt5, debiendo usarse exclusivamente la biblioteca externa \texttt{asyncio}.
+\end{enumerate}
+
+\bigskip
+
+\textbf{Pregunta 5.} \textit{Gestión de Eventos a bajo nivel en Qt.} \\
+En PyQt5, cuando se presiona un botón del mouse sobre una ventana, Qt genera un objeto de tipo \texttt{QMouseEvent} y lo propaga a través de un método de evento específico. Si deseamos interceptar y modificar esta interacción a bajo nivel, ¿qué método debemos sobrescribir en nuestra clase de ventana personalizada?
+\begin{enumerate}[label=\alph*)]
+  \item \texttt{clickEvent(self, event)}
+  \item \texttt{mousePressEvent(self, event)}
+  \item \texttt{on\_mouse\_click(self, event)}
+  \item \texttt{captureMouse(self, event)}
+  \item \texttt{mouse\_trigger(self, event)}
+\end{enumerate}
+
+\pagebreak
+
+\section*{Parte 2: Preguntas de Desarrollo}
+
+\textbf{Pregunta 6.} \textit{Protocolo de Iteración y Backtracking (Materia: Excepciones e Iteradores).} \\
+Implemente un sistema básico para gestionar el historial de navegación de un usuario en un editor de texto que admita la acción de deshacer (backtracking).
+\begin{enumerate}[label=\alph*)]
+  \item Diseñe una clase \texttt{HistorialAcciones} que almacene una lista de cadenas de texto (las acciones realizadas).
+  \item Implemente el protocolo de iteración manual para la clase de modo que permita recorrer el historial en orden inverso (del cambio más nuevo al más antiguo) usando un iterador interno personalizado llamado \texttt{IteradorInverso}.
+  \item El iterador debe soportar el método especial \texttt{\_\_next\_\_} de forma manual y levantar \texttt{StopIteration} cuando se complete la secuencia.
+\end{enumerate}
+
+\bigskip
+
+\textbf{Pregunta 7.} \textit{Procesamiento Funcional de Logs (Materia: Programación Funcional).} \\
+Considere una lista de líneas de un archivo de log de servidor con el formato: \texttt{"[FECHA] [CATEGORIA] MENSAJE"}. Ejemplo: \texttt{"[2026-05-27] [ERROR] Connection timed out"}.
+Implemente un pipeline de programación funcional que reciba esta lista de cadenas y:
+\begin{itemize}
+  \item Filtre las líneas de log que sean exclusivamente de categoría \texttt{"[ERROR]"}.
+  \item Extraiga (mapee) únicamente el mensaje del error (es decir, elimine la fecha y la categoría).
+  \item Cuente la cantidad total de errores encontrados utilizando reducción o sumatoria funcional.
+  \item \textbf{Requisito:} Implemente todo el flujo encadenando `filter`, `map` y `reduce` en una única instrucción/línea de código.
+\end{itemize}
+
+\bigskip
+
+\textbf{Pregunta 8.} \textit{Coordinación en Grupo usando Eventos (Materia: Threading y Concurrencia).} \\
+En una aplicación de renderizado 3D de alta exigencia, se necesita iniciar el cálculo de un frame complejo solo cuando todos los hilos trabajadores de renderizado (3 hilos en total) estén completamente inicializados y listos.
+Implemente un script donde:
+\begin{itemize}
+  \item Un evento global llamado \texttt{evento\_inicio} mantenga a los trabajadores esperando en su estado inicial.
+  \item Cada trabajador (hilo) realice una inicialización simulada (tiempo aleatorio entre 0.1 y 0.5 segundos) y luego deba bloquearse hasta que se dé la señal global de inicio de cálculo.
+  \item El hilo principal controle la coordinación: espere a que todos los hilos confirmen estar preparados y posteriormente active el evento global llamando a \texttt{set()} para iniciar el cálculo simultáneo.
+\end{itemize}
+
+\bigskip
+
+\textbf{Pregunta 9.} \textit{Concurrencia en Interfaces con \texttt{QThread} (Materia: GUI PyQt5).} \\
+En un visor de procesos, se desea presionar un botón para iniciar una tarea pesada (cálculo de 0 a 100 con demoras intermitentes) y mostrar el progreso en tiempo real usando un componente \texttt{QProgressBar} de la interfaz gráfica sin bloquear la ventana durante el proceso.
+\begin{enumerate}[label=\alph*)]
+  \item Diseñe una clase \texttt{WorkerThread} que herede de \texttt{QThread} y defina una señal llamada \texttt{progreso\_actualizado} de tipo \texttt{int}.
+  \item Implemente el método \texttt{run()} de modo que itere de 0 a 100 con pausas de 0.05 segundos, emitiendo la señal en cada incremento.
+  \item Implemente la clase \texttt{VentanaProceso} con un botón para iniciar la tarea y un \texttt{QProgressBar} para visualizar los avances interconectando la señal de progreso.
+\end{enumerate}
+
+\pagebreak
+
+\section*{Solucionario}
+
+\subsection*{Respuestas de Selección Múltiple}
+
+\textbf{Pregunta 1:} \textbf{b)} \\
+\textbf{Explicación:} En Python, un iterable es cualquier objeto capaz de retornar sus elementos uno a uno cuando se le solicita (implementa \texttt{\_\_iter\_\_()}). El iterador es el objeto retornado por \texttt{\_\_iter\_\_()} y se encarga de realizar el recorrido manteniendo la posición actual (implementa \texttt{\_\_next\_\_()} e \texttt{\_\_iter\_\_()}). Una vez consumido el iterador, no se puede reiniciar; se debe solicitar un nuevo iterador al iterable.
+
+\medskip
+
+\textbf{Pregunta 2:} \textbf{c)} \\
+\textbf{Explicación:} Por especificación de diseño de Python, la función \texttt{zip()} empareja elementos posicionales de los iterables entregados. Cuando el más corto de los iterables se queda sin elementos, \texttt{zip()} detiene la generación de tuplas levantando internamente la señal de término estándar de forma transparente. Para emparejar rellenando elementos vacíos, se debe recurrir a \texttt{itertools.zip\_longest()}.
+
+\medskip
+
+\textbf{Pregunta 3:} \textbf{c)} \\
+\textbf{Explicación:} Los objetos de tipo \texttt{Event} manejan una bandera booleana interna (inicialmente \texttt{False}). El método \texttt{wait()} comprueba dicha bandera. Si es \texttt{False}, el hilo invocador se bloquea en ese punto. El bloqueo se levanta únicamente cuando otro hilo de control cambia el estado del evento llamando a \texttt{set()}, lo cual despierta simultáneamente a todos los hilos que se encontraban suspendidos en llamadas a \texttt{wait()}.
+
+\medskip
+
+\textbf{Pregunta 4:} \textbf{a)} \\
+\textbf{Explicación:} La arquitectura limpia en PyQt5 consiste en derivar de \texttt{QThread} y definir la tarea pesada dentro del método sobrescrito \texttt{run()}. Dentro de este método, para reportar cambios (como porcentajes de avance), se emite una señal personalizada. El hilo principal de la GUI, al crear la instancia del hilo secundario, conecta esta señal a un slot (por ejemplo, el método \texttt{setValue} de un \texttt{QProgressBar}). De esta forma, el paso de datos cruza de un hilo a otro de manera segura y sincronizada por el framework.
+
+\medskip
+
+\textbf{Pregunta 5:} \textbf{b)} \\
+\textbf{Explicación:} Para capturar clics de ratón a bajo nivel sobre componentes de Qt que no sean botones interactivos dedicados, se debe redefinir el método de evento nativo \texttt{mousePressEvent(self, event)} en la clase widget correspondiente. Al sobrescribirlo, podemos extraer las coordenadas exactas de la pulsación utilizando el objeto de evento recibido por parámetro.
+
+\pagebreak
+
+\subsection*{Soluciones de Desarrollo}
+
+\textbf{Pregunta 6 (Protocolo de Iteración y Backtracking):}
+\begin{verbatim}
+class IteradorInverso:
+    def __init__(self, lista_datos):
+        self.datos = lista_datos
+        self.indice_actual = len(lista_datos) - 1
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.indice_actual < 0:
+            raise StopIteration
+        
+        # Obtenemos el elemento en el índice actual y retrocedemos
+        elemento = self.datos[self.indice_actual]
+        self.indice_actual -= 1
+        return elemento
+
+class HistorialAcciones:
+    def __init__(self):
+        self.acciones = []
+
+    def agregar_accion(self, accion: str):
+        self.acciones.append(accion)
+
+    def __iter__(self):
+        # Retorna el iterador personalizado inverso
+        return IteradorInverso(self.acciones)
+
+# Ejemplo de uso
+historial = HistorialAcciones()
+historial.agregar_accion("Crear archivo")
+historial.agregar_accion("Escribir Hola")
+historial.agregar_accion("Negrita en Hola")
+
+print("Recorriendo historial para deshacer (Backtracking):")
+for accion in historial:
+    print(f"Deshaciendo: {accion}")
+    # Imprime en orden: Negrita en Hola, Escribir Hola, Crear archivo
+\end{verbatim}
+
+\pagebreak
+
+\textbf{Pregunta 7 (Procesamiento Funcional de Logs):}
+\begin{verbatim}
+from functools import reduce
+
+# Logs de prueba
+lineas_log = [
+    "[2026-05-27] [INFO] Server started",
+    "[2026-05-27] [ERROR] Connection timed out",
+    "[2026-05-27] [WARNING] Low memory space",
+    "[2026-05-27] [ERROR] Database authentication failed"
+]
+
+# Pipeline funcional en una sola línea
+# 1. Filtra las líneas que contienen '[ERROR]'
+# 2. Mapea para extraer el mensaje quitando el prefijo de fecha y categoría
+# 3. Reduce para sumar 1 por cada error procesado
+total_errores = reduce(lambda acc, _: acc + 1, map(lambda line: line.split("] [ERROR] ")[1], filter(lambda line: "[ERROR]" in line, lineas_log)), 0)
+
+print(f"Cantidad total de errores procesados: {total_errores}")  # Imprime: 2
+\end{verbatim}
+
+\bigskip
+
+\textbf{Pregunta 8 (Coordinación en Grupo usando Eventos):}
+\begin{verbatim}
+import threading
+import time
+import random
+
+def trabajador_render(id_worker, evento_inicio):
+    # Simulación de inicialización de texturas y geometría
+    delay = random.uniform(0.1, 0.5)
+    time.sleep(delay)
+    print(f"[Worker {id_worker}] Inicializado en {delay:.2f}s. Esperando señal global...")
+    
+    # El hilo se bloquea hasta que la bandera del evento sea True
+    evento_inicio.wait()
+    
+    # Procesamiento una vez dada la señal
+    print(f"[Worker {id_worker}] >>> ¡Señal recibida! Renderizando frame...")
+    time.sleep(0.2)
+    print(f"[Worker {id_worker}] <<< Renderizado finalizado.")
+
+# Evento de control compartido
+evento_arranque = threading.Event()
+
+# Creación de hilos
+workers = []
+for i in range(1, 4):
+    hilo = threading.Thread(
+        target=trabajador_render, 
+        args=(i, evento_arranque)
+    )
+    workers.append(hilo)
+    hilo.start()
+
+# Simulación de espera en el hilo principal
+print("[Principal] Hilo principal preparando buffers globales...")
+time.sleep(0.8)  # Damos un margen de tiempo para que todos los trabajadores se listen
+
+print("[Principal] Todos los recursos listos. ¡Iniciando cálculo de renderizado!")
+# Activamos el evento. Esto liberará simultáneamente a los 3 trabajadores bloqueados
+evento_arranque.set()
+
+for w in workers:
+    w.join()
+
+print("[Principal] Frame renderizado con éxito.")
+\end{verbatim}
+
+\pagebreak
+
+\textbf{Pregunta 9 (Concurrencia en Interfaces con QThread):}
+\begin{verbatim}
+import sys
+import time
+from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, 
+                             QPushButton, QProgressBar)
+from PyQt5.QtCore import QThread, pyqtSignal
+
+# a) Subclase QThread para cómputo en segundo plano
+class WorkerThread(QThread):
+    progreso_actualizado = pyqtSignal(int)  # Flujo de datos hacia la GUI
+
+    # b) Sobrescribir método run
+    def run(self):
+        for i in range(101):
+            time.sleep(0.05)  # Simula cálculo exigente o lectura
+            self.progreso_actualizado.emit(i)  # Envío seguro
+
+# c) Interfaz Gráfica Principal
+class VentanaProceso(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.init_ui()
+
+    def init_ui(self):
+        self.setWindowTitle("Control de Hilos")
+        self.resize(300, 100)
+
+        layout = QVBoxLayout()
+
+        self.progreso = QProgressBar()
+        self.progreso.setValue(0)
+        layout.addWidget(self.progreso)
+
+        self.btn_iniciar = QPushButton("Iniciar Proceso")
+        self.btn_iniciar.clicked.connect(self.comenzar_tarea)
+        layout.addWidget(self.btn_iniciar)
+
+        self.setLayout(layout)
+
+    def comenzar_tarea(self):
+        # Crear la instancia del hilo trabajador
+        self.hilo = WorkerThread()
+        
+        # Conectar la señal al slot nativo del QProgressBar
+        self.hilo.progreso_actualizado.connect(self.progreso.setValue)
+        
+        # Desactivar botón temporalmente para evitar ejecuciones duplicadas
+        self.hilo.started.connect(lambda: self.btn_iniciar.setEnabled(False))
+        self.hilo.finished.connect(lambda: self.btn_iniciar.setEnabled(True))
+
+        # Iniciar el hilo auxiliar de forma asíncrona
+        self.hilo.start()
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    ventana = VentanaProceso()
+    ventana.show()
+    sys.exit(app.exec_())
+\end{verbatim}
+
+\end{document}

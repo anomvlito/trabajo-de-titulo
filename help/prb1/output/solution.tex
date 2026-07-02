@@ -1,0 +1,311 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage{mathpazo}
+\usepackage{fontspec}
+\setmainfont{PatrickHand-Regular.ttf}[Path=./]
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+
+\definecolor{gnbg}{HTML}{FDFDFD}
+\pagecolor{gnbg}
+
+\definecolor{ink}{HTML}{2C3E50}
+\color{ink}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw[step=6mm, color=gray!20, thin]
+      (current page.south west) grid (current page.north east);
+  \end{tikzpicture}
+}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\begin{center}
+  {\large \textbf{Ecuaciones Diferenciales Ordinarias}}
+\end{center}
+
+\bigskip
+
+%--------------------------------------------------------------
+\textbf{Pregunta 1} \textit{[35 puntos].}
+
+Dada la EDO $x^2y''+xy'-y=f(x)$.
+
+\begin{enumerate}[label=\alph*)]
+  \item Pruebe que $y_1(x)=x$ es una solución de la EDO homogénea $x^2y''+xy'-y=0$.
+  \item Usando $y_1$, encuentre otra solución de la EDO homogénea anterior.
+  \item Determine la solución general (encontrando una particular) de la EDO dada, usando $f(x)=18x\sqrt{2}$.
+\end{enumerate}
+
+\medskip
+
+\textbf{a)} Sea la función $y_1(x) = x$, sus derivadas primera y segunda son:
+\[
+  y_1'(x) = 1, \qquad y_1''(x) = 0
+\]
+Reemplazando en la ecuación diferencial homogénea asociada:
+\[
+  x^2(0) + x(1) - x = 0 + x - x = 0
+\]
+Como la igualdad se satisface para todo $x$, se comprueba que $y_1(x) = x$ es solución.
+
+\medskip
+
+\textbf{b)} Proponiendo una segunda solución de la forma $y_2(x) = v(x) \cdot y_1(x) = v(x) \cdot x$, calculamos sus derivadas usando la regla del producto:
+\[
+  y_2'(x) = v'x + v, \qquad y_2''(x) = v''x + 2v'
+\]
+Reemplazando estos términos en la EDO homogénea $x^2y''+xy'-y=0$:
+\[
+  x^2(v''x+2v') + x(v'x+v) - vx = 0
+\]
+Desarrollando y agrupando términos semejantes:
+\[
+  x^3 v'' + 3x^2 v' = 0
+\]
+Haciendo la sustitución $w(x) = v'(x)$, obtenemos una ecuación lineal de primer orden para $w$:
+\[
+  x^3 w' + 3x^2 w = 0 \implies \frac{w'}{w} = -\frac{3}{x}
+\]
+Integrando respecto a $x$ a ambos lados:
+\[
+  \ln|w| = -3\ln|x| + C \implies w(x) = C_0 x^{-3}
+\]
+Definiendo la constante $C_0 = -2$ para simplificar la integración posterior:
+\[
+  v'(x) = -2x^{-3}
+\]
+Integrando respecto a $x$:
+\[
+  v(x) = x^{-2}
+\]
+Volviendo a la variable de la solución propuesta:
+\[
+  y_2(x) = x \cdot x^{-2} = \frac{1}{x}
+\]
+Para verificar la independencia lineal, evaluamos el Wronskiano de $y_1$ e $y_2$:
+\[
+  W[y_1, y_2](x) = \begin{vmatrix} x & x^{-1} \\ 1 & -x^{-2} \end{vmatrix} = -x^{-1} - x^{-1} = -\frac{2}{x} \neq 0
+\]
+Lo cual confirma que las soluciones son linealmente independientes. La solución homogénea general es $y_h(x) = C_1 x + \dfrac{C_2}{x}$.
+
+\medskip
+
+\textbf{c)} Reescribiendo la EDO no homogénea con $f(x) = 18x\sqrt{2}$ en su forma estándar:
+\[
+  y'' + \frac{1}{x}y' - \frac{1}{x^2}y = \frac{18\sqrt{2}}{x}
+\]
+donde denotamos la función fuente como $g(x) = 18\sqrt{2}x^{-1}$. Proponemos la solución particular $y_p(x) = u_1(x)y_1(x) + u_2(x)y_2(x)$ mediante variación de parámetros. Las funciones determinantes del sistema son:
+\[
+  u_1'(x) = -\frac{y_2(x)g(x)}{W(x)}, \qquad u_2'(x) = \frac{y_1(x)g(x)}{W(x)}
+\]
+Reemplazando los valores del Wronskiano y las soluciones conocidas:
+\[
+  u_1'(x) = -\frac{x^{-1} \cdot 18\sqrt{2}x^{-1}}{-2/x} = 9\sqrt{2}x^{-1}
+\]
+\[
+  u_2'(x) = \frac{x \cdot 18\sqrt{2}x^{-1}}{-2/x} = -9\sqrt{2}x
+\]
+Integrando respecto a $x$ para obtener cada función:
+\[
+  u_1(x) = \int 9\sqrt{2}x^{-1} \, dx = 9\sqrt{2}\ln|x|
+\]
+\[
+  u_2(x) = \int -9\sqrt{2}x \, dx = -\frac{9\sqrt{2}}{2}x^2
+\]
+Sustituyendo en la propuesta de la solución particular:
+\[
+  y_p(x) = (9\sqrt{2}\ln|x|)(x) + \left(-\frac{9\sqrt{2}}{2}x^2\right)(x^{-1}) = 9\sqrt{2}x\ln|x| - \frac{9\sqrt{2}}{2}x
+\]
+Sumando la solución homogénea y la particular, se obtiene la solución general de la EDO:
+\[
+  y(x) = C_1 x + \frac{C_2}{x} + 9\sqrt{2}x\ln|x| - \frac{9\sqrt{2}}{2}x
+\]
+Dado que el término $-\frac{9\sqrt{2}}{2}x$ es una función lineal linealmente dependiente con la primera solución homogénea $y_1(x) = x$, este puede ser absorbido dentro de la constante $C_1$, simplificando la solución general a:
+\[
+  y(x) = C_1 x + \frac{C_2}{x} + 9\sqrt{2}x\ln|x|
+\]
+
+\bigskip
+
+%--------------------------------------------------------------
+\textbf{Pregunta 2} \textit{[35 puntos].}
+
+En un centro de desarrollo aeroespacial, se pone a prueba un módulo de calibración óptica que se desplaza verticalmente dentro de una plataforma de estabilización. El módulo tiene una masa de 5 kg y está suspendido mediante un resorte que se estira 2 metros cuando se coloca la masa en equilibrio. Con el fin de reducir las vibraciones producidas durante el lanzamiento, el sistema incorpora un amortiguador electromagnético que genera una fuerza proporcional a la velocidad del módulo, con coeficiente de amortiguamiento igual a 20 kg/seg.
+Durante una prueba de laboratorio, el módulo se libera desde una posición situada 0.5 metros por encima de la posición de equilibrio, con una velocidad inicial descendente de 3 m/s.
+
+\begin{enumerate}[label=\alph*)]
+  \item Plantee la ecuación diferencial que modela esta situación.
+  \item Resuelva la EDO, para determinar la ecuación del movimiento libre amortiguado que modela este sistema mecánico.
+  \item Calcule la posición del módulo transcurridos $\pi/8$ segundos. ¿Qué indica el signo de la posición de la masa calculada?
+\end{enumerate}
+
+\medskip
+
+\textbf{a)} Estableciendo el equilibrio de fuerzas para el resorte estirado por la masa en ausencia de movimiento dinámico, se tiene:
+\[
+  k s = mg \implies k(2) = 5(10) \implies k = 25\text{ N/m}
+\]
+donde se ha tomado la aceleración de gravedad como $g = 10\text{ m/s}^2$. Definiendo $y(t)$ como el desplazamiento del módulo medido en metros respecto a su posición de equilibrio, con sentido positivo hacia abajo, la ecuación general del movimiento libre amortiguado es:
+\[
+  my'' + \beta y' + ky = 0
+\]
+Sustituyendo los parámetros físicos $m = 5\text{ kg}$, $\beta = 20\text{ kg/s}$ y $k = 25\text{ N/m}$:
+\[
+  5y'' + 20y' + 25y = 0 \implies y'' + 4y' + 5y = 0
+\]
+
+\medskip
+
+\textbf{b)} Para resolver la ecuación diferencial lineal de segundo orden, planteamos la ecuación característica asociada:
+\[
+  r^2 + 4r + 5 = 0 \implies (r+2)^2 + 1 = 0 \implies r = -2 \pm i
+\]
+Al ser las raíces complejas conjugadas, el sistema corresponde a un movimiento subamortiguado. La solución general se escribe como:
+\[
+  y(t) = e^{-2t}(C_1 \cos t + C_2 \sin t)
+\]
+Determinamos las constantes aplicando las condiciones iniciales del problema. Dado que se libera $0.5\text{ m}$ por encima del equilibrio:
+\[
+  y(0) = -0.5 = -\frac{1}{2}
+\]
+Y como la velocidad inicial es de $3\text{ m/s}$ dirigida hacia abajo:
+\[
+  y'(0) = 3
+\]
+Evaluando la solución general en $t=0$:
+\[
+  y(0) = C_1 = -\frac{1}{2}
+\]
+Derivando la función de posición respecto al tiempo:
+\[
+  y'(t) = e^{-2t}[(-2C_1 + C_2)\cos t + (-C_1 - 2C_2)\sin t]
+\]
+Evaluando en $t=0$:
+\[
+  y'(0) = -2C_1 + C_2 = 3 \implies -2\left(-\frac{1}{2}\right) + C_2 = 3 \implies 1 + C_2 = 3 \implies C_2 = 2
+\]
+Reemplazando los coeficientes obtenidos, la ecuación horaria del movimiento es:
+\[
+  y(t) = e^{-2t}\left(-\frac{1}{2}\cos t + 2\sin t\right)
+\]
+
+\medskip
+
+\textbf{c)} Evaluando la posición al cabo del tiempo $t = \pi/8$ segundos:
+\[
+  y\left(\frac{\pi}{8}\right) = e^{-\pi/4}\left(-\frac{1}{2}\cos\left(\frac{\pi}{8}\right) + 2\sin\left(\frac{\pi}{8}\right)\right)
+\]
+Utilizando las identidades de ángulo medio para las funciones trigonométricas:
+\[
+  \cos\left(\frac{\pi}{8}\right) = \sqrt{\frac{1+\cos(\pi/4)}{2}} = \frac{\sqrt{2+\sqrt{2}}}{2} \approx 0.9239
+\]
+\[
+  \sin\left(\frac{\pi}{8}\right) = \sqrt{\frac{1-\cos(\pi/4)}{2}} = \frac{\sqrt{2-\sqrt{2}}}{2} \approx 0.3827
+\]
+Reemplazando estos valores aproximados en el factor armónico:
+\[
+  -\frac{1}{2}(0.9239) + 2(0.3827) = -0.4619 + 0.7654 = 0.3034
+\]
+Multiplicando por el factor exponencial:
+\[
+  y\left(\frac{\pi}{8}\right) \approx e^{-\pi/4} (0.3034) \approx 0.4559 \cdot 0.3034 \approx 0.1383\text{ m}
+\]
+El signo positivo obtenido indica que el módulo se encuentra a una distancia de $0.1383\text{ m}$ por debajo de la posición de equilibrio.
+
+Cabe destacar que este resultado físico es independiente del sistema de referencia elegido. Si se hubiese adoptado la convención alternativa donde el sentido positivo es hacia arriba, las condiciones iniciales habrían sido $y(0) = 0.5\text{ m}$ e $y'(0) = -3\text{ m/s}$, conduciendo a la solución $y(t) = e^{-2t}\left(\frac{1}{2}\cos t - 2\sin t\right)$ y a la posición $y(\pi/8) \approx -0.1383\text{ m}$, donde el signo negativo nuevamente representa una posición por debajo del equilibrio. Ambos enfoques coinciden plenamente en la interpretación física: el módulo ha cruzado la posición de equilibrio hacia abajo debido a la gran magnitud de su velocidad inicial descendente.
+
+\bigskip
+
+%--------------------------------------------------------------
+\textbf{Pregunta 3} \textit{[30 puntos].}
+
+Considere la ecuación diferencial con coeficientes constantes
+\[
+  y'' + by' + cy = f(x)
+\]
+Suponga que una de las soluciones de la ecuación homogénea asociada es $y_1(x) = e^{-3x}$ y que la ecuación característica posee raíces reales repetidas.
+
+\begin{enumerate}[label=\alph*)]
+  \item Determine la otra solución de la ecuación homogénea asociada y, con ello, construya dicha ecuación homogénea.
+  \item Considerando la ecuación no homogénea con $f(x) = xe^{-3x}$, resuelva la EDO usando coeficientes indeterminados. Justifique por qué factor debe multiplicarse para obtener una solución particular válida.
+\end{enumerate}
+
+\medskip
+
+\textbf{a)} Dado que $y_1(x) = e^{-3x}$ es solución de la ecuación homogénea con coeficientes constantes, el exponente $r_1 = -3$ corresponde a una raíz de su ecuación característica. Dado que se especifica que el polinomio posee raíces reales repetidas, ambas raíces deben ser iguales:
+\[
+  r_1 = r_2 = -3
+\]
+Bajo este caso de multiplicidad, la segunda solución linealmente independiente de la homogénea se construye multiplicando por la variable independiente:
+\[
+  y_2(x) = xe^{-3x}
+\]
+La ecuación característica de esta EDO es:
+\[
+  (r+3)^2 = 0 \implies r^2 + 6r + 9 = 0
+\]
+Lo cual determina los coeficientes $b = 6$ y $c = 9$. Así, la ecuación diferencial homogénea asociada es:
+\[
+  y'' + 6y' + 9y = 0
+\]
+
+\medskip
+
+\textbf{b)} Para resolver la ecuación no homogénea con término fuente $f(x) = xe^{-3x}$:
+\[
+  y'' + 6y' + 9y = xe^{-3x}
+\]
+Proponemos la forma de la solución particular usando el método de coeficientes indeterminados. La propuesta base para un polinomio de primer grado por una exponencial es $y_p(x) = (Ax + B)e^{-3x}$. Sin embargo, dado que tanto $e^{-3x}$ como $xe^{-3x}$ son soluciones de la EDO homogénea (asociadas a la raíz de multiplicidad 2 del operador diferencial), esta propuesta generaría redundancias. Aplicamos la regla de modificación multiplicando por $x^2$:
+\[
+  y_p(x) = x^2(Ax + B)e^{-3x} = (Ax^3 + Bx^2)e^{-3x}
+\]
+Derivando esta función para sustituirla en la EDO:
+\[
+  y_p'(x) = [3Ax^2 + 2Bx - 3(Ax^3 + Bx^2)]e^{-3x} = [-3Ax^3 + (3A-3B)x^2 + 2Bx]e^{-3x}
+\]
+\[
+  y_p''(x) = [-9Ax^2 + 2(3A-3B)x + 2B - 3(-3Ax^3 + (3A-3B)x^2 + 2Bx)]e^{-3x}
+\]
+\[
+  y_p''(x) = [9Ax^3 + (-18A+9B)x^2 + (6A-12B)x + 2B]e^{-3x}
+\]
+Reemplazando $y_p$, $y_p'$ e $y_p''$ en el miembro izquierdo de la EDO y agrupando potencias de $x$:
+\[
+  [9Ax^3 + (-18A+9B)x^2 + (6A-12B)x + 2B + 6(-3Ax^3 + (3A-3B)x^2 + 2Bx) + 9(Ax^3 + Bx^2)]e^{-3x} = xe^{-3x}
+\]
+Desarrollando los términos algebraicos internos:
+\[
+  x^3(9A - 18A + 9A) + x^2(-18A + 9B + 18A - 18B + 9B) + x(6A - 12B + 12B) + 2B = x
+\]
+Lo cual se reduce al sistema:
+\[
+  6Ax + 2B = x
+\]
+Igualando coeficientes miembro a miembro:
+\[
+  6A = 1 \implies A = \frac{1}{6}
+\]
+\[
+  2B = 0 \implies B = 0
+\]
+De este modo, la solución particular resulta:
+\[
+  y_p(x) = \frac{1}{6}x^3 e^{-3x}
+\]
+Sumando las componentes homogénea y particular, la solución general es:
+\[
+  y(x) = (C_1 + C_2 x)e^{-3x} + \frac{1}{6}x^3 e^{-3x}
+\]
+
+\end{document}

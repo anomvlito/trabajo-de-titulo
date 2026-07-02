@@ -1,0 +1,28 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción: el QSM como laboratorio de técnicas exportables}{2}{section.1}%
+\contentsline {section}{\numberline {2}Estado del arte del QSM médico (2023 a 2026)}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Consenso clínico internacional}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Separación de fuentes: hierro vs.\ mielina ($\chi $-separation)}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Redes neuronales y aprendizaje profundo}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}QSM fuera del cerebro}{5}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Aplicaciones del QSM en la enfermedad de Parkinson y neurodegeneración}{5}{section.3}%
+\contentsline {section}{\numberline {4}Derrame 1: Nanociencia y microscopía electrónica}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}El algoritmo QSM de origen: el pipeline de inversión cuantitativa de fase magnética}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}El mismo problema en escala nanométrica}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Resultados de la adopción}{6}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Derrame 2: Tomografía Óptica de Difracción y biología celular}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}El algoritmo QSM de origen: QSMnet y la idea de aprender la inversión desde datos}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}El problema análogo en biología óptica: el cono perdido}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Resultados de la adopción}{8}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Derrame 3: Geofísica y exploración aeromagnética}{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}El algoritmo QSM de origen: MEDI y la regularización guiada por imagen co-registrada}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}El mismo problema inverso a escala kilométrica}{9}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Resultados de la adopción}{9}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Nuevas fronteras: conocimiento emergente desde el QSM}{10}{section.7}%
+\contentsline {subsection}{\numberline {7.1}QSM en envejecimiento cerebral y longevidad}{10}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}QSM y enfermedad mental: la psiquiatría cuantitativa}{10}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}QSM implícita con representación neuronal}{11}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Mapa de transferencia interdisciplinaria}{11}{section.8}%
+\contentsline {section}{\numberline {9}Recursos adicionales y enlaces de interés}{11}{section.9}%
+\contentsline {section}{\numberline {10}Conclusiones}{12}{section.10}%
+\contentsline {section}{Referencias}{12}{section*.4}%
