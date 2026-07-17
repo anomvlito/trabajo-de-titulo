@@ -108,9 +108,12 @@ gh auth refresh -s project -s read:project
 
 No asumir deploy automático. Revisar primero la documentación vigente:
 
+- `documentacion/infraestructura/aws-runbook.md`
 - `documentacion/informe_deployment_aws_2026-06-18.md`
 - `documentacion/aws_estado_actual_2026-06-18.md`
 - guías en `documentacion/guias/` si existen.
+
+Para temas AWS/EC2/RDS/S3/CloudFront/ECR, subida de PDFs o credenciales, usar también `/aws-infrastructure` antes de diagnosticar o cambiar recursos.
 
 No ejecutar deploy productivo sin confirmación explícita del usuario.
 
