@@ -56,6 +56,12 @@ Ejecuta este ciclo:
    - pruebas de regresión necesarias.
 8. Solo después recomendar implementación o derivar a `/fullstack-implementer`.
 
+## Infraestructura AWS
+
+Cuando el requerimiento involucre AWS, deploy, EC2, RDS, S3, CloudFront, ECR, credenciales, subida de archivos o errores de PDF, primero deriva el diagnóstico operativo a `/aws-infrastructure` y revisa `documentacion/infraestructura/aws-runbook.md`.
+
+El orquestador debe decidir alcance, riesgos y si corresponde HU/spike/implementación; no debe duplicar comandos AWS detallados ni asumir estado productivo sin verificación de terminal.
+
 ## HealthTech guardrails
 
 Trasplan no es una app CRUD genérica. Mantén estas restricciones:
