@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1790018313.56206 "informe_titulo.tex" "informe_titulo.pdf" "informe_titulo" 1790018314.44262 0
+["pdflatex"] 1790022288.23611 "informe_titulo.tex" "informe_titulo.pdf" "informe_titulo" 1790022289.11919 0
   "/etc/texmf/web2c/texmf.cnf" 1777310004.38688 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1698694482 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -186,12 +186,12 @@
   "fig_monitoreo_cluster.png" 1789439346.28887 198082 768d6f0fdfa2df0fc1cf76a51ba3fc80 ""
   "fig_plataforma.png" 1789439345.64528 198810 e8a9b1da9c6368fa17f25e621dbef56b ""
   "imagenes_plataforma/panel_de_acuerdo.png" 1789444020.43036 135259 cd67bdc076cc9e64ae21a8be646f8ae6 ""
-  "informe_titulo.aux" 1790018314.35973 7835 de54e0101120158fc9b037edecab377f "pdflatex"
-  "informe_titulo.lof" 1790018314.36133 1314 2593ac63c55e5c8591f27b494b607330 "pdflatex"
-  "informe_titulo.lot" 1790018314.36133 150 730f8249457af8619ab6e0f1aeedfa85 "pdflatex"
-  "informe_titulo.out" 1790018314.35973 7012 1e0e0f984b24355c3dd858bcba98ce92 "pdflatex"
-  "informe_titulo.tex" 1790018154.93557 48657 d5da648f6bf8818a625cb339d3baee98 ""
-  "informe_titulo.toc" 1790018314.36133 3274 8e8947d0f11eea520426d2f90242c441 "pdflatex"
+  "informe_titulo.aux" 1790022289.03493 7835 dc4f89e0edbf0b689c2e03eb36e8626e "pdflatex"
+  "informe_titulo.lof" 1790022289.03656 1314 d9eeb7b5ee032ac76ca4f6b9047a77ae "pdflatex"
+  "informe_titulo.lot" 1790022289.03656 150 8d2326bf5e84449b2d95f28a19891669 "pdflatex"
+  "informe_titulo.out" 1790022289.036 7012 1e0e0f984b24355c3dd858bcba98ce92 "pdflatex"
+  "informe_titulo.tex" 1790022284.9938 49618 5575679f870bf9f328c7d922b9eb1723 ""
+  "informe_titulo.toc" 1790022289.03656 3274 54b3528447f1034eede0262882b5da0e "pdflatex"
   "vista_anotacion_censurada.png" 1789444278.11784 242678 dd5fd9b08e9d5632165fa8eef122cbde ""
   (generated)
   "informe_titulo.aux"

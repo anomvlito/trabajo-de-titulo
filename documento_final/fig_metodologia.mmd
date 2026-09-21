@@ -1,0 +1,16 @@
+flowchart LR
+    subgraph HU["Historias de usuario (epicrisis_documentacion)"]
+        direction TB
+        ADMIN["12 de administración<br/>panel, seguridad, exportación"]
+        ANOT["35 de anotación clínica<br/>formulario, visor, evidencia, guías"]
+    end
+
+    ADR["7 registros de decisiones<br/>de arquitectura (ADR)"]
+
+    HU --> DEV["Implementación versionada<br/>epicrisis_app · epicrisis_backend"]
+    ADR --> DEV
+
+    DEV --> REV["Retroalimentación semanal<br/>del equipo clínico"]
+    REV -->|siguiente iteración| DEV
+
+    DEV --> PLAT[("Plataforma de anotación<br/>en producción<br/>275 epicrisis · 5 anotadores")]

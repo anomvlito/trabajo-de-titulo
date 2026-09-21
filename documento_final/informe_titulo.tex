@@ -83,13 +83,13 @@ Santiago de Chile, 2026
 
 Agradezco a iHealth y al equipo médico y técnico vinculado a la Unidad de Paciente Crítico por abrir las puertas de un problema real y por la confianza depositada durante todo el desarrollo de este trabajo. Trabajar con datos clínicos verdaderos, con las responsabilidades que eso implica, fue una experiencia formativa que no se consigue en un entorno simulado.
 
-A mi profesor guía, Denis Parra, por su orientación y disposición durante el proceso. A mi supervisor Marcelo Andia, por el acompañamiento semanal, las discusiones técnicas y clínicas, y por empujar el proyecto hacia resultados concretos.
+A mi profesor guía, Denis Parra, por su disposición durante el proceso. A mi supervisor Marcelo Andia, por acompañamiento, las discusiones técnicas y clínicas, y por empujar el proyecto hacia resultados concretos.
 
 A Rafael Kaempfer, por su apoyo pedagógico durante todo este proceso y por la amistad que construimos en el camino: este trabajo de título fue una de las mejores épocas que he tenido en la universidad, y en buena parte fue gracias a eso.
 
 Al equipo de anotadores clínicos que participó del proceso de construcción del conjunto de referencia, por su rigor y su paciencia con una herramienta que evolucionaba semana a semana con su retroalimentación.
 
-A mi madre, Yohana, por su apoyo incondicional en cada etapa de este camino. A mis abuelos, Carmen y David, por todo lo que hicieron para que yo pudiera estudiar tranquilo.
+A mi madre, Yohana, y a mis abuelos, Carmen y David, por su apoyo incondicional en cada etapa de este camino y por todo lo que hicieron para que yo pudiera estudiar tranquilo.
 
 Y a mis compañeros más fieles: Kobach, Gastón, Jerson y Toffy, los animales que me hicieron compañía durante todo este proceso. En especial a Toffy, que estuvo a mi lado desde que intenté entrar a la universidad por primera vez, acompañándome incontables horas de estudio apegado a mis pies.
 \newpage
@@ -111,7 +111,7 @@ El objetivo del proyecto fue implementar un sistema de software clínico que int
 
 Sobre el primer frente, se construyó una plataforma completa: ingesta de documentos PDF hacia una base de datos, un mecanismo de anonimización que oculta la identidad del paciente antes de mostrar el documento, un formulario jerárquico de nueve bloques con 186 variables clínicas, un visor seguro que muestra la epicrisis sin entregar el archivo original, y un experimento de concordancia entre anotadores sobre 50 epicrisis con cinco anotadores y tres revisores por caso. Sobre el segundo frente, se montó en el clúster de cómputo de iHealth la evaluación de tres modelos de lenguaje abiertos (Gemma, Llama y Qwen) en la extracción de 48 variables clínicas con la evidencia textual que las respalda, y se diseñó un procedimiento de extracción por dominios clínicos que, en su validación, eliminó los truncamientos y las citas inventadas de las respuestas.
 
-El proyecto exigió, además, resolver problemas propios de un sistema en producción: protección de datos personales sobre 275 epicrisis reales, migración de la base de datos a un servicio administrado en la nube, respaldos verificados y monitoreo de disponibilidad. El desarrollo permitió evidenciar las tres competencias del perfil de egreso declaradas: el desarrollo de soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de Computación, la aplicación de diversos métodos de análisis de datos, y la investigación y adopción de nuevas tecnologías de información dentro de una organización de salud.
+El proyecto exigió, además, resolver problemas propios de un sistema en producción: protección de datos personales sobre 275 epicrisis reales, validación de la migración de la base de datos a un servicio administrado en la nube, respaldos verificados y monitoreo de disponibilidad. El desarrollo permitió evidenciar las tres competencias del perfil de egreso declaradas: el desarrollo de soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de Computación, la aplicación de diversos métodos de análisis de datos, y la investigación y adopción de nuevas tecnologías de información dentro de una organización de salud.
 \newpage
 
 % ==================== ABSTRACT ====================
@@ -124,7 +124,7 @@ The goal of the project was to implement a clinical software system integrating 
 
 On the first front, a complete platform was built: PDF ingestion into a database, an anonymization mechanism that hides patient identity before displaying each document, a hierarchical annotation form of nine blocks covering 186 clinical variables, a secure viewer that renders the epicrisis without delivering the original file, and an inter-annotator agreement experiment over 50 epicrises with five annotators and three reviewers per case. On the second front, an evaluation of three open language models (Gemma, Llama, and Qwen) was set up on the iHealth computing cluster to extract 48 clinical variables together with their supporting textual evidence, and a domain-based extraction procedure was designed which, in its validation, eliminated truncated outputs and fabricated citations.
 
-The project also required solving problems inherent to a production system: personal data protection over 275 real epicrises, database migration to a managed cloud service, verified backups, and availability monitoring. The work provided evidence for the three declared graduate profile competencies: developing innovative solutions based on advanced Computer Science engineering knowledge, applying diverse data analysis methods, and researching and facilitating the adoption of new information technologies within a healthcare organization.
+The project also required solving problems inherent to a production system: personal data protection over 275 real epicrises, a validated migration path to a managed cloud database service, verified backups, and availability monitoring. The work provided evidence for the three declared graduate profile competencies: developing innovative solutions based on advanced Computer Science engineering knowledge, applying diverse data analysis methods, and researching and facilitating the adoption of new information technologies within a healthcare organization.
 \newpage
 
 % ==================== I. INTRODUCCIÓN ====================
@@ -136,7 +136,7 @@ El presente informe describe el trabajo de título desarrollado por el estudiant
 
 \subsubsection{iHealth y la Unidad de Paciente Crítico}
 
-iHealth es un instituto de investigación que reúne a médicos, ingenieros y científicos de datos con el propósito de llevar herramientas de inteligencia artificial a la práctica clínica chilena. El proyecto en que se enmarca este trabajo nace de una necesidad concreta de la Unidad de Paciente Crítico (UPC) del Hospital Dr.\ Sótero del Río: la incertidumbre terapéutica en pacientes críticos, en particular en torno al uso de la hemofiltración de alto volumen (HFAV), una terapia cuya indicación y resultados son difíciles de evaluar retrospectivamente porque la información relevante está dispersa en registros narrativos.
+iHealth es un instituto de investigación que reúne a médicos, ingenieros y científicos de datos con el propósito de llevar herramientas de inteligencia artificial a la práctica clínica chilena. El proyecto en que se enmarca este trabajo nace de una necesidad concreta de la Unidad de Paciente Crítico (UPC) del Hospital Dr.\ Sótero del Río: estudiar las comorbilidades de sus pacientes críticos, una pregunta clínica que depende de datos estructurados que hoy no existen, porque la información relevante está dispersa en registros narrativos. A nivel exploratorio, tanto este trabajo como la publicación académica asociada buscan evaluar si modelos de lenguaje (LLM) pueden extraer esa información clínica de forma confiable desde texto narrativo, en el contexto específico de la práctica chilena.
 
 La epicrisis, el resumen médico que se redacta al alta de cada paciente, concentra los antecedentes, el curso clínico, las infecciones, los soportes vitales y los diagnósticos del episodio. Es un documento riquísimo en información y a la vez inutilizable para el análisis sistemático, porque cada médico lo redacta a su manera, en texto libre. Convertir ese texto en datos estructurados y confiables es la condición previa para cualquier análisis estadístico o modelo predictivo sobre la población de la UPC.
 
@@ -150,20 +150,20 @@ Este informe describe exclusivamente el trabajo realizado por el estudiante: la 
 
 \subsubsection{Objetivo general}
 
-Implementar un sistema de software clínico que integre inteligencia artificial para el análisis automatizado de registros médicos y la predicción de eventos clínicos en pacientes de Unidades de Cuidados Intensivos.
+Implementar un sistema de software clínico que integre modelos de lenguaje para la extracción automatizada de información desde registros médicos de pacientes en Unidades de Cuidados Intensivos, y evaluar su desempeño mediante coeficientes de concordancia frente a un conjunto de referencia anotado por humanos.
 
 \subsubsection{Objetivos específicos}
 
 \begin{enumerate}
     \item Desarrollar una herramienta de anotación clínica para generar el conjunto de referencia (\textit{ground truth}), respaldada por una base de datos consultable y una interfaz web segura para el equipo de anotadores.
+    \item Proteger la identidad de los pacientes mediante un mecanismo de anonimización, y operar la plataforma de forma confiable en producción, con monitoreo y respaldos verificados.
     \item Evaluar modelos de lenguaje de código abierto en su capacidad de extraer variables clínicas desde epicrisis reales, exigiendo evidencia textual verificable para cada valor extraído.
-    \item Medir la confiabilidad del conjunto de referencia mediante un experimento de concordancia entre anotadores.
-    \item Estudiar arquitecturas de predicción de eventos clínicos (Delphi-2M, TFT, Foresight) como base para el análisis predictivo sobre los datos estructurados.
+    \item Medir la confiabilidad del conjunto de referencia mediante un experimento de concordancia entre anotadores, y comparar el desempeño de los modelos de lenguaje contra ese estándar de referencia humano.
 \end{enumerate}
 
 \subsubsection{Metodología}
 
-El proyecto se organizó en áreas de desarrollo consecutivas y superpuestas. La primera área correspondió al software de extracción: la plataforma de anotación, su base de datos, la anonimización y el visor seguro de documentos. La segunda, a la evaluación de modelos de lenguaje sobre el clúster de cómputo ih-condor, incluyendo el diseño de un procedimiento de extracción por dominios clínicos. La tercera, al estudio de arquitecturas de predicción de eventos clínicos y a la preparación de los datos que esos modelos requieren.
+El proyecto se organizó en tres áreas de desarrollo consecutivas y superpuestas. La primera correspondió a la plataforma de anotación clínica: su base de datos, el formulario jerárquico y el visor seguro de documentos. La segunda, a la protección de datos y la infraestructura de producción: el mecanismo de anonimización, la validación de la migración a un servicio administrado en la nube, y el monitoreo y los respaldos verificados. La tercera, a la extracción automática con modelos de lenguaje sobre el clúster de cómputo ih-condor, incluyendo el diseño de un procedimiento de extracción por dominios clínicos y la comparación del desempeño de los modelos contra el estándar de referencia humano.
 
 El trabajo siguió un ciclo iterativo con retroalimentación semanal del equipo clínico: cada versión de la plataforma fue usada por anotadores reales, y sus observaciones alimentaron la siguiente iteración. Los requisitos se registraron como historias de usuario en un repositorio de documentación centralizado, y todo el desarrollo quedó versionado en repositorios Git, lo que permite trazar cada afirmación de este informe a trabajo verificable.
 
@@ -188,7 +188,7 @@ Este capítulo describe el trabajo realizado, organizado por líneas de desarrol
 
 \subsection{Conceptualización y análisis exploratorio}
 
-El proyecto comenzó con una reunión de definición junto al equipo médico y técnico de iHealth, en la que se acordó el problema central (incertidumbre terapéutica en UCI, con foco en la HFAV) y una visión dual: generar publicaciones académicas y, a la vez, un producto funcional integrable en sistemas hospitalarios. Se exploraron 27 epicrisis reales de la UPC, aplicando anonimización manual y automática para proteger la información sensible de los pacientes, y se ejecutó un análisis de agrupamiento (\textit{clustering}) de comorbilidades que permitió identificar perfiles de paciente y validar la viabilidad de extraer información estructurada desde texto clínico no estructurado.
+El proyecto comenzó con una reunión de definición junto al equipo médico y técnico de iHealth, en la que se acordó el problema central a nivel exploratorio (evaluar la extracción de información clínica desde texto narrativo mediante modelos de lenguaje, con foco en las comorbilidades de pacientes críticos, en el contexto de la práctica chilena) y una visión dual: generar publicaciones académicas y, a la vez, un producto funcional integrable en sistemas hospitalarios. Se exploraron 27 epicrisis reales de la UPC, aplicando anonimización manual y automática para proteger la información sensible de los pacientes, y se ejecutó un análisis de agrupamiento (\textit{clustering}) de comorbilidades que permitió identificar perfiles de paciente y validar la viabilidad de extraer información estructurada desde texto clínico no estructurado.
 
 En paralelo, el estudiante completó un proceso de formación técnica que abarcó fundamentos matemáticos, aprendizaje de máquina, redes neuronales, procesamiento de lenguaje natural, mecanismos de atención, arquitecturas Transformer, modelos de supervivencia e inteligencia artificial aplicada a medicina, junto con la configuración del acceso al clúster de cómputo de iHealth (ih-condor): autenticación, desarrollo remoto y buenas prácticas de almacenamiento en un entorno compartido.
 
@@ -237,7 +237,7 @@ Durante la anotación, la plataforma ofrece supervisión en dos niveles: un pane
 
 \subsection{Infraestructura y operación}
 
-El paso de prototipo a sistema en uso exigió infraestructura seria. La base de datos se trasladó desde un computador local a un servicio administrado en la nube en la región sudamericana, con conexión cifrada y verificación efectiva del certificado del servidor.
+El paso de prototipo a sistema en uso exigió infraestructura seria. Se validó la migración de la base de datos desde un computador local a un servicio administrado en la nube en la región sudamericana, con conexión cifrada y verificación efectiva del certificado del servidor; durante el experimento de concordancia, la base opera localmente, replicada cada hora hacia ese proveedor en la nube.
 
 La operación se supervisa mediante lazos de monitoreo concéntricos que convergen en un mismo canal de mensajería. En el lazo interno, el supervisor de procesos reinicia automáticamente la API ante cualquier caída. En un segundo nivel, un bot de Telegram que corre como proceso independiente (de modo que sobrevive a una caída de la API y puede levantarla remotamente) emite cuatro reportes diarios que combinan el estado de los servicios, el uso de disco y de registros de transacciones de la base de datos, y el avance del experimento por anotador; el mismo bot notifica en tiempo real los inicios de sesión de los anotadores y sus avances sustanciales, con umbrales y períodos de enfriamiento para evitar ruido. En el nivel más externo, un flujo de integración continua ejecutado fuera de la infraestructura propia verifica cada quince minutos el frontend y el backend mediante una sonda sintética que ejercita la ruta pública, la API y una consulta real a la base de datos, registrando cada corte como un aviso que se abre y cierra automáticamente.
 
@@ -304,7 +304,7 @@ El experimento de concordancia entre anotadores es la aplicación más formal de
 
 \subsection*{Investigar sobre nuevas tecnologías de información existentes en la industria y facilitar su adopción dentro de las organizaciones}
 
-El proyecto exigió investigar tecnología que ni el estudiante ni la organización dominaban al inicio, y dejarla operativa para otros. El estudiante completó un programa de formación en aprendizaje profundo y modelos de lenguaje, estudió arquitecturas de predicción de eventos clínicos (Delphi-2M, TFT, Foresight) y llevó ese estudio a la práctica: la evaluación de Gemma, Llama-70B y Qwen sobre el clúster ih-condor requirió resolver problemas concretos de adopción, desde la reserva de múltiples tarjetas gráficas para los modelos grandes hasta la constatación de que los nodos del clúster no alcanzan el repositorio público de paquetes, con su procedimiento de instalación documentado para el resto del equipo.
+El proyecto exigió investigar tecnología que ni el estudiante ni la organización dominaban al inicio, y dejarla operativa para otros. El estudiante completó un programa de formación en aprendizaje profundo y modelos de lenguaje, y estudió arquitecturas orientadas a la predicción de eventos clínicos (Delphi-2M, TFT, Foresight) como investigación aplicada de cara a trabajo futuro. La práctica concreta de esta competencia se dio en la evaluación de Gemma, Llama-70B y Qwen sobre el clúster ih-condor, que requirió resolver problemas concretos de adopción, desde la reserva de múltiples tarjetas gráficas para los modelos grandes hasta la constatación de que los nodos del clúster no alcanzan el repositorio público de paquetes, con su procedimiento de instalación documentado para el resto del equipo.
 
 La dimensión de adopción organizacional es explícita en varios entregables: el manual de anotación interactivo dentro de la propia aplicación, que convierte el protocolo de anotación en ejercicios prácticos; el glosario clínico indexado por campo; la documentación del entorno de cómputo y la norma de ejecutar todo trabajo mediante el planificador de tareas del clúster; y la migración de la base de datos a un servicio administrado en la nube, que sacó a la plataforma de una máquina personal y la dejó sobre infraestructura que la organización puede operar. Investigar tecnología nueva es la mitad de la competencia; la otra mitad, dejarla usable por otros, es lo que este proyecto ejercitó de forma sostenida.
 
