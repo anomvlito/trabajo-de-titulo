@@ -1,0 +1,1 @@
+epicrisis_backend: eaa087e (api/_lib/redact.ts, api/epicrisis.ts, api/layouts.ts), c3ca391 (MEDICAL_TERMS e isMedicalPhrase), 726df9f, f87b88d (extractPiiFromHtml), 3817367 (firmas al final del documento), 88b3ee4 (fix declaracion row en api/epicrisis.ts). epicrisis_documentacion: 6234fd6 (historias-usuario/admin/HU-023-redaccion-fbi-on-the-fly.md).

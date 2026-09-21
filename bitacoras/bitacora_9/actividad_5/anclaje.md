@@ -1,0 +1,1 @@
+Consistencia verificada contra: bitacoras 8 y 9 (SIDING), HU-045 actualizada (commit 4399cf5), incidente y ADR-008 (commit f2fa33a), manifest.json de la entrega de 275 epicrisis, y el propio informe_titulo.tex.

@@ -1,0 +1,1 @@
+epicrisis_documentacion: commit 4399cf5 (2026-09-09) "docs(HU-045): registrar rebalanceo del experimento", actualiza historias-usuario/admin/HU-045-incorporar-anotador-tardio.md con el detalle del traspaso del 2026-09-07 (EXP-011 a EXP-015 y EXP-021 a EXP-030, tabla de reparto y verificacion: 150 asignaciones, 3 revisores por caso, 58 entregas completadas).

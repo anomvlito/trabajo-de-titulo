@@ -1,0 +1,1 @@
+Operacion sin commits por naturaleza: evidencia en los reportes del bot de Telegram, la vista del experimento del panel de administracion y el correo de entrega del borrador al profesor guia (14-09-2026).

@@ -1,0 +1,2 @@
+**Competencia:** Investigar sobre nuevas tecnologías de información existentes en la industria y facilitar su adopción dentro de las organizaciones.
+**Evidencia:** Estudio profundo, adaptación y ejecución del proceso de fine-tuning sobre arquitecturas Transformer especializadas y de vanguardia (Delphi 2M, TFT, Foresight) orientadas a la predicción de secuencias y eventos en la UCI, facilitando la adopción de estas nuevas tecnologías en el entorno hospitalario.

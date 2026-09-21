@@ -1,0 +1,1 @@
+Cifras de avance (23 entregas al 27-08 por reporte /status del bot; 58 al 07-09 por la verificacion registrada en el commit 4399cf5). La operacion continua no deja commits: su evidencia son los reportes del bot de Telegram y la vista del experimento en el panel de administracion.

@@ -1,0 +1,40 @@
+flowchart LR
+    subgraph PLAT["Plataforma de anotación"]
+        A["Anotador<br/>(navegador)"]
+        V["Frontend Vue 3<br/>(CDN)"]
+        T["Túnel SSH reverso<br/>pasarela HTTPS"]
+        API["API Node<br/>(supervisada)"]
+        DB[("PostgreSQL local<br/>275 epicrisis anonimizadas")]
+        A -->|estáticos| V
+        A <-->|"API + token"| T
+        T <--> API
+        API <-->|"SQL"| DB
+    end
+
+    subgraph RESP["Respaldos verificados"]
+        S3["Volcado cifrado<br/>+ checksum"]
+        NEON["Réplica horaria<br/>verificada por conteos"]
+    end
+    DB --> S3
+    DB --> NEON
+
+    subgraph MON["Monitoreo"]
+        BOT["Bot de Telegram<br/>(proceso aparte)"]
+        GHA["Sonda externa<br/>cada 15 min"]
+        TG["Canal de alertas<br/>+ control remoto"]
+        BOT --> TG
+        GHA --> TG
+    end
+    BOT -.-> API
+    BOT -.-> DB
+    GHA -.-> V
+    GHA -.-> T
+
+    subgraph CLUS["Evaluación de modelos"]
+        XL["Extracto anonimizado<br/>(sin datos personales)"]
+        C["Clúster ih-condor<br/>8× RTX A6000, SLURM<br/>Gemma / Llama / Qwen"]
+        AN["Análisis de resultados"]
+        XL --> C
+        C --> AN
+    end
+    DB -.->|"estándar de referencia<br/>(anotación humana)"| AN

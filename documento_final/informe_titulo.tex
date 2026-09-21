@@ -1,0 +1,396 @@
+% Informe de Trabajo de Título - Fabián Ortega Llantén
+% Formato según Reglamento TT vf2024: carta, márgenes 2,5 cm, Times 12,
+% párrafos justificados con sangría 1,27 cm, numeración esquina superior derecha
+% desde la portada, citas APA. Cuerpo objetivo: 15 a 25 páginas.
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{newtxtext,newtxmath} % Times
+\usepackage[letterpaper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{parskip}
+\setlength{\parindent}{1.27cm}
+\setlength{\parskip}{6pt}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning, fit, arrows.meta}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\setlist{itemsep=2pt, topsep=4pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyhead[R]{\thepage}\renewcommand{\headrulewidth}{0pt}}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\MakeUppercase}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\itshape\bfseries}{\thesubsubsection}{0.6em}{}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\begin{document}
+
+% ==================== PORTADA 1 ====================
+\thispagestyle{plain}
+\begin{center}
+{\normalsize Pontificia Universidad Católica de Chile\\
+\textbf{Escuela de Ingeniería}}\\[3.5cm]
+{\large\bfseries IMPLEMENTACIÓN DE UNA HERRAMIENTA DE HISTORIAL CLÍNICO CON IA PARA LA GESTIÓN EFICIENTE DE PACIENTES EN UNA UNIDAD DE PACIENTE CRÍTICO}\\[2.5cm]
+{\large\bfseries Fabián Ignacio Ortega Llantén}\\[2cm]
+Trabajo de Título para optar al título de\\
+Ingeniero Civil de Industrias, Diploma en Ingeniería en Tecnologías de Información\\[2cm]
+Profesor Guía:\\[0.3cm]
+{\bfseries Denis Parra Santander}\\[2cm]
+Santiago de Chile, 2026
+\end{center}
+\newpage
+
+% ==================== PORTADA 2 ====================
+\begin{center}
+{\normalsize Pontificia Universidad Católica de Chile\\
+Escuela de Ingeniería\\
+Departamento de Ciencia de la Computación}\\[3cm]
+{\large\bfseries IMPLEMENTACIÓN DE UNA HERRAMIENTA DE HISTORIAL CLÍNICO CON IA PARA LA GESTIÓN EFICIENTE DE PACIENTES EN UNA UNIDAD DE PACIENTE CRÍTICO}\\[2cm]
+{\large\bfseries Fabián Ignacio Ortega Llantén}\\[1.5cm]
+Trabajo de Título presentado a la Comisión integrada por los profesores:\\[0.5cm]
+{\bfseries Denis Parra Santander}\\[0.2cm]
+{\bfseries Marcelo Andia Kohnenkampf}\\[0.2cm]
+{\bfseries Javier Pereda Torres}\\[1.5cm]
+Para completar las exigencias del título de\\
+Ingeniero Civil de Industrias, Diploma en Ingeniería en Tecnologías de Información\\[1.5cm]
+Santiago de Chile, 2026
+\end{center}
+\newpage
+
+% ==================== DEDICATORIA ====================
+\vspace*{\fill}
+\begin{flushright}
+\textit{A mi padre, Fabián.}
+\end{flushright}
+\vspace*{\fill}
+\newpage
+
+% ==================== AGRADECIMIENTOS ====================
+\section*{AGRADECIMIENTOS}
+\addcontentsline{toc}{section}{AGRADECIMIENTOS}
+
+Agradezco a iHealth y al equipo médico y técnico vinculado a la Unidad de Paciente Crítico por abrir las puertas de un problema real y por la confianza depositada durante todo el desarrollo de este trabajo. Trabajar con datos clínicos verdaderos, con las responsabilidades que eso implica, fue una experiencia formativa que no se consigue en un entorno simulado.
+
+A mi profesor guía, Denis Parra, por su orientación y disposición durante el proceso. A mi supervisor Marcelo Andia, por el acompañamiento semanal, las discusiones técnicas y clínicas, y por empujar el proyecto hacia resultados concretos.
+
+A Rafael Kaempfer, por su apoyo pedagógico durante todo este proceso y por la amistad que construimos en el camino: este trabajo de título fue una de las mejores épocas que he tenido en la universidad, y en buena parte fue gracias a eso.
+
+Al equipo de anotadores clínicos que participó del proceso de construcción del conjunto de referencia, por su rigor y su paciencia con una herramienta que evolucionaba semana a semana con su retroalimentación.
+
+A mi madre, Yohana, por su apoyo incondicional en cada etapa de este camino. A mis abuelos, Carmen y David, por todo lo que hicieron para que yo pudiera estudiar tranquilo.
+
+Y a mis compañeros más fieles: Kobach, Gastón, Jerson y Toffy, los animales que me hicieron compañía durante todo este proceso. En especial a Toffy, que estuvo a mi lado desde que intenté entrar a la universidad por primera vez, acompañándome incontables horas de estudio apegado a mis pies.
+\newpage
+
+% ==================== ÍNDICES ====================
+\tableofcontents
+\newpage
+\listoftables
+\listoffigures
+\newpage
+
+% ==================== RESUMEN ====================
+\section*{RESUMEN}
+\addcontentsline{toc}{section}{RESUMEN}
+
+Este trabajo de título se desarrolló en colaboración con iHealth y la Unidad de Paciente Crítico (UPC) del Hospital Dr. Sótero del Río, y abordó un problema estructural de la gestión clínica en unidades de cuidados intensivos: la información más valiosa de cada paciente queda registrada como texto libre en las epicrisis, lo que impide construir estadísticas, auditar decisiones terapéuticas o entrenar modelos predictivos sobre esos datos.
+
+El objetivo del proyecto fue implementar un sistema de software clínico que integre inteligencia artificial para el análisis automatizado de registros médicos en pacientes de UCI. El trabajo se organizó en torno a dos frentes complementarios: la construcción de una plataforma web de anotación clínica que permite a un equipo de anotadores generar un conjunto de referencia (\textit{ground truth}) confiable a partir de las epicrisis, y la evaluación de modelos de lenguaje de código abierto que intentan extraer automáticamente esas mismas variables.
+
+Sobre el primer frente, se construyó una plataforma completa: ingesta de documentos PDF hacia una base de datos, un mecanismo de anonimización que oculta la identidad del paciente antes de mostrar el documento, un formulario jerárquico de nueve bloques con 186 variables clínicas, un visor seguro que muestra la epicrisis sin entregar el archivo original, y un experimento de concordancia entre anotadores sobre 50 epicrisis con cinco anotadores y tres revisores por caso. Sobre el segundo frente, se montó en el clúster de cómputo de iHealth la evaluación de tres modelos de lenguaje abiertos (Gemma, Llama y Qwen) en la extracción de 48 variables clínicas con la evidencia textual que las respalda, y se diseñó un procedimiento de extracción por dominios clínicos que, en su validación, eliminó los truncamientos y las citas inventadas de las respuestas.
+
+El proyecto exigió, además, resolver problemas propios de un sistema en producción: protección de datos personales sobre 275 epicrisis reales, migración de la base de datos a un servicio administrado en la nube, respaldos verificados y monitoreo de disponibilidad. El desarrollo permitió evidenciar las tres competencias del perfil de egreso declaradas: el desarrollo de soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de Computación, la aplicación de diversos métodos de análisis de datos, y la investigación y adopción de nuevas tecnologías de información dentro de una organización de salud.
+\newpage
+
+% ==================== ABSTRACT ====================
+\section*{ABSTRACT}
+\addcontentsline{toc}{section}{ABSTRACT}
+
+This thesis was developed in collaboration with iHealth and the Critical Care Unit of Hospital Dr.\ Sótero del Río, addressing a structural problem in intensive care management: the most valuable patient information is recorded as free text in discharge summaries (epicrises), which prevents building statistics, auditing therapeutic decisions, or training predictive models on that data.
+
+The goal of the project was to implement a clinical software system integrating artificial intelligence for the automated analysis of medical records of ICU patients. The work was organized around two complementary fronts: building a web-based clinical annotation platform that allows a team of annotators to produce a reliable ground truth from the epicrises, and evaluating open-source large language models that attempt to extract those same variables automatically.
+
+On the first front, a complete platform was built: PDF ingestion into a database, an anonymization mechanism that hides patient identity before displaying each document, a hierarchical annotation form of nine blocks covering 186 clinical variables, a secure viewer that renders the epicrisis without delivering the original file, and an inter-annotator agreement experiment over 50 epicrises with five annotators and three reviewers per case. On the second front, an evaluation of three open language models (Gemma, Llama, and Qwen) was set up on the iHealth computing cluster to extract 48 clinical variables together with their supporting textual evidence, and a domain-based extraction procedure was designed which, in its validation, eliminated truncated outputs and fabricated citations.
+
+The project also required solving problems inherent to a production system: personal data protection over 275 real epicrises, database migration to a managed cloud service, verified backups, and availability monitoring. The work provided evidence for the three declared graduate profile competencies: developing innovative solutions based on advanced Computer Science engineering knowledge, applying diverse data analysis methods, and researching and facilitating the adoption of new information technologies within a healthcare organization.
+\newpage
+
+% ==================== I. INTRODUCCIÓN ====================
+\section{Introducción}
+
+El presente informe describe el trabajo de título desarrollado por el estudiante de Ingeniería Civil de Industrias, Diploma en Ingeniería en Tecnologías de Información, de la Pontificia Universidad Católica de Chile, realizado entre mayo y septiembre de 2026 en colaboración con iHealth y la Unidad de Paciente Crítico del Hospital Dr.\ Sótero del Río. El documento presenta el contexto del proyecto, las actividades desempeñadas, los resultados obtenidos y la forma en que el trabajo evidencia las competencias del perfil de egreso declaradas en la inscripción.
+
+\subsection{Contexto institucional}
+
+\subsubsection{iHealth y la Unidad de Paciente Crítico}
+
+iHealth es un instituto de investigación que reúne a médicos, ingenieros y científicos de datos con el propósito de llevar herramientas de inteligencia artificial a la práctica clínica chilena. El proyecto en que se enmarca este trabajo nace de una necesidad concreta de la Unidad de Paciente Crítico (UPC) del Hospital Dr.\ Sótero del Río: la incertidumbre terapéutica en pacientes críticos, en particular en torno al uso de la hemofiltración de alto volumen (HFAV), una terapia cuya indicación y resultados son difíciles de evaluar retrospectivamente porque la información relevante está dispersa en registros narrativos.
+
+La epicrisis, el resumen médico que se redacta al alta de cada paciente, concentra los antecedentes, el curso clínico, las infecciones, los soportes vitales y los diagnósticos del episodio. Es un documento riquísimo en información y a la vez inutilizable para el análisis sistemático, porque cada médico lo redacta a su manera, en texto libre. Convertir ese texto en datos estructurados y confiables es la condición previa para cualquier análisis estadístico o modelo predictivo sobre la población de la UPC.
+
+\subsubsection{Rol del estudiante}
+
+El estudiante se integró al equipo como responsable del desarrollo de software del proyecto, con un doble mandato: construir la plataforma de anotación clínica con que el equipo médico genera el conjunto de referencia, y montar sobre el clúster de cómputo de iHealth la evaluación de modelos de lenguaje que intentan extraer la misma información de forma automática. El rol incluyó el ciclo completo de un sistema en producción: diseño, implementación, protección de datos personales, infraestructura, operación y soporte a los usuarios clínicos, bajo la supervisión de Marcelo Andia y Rafael Kaempfer por parte de iHealth y la guía académica del profesor Denis Parra.
+
+Este informe describe exclusivamente el trabajo realizado por el estudiante: la plataforma de anotación, el procedimiento de extracción por dominios (\textit{harness}) y la evaluación experimental de los tres modelos de lenguaje en el clúster. Los análisis orientados a publicación científica desarrollados por otros integrantes del equipo quedan fuera del alcance de este documento.
+
+\subsection{Trabajo de título}
+
+\subsubsection{Objetivo general}
+
+Implementar un sistema de software clínico que integre inteligencia artificial para el análisis automatizado de registros médicos y la predicción de eventos clínicos en pacientes de Unidades de Cuidados Intensivos.
+
+\subsubsection{Objetivos específicos}
+
+\begin{enumerate}
+    \item Desarrollar una herramienta de anotación clínica para generar el conjunto de referencia (\textit{ground truth}), respaldada por una base de datos consultable y una interfaz web segura para el equipo de anotadores.
+    \item Evaluar modelos de lenguaje de código abierto en su capacidad de extraer variables clínicas desde epicrisis reales, exigiendo evidencia textual verificable para cada valor extraído.
+    \item Medir la confiabilidad del conjunto de referencia mediante un experimento de concordancia entre anotadores.
+    \item Estudiar arquitecturas de predicción de eventos clínicos (Delphi-2M, TFT, Foresight) como base para el análisis predictivo sobre los datos estructurados.
+\end{enumerate}
+
+\subsubsection{Metodología}
+
+El proyecto se organizó en áreas de desarrollo consecutivas y superpuestas. La primera área correspondió al software de extracción: la plataforma de anotación, su base de datos, la anonimización y el visor seguro de documentos. La segunda, a la evaluación de modelos de lenguaje sobre el clúster de cómputo ih-condor, incluyendo el diseño de un procedimiento de extracción por dominios clínicos. La tercera, al estudio de arquitecturas de predicción de eventos clínicos y a la preparación de los datos que esos modelos requieren.
+
+El trabajo siguió un ciclo iterativo con retroalimentación semanal del equipo clínico: cada versión de la plataforma fue usada por anotadores reales, y sus observaciones alimentaron la siguiente iteración. Los requisitos se registraron como historias de usuario en un repositorio de documentación centralizado, y todo el desarrollo quedó versionado en repositorios Git, lo que permite trazar cada afirmación de este informe a trabajo verificable.
+
+\subsubsection{Resultados esperados}
+
+Un sistema integral funcional que permita la extracción de texto clínico, la construcción de un conjunto de referencia confiable con medidas de concordancia entre anotadores, y la evaluación rigurosa de modelos de inteligencia artificial ajustados a las necesidades reales de gestión de pacientes críticos.
+
+\subsubsection{Competencias del perfil de egreso}
+
+En la inscripción del trabajo se declararon tres competencias técnicas del perfil de egreso, que se desarrollan en detalle en el Capítulo IV:
+
+\begin{enumerate}
+    \item Desarrollar soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de Computación.
+    \item Aplicar diversos métodos de análisis de datos para la comprensión de los fenómenos abordados.
+    \item Investigar sobre nuevas tecnologías de información existentes en la industria y facilitar su adopción dentro de las organizaciones.
+\end{enumerate}
+
+% ==================== II. ACTIVIDADES ====================
+\section{Actividades desempeñadas}
+
+Este capítulo describe el trabajo realizado, organizado por líneas de desarrollo. La dedicación total registrada en las bitácoras del período fue de 493 horas, distribuidas entre mayo y agosto de 2026.
+
+\subsection{Conceptualización y análisis exploratorio}
+
+El proyecto comenzó con una reunión de definición junto al equipo médico y técnico de iHealth, en la que se acordó el problema central (incertidumbre terapéutica en UCI, con foco en la HFAV) y una visión dual: generar publicaciones académicas y, a la vez, un producto funcional integrable en sistemas hospitalarios. Se exploraron 27 epicrisis reales de la UPC, aplicando anonimización manual y automática para proteger la información sensible de los pacientes, y se ejecutó un análisis de agrupamiento (\textit{clustering}) de comorbilidades que permitió identificar perfiles de paciente y validar la viabilidad de extraer información estructurada desde texto clínico no estructurado.
+
+En paralelo, el estudiante completó un proceso de formación técnica que abarcó fundamentos matemáticos, aprendizaje de máquina, redes neuronales, procesamiento de lenguaje natural, mecanismos de atención, arquitecturas Transformer, modelos de supervivencia e inteligencia artificial aplicada a medicina, junto con la configuración del acceso al clúster de cómputo de iHealth (ih-condor): autenticación, desarrollo remoto y buenas prácticas de almacenamiento en un entorno compartido.
+
+\subsection{Plataforma de anotación clínica}
+
+La pieza central del primer frente fue una plataforma web donde los anotadores clínicos registran, para cada epicrisis, el valor de un conjunto de variables definidas junto al equipo médico.
+
+\subsubsection{Ingesta y base de datos}
+
+Se desarrolló el flujo de ingesta de los documentos PDF hacia una base de datos PostgreSQL, junto con la interfaz base de anotación, métricas de consistencia entre evaluadores y la guía oficial de anotación. Sobre esa base se iteró durante todo el proyecto: migración a escrituras atómicas para manejar concurrencia, validaciones de fechas, pruebas unitarias y de extremo a extremo, verificación de desviaciones de esquema y un canal de notificaciones para el monitoreo remoto del sistema.
+
+\subsubsection{Formulario jerárquico de anotación}
+
+El formulario se rediseñó en una estructura jerárquica de nueve bloques desplegables con 186 variables finales, pensada para recorrer documentos largos sin saltarse campos. Cada variable admite Sí, No o duda con grado de sospecha; las fechas se capturan en dos pasos; y un buscador con sinónimos y códigos de la clasificación internacional de enfermedades permite ubicar cada variable por el nombre que usó el médico. Iteraciones posteriores incorporaron el inicio en blanco (distinguir un ``No'' decidido de una variable aún no revisada), la propagación de respuestas desde variables madre a sus dependientes, la captura de múltiples evidencias por variable y la corrección de un defecto que borraba trabajo ya anotado al cambiar una sección de estado. Estas decisiones quedaron registradas como historias de usuario y respaldadas por pruebas automatizadas.
+
+\subsubsection{Visor seguro de documentos}
+
+Para que el anotador vea la epicrisis sin que el archivo original llegue a su navegador, se construyó un visor propio: la estructura visual de cada documento (posición, tamaño y fuente de cada bloque de texto) se extrae del PDF y se guarda en la base de datos, y un servicio la entrega solo a quien tiene sesión iniciada, el rol adecuado y el caso asignado. El visor reconstruye cada página en pantalla y permite capturar evidencia con un clic sobre el propio texto (Figura~\ref{fig:vista}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{vista_anotacion_censurada.png}
+\caption{Vista de anotación de la plataforma, en modo de revisión en vivo: a la izquierda, el documento reconstruido con los identificadores del paciente ocultos por el sistema; a la derecha, el formulario jerárquico con su barra de progreso. El contenido clínico fue difuminado adicionalmente para esta publicación.}
+\label{fig:vista}
+\end{figure}
+
+\subsection{Protección de datos personales}
+
+El trabajo con epicrisis reales exigió un mecanismo de anonimización en constante endurecimiento. La primera versión ocultaba RUT, dirección, nombre y firmas médicas al momento de entregar el documento, usando bloques del mismo largo que el texto tapado para no descuadrar la página. Iteraciones posteriores agregaron teléfono, fecha de nacimiento, comuna, número de archivo y correo electrónico, y corrigieron casos límite detectados en uso real: apellidos que contienen términos médicos, cargos clínicos cuya eliminación mutilaba palabras legítimas (el caso del cargo TENS dentro de ``hipertensión''), y menciones negadas de la terapia HFAV. La reconstrucción final del procedimiento se validó primero sobre 28 documentos y luego sobre los 275 originales, generando la planilla y la base de datos desde una misma fuente, con una entrega cifrada acompañada de inventario, diccionario de datos y huellas de verificación.
+
+Este frente incluyó además la gestión de un incidente real: un proceso automatizado sobrescribió la base de datos de producción exponiéndola a información personal identificable. Se aplicaron correcciones de emergencia (anonimización de las ocurrencias afectadas, reparación del renderizador y una migración idempotente de la base) y, como consecuencia de mediano plazo, se incorporaron respaldos verificados y alertas que se describen en la sección de infraestructura.
+
+\subsection{Evaluación de modelos de lenguaje en el clúster}
+
+El segundo frente evaluó si un modelo de lenguaje de código abierto puede extraer por sí solo las variables que los anotadores marcan a mano. Sobre el clúster ih-condor se configuró primero una corrida mínima con el modelo Gemma, sin aleatoriedad, apuntando a los 48 campos del formulario y exigiendo que cada valor venga acompañado del fragmento de texto que lo respalda. Superada esa prueba de circuito completo, se ejecutó la evaluación sobre una cohorte de referencia de 20 casos con tres modelos abiertos: Gemma, Llama-70B y Qwen. Cada ejecución se limitó a tres horas para poder reanudarla, se corrigió la reserva de tarjetas gráficas al detectar que uno de los modelos debía repartirse entre varias, y se versionaron los resultados, el registro de cada consulta y los archivos de ejecución.
+
+A partir de los primeros resultados se rediseñó el procedimiento de consulta: en lugar de una única llamada al modelo, la extracción se dividió en un mapa inicial del caso y cinco consultas especializadas por dominio clínico (antecedentes, episodio en la UCI, infecciones, fallas orgánicas y diagnósticos). Así cada llamada abarca menos, se valida por separado y puede reintentarse sin rehacer todo. Se endureció además la exigencia de evidencia: el modelo ya no redacta la cita, sino que señala qué fragmento numerado de la epicrisis la respalda, y el sistema copia ese tramo literal, eliminando la posibilidad de evidencia inventada.
+
+\subsection{Experimento de concordancia entre anotadores}
+
+Para la construcción del estándar de referencia se incorporó un equipo de cinco estudiantes de medicina como anotadores clínicos, que al cierre de este informe se encuentran anotando en producción sobre la plataforma. El proceso de incorporación se resolvió dentro de la propia aplicación: en el primer inicio de sesión se exige la aceptación de términos y condiciones, y el anotador dispone de un manual integrado con ejemplos interactivos (un documento clínico simulado y una versión reducida del formulario donde practicar sin afectar casos reales) y un glosario clínico con buscador. El estudiante desarrolló la implementación de estas herramientas dentro de la aplicación, sobre la base del protocolo de anotación y el video tutorial elaborados por otros integrantes del equipo.
+
+La asignación de casos sigue un diseño combinatorio balanceado: 50 epicrisis se distribuyen de modo que cada caso sea revisado por tres anotadores, cada anotador reciba 30 casos y cada pareja comparta exactamente 15, lo que produce 150 asignaciones y permite estimar la concordancia entre todos los pares mediante kappa de Cohen. La selección de los 50 casos es determinista y auditable (un hash con semilla fija sobre el identificador anonimizado de cada paciente), y la asignación se verifica programáticamente antes de aplicarse en una transacción única.
+
+Durante la anotación, la plataforma ofrece supervisión en dos niveles: un panel de administración con la matriz de avance caso por anotador y revisión en vivo (el administrador abre la misma vista de anotación en modo de solo lectura, con actualización automática), y una derivación automática a revisión experta cuando un caso acumula criterios marcados como no determinables. Durante la ejecución, el estudiante acompañó el avance de cada anotador, atendió consultas y corrigió los defectos que el uso intensivo hizo visibles.
+
+\subsection{Infraestructura y operación}
+
+El paso de prototipo a sistema en uso exigió infraestructura seria. La base de datos se trasladó desde un computador local a un servicio administrado en la nube en la región sudamericana, con conexión cifrada y verificación efectiva del certificado del servidor.
+
+La operación se supervisa mediante lazos de monitoreo concéntricos que convergen en un mismo canal de mensajería. En el lazo interno, el supervisor de procesos reinicia automáticamente la API ante cualquier caída. En un segundo nivel, un bot de Telegram que corre como proceso independiente (de modo que sobrevive a una caída de la API y puede levantarla remotamente) emite cuatro reportes diarios que combinan el estado de los servicios, el uso de disco y de registros de transacciones de la base de datos, y el avance del experimento por anotador; el mismo bot notifica en tiempo real los inicios de sesión de los anotadores y sus avances sustanciales, con umbrales y períodos de enfriamiento para evitar ruido. En el nivel más externo, un flujo de integración continua ejecutado fuera de la infraestructura propia verifica cada quince minutos el frontend y el backend mediante una sonda sintética que ejercita la ruta pública, la API y una consulta real a la base de datos, registrando cada corte como un aviso que se abre y cierra automáticamente.
+
+Los respaldos siguen la misma lógica de verificación: la base se replica cada hora hacia un proveedor secundario con comparación de conteos tabla por tabla, complementada por volcados cifrados con verificación de suma de comprobación. Tras detectar que la copia de respaldo llevaba doce días sin actualizarse sin que ninguna alerta lo advirtiera, se sumó un verificador de frescura que alerta si el último respaldo verificado supera las tres horas de antigüedad.
+
+\subsection{Desafíos encontrados}
+
+Tres desafíos marcaron el proyecto. El primero fue trabajar con datos clínicos reales: cada decisión técnica tuvo una dimensión de responsabilidad sobre la privacidad de pacientes verdaderos, y los defectos del anonimizador no eran errores abstractos sino riesgos concretos. El segundo fue construir para usuarios no técnicos en un dominio ajeno: el equipo de anotadores son profesionales clínicos, y cada fricción de la interfaz se traducía en pérdida de calidad del conjunto de referencia; la retroalimentación semanal obligó a un ritmo de iteración alto. El tercero fue operar un sistema en producción con recursos acotados: los incidentes de la base de datos y del respaldo silencioso mostraron que la confiabilidad no se declara, se construye con verificación y monitoreo.
+
+% ==================== III. RESULTADOS ====================
+\section{Resultados}
+
+\subsection{Plataforma de anotación operativa}
+
+El resultado más visible del proyecto es una plataforma de anotación clínica en producción, usada por un equipo real de anotadores sobre 275 epicrisis anonimizadas de la UPC. La plataforma integra el formulario jerárquico de 186 variables, el visor seguro de documentos, la captura de evidencia textual, el manual interactivo de entrenamiento y un panel de administración con búsqueda, seguimiento del avance por anotador y exportación de resultados.
+
+\subsection{Conjunto de datos protegido y trazable}
+
+Las 275 epicrisis originales fueron procesadas por un procedimiento de anonimización validado iterativamente, con una entrega final cifrada que incluye inventario, diccionario de datos y huellas de verificación. La auditoría de la versión final verificó 1.455 componentes de identidad procesados, con cero RUT, cero teléfonos y cero correos residuales, y sin corrupciones del texto clínico. La base de datos de anotación y la planilla de análisis se generan desde una misma fuente, lo que garantiza consistencia entre lo que ven los anotadores y lo que consumen los análisis posteriores.
+
+\subsection{Evaluación de modelos de lenguaje: infraestructura y método}
+
+Sobre el clúster ih-condor (8 GPU NVIDIA RTX A6000 de 48~GiB, planificador SLURM) el estudiante montó la infraestructura de evaluación de tres modelos de lenguaje abiertos (Gemma, Llama-70B y Qwen) en la extracción de las 48 variables del formulario con evidencia textual verificable: corridas deterministas y reanudables sobre la cohorte fija de 20 casos, con resultados, registro de cada consulta y archivos de ejecución versionados.
+
+El resultado consolidado de esta etapa es metodológico. Las corridas exploratorias mostraron que la consulta única de 48 campos es frágil: respuestas truncadas y tiempos por paciente que superaban la media hora. El procedimiento de extracción por dominios clínicos (\textit{harness}) diseñado en respuesta produjo, en su validación sobre 5 epicrisis, 44 de 44 estructuras de datos válidas, cero truncamientos y una reducción de tiempo cercana a 5,5 veces por paciente. Además, la exigencia de evidencia por referencia a fragmentos numerados eliminó la posibilidad de citas inventadas, y en al menos un caso el procedimiento recuperó una mención de HFAV con su evidencia textual donde la consulta única la había perdido.
+
+La corrida definitiva de la comparación de los tres modelos, con la tabla de comportamiento de inferencia (latencia, velocidad de generación, memoria y truncamientos) y las métricas de acuerdo contra el estándar de referencia humano, quedó programada para ejecutarse una vez que el conjunto de referencia alcance la cobertura suficiente, y sus resultados se incorporarán en la versión final de este informe.
+
+\subsection{Experimento de concordancia en ejecución}
+
+El experimento de concordancia entre anotadores quedó diseñado, instrumentado y en ejecución: 50 epicrisis, cinco anotadores, tres revisores por caso, 150 asignaciones, con selección reproducible de casos y una vista de administración que calcula la concordancia sin interferir con el trabajo de anotación.
+
+El experimento avanza a ritmo sostenido: al corte del 27 de agosto de 2026 registraba 23 de las 150 asignaciones entregadas, y al corte verificado del 7 de septiembre alcanzó 58, con 27 casos con una anotación completa, 14 con dos, 1 con las tres y 8 aún sin entregas. Durante ese período se rebalanceó además la carga entre los revisores médicos del equipo mediante un traspaso transaccional de asignaciones, verificando que el diseño se mantuviera intacto: 150 asignaciones y tres revisores por caso.
+
+Al corte del 15 de septiembre de 2026, con 43 epicrisis que cuentan con dos o más anotaciones enviadas y 222 criterios evaluados, la concordancia inter-anotador preliminar alcanza un kappa de Cohen promedio de 0,72, calculado por pares de anotadores y por criterio sobre las frecuencias marginales observadas, un acuerdo sustancial en la escala de Landis y Koch (1977) (Figura~\ref{fig:irr}). La distribución por criterio muestra la heterogeneidad esperable: 158 de los 222 criterios (71\%) alcanzan acuerdo sustancial (kappa sobre 0,6), 21 quedan en rango moderado y 43 (19\%) bajo 0,4. Dentro de este último grupo, 30 criterios exhiben kappa nulo o negativo pese a acuerdos porcentuales sobre el 82\%, la conocida paradoja del kappa en categorías de prevalencia extrema, concentrada aquí en las categorías residuales del formulario (los campos de tipo ``otra''). El desacuerdo genuino se concentra en la identificación del foco respiratorio de infección (47\% de acuerdo), un hallazgo accionable para la siguiente revisión de la guía de anotación. Los valores definitivos, con el experimento cerrado, se reportarán en la versión final.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{imagenes_plataforma/panel_de_acuerdo.png}
+\caption{Vista de acuerdo inter-anotador del panel de administración, al corte del 15 de septiembre de 2026: 43 epicrisis solapadas, kappa de Cohen promedio de 0,72 y 222 criterios evaluados, con el detalle por criterio ordenado desde los valores más bajos.}
+\label{fig:irr}
+\end{figure}
+
+\subsection{Infraestructura confiable}
+
+La plataforma opera con una base de datos PostgreSQL replicada cada hora hacia un proveedor secundario con verificación de conteos y alertas de frescura, y con una migración validada hacia un servicio administrado en la nube (región sudamericana) con conexión cifrada verificada, disponible como entorno de despliegue. La disponibilidad se vigila desde fuera de la infraestructura propia cada quince minutos. El incidente de exposición de datos de mayo y el respaldo silencioso de agosto fueron detectados, diagnosticados y resueltos, y ambos dejaron mecanismos permanentes de prevención. El desarrollo quedó respaldado por 47 historias de usuario, 7 registros de decisiones de arquitectura y una suite de más de 180 pruebas automatizadas entre frontend, backend y extremo a extremo.
+
+% ==================== IV. COMPETENCIAS ====================
+\section{Competencias de perfil de egreso}
+
+A lo largo del proyecto se evidenciaron de manera concreta las tres competencias del perfil de egreso declaradas en la inscripción. No se manifestaron solo en el resultado final, sino en el proceso: en las decisiones de arquitectura, en el trato con datos sensibles, en la evaluación experimental de tecnologías nuevas y en la operación diaria de un sistema del que dependía el trabajo de un equipo clínico. A continuación se detalla cada una.
+
+\subsection*{Desarrollar soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de Computación}
+
+La plataforma de anotación no es la aplicación de una receta conocida, sino una solución diseñada desde cero para un problema con restricciones poco habituales: los usuarios son profesionales clínicos sin formación técnica, los datos son sensibles al punto de que el archivo original no puede llegar al navegador, y el producto del sistema (el conjunto de referencia) debe ser defendible metodológicamente.
+
+Esas restricciones exigieron decisiones de ingeniería no triviales. El visor seguro reconstruye cada página del documento a partir de su estructura visual almacenada en la base de datos, en lugar de servir el PDF, lo que permite anonimizar al vuelo y controlar exactamente qué información llega a cada rol. El formulario jerárquico traduce un árbol de 186 variables clínicas, con estados de duda, propagación entre variables dependientes y candados de protección, a un modelo de datos plano y consultable. La anonimización opera en memoria al momento de entrega, preservando los registros originales para el equipo investigador, y usa reemplazos de longitud equivalente para no descuadrar el posicionamiento absoluto del documento. Cada una de estas piezas aplica conocimientos de arquitectura de software, bases de datos, seguridad y diseño de sistemas interactivos a un problema abierto, y el conjunto forma un sistema que no existía en la organización y que hoy sostiene su línea de investigación clínica.
+
+\subsection*{Aplicar diversos métodos de análisis de datos para la comprensión de los fenómenos abordados}
+
+El análisis de datos atraviesa el proyecto de principio a fin. En la etapa exploratoria, el agrupamiento de comorbilidades sobre las primeras 27 epicrisis permitió identificar perfiles de paciente y dimensionar la viabilidad de la extracción estructurada. En la etapa de evaluación, la comparación de tres modelos de lenguaje sobre una cohorte fija de 20 casos, con 48 variables por caso y evidencia textual verificable, constituye un diseño experimental controlado: mismos casos, mismos campos, condiciones de ejecución registradas, resultados versionados.
+
+El experimento de concordancia entre anotadores es la aplicación más formal de esta competencia: mide la confiabilidad del conjunto de referencia mediante acuerdo entre evaluadores independientes, con selección determinista y reproducible de los 50 casos, tres revisores por caso y el cálculo de concordancia integrado al panel de administración. Este diseño reconoce algo que es fácil pasar por alto: antes de evaluar si una máquina extrae bien, hay que medir cuánto acuerdan los humanos entre sí, porque ese acuerdo es la cota superior de lo que tiene sentido exigirle al modelo. Finalmente, el análisis de datos también operó al servicio de la confiabilidad del propio sistema: la verificación de respaldos por comparación de conteos de registros entre origen y copia es, en el fondo, una prueba de consistencia de datos aplicada a infraestructura.
+
+\subsection*{Investigar sobre nuevas tecnologías de información existentes en la industria y facilitar su adopción dentro de las organizaciones}
+
+El proyecto exigió investigar tecnología que ni el estudiante ni la organización dominaban al inicio, y dejarla operativa para otros. El estudiante completó un programa de formación en aprendizaje profundo y modelos de lenguaje, estudió arquitecturas de predicción de eventos clínicos (Delphi-2M, TFT, Foresight) y llevó ese estudio a la práctica: la evaluación de Gemma, Llama-70B y Qwen sobre el clúster ih-condor requirió resolver problemas concretos de adopción, desde la reserva de múltiples tarjetas gráficas para los modelos grandes hasta la constatación de que los nodos del clúster no alcanzan el repositorio público de paquetes, con su procedimiento de instalación documentado para el resto del equipo.
+
+La dimensión de adopción organizacional es explícita en varios entregables: el manual de anotación interactivo dentro de la propia aplicación, que convierte el protocolo de anotación en ejercicios prácticos; el glosario clínico indexado por campo; la documentación del entorno de cómputo y la norma de ejecutar todo trabajo mediante el planificador de tareas del clúster; y la migración de la base de datos a un servicio administrado en la nube, que sacó a la plataforma de una máquina personal y la dejó sobre infraestructura que la organización puede operar. Investigar tecnología nueva es la mitad de la competencia; la otra mitad, dejarla usable por otros, es lo que este proyecto ejercitó de forma sostenida.
+
+% ==================== V. CONCLUSIONES ====================
+\section{Conclusiones}
+
+Este trabajo de título partió de un problema clínico real y terminó con un sistema en producción que lo ataca por su base: sin datos estructurados confiables no hay estadística, ni auditoría, ni predicción posible sobre los pacientes de una UCI. La plataforma de anotación construida, con su visor seguro, su formulario jerárquico y su experimento de concordancia, convierte el texto libre de las epicrisis en un conjunto de referencia con calidad medible. La evaluación de modelos de lenguaje abiertos sobre el clúster de iHealth estableció, además, un marco reproducible para responder la pregunta que sigue: cuánto de ese trabajo de anotación puede automatizarse sin sacrificar validez clínica.
+
+El proyecto también dejó aprendizajes que exceden lo técnico. Trabajar con datos de pacientes reales enseñó que la protección de datos no es una casilla de cumplimiento sino una práctica continua, que se endurece con cada caso límite descubierto. Operar un sistema del que depende un equipo enseñó que la confiabilidad se construye con verificación y monitoreo, no con optimismo: los dos incidentes del período (la sobreescritura de la base y el respaldo silencioso) fueron resueltos y convertidos en mecanismos permanentes de prevención. Y construir para usuarios clínicos enseñó que la adopción de tecnología es un problema de ingeniería por derecho propio, que se resuelve con manuales interactivos, glosarios y fricción cuidadosamente eliminada, no con capacitaciones de una vez.
+
+Quedan abiertas las líneas que dan continuidad natural al proyecto: cerrar el análisis de concordancia entre anotadores y entre modelo y humano, extender la extracción automática al conjunto completo de epicrisis, y avanzar hacia los modelos predictivos de eventos clínicos que motivaron el proyecto desde su origen. La infraestructura, los datos y el marco de evaluación para ese camino quedaron construidos.
+
+% ==================== BIBLIOGRAFÍA ====================
+\newpage
+\section*{BIBLIOGRAFÍA}
+\addcontentsline{toc}{section}{BIBLIOGRAFÍA}
+
+\begin{itemize}[leftmargin=1.27cm, label={}]
+    \item Grattafiori, A., et al. (2024). \textit{The Llama 3 herd of models}. arXiv preprint arXiv:2407.21783.
+    \item Kraljevic, Z., Bean, D., Shek, A., Bendayan, R., Hemingway, H., Yeung, J. A., \ldots\ \& Dobson, R. J. B. (2024). Foresight: Generative pretrained transformer for the prediction of patient timelines using electronic health records. \textit{The Lancet Digital Health, 6}(4), e281--e290.
+    \item Landis, J. R., \& Koch, G. G. (1977). The measurement of observer agreement for categorical data. \textit{Biometrics, 33}(1), 159--174.
+    \item Lim, B., Arık, S. Ö., Loeff, N., \& Pfister, T. (2021). Temporal Fusion Transformers for interpretable multi-horizon time series forecasting. \textit{International Journal of Forecasting, 37}(4), 1748--1764.
+    \item Lundberg, S. M., \& Lee, S.-I. (2017). A unified approach to interpreting model predictions. \textit{Advances in Neural Information Processing Systems, 30}.
+    \item Shmatko, A., et al. (2025). Learning the natural history of human disease with generative transformers. \textit{Nature}. \textit{[Verificar referencia exacta de Delphi-2M.]}
+    \item Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., \& Polosukhin, I. (2017). Attention is all you need. \textit{Advances in Neural Information Processing Systems, 30}.
+\end{itemize}
+
+% ==================== ANEXOS ====================
+\newpage
+\begin{center}
+{\large\bfseries A N E X O S}
+\end{center}
+\addcontentsline{toc}{section}{ANEXOS}
+\newpage
+
+\section*{Anexo A: Resumen de dedicación por bitácora}
+\addcontentsline{toc}{section}{Anexo A: Resumen de dedicación por bitácora}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{clr}
+\toprule
+\textbf{Bitácora} & \textbf{Foco principal} & \textbf{Horas} \\
+\midrule
+1 & Conceptualización y análisis exploratorio de epicrisis & 40 \\
+2 & Diseño del experimento y gestión de incidente de producción & 42 \\
+3 & Pipeline de ingesta, anonimización y estabilización & 45 \\
+4 & Visor seguro, ocultamiento de datos y formulario jerárquico & 40 \\
+5 & Validaciones, fechas clínicas, manual interactivo y clúster & 80 \\
+6 & Evaluación de tres modelos LLM y extracción por dominios & 80 \\
+7 & Anonimizador reconstruido, 275 epicrisis y panel de administración & 82 \\
+8 & Experimento de concordancia, nube, respaldos y monitoreo & 84 \\
+\midrule
+\multicolumn{2}{l}{\textbf{Total}} & \textbf{493} \\
+\bottomrule
+\end{tabular}
+\caption{Dedicación registrada en las bitácoras de SIDING.}
+\end{table}
+
+\section*{Anexo B: Arquitectura de la plataforma}
+\addcontentsline{toc}{section}{Anexo B: Arquitectura de la plataforma}
+
+La plataforma se compone de tres capas: una aplicación web de anotación, una API con base de datos relacional, y una infraestructura de operación y monitoreo. A ellas se suma, como rama paralela, el entorno de evaluación de modelos de lenguaje en el clúster ih-condor (Figuras~\ref{fig:arquitectura} y~\ref{fig:monitoreo}).
+
+El frontend es una aplicación de página única construida con Vue~3, TypeScript y Pinia, servida como sitio estático desde una CDN con despliegue automático en cada integración a la rama principal. Ofrece siete vistas principales: inicio de sesión, aceptación de consentimiento, panel del anotador, vista de anotación, guía interactiva, glosario clínico y panel de administración. La vista de anotación presenta dos paneles: a la izquierda, el documento (texto seccionado o layout posicional reconstruido desde el PDF); a la derecha, el formulario clínico definido como un árbol de 222 nodos con 199 variables hoja (174 booleanas ternarias, 11 fechas, 5 selectores y 9 de texto libre), con sinónimos y pistas de la clasificación internacional de enfermedades por variable. Componentes dedicados miden el tiempo activo de anotación, dificultan la captura de pantalla y validan el formulario antes del envío.
+
+El backend es una API en Node con TypeScript, supervisada por un administrador de procesos en una estación de trabajo dedicada y expuesta a internet mediante un túnel SSH reverso hacia un servidor con pasarela HTTPS. La autenticación usa tokens firmados con expiración, contraseñas cifradas y dos roles (administrador y anotador) verificados en el servidor en cada petición: un anotador solo accede a las epicrisis que tiene asignadas. Un bloqueo cooperativo con expiración evita colisiones entre anotadores concurrentes; el envío de anotaciones corre en una transacción; y los casos con criterios no determinables sobre un umbral se derivan a revisión experta.
+
+La base de datos es PostgreSQL, accedido mediante un ORM. El proyecto validó su migración a un servicio administrado en la nube (región sudamericana) con TLS verificado contra las autoridades certificadoras oficiales del proveedor; durante la ejecución del experimento de concordancia la base opera localmente, replicada cada hora hacia un proveedor secundario con verificación tabla por tabla. El esquema almacena las 275 epicrisis anonimizadas con su documento, el texto seccionado, el layout posicional, las anotaciones por usuario y criterio con su evidencia, las asignaciones y las cohortes de experimentos.
+
+Una capa de anonimización en el servidor actúa como defensa en profundidad: además de la anonimización en origen (identificadores con hash criptográfico y mapeo cifrado fuera del repositorio), un módulo de redacción extrae del propio documento nombres, RUT, firmas médicas, teléfonos y direcciones, y los enmascara al vuelo en toda respuesta de la API, protegiendo más de 60 términos médicos contra falsos positivos. El navegador nunca recibe información identificatoria.
+
+La operación se monitorea en lazos concéntricos: el supervisor de procesos reinicia servicios caídos en segundos; un bot de Telegram en proceso independiente emite cuatro reportes diarios de salud (API, túnel, frontend, base de datos y almacenamiento) y permite reiniciar la API remotamente; una verificación externa cada quince minutos ejercita el sistema desde fuera de la infraestructura propia; y un respaldo horario verificado por conteo tabla por tabla replica la base hacia un proveedor secundario, con volcados cifrados adicionales verificados por suma de comprobación.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.78\textwidth]{fig_plataforma.png}
+\caption{Flujo de la plataforma de anotación: el anotador recibe la aplicación desde la CDN y conversa con la API a través del túnel HTTPS; la API anonimiza al vuelo cada respuesta y la base local se respalda por dos vías verificadas.}
+\label{fig:arquitectura}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_monitoreo_cluster.png}
+\caption{Monitoreo en lazos concéntricos (derecha) y evaluación de modelos de lenguaje en el clúster ih-condor (izquierda), alimentada solo con extractos sin datos personales y contrastada con la anotación humana.}
+\label{fig:monitoreo}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,2 @@
+**Competencia:** Desarrollar soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de Computación
+**Evidencia:** Se construyó de extremo a extremo la entrega en pantalla de una epicrisis: la estructura visual del documento se guarda en la base de datos, un servicio la entrega solo a quien tiene el rol y el caso asignado, y un visor propio reconstruye cada página sin exponer el archivo original.

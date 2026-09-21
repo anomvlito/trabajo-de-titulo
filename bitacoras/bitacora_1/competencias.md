@@ -1,0 +1,2 @@
+**Competencia:** Desarrollar soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de Computación.
+**Evidencia:** Diseño, arquitectura e implementación integral de la herramienta de software clínico (API REST, base de datos e interfaz), adaptada a la problemática, necesidades y limitaciones reales de la Unidad de Paciente Crítico para el manejo de ground truth y evaluación de modelos.

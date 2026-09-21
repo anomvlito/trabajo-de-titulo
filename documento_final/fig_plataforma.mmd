@@ -1,0 +1,15 @@
+flowchart TB
+    A["Anotador (navegador)"]
+    V["Frontend Vue 3 (CDN)"]
+    T["Túnel SSH reverso · pasarela HTTPS"]
+    API["API Node supervisada<br/>anonimización al vuelo en cada respuesta"]
+    DB[("PostgreSQL local<br/>275 epicrisis anonimizadas")]
+    S3["Volcado cifrado + checksum"]
+    NEON["Réplica horaria verificada por conteos"]
+
+    A -->|"descarga la aplicación"| V
+    A <-->|"peticiones con token"| T
+    T <--> API
+    API <-->|SQL| DB
+    DB --> S3
+    DB --> NEON

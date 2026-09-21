@@ -1,0 +1,1 @@
+documento_final/informe_titulo.tex y .pdf (24 paginas, compilacion del 14-09-2026). Los cortes del experimento provienen del reporte del bot (27-08) y de la verificacion registrada en epicrisis_documentacion commit 4399cf5 (07-09).

@@ -1,0 +1,2 @@
+- Aplicar diversos métodos de análisis de datos para la comprensión de los fenómenos abordados
+- Desarrollar soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de Computación

@@ -1,0 +1,17 @@
+flowchart TB
+    subgraph M["Monitoreo en lazos concéntricos"]
+        direction TB
+        BOT["Bot de Telegram<br/>(proceso independiente)"]
+        GHA["Sonda externa cada 15 min"]
+        TG["Canal de alertas y control remoto"]
+        BOT -->|"4 reportes diarios · avance por anotador"| TG
+        GHA -->|"abre y cierra avisos de corte"| TG
+    end
+    subgraph C["Evaluación de modelos de lenguaje"]
+        direction TB
+        XL["Extracto anonimizado<br/>(sin datos personales)"]
+        CL["Clúster ih-condor<br/>8× RTX A6000 · SLURM<br/>Gemma / Llama / Qwen"]
+        AN["Análisis de resultados<br/>contra la anotación humana"]
+        XL --> CL
+        CL --> AN
+    end

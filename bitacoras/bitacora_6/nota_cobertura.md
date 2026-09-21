@@ -1,0 +1,1 @@
+Sincronizado el 25-08-2026 directamente desde la pantalla de SIDING (Editar/Ver de la bitacora 6). Es el contenido real, incluye ajustes de horas y fusiones de actividades hechos a mano en SIDING, no solo lo generado originalmente. Fuente unica de verdad para esta bitacora.
