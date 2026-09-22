@@ -18,20 +18,20 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Ingesta y base de datos}{13}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Formulario jerárquico de anotación}{13}{subsubsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.3}Visor seguro de documentos}{14}{subsubsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.3}Protección de datos personales}{14}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Evaluación de modelos de lenguaje en el clúster}{15}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Experimento de concordancia entre anotadores}{15}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Infraestructura y operación}{16}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Desafíos encontrados}{17}{subsection.2.7}%
-\contentsline {section}{\numberline {III}Resultados}{17}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Plataforma de anotación operativa}{17}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Conjunto de datos protegido y trazable}{17}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Evaluación de modelos de lenguaje: infraestructura y método}{17}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Experimento de concordancia en ejecución}{18}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Infraestructura confiable}{19}{subsection.3.5}%
-\contentsline {section}{\numberline {IV}Competencias de perfil de egreso}{19}{section.4}%
-\contentsline {section}{\numberline {V}Conclusiones}{21}{section.5}%
-\contentsline {section}{BIBLIOGRAFÍA}{23}{section.5}%
-\contentsline {section}{ANEXOS}{24}{section.5}%
-\contentsline {section}{Anexo A: Resumen de dedicación por bitácora}{25}{section.5}%
-\contentsline {section}{Anexo B: Arquitectura de la plataforma}{25}{table.1}%
+\contentsline {subsection}{\numberline {2.3}Protección de datos personales}{16}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Evaluación de modelos de lenguaje en el clúster}{16}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Experimento de concordancia entre anotadores}{17}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Infraestructura y operación}{17}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Desafíos encontrados}{18}{subsection.2.7}%
+\contentsline {section}{\numberline {III}Resultados}{18}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Plataforma de anotación operativa}{18}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Conjunto de datos protegido y trazable}{19}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Evaluación de modelos de lenguaje: infraestructura y método}{19}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Experimento de concordancia en ejecución}{20}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Infraestructura confiable}{20}{subsection.3.5}%
+\contentsline {section}{\numberline {IV}Competencias de perfil de egreso}{21}{section.4}%
+\contentsline {section}{\numberline {V}Conclusiones}{23}{section.5}%
+\contentsline {section}{BIBLIOGRAFÍA}{24}{section.5}%
+\contentsline {section}{ANEXOS}{25}{section.5}%
+\contentsline {section}{Anexo A: Resumen de dedicación por bitácora}{26}{section.5}%
+\contentsline {section}{Anexo B: Arquitectura de la plataforma}{26}{table.2}%

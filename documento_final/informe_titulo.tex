@@ -155,9 +155,9 @@ Implementar un sistema de software clínico que integre modelos de lenguaje para
 \subsubsection{Objetivos específicos}
 
 \begin{enumerate}
-    \item Desarrollar una herramienta de anotación clínica para generar el conjunto de referencia (\textit{ground truth}), respaldada por una base de datos consultable y una interfaz web segura para el equipo de anotadores.
+    \item Desarrollar una herramienta de anotación clínica para generar el conjunto de referencia (\textit{ground truth}), capaz de reconstruir la estructura visual de los documentos PDF de origen, con roles diferenciados de administrador y anotador, respaldada por una base de datos consultable y una interfaz web segura para el equipo de anotadores.
     \item Proteger la identidad de los pacientes mediante un mecanismo de anonimización, y operar la plataforma de forma confiable en producción, con monitoreo y respaldos verificados.
-    \item Evaluar modelos de lenguaje de código abierto en su capacidad de extraer variables clínicas desde epicrisis reales, exigiendo evidencia textual verificable para cada valor extraído.
+    \item Seleccionar y evaluar modelos de lenguaje de código abierto en su capacidad de extraer variables clínicas desde epicrisis reales, exigiendo evidencia textual verificable para cada valor extraído.
     \item Medir la confiabilidad del conjunto de referencia mediante un experimento de concordancia entre anotadores, y comparar el desempeño de los modelos de lenguaje contra ese estándar de referencia humano.
 \end{enumerate}
 
@@ -190,7 +190,7 @@ Este capítulo describe el trabajo realizado, organizado por líneas de desarrol
 
 El proyecto comenzó con una reunión de definición junto al equipo médico y técnico de iHealth, en la que se acordó el problema central a nivel exploratorio (evaluar la extracción de información clínica desde texto narrativo mediante modelos de lenguaje, con foco en las comorbilidades de pacientes críticos, en el contexto de la práctica chilena) y una visión dual: generar publicaciones académicas y, a la vez, un producto funcional integrable en sistemas hospitalarios. Se exploraron 27 epicrisis reales de la UPC, aplicando anonimización manual y automática para proteger la información sensible de los pacientes, y se ejecutó un análisis de agrupamiento (\textit{clustering}) de comorbilidades que permitió identificar perfiles de paciente y validar la viabilidad de extraer información estructurada desde texto clínico no estructurado.
 
-En paralelo, el estudiante completó un proceso de formación técnica que abarcó fundamentos matemáticos, aprendizaje de máquina, redes neuronales, procesamiento de lenguaje natural, mecanismos de atención, arquitecturas Transformer, modelos de supervivencia e inteligencia artificial aplicada a medicina, junto con la configuración del acceso al clúster de cómputo de iHealth (ih-condor): autenticación, desarrollo remoto y buenas prácticas de almacenamiento en un entorno compartido.
+En paralelo, el estudiante completó un proceso de formación técnica autodidacta de diez capítulos, que abarcó fundamentos matemáticos, aprendizaje de máquina, redes neuronales, procesamiento de lenguaje natural, \textit{embeddings}, mecanismos de atención, arquitecturas Transformer, modelos de lenguaje (GPT/LLM) con implementación práctica en PyTorch, modelos de supervivencia e inteligencia artificial aplicada a medicina, junto con la configuración del acceso al clúster de cómputo de iHealth (ih-condor): autenticación, desarrollo remoto y buenas prácticas de almacenamiento en un entorno compartido.
 
 \subsection{Plataforma de anotación clínica}
 
@@ -206,24 +206,31 @@ El formulario se rediseñó en una estructura jerárquica de nueve bloques despl
 
 \subsubsection{Visor seguro de documentos}
 
-Para que el anotador vea la epicrisis sin que el archivo original llegue a su navegador, se construyó un visor propio: la estructura visual de cada documento (posición, tamaño y fuente de cada bloque de texto) se extrae del PDF y se guarda en la base de datos, y un servicio la entrega solo a quien tiene sesión iniciada, el rol adecuado y el caso asignado. El visor reconstruye cada página en pantalla y permite capturar evidencia con un clic sobre el propio texto (Figura~\ref{fig:vista}).
+Para que el anotador vea la epicrisis sin que el archivo original llegue a su navegador, se construyó un visor propio: la estructura visual de cada documento (posición, tamaño y fuente de cada bloque de texto) se extrae del PDF y se guarda en la base de datos, y un servicio la entrega solo a quien tiene sesión iniciada, el rol adecuado y el caso asignado. El visor reconstruye cada página en pantalla y permite capturar evidencia con un clic sobre el propio texto (Figuras~\ref{fig:vista-documento} y~\ref{fig:vista-formulario}).
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{vista_anotacion_censurada.png}
-\caption{Vista de anotación de la plataforma, en modo de revisión en vivo: a la izquierda, el documento reconstruido con los identificadores del paciente ocultos por el sistema; a la derecha, el formulario jerárquico con su barra de progreso. El contenido clínico fue difuminado adicionalmente para esta publicación.}
-\label{fig:vista}
+\includegraphics[width=0.75\textwidth]{vista_anotacion_documento.png}
+\caption{Documento reconstruido en el visor seguro de la plataforma, en modo de revisión en vivo, con los identificadores del paciente ocultos por el sistema. El contenido clínico fue difuminado adicionalmente para esta publicación.}
+\label{fig:vista-documento}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{vista_anotacion_formulario.png}
+\caption{Formulario jerárquico de anotación con su barra de progreso, correspondiente al mismo caso de la Figura~\ref{fig:vista-documento}.}
+\label{fig:vista-formulario}
 \end{figure}
 
 \subsection{Protección de datos personales}
 
 El trabajo con epicrisis reales exigió un mecanismo de anonimización en constante endurecimiento. La primera versión ocultaba RUT, dirección, nombre y firmas médicas al momento de entregar el documento, usando bloques del mismo largo que el texto tapado para no descuadrar la página. Iteraciones posteriores agregaron teléfono, fecha de nacimiento, comuna, número de archivo y correo electrónico, y corrigieron casos límite detectados en uso real: apellidos que contienen términos médicos, cargos clínicos cuya eliminación mutilaba palabras legítimas (el caso del cargo TENS dentro de ``hipertensión''), y menciones negadas de la terapia HFAV. La reconstrucción final del procedimiento se validó primero sobre 28 documentos y luego sobre los 275 originales, generando la planilla y la base de datos desde una misma fuente, con una entrega cifrada acompañada de inventario, diccionario de datos y huellas de verificación.
 
-Este frente incluyó además la gestión de un incidente real: un proceso automatizado sobrescribió la base de datos de producción exponiéndola a información personal identificable. Se aplicaron correcciones de emergencia (anonimización de las ocurrencias afectadas, reparación del renderizador y una migración idempotente de la base) y, como consecuencia de mediano plazo, se incorporaron respaldos verificados y alertas que se describen en la sección de infraestructura.
+Este frente incluyó además la gestión de un incidente real, ocurrido en mayo de 2026: un proceso automatizado sobrescribió la base de datos de producción, dejando expuesta información personal identificable. El estudiante diagnosticó el alcance del problema y respondió con tres correcciones de emergencia en secuencia: primero la anonimización de las 434 ocurrencias afectadas para contener la exposición, luego la reparación del renderizador del frontend que la había provocado, y finalmente una migración idempotente de la base de datos para dejar el esquema en un estado consistente y repetible. Como consecuencia de mediano plazo del incidente, se incorporaron los respaldos verificados y las alertas de frescura que se describen en la sección de infraestructura, de modo que un problema similar se detecte automáticamente en vez de descubrirse por inspección manual.
 
 \subsection{Evaluación de modelos de lenguaje en el clúster}
 
-El segundo frente evaluó si un modelo de lenguaje de código abierto puede extraer por sí solo las variables que los anotadores marcan a mano. Sobre el clúster ih-condor se configuró primero una corrida mínima con el modelo Gemma, sin aleatoriedad, apuntando a los 48 campos del formulario y exigiendo que cada valor venga acompañado del fragmento de texto que lo respalda. Superada esa prueba de circuito completo, se ejecutó la evaluación sobre una cohorte de referencia de 20 casos con tres modelos abiertos: Gemma, Llama-70B y Qwen. Cada ejecución se limitó a tres horas para poder reanudarla, se corrigió la reserva de tarjetas gráficas al detectar que uno de los modelos debía repartirse entre varias, y se versionaron los resultados, el registro de cada consulta y los archivos de ejecución.
+El segundo frente evaluó si un modelo de lenguaje de código abierto puede extraer por sí solo las variables que los anotadores marcan a mano. Se optó por modelos de código abierto, descartando servicios propietarios por API, porque el requisito de no sacar información clínica identificable fuera del entorno controlado de iHealth exigía correr la inferencia íntegramente dentro del clúster ih-condor; dentro de esa restricción se seleccionaron Gemma, Llama-70B y Qwen. Sobre el clúster ih-condor se configuró primero una corrida mínima con el modelo Gemma, sin aleatoriedad, apuntando a los 48 campos del formulario y exigiendo que cada valor venga acompañado del fragmento de texto que lo respalda. Superada esa prueba de circuito completo, se ejecutó la evaluación sobre una cohorte de referencia de 20 casos con tres modelos abiertos: Gemma, Llama-70B y Qwen. Cada ejecución se limitó a tres horas para poder reanudarla, se corrigió la reserva de tarjetas gráficas al detectar que uno de los modelos debía repartirse entre varias, y se versionaron los resultados, el registro de cada consulta y los archivos de ejecución.
 
 A partir de los primeros resultados se rediseñó el procedimiento de consulta: en lugar de una única llamada al modelo, la extracción se dividió en un mapa inicial del caso y cinco consultas especializadas por dominio clínico (antecedentes, episodio en la UCI, infecciones, fallas orgánicas y diagnósticos). Así cada llamada abarca menos, se valida por separado y puede reintentarse sin rehacer todo. Se endureció además la exigencia de evidencia: el modelo ya no redacta la cita, sino que señala qué fragmento numerado de la epicrisis la respalda, y el sistema copia ese tramo literal, eliminando la posibilidad de evidencia inventada.
 
@@ -239,13 +246,13 @@ Durante la anotación, la plataforma ofrece supervisión en dos niveles: un pane
 
 El paso de prototipo a sistema en uso exigió infraestructura seria. Se validó la migración de la base de datos desde un computador local a un servicio administrado en la nube en la región sudamericana, con conexión cifrada y verificación efectiva del certificado del servidor; durante el experimento de concordancia, la base opera localmente, replicada cada hora hacia ese proveedor en la nube.
 
-La operación se supervisa mediante lazos de monitoreo concéntricos que convergen en un mismo canal de mensajería. En el lazo interno, el supervisor de procesos reinicia automáticamente la API ante cualquier caída. En un segundo nivel, un bot de Telegram que corre como proceso independiente (de modo que sobrevive a una caída de la API y puede levantarla remotamente) emite cuatro reportes diarios que combinan el estado de los servicios, el uso de disco y de registros de transacciones de la base de datos, y el avance del experimento por anotador; el mismo bot notifica en tiempo real los inicios de sesión de los anotadores y sus avances sustanciales, con umbrales y períodos de enfriamiento para evitar ruido. En el nivel más externo, un flujo de integración continua ejecutado fuera de la infraestructura propia verifica cada quince minutos el frontend y el backend mediante una sonda sintética que ejercita la ruta pública, la API y una consulta real a la base de datos, registrando cada corte como un aviso que se abre y cierra automáticamente.
+La operación se supervisa mediante lazos de monitoreo concéntricos que convergen en un mismo canal de mensajería (esquematizados en la Figura~\ref{fig:monitoreo} del Anexo B). En el lazo interno, el supervisor de procesos reinicia automáticamente la API ante cualquier caída. En un segundo nivel, un bot de Telegram que corre como proceso independiente (de modo que sobrevive a una caída de la API y puede levantarla remotamente) emite cuatro reportes diarios que combinan el estado de los servicios, el uso de disco y de registros de transacciones de la base de datos, y el avance del experimento por anotador; el mismo bot notifica en tiempo real los inicios de sesión de los anotadores y sus avances sustanciales, con umbrales y períodos de enfriamiento para evitar ruido. En el nivel más externo, un flujo de integración continua ejecutado fuera de la infraestructura propia verifica cada quince minutos el frontend y el backend mediante una sonda sintética que ejercita la ruta pública, la API y una consulta real a la base de datos, registrando cada corte como un aviso que se abre y cierra automáticamente.
 
 Los respaldos siguen la misma lógica de verificación: la base se replica cada hora hacia un proveedor secundario con comparación de conteos tabla por tabla, complementada por volcados cifrados con verificación de suma de comprobación. Tras detectar que la copia de respaldo llevaba doce días sin actualizarse sin que ninguna alerta lo advirtiera, se sumó un verificador de frescura que alerta si el último respaldo verificado supera las tres horas de antigüedad.
 
 \subsection{Desafíos encontrados}
 
-Tres desafíos marcaron el proyecto. El primero fue trabajar con datos clínicos reales: cada decisión técnica tuvo una dimensión de responsabilidad sobre la privacidad de pacientes verdaderos, y los defectos del anonimizador no eran errores abstractos sino riesgos concretos. El segundo fue construir para usuarios no técnicos en un dominio ajeno: el equipo de anotadores son profesionales clínicos, y cada fricción de la interfaz se traducía en pérdida de calidad del conjunto de referencia; la retroalimentación semanal obligó a un ritmo de iteración alto. El tercero fue operar un sistema en producción con recursos acotados: los incidentes de la base de datos y del respaldo silencioso mostraron que la confiabilidad no se declara, se construye con verificación y monitoreo.
+Tres desafíos marcaron el proyecto. El primero fue trabajar con datos clínicos reales: cada decisión técnica tuvo una dimensión de responsabilidad sobre la privacidad de pacientes verdaderos, y los defectos del anonimizador no eran errores abstractos sino riesgos concretos. El segundo fue diseñar software para usuarios sin formación técnica, en un dominio (la medicina clínica) ajeno a la formación del propio estudiante: el equipo de anotadores está compuesto por profesionales clínicos, no por desarrolladores, y cada fricción de la interfaz se traducía directamente en pérdida de calidad del conjunto de referencia; la retroalimentación semanal con el equipo médico obligó a un ritmo de iteración alto. El tercero fue operar un sistema en producción con recursos acotados: los incidentes de la base de datos y del respaldo silencioso mostraron que la confiabilidad no se declara, se construye con verificación y monitoreo.
 
 % ==================== III. RESULTADOS ====================
 \section{Resultados}
@@ -262,7 +269,24 @@ Las 275 epicrisis originales fueron procesadas por un procedimiento de anonimiza
 
 Sobre el clúster ih-condor (8 GPU NVIDIA RTX A6000 de 48~GiB, planificador SLURM) el estudiante montó la infraestructura de evaluación de tres modelos de lenguaje abiertos (Gemma, Llama-70B y Qwen) en la extracción de las 48 variables del formulario con evidencia textual verificable: corridas deterministas y reanudables sobre la cohorte fija de 20 casos, con resultados, registro de cada consulta y archivos de ejecución versionados.
 
-El resultado consolidado de esta etapa es metodológico. Las corridas exploratorias mostraron que la consulta única de 48 campos es frágil: respuestas truncadas y tiempos por paciente que superaban la media hora. El procedimiento de extracción por dominios clínicos (\textit{harness}) diseñado en respuesta produjo, en su validación sobre 5 epicrisis, 44 de 44 estructuras de datos válidas, cero truncamientos y una reducción de tiempo cercana a 5,5 veces por paciente. Además, la exigencia de evidencia por referencia a fragmentos numerados eliminó la posibilidad de citas inventadas, y en al menos un caso el procedimiento recuperó una mención de HFAV con su evidencia textual donde la consulta única la había perdido.
+El resultado consolidado de esta etapa es metodológico. Las corridas exploratorias mostraron que la consulta única de 48 campos es frágil, con respuestas truncadas y tiempos por paciente que superaban la media hora. El procedimiento de extracción por dominios clínicos (\textit{harness}) diseñado en respuesta se validó sobre 5 epicrisis, con los resultados de la Tabla~\ref{tab:harness}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lc}
+\toprule
+\textbf{Métrica (validación sobre 5 epicrisis)} & \textbf{Extracción por dominios (\textit{harness})} \\
+\midrule
+Estructuras de datos válidas & 44 de 44 \\
+Truncamientos & 0 \\
+Reducción de tiempo por paciente & $\sim$5,5$\times$ \\
+\bottomrule
+\end{tabular}
+\caption{Resultados de la validación del procedimiento de extracción por dominios clínicos, frente a la consulta única previa.}
+\label{tab:harness}
+\end{table}
+
+Además, la exigencia de evidencia por referencia a fragmentos numerados eliminó la posibilidad de citas inventadas, y en al menos un caso el procedimiento recuperó una mención de HFAV con su evidencia textual donde la consulta única la había perdido.
 
 La corrida definitiva de la comparación de los tres modelos, con la tabla de comportamiento de inferencia (latencia, velocidad de generación, memoria y truncamientos) y las métricas de acuerdo contra el estándar de referencia humano, quedó programada para ejecutarse una vez que el conjunto de referencia alcance la cobertura suficiente, y sus resultados se incorporarán en la versión final de este informe.
 
