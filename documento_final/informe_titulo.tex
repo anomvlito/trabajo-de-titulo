@@ -206,19 +206,12 @@ El formulario se rediseñó en una estructura jerárquica de nueve bloques despl
 
 \subsubsection{Visor seguro de documentos}
 
-Para que el anotador vea la epicrisis sin que el archivo original llegue a su navegador, se construyó un visor propio: la estructura visual de cada documento (posición, tamaño y fuente de cada bloque de texto) se extrae del PDF y se guarda en la base de datos, y un servicio la entrega solo a quien tiene sesión iniciada, el rol adecuado y el caso asignado. El visor reconstruye cada página en pantalla y permite capturar evidencia con un clic sobre el propio texto (Figuras~\ref{fig:vista-documento} y~\ref{fig:vista-formulario}).
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.75\textwidth]{vista_anotacion_documento.png}
-\caption{Documento reconstruido en el visor seguro de la plataforma, en modo de revisión en vivo, con los identificadores del paciente ocultos por el sistema. El contenido clínico fue difuminado adicionalmente para esta publicación.}
-\label{fig:vista-documento}
-\end{figure}
+Para que el anotador vea la epicrisis sin que el archivo original llegue a su navegador, se construyó un visor propio: la estructura visual de cada documento (posición, tamaño y fuente de cada bloque de texto) se extrae del PDF y se guarda en la base de datos, y un servicio la entrega solo a quien tiene sesión iniciada, el rol adecuado y el caso asignado. El visor reconstruye cada página en pantalla y permite capturar evidencia con un clic sobre el propio texto; la Figura~\ref{fig:vista-formulario} muestra el formulario jerárquico durante una sesión de revisión en vivo.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{vista_anotacion_formulario.png}
-\caption{Formulario jerárquico de anotación con su barra de progreso, correspondiente al mismo caso de la Figura~\ref{fig:vista-documento}.}
+\caption{Formulario jerárquico de anotación con su barra de progreso, en modo de revisión en vivo.}
 \label{fig:vista-formulario}
 \end{figure}
 
