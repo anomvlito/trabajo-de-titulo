@@ -146,13 +146,16 @@ no es estructural, es de verificación de texto oficial (ver más abajo).
   todo el trabajo).
 - Diagramas explicativos del problema técnico.
 
-Comparación con nuestras imágenes: `fig_arquitectura.png` (calidad visual comparable o superior a
-las del ejemplo, con agrupación por capas y estilos de flecha diferenciados) **no está referenciada
-en el `.tex`**; tampoco lo están `imagenes_plataforma/matriz_de_avance.png` ni
-`imagenes_plataforma/ Vista de anotación.png`. El ejemplo usa el equivalente de "antes/después de
-la UI"; nosotros tenemos material similar sin usar (matriz de avance del panel de administración,
-vista de anotación sin censurar) que podría reforzar "Plataforma de anotación operativa" o
-"Experimento de concordancia en ejecución" de la misma manera. Ver `tt-redaccion`.
+Comparación con nuestras imágenes: `figuras/diagramas/sin_usar/fig_arquitectura.png` (calidad visual
+comparable o superior a las del ejemplo, con agrupación por capas y estilos de flecha diferenciados)
+**no está referenciada en el `.tex`**; tampoco lo están `figuras/diagramas/sin_usar/fig_metodologia.png`
+ni `figuras/capturas/matriz_de_avance.png`. El ejemplo usa el equivalente de "antes/después de la
+UI"; nosotros tenemos material similar sin usar (matriz de avance del panel de administración) que
+podría reforzar "Plataforma de anotación operativa" o "Experimento de concordancia en ejecución" de
+la misma manera. La captura de "antes/después" del visor sin censurar (`Vista de anotación.png`) se
+sacó del árbol del repo el 2026-09-22 por exponer texto clínico legible en un repo público de
+GitHub; si se quiere ese recurso visual, hay que generar una versión nueva con difuminado real, no
+reusar la borrada. Ver `tt-redaccion`.
 
 ## Brechas concretas detectadas en `documento_final/informe_titulo.tex` (al 2026-09-21)
 
@@ -176,9 +179,11 @@ vista de anotación sin censurar) que podría reforzar "Plataforma de anotación
    no vale la pena seguir indagando el nombre exacto del diploma más allá de esto.
 3. **Nombres propios en el informe**: resuelto (ver lección 6 arriba). Comisión oficial con nombre
    completo y rol; el resto de las personas mencionadas, con rol genérico.
-4. **Imágenes generadas sin usar** en el documento (`fig_arquitectura.png`,
-   `matriz_de_avance.png`, `Vista de anotación.png`): evaluar si suman evidencia visual a algún
-   resultado antes de la versión final.
+4. **Imágenes generadas sin usar** en el documento (`figuras/diagramas/sin_usar/fig_arquitectura.png`,
+   `figuras/diagramas/sin_usar/fig_metodologia.png`, `figuras/capturas/matriz_de_avance.png`):
+   evaluar si suman evidencia visual a algún resultado antes de la versión final. `Vista de
+   anotación.png` (la cuarta que aparecía aquí) se sacó del repo el 2026-09-22 por exponer texto
+   clínico sin difuminar en un repo público; no reintroducirla sin censurar.
 
 Lo que ya está bien (no tocar sin razón): estructura de capítulos, subsección "Rol del estudiante",
 capítulo dedicado de competencias con una subsección por competencia y evidencia concreta, cursiva

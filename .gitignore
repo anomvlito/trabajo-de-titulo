@@ -1,3 +1,13 @@
 # Contenido privado de terceros, usado solo como referencia local.
 # Ver documentacion/analisis_ejemplo_referencia.md para el análisis ya anonimizado.
 ejemplo_referencia/
+
+# Artefactos regenerables de compilación LaTeX (ver skill tt-compilar).
+documento_final/*.aux
+documento_final/*.fdb_latexmk
+documento_final/*.fls
+documento_final/*.log
+documento_final/*.lof
+documento_final/*.lot
+documento_final/*.out
+documento_final/*.toc

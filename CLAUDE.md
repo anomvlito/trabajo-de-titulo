@@ -19,7 +19,9 @@ Javier Pereda (Representante Pregrado, Ing. Eléctrica).
 ## Rutas clave
 
 - `documento_final/informe_titulo.tex` → PDF del informe (compilar: `latexmk -pdf`).
-  Figuras mermaid: editar `.mmd` y regenerar con `mmdc` (config en `mermaid-config.json`).
+  Figuras: `documento_final/figuras/diagramas/` (mermaid, editar `.mmd` y regenerar con `mmdc`,
+  config en `mermaid-config.json`; `sin_usar/` son diagramas generados y no citados en el `.tex`)
+  y `documento_final/figuras/capturas/` (capturas reales de la plataforma).
 - `documento_final/datos/irr_2026-09-15.tsv` → tabla kappa completa del experimento
   (κ promedio 0,72, 43 epicrisis solapadas, 222 criterios).
 - `bitacoras/` → carpetas espejo de SIDING; `bitacoras/PLAN_BITACORAS.md` es la guía

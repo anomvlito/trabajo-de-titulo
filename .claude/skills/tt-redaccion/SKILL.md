@@ -61,10 +61,12 @@ con el ejemplo y con el reglamento.
   grep -n includegraphics documento_final/informe_titulo.tex
   find documento_final -iname "*.png"
   ```
-  Al 2026-09-21 hay 3 imágenes generadas y no usadas (`fig_arquitectura.png`,
-  `imagenes_plataforma/matriz_de_avance.png`, `imagenes_plataforma/ Vista de anotación.png`,
-  esta última con espacio inicial en el nombre, cuidado al referenciarla). Evalúa si alguna suma
-  evidencia visual a un resultado antes de la versión final; si no, no las fuerces.
+  Al 2026-09-22 hay 3 imágenes generadas y no usadas: `figuras/diagramas/sin_usar/fig_arquitectura.png`,
+  `figuras/diagramas/sin_usar/fig_metodologia.png` y `figuras/capturas/matriz_de_avance.png`. Evalúa
+  si alguna suma evidencia visual a un resultado antes de la versión final; si no, no las fuerces.
+  Una cuarta, `imagenes_plataforma/ Vista de anotación.png` (captura sin difuminar, con texto
+  clínico completo legible), se sacó del árbol del repo por exposición de datos: el repo es
+  público en GitHub. No la reintroduzcas sin difuminar.
 
 ## Antes de dar una sección por lista
 
