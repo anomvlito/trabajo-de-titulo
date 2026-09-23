@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.4.27)  22 SEP 2026 22:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.4.27)  22 SEP 2026 22:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1233,14 +1233,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [18]
-<imagenes_plataforma/panel_de_acuerdo.png, id=296, 1855.93375pt x 1004.75375pt>
-
-File: imagenes_plataforma/panel_de_acuerdo.png Graphic file (type png)
-<use imagenes_plataforma/panel_de_acuerdo.png>
-Package pdftex.def Info: imagenes_plataforma/panel_de_acuerdo.png  used on inpu
-t line 296.
-(pdftex.def)             Requested size: 448.42822pt x 242.75562pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1250,6 +1242,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
+<imagenes_plataforma/panel_de_acuerdo.png, id=302, 1855.93375pt x 1004.75375pt>
+
+File: imagenes_plataforma/panel_de_acuerdo.png Graphic file (type png)
+<use imagenes_plataforma/panel_de_acuerdo.png>
+Package pdftex.def Info: imagenes_plataforma/panel_de_acuerdo.png  used on inpu
+t line 296.
+(pdftex.def)             Requested size: 448.42822pt x 242.75562pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1378,7 +1378,7 @@ Here is how much of TeX's memory you used:
 -dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ne
 wtx/ztmri.pfb>
-Output written on informe_titulo.pdf (29 pages, 773390 bytes).
+Output written on informe_titulo.pdf (29 pages, 773785 bytes).
 PDF statistics:
  391 PDF objects out of 1000 (max. 8388607)
  340 compressed objects within 4 object streams
