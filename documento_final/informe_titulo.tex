@@ -109,7 +109,7 @@ Este trabajo de título se desarrolló en colaboración con iHealth y la Unidad 
 
 El objetivo del proyecto fue implementar un sistema de software clínico que integre inteligencia artificial para el análisis automatizado de registros médicos en pacientes de UCI. El trabajo se organizó en torno a dos frentes complementarios: la construcción de una plataforma web de anotación clínica que permite a un equipo de anotadores generar un conjunto de referencia (\textit{ground truth}) confiable a partir de las epicrisis, y la evaluación de modelos de lenguaje de código abierto que intentan extraer automáticamente esas mismas variables.
 
-Sobre el primer frente, se construyó una plataforma completa: ingesta de documentos PDF hacia una base de datos, un mecanismo de anonimización que oculta la identidad del paciente antes de mostrar el documento, un formulario jerárquico de nueve bloques con 186 variables clínicas, un visor seguro que muestra la epicrisis sin entregar el archivo original, y un experimento de concordancia entre anotadores sobre 50 epicrisis con cinco anotadores y tres revisores por caso. Sobre el segundo frente, se montó en el clúster de cómputo de iHealth la evaluación de tres modelos de lenguaje abiertos (Gemma, Llama y Qwen) en la extracción de 48 variables clínicas con la evidencia textual que las respalda, y se diseñó un procedimiento de extracción por dominios clínicos que, en su validación, eliminó los truncamientos y las citas inventadas de las respuestas.
+Sobre el primer frente, se construyó una plataforma completa: ingesta de documentos PDF hacia una base de datos, un mecanismo de anonimización que oculta la identidad del paciente antes de mostrar el documento, un formulario jerárquico de nueve bloques con 199 variables clínicas, un visor seguro que muestra la epicrisis sin entregar el archivo original, y un experimento de concordancia entre anotadores sobre 50 epicrisis con cinco anotadores y tres revisores por caso. Sobre el segundo frente, se montó en el clúster de cómputo de iHealth la evaluación de tres modelos de lenguaje abiertos (Gemma, Llama y Qwen) en la extracción de 48 variables clínicas con la evidencia textual que las respalda, y se diseñó un procedimiento de extracción por dominios clínicos que, en su validación, eliminó los truncamientos y las citas inventadas de las respuestas.
 
 El proyecto exigió, además, resolver problemas propios de un sistema en producción: protección de datos personales sobre 275 epicrisis reales, validación de la migración de la base de datos a un servicio administrado en la nube, respaldos verificados y monitoreo de disponibilidad. El desarrollo permitió evidenciar las tres competencias del perfil de egreso declaradas: el desarrollo de soluciones innovadoras basadas en conocimientos avanzados de Ingeniería de Computación, la aplicación de diversos métodos de análisis de datos, y la investigación y adopción de nuevas tecnologías de información dentro de una organización de salud.
 \newpage
@@ -122,7 +122,7 @@ This thesis was developed in collaboration with iHealth and the Critical Care Un
 
 The goal of the project was to implement a clinical software system integrating artificial intelligence for the automated analysis of medical records of ICU patients. The work was organized around two complementary fronts: building a web-based clinical annotation platform that allows a team of annotators to produce a reliable ground truth from the epicrises, and evaluating open-source large language models that attempt to extract those same variables automatically.
 
-On the first front, a complete platform was built: PDF ingestion into a database, an anonymization mechanism that hides patient identity before displaying each document, a hierarchical annotation form of nine blocks covering 186 clinical variables, a secure viewer that renders the epicrisis without delivering the original file, and an inter-annotator agreement experiment over 50 epicrises with five annotators and three reviewers per case. On the second front, an evaluation of three open language models (Gemma, Llama, and Qwen) was set up on the iHealth computing cluster to extract 48 clinical variables together with their supporting textual evidence, and a domain-based extraction procedure was designed which, in its validation, eliminated truncated outputs and fabricated citations.
+On the first front, a complete platform was built: PDF ingestion into a database, an anonymization mechanism that hides patient identity before displaying each document, a hierarchical annotation form of nine blocks covering 199 clinical variables, a secure viewer that renders the epicrisis without delivering the original file, and an inter-annotator agreement experiment over 50 epicrises with five annotators and three reviewers per case. On the second front, an evaluation of three open language models (Gemma, Llama, and Qwen) was set up on the iHealth computing cluster to extract 48 clinical variables together with their supporting textual evidence, and a domain-based extraction procedure was designed which, in its validation, eliminated truncated outputs and fabricated citations.
 
 The project also required solving problems inherent to a production system: personal data protection over 275 real epicrises, a validated migration path to a managed cloud database service, verified backups, and availability monitoring. The work provided evidence for the three declared graduate profile competencies: developing innovative solutions based on advanced Computer Science engineering knowledge, applying diverse data analysis methods, and researching and facilitating the adoption of new information technologies within a healthcare organization.
 \newpage
@@ -184,7 +184,7 @@ En la inscripción del trabajo se declararon tres competencias técnicas del per
 % ==================== II. ACTIVIDADES ====================
 \section{Actividades desempeñadas}
 
-Este capítulo describe el trabajo realizado, organizado por líneas de desarrollo. La dedicación total registrada en las bitácoras del período fue de 493 horas, distribuidas entre mayo y agosto de 2026.
+Este capítulo describe el trabajo realizado, organizado por líneas de desarrollo. La dedicación total registrada en las bitácoras del período fue de 573 horas, distribuidas entre mayo y septiembre de 2026.
 
 \subsection{Conceptualización y análisis exploratorio}
 
@@ -202,7 +202,7 @@ Se desarrolló el flujo de ingesta de los documentos PDF hacia una base de datos
 
 \subsubsection{Formulario jerárquico de anotación}
 
-El formulario se rediseñó en una estructura jerárquica de nueve bloques desplegables con 186 variables finales, pensada para recorrer documentos largos sin saltarse campos. Cada variable admite Sí, No o duda con grado de sospecha; las fechas se capturan en dos pasos; y un buscador con sinónimos y códigos de la clasificación internacional de enfermedades permite ubicar cada variable por el nombre que usó el médico. Iteraciones posteriores incorporaron el inicio en blanco (distinguir un ``No'' decidido de una variable aún no revisada), la propagación de respuestas desde variables madre a sus dependientes, la captura de múltiples evidencias por variable y la corrección de un defecto que borraba trabajo ya anotado al cambiar una sección de estado. Estas decisiones quedaron registradas como historias de usuario y respaldadas por pruebas automatizadas.
+El formulario se rediseñó en una estructura jerárquica de nueve bloques desplegables con 199 variables finales, pensada para recorrer documentos largos sin saltarse campos. Cada variable admite Sí, No o duda con grado de sospecha; las fechas se capturan en dos pasos; y un buscador con sinónimos y códigos de la clasificación internacional de enfermedades permite ubicar cada variable por el nombre que usó el médico. Iteraciones posteriores incorporaron el inicio en blanco (distinguir un ``No'' decidido de una variable aún no revisada), la propagación de respuestas desde variables madre a sus dependientes, la captura de múltiples evidencias por variable y la corrección de un defecto que borraba trabajo ya anotado al cambiar una sección de estado. Estas decisiones quedaron registradas como historias de usuario y respaldadas por pruebas automatizadas.
 
 \subsubsection{Visor seguro de documentos}
 
@@ -252,7 +252,7 @@ Tres desafíos marcaron el proyecto. El primero fue trabajar con datos clínicos
 
 \subsection{Plataforma de anotación operativa}
 
-El resultado más visible del proyecto es una plataforma de anotación clínica en producción, usada por un equipo real de anotadores sobre 275 epicrisis anonimizadas de la UPC. La plataforma integra el formulario jerárquico de 186 variables, el visor seguro de documentos, la captura de evidencia textual, el manual interactivo de entrenamiento y un panel de administración con búsqueda, seguimiento del avance por anotador y exportación de resultados.
+El resultado más visible del proyecto es una plataforma de anotación clínica en producción, usada por un equipo real de anotadores sobre 275 epicrisis anonimizadas de la UPC. La plataforma integra el formulario jerárquico de 199 variables, el visor seguro de documentos, la captura de evidencia textual, el manual interactivo de entrenamiento y un panel de administración con búsqueda, seguimiento del avance por anotador y exportación de resultados.
 
 \subsection{Conjunto de datos protegido y trazable}
 
@@ -311,7 +311,7 @@ A lo largo del proyecto se evidenciaron de manera concreta las tres competencias
 
 La plataforma de anotación no es la aplicación de una receta conocida, sino una solución diseñada desde cero para un problema con restricciones poco habituales: los usuarios son profesionales clínicos sin formación técnica, los datos son sensibles al punto de que el archivo original no puede llegar al navegador, y el producto del sistema (el conjunto de referencia) debe ser defendible metodológicamente.
 
-Esas restricciones exigieron decisiones de ingeniería no triviales. El visor seguro reconstruye cada página del documento a partir de su estructura visual almacenada en la base de datos, en lugar de servir el PDF, lo que permite anonimizar al vuelo y controlar exactamente qué información llega a cada rol. El formulario jerárquico traduce un árbol de 186 variables clínicas, con estados de duda, propagación entre variables dependientes y candados de protección, a un modelo de datos plano y consultable. La anonimización opera en memoria al momento de entrega, preservando los registros originales para el equipo investigador, y usa reemplazos de longitud equivalente para no descuadrar el posicionamiento absoluto del documento. Cada una de estas piezas aplica conocimientos de arquitectura de software, bases de datos, seguridad y diseño de sistemas interactivos a un problema abierto, y el conjunto forma un sistema que no existía en la organización y que hoy sostiene su línea de investigación clínica.
+Esas restricciones exigieron decisiones de ingeniería no triviales. El visor seguro reconstruye cada página del documento a partir de su estructura visual almacenada en la base de datos, en lugar de servir el PDF, lo que permite anonimizar al vuelo y controlar exactamente qué información llega a cada rol. El formulario jerárquico traduce un árbol de 199 variables clínicas, con estados de duda, propagación entre variables dependientes y candados de protección, a un modelo de datos plano y consultable. La anonimización opera en memoria al momento de entrega, preservando los registros originales para el equipo investigador, y usa reemplazos de longitud equivalente para no descuadrar el posicionamiento absoluto del documento. Cada una de estas piezas aplica conocimientos de arquitectura de software, bases de datos, seguridad y diseño de sistemas interactivos a un problema abierto, y el conjunto forma un sistema que no existía en la organización y que hoy sostiene su línea de investigación clínica.
 
 \subsection*{Aplicar diversos métodos de análisis de datos para la comprensión de los fenómenos abordados}
 
@@ -342,7 +342,6 @@ Quedan abiertas las líneas que dan continuidad natural al proyecto: cerrar el a
 \begin{itemize}[leftmargin=1.27cm, label={}]
     \item Grattafiori, A., et al. (2024). \textit{The Llama 3 herd of models}. arXiv preprint arXiv:2407.21783.
     \item Landis, J. R., \& Koch, G. G. (1977). The measurement of observer agreement for categorical data. \textit{Biometrics, 33}(1), 159--174.
-    \item Lundberg, S. M., \& Lee, S.-I. (2017). A unified approach to interpreting model predictions. \textit{Advances in Neural Information Processing Systems, 30}.
     \item Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., \& Polosukhin, I. (2017). Attention is all you need. \textit{Advances in Neural Information Processing Systems, 30}.
 \end{itemize}
 
@@ -371,8 +370,9 @@ Quedan abiertas las líneas que dan continuidad natural al proyecto: cerrar el a
 6 & Evaluación de tres modelos LLM y extracción por dominios & 80 \\
 7 & Anonimizador reconstruido, 275 epicrisis y panel de administración & 82 \\
 8 & Experimento de concordancia, nube, respaldos y monitoreo & 84 \\
+9 & Causa raíz del incidente de agosto, acompañamiento del experimento y cierre del informe & 80 \\
 \midrule
-\multicolumn{2}{l}{\textbf{Total}} & \textbf{493} \\
+\multicolumn{2}{l}{\textbf{Total}} & \textbf{573} \\
 \bottomrule
 \end{tabular}
 \caption{Dedicación registrada en las bitácoras de SIDING.}
