@@ -1,0 +1,219 @@
+{
+  "schema": {
+    "variables": 199,
+    "types": {
+      "date": 11,
+      "leaf": 174,
+      "select": 5,
+      "text": 9
+    },
+    "with_leaf_ancestor": 96,
+    "with_mutual_exclusion": 8,
+    "groups": [
+      {
+        "name": "hospitalizacion_01",
+        "size": 2
+      },
+      {
+        "name": "antecedentes_01",
+        "size": 16
+      },
+      {
+        "name": "antecedentes_02",
+        "size": 16
+      },
+      {
+        "name": "antecedentes_03",
+        "size": 16
+      },
+      {
+        "name": "antecedentes_04",
+        "size": 16
+      },
+      {
+        "name": "antecedentes_05",
+        "size": 7
+      },
+      {
+        "name": "ingreso_01",
+        "size": 4
+      },
+      {
+        "name": "soporte_01",
+        "size": 16
+      },
+      {
+        "name": "soporte_02",
+        "size": 16
+      },
+      {
+        "name": "soporte_03",
+        "size": 16
+      },
+      {
+        "name": "soporte_04",
+        "size": 9
+      },
+      {
+        "name": "falla_01",
+        "size": 9
+      },
+      {
+        "name": "infecciones_01",
+        "size": 16
+      },
+      {
+        "name": "infecciones_02",
+        "size": 16
+      },
+      {
+        "name": "infecciones_03",
+        "size": 10
+      },
+      {
+        "name": "complicaciones_01",
+        "size": 7
+      },
+      {
+        "name": "egreso_01",
+        "size": 5
+      },
+      {
+        "name": "calidad_01",
+        "size": 2
+      }
+    ],
+    "relations": {
+      "parent_child": 137,
+      "parent_child_crossing_groups": 51,
+      "children_with_crossing_parent": 44,
+      "exclusion_pairs": 7,
+      "exclusion_pairs_crossing_groups": 3
+    }
+  },
+  "notes": {
+    "pages": {
+      "median": 3.0,
+      "q1": 2.0,
+      "q3": 3.25,
+      "min": 2,
+      "max": 6,
+      "sum": 144
+    },
+    "spans": {
+      "median": 168.5,
+      "q1": 128.0,
+      "q3": 229.25,
+      "min": 89,
+      "max": 362,
+      "sum": 9089
+    },
+    "characters": {
+      "median": 6048.5,
+      "q1": 3270.0,
+      "q3": 8721.75,
+      "min": 1628,
+      "max": 15628,
+      "sum": 311260
+    },
+    "nonempty_lines": {
+      "median": 115.0,
+      "q1": 79.25,
+      "q3": 154.25,
+      "min": 50,
+      "max": 303,
+      "sum": 6064
+    }
+  },
+  "annotation": {
+    "planned_assignments": 150,
+    "reviewers_assigned": 6,
+    "submissions": 63,
+    "reviewers_submitting": 4,
+    "cases_by_submissions": {
+      "0": 7,
+      "1": 24,
+      "2": 18,
+      "3": 1
+    },
+    "criteria_per_submission": [
+      222
+    ],
+    "leaf_states": {
+      "no": 9729,
+      "yes": 1189,
+      "unanswered": 43
+    },
+    "yes_with_evidence_text": 1183,
+    "yes_per_submission": {
+      "median": 18,
+      "q1": 10.0,
+      "q3": 25.0,
+      "min": 2,
+      "max": 43,
+      "sum": 1189
+    },
+    "leaf_never_yes": 40
+  },
+  "inter_annotator": {
+    "unit": "submission pair x boolean variable",
+    "cases": 19,
+    "submission_pairs": 21,
+    "item_pairs": 3616,
+    "excluded_unanswered": 38,
+    "observed_agreement": 0.946,
+    "cohen_kappa_pooled": 0.761,
+    "kappa_ci95_case_bootstrap": [
+      0.695,
+      0.819
+    ],
+    "positive_specific_agreement": 0.791,
+    "psa_ci95_case_bootstrap": [
+      0.732,
+      0.843
+    ],
+    "negative_specific_agreement": 0.969,
+    "bootstrap": {
+      "replicates": 5000,
+      "seed": 20260923
+    },
+    "by_domain": {
+      "antecedentes": {
+        "item_pairs": 1471,
+        "observed_agreement": 0.978,
+        "kappa": 0.85,
+        "positive_agreement": 0.862
+      },
+      "soporte": {
+        "item_pairs": 919,
+        "observed_agreement": 0.94,
+        "kappa": 0.788,
+        "positive_agreement": 0.824
+      },
+      "falla": {
+        "item_pairs": 186,
+        "observed_agreement": 0.866,
+        "kappa": 0.711,
+        "positive_agreement": 0.818
+      },
+      "infecciones": {
+        "item_pairs": 874,
+        "observed_agreement": 0.927,
+        "kappa": 0.642,
+        "positive_agreement": 0.683
+      },
+      "complicaciones": {
+        "item_pairs": 145,
+        "observed_agreement": 0.89,
+        "kappa": 0.537,
+        "positive_agreement": 0.6
+      },
+      "egreso": {
+        "item_pairs": 21,
+        "observed_agreement": 0.905,
+        "kappa": 0.611,
+        "positive_agreement": 0.667
+      }
+    }
+  }
+}

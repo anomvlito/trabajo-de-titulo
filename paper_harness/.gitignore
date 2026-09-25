@@ -1,0 +1,7 @@
+referencias/pdf/
+referencias/.venv/
+*.aux
+*.log
+*.bbl
+*.blg
+*.out

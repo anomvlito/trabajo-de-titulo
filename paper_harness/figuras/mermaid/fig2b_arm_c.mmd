@@ -1,0 +1,12 @@
+flowchart TD
+    N["Indexed discharge summary<br/>[E0001] ... [Ennnn]"] --> C0["Call 0: case model<br/>common rules + case-model instruction + note"]
+    C0 --> V0{"Strict parse, schema check,<br/>evidence IDs valid?"}
+    V0 -- "no, retry (max 2)" --> C0
+    V0 -- "no, retries exhausted" --> F["Case failed for Arm C<br/>(never falls back to Arm B)"]
+    V0 -- yes --> CM["Validated case model<br/>ICU stays and first stay; timeline;<br/>problems with status and certainty;<br/>support performed or planned; infections;<br/>outcome; documentation gaps; doubts<br/>(every statement with evidence IDs)"]
+    CM --> G["18 group calls in one batch<br/>common rules + case model + group catalogue + note"]
+    G --> R["Rules for group calls:<br/>the note prevails; evidence cites note lines only;<br/>conflicts reported in comentario"]
+    R --> VG["Per-group validation and retries<br/>(as in Arm B)"]
+    VG --> VC["Case-level validation: hierarchy, exclusions;<br/>clinical coherence rules (reported, not corrected)"]
+    VC --> OUT["results/patient_id.json"]
+    CM -. "clinician audit on a sample" .-> AU["Case-model accuracy<br/>and error propagation"]

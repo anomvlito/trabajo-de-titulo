@@ -1,0 +1,56 @@
+\section{Introduction}\label{sec:intro}
+
+Discharge summaries of intensive care unit (ICU) stays condense the clinical history,
+organ support, infections, complications and outcome of a critically ill patient into
+narrative text. Converting that narrative into the variables of a clinical registry or a
+research database still depends largely on manual chart abstraction, which is slow, costly
+and difficult to scale beyond small cohorts. Large language models (LLMs) have shown that
+clinical information can be extracted from free text with little or no task-specific
+training~\cite{agrawal2022fewshot}, and a growing body of work applies them to structured
+extraction from clinical notes, pathology reports and radiology reports, including with open-weight
+models run on local infrastructure%
+~\cite{privacy2024structured,iterativerefine2025,clinicalentityretrieval2024,spaanderman2025structured}.
+
+For research use, the value of an extracted variable depends on whether it can be audited.
+A reviewer must be able to see which part of the note supports each answer, to distinguish
+a documented absence from a missing answer, and to detect when the output violates the
+structure of the form. These requirements become harder to meet as the form grows. When a
+single generation must return hundreds of variables, the output becomes long: it may exceed
+the token budget and be truncated, it may omit keys or break the JSON structure, and an
+error anywhere invalidates or obscures the whole response. A common engineering response is
+to decompose the task, for example by processing the note sentence by sentence, by reviewing
+and correcting an initial output, by chaining sequential sub-prompts, or by retrieving only the
+passages relevant to each variable~\cite{llmie2025,fornasiere2024medical,spaanderman2025structured,clinicalentityretrieval2024}. Decomposition is not
+free, however. It multiplies the number of calls, repeats the note in every prompt, increases
+latency and creates new opportunities for inconsistency between answers produced
+independently for related variables.
+
+Existing studies differ in note type, language, schema size, annotation procedure, models and
+metrics, and they rarely isolate the effect of the calling strategy on the same patients, the
+same schema and the same models (Section~\ref{sec:related}). In information extraction from
+radiology reports, a scoping review found that results could not be compared across studies and
+that annotation guidelines, inter-annotator agreement and code were often not
+reported~\cite{scoping2024radiology}. The choice between a
+single call and a decomposed pipeline is therefore usually made on engineering intuition rather
+than on a paired measurement of what each strategy gains and costs.
+
+This study addresses that gap for one concrete and demanding case: a hierarchical annotation form
+of 199 variables applied to Spanish discharge summaries of an adult ICU in a public hospital in Chile, the
+same form used by human annotators in an annotation platform. We compare three strategies that share the
+note, the rules, the output contract and the validator, and differ only in how the form is requested: one
+call for all 199 variables; a schema-constrained harness of 18 independent calls, each returning a clinically
+coherent group of 2 to 16 variables that is validated, retried on error and merged; and the same harness in
+which a preliminary call first builds an evidence-grounded model of the case (ICU stays, timeline, problem
+status, support, infections and outcome) that every group call receives. The third strategy addresses a
+limitation of independent calls: many variables require inference across the whole episode, and groups that
+cannot see each other's answers may reconstruct the clinical story differently. In all strategies the model
+cites evidence by line identifier and the software copies the cited text, so that a quotation cannot be
+paraphrased or invented by the model.
+
+The contribution is not the use of several prompts, nor the idea of an intermediate representation, both of
+which have precedents. It is (i) a controlled, within-patient and within-model comparison of monolithic,
+schema-decomposed and case-model-guided extraction under an identical 199-variable contract; (ii) a
+reproducible protocol that separates structural validity, evidence fidelity, clinical coherence, agreement
+with human annotators and operational cost, and that never converts a failed or truncated answer into a
+negative finding; and (iii) an execution with three open-weight models on local infrastructure, with frozen
+inputs, hashes and per-call traces.

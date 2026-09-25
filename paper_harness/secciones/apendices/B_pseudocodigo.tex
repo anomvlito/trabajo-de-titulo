@@ -1,0 +1,57 @@
+\section{Pseudocode}\label{app:pseudocode}
+
+The pseudocode summarises \texttt{runner.py} (Arm B) and the specification of Arm A. \textsc{Validate} with
+\emph{relations=false} applies the field-level checks of Section~\ref{sec:harness}; with \emph{relations=true} it adds
+parent--child, mutual-exclusion and discharge-destination checks.
+
+\begin{lstlisting}[mathescape=true]
+procedure RUN_ARM_B(case, model, settings)          # settings: max_new_tokens=4096, max_retries=2
+    indexed_note, index <- INDEX_LINES(case.text)   # [E0001] ... ; keeps offsets
+    sig <- HASH(protocol, runner, inference_code, case.id, case.text, model, settings)
+    merged <- {} ; calls <- 0
+    for group in GROUPS(schema, size=16):           # 18 groups, form order
+        cp <- LOAD_CHECKPOINT(case.id, group)
+        if cp exists:
+            if cp.signature != sig: abort("configuration changed; use a new output directory")
+            if VALIDATE(cp.output, group.fields, index, relations=false) is empty:
+                merged <- merged $\cup$ cp.output ; continue
+        prompt <- COMMON + CATALOGUE(group)
+        errors <- [] ; output <- none
+        for attempt in 0..settings.max_retries:
+            p <- prompt if attempt = 0 else prompt + RETRY_BLOCK(errors, output)
+            output, meta <- GENERATE(model, p, indexed_note, settings.max_new_tokens, greedy)
+            calls <- calls + 1
+            errors <- VALIDATE(output, group.fields, index, relations=false)
+            WRITE_TRACE_AND_CHECKPOINT(sig, group, attempt, p, output, errors, meta)
+            if errors is empty: break
+        if errors is empty: merged <- merged $\cup$ output     # failed group: keys stay missing, never "No"
+    final_errors <- VALIDATE(merged, all_fields, index, relations=true)
+    WRITE_RESULT(case.id, model, valid = (final_errors is empty), final_errors,
+                 annotations = COPY_EVIDENCE(merged, index), calls)
+
+procedure RUN_ARM_A(case, model, settings_A)       # monolithic.py; settings_A.max_new_tokens=16384
+    indexed_note, index <- INDEX_LINES(case.text)
+    prompt <- COMMON_ALL + CONCAT(CATALOGUE(g) for g in GROUPS(schema, size=16))
+    for attempt in 0..settings_A.max_retries:
+        output, meta <- GENERATE(model, prompt (+ RETRY_BLOCK), indexed_note, settings_A.max_new_tokens, greedy)
+        errors <- VALIDATE(output, all_fields, index, relations=true)
+        WRITE_TRACE(...) ; if errors is empty: break
+    kept <- keys of the last output whose entries pass field-level checks; others missing, never "No"
+    WRITE_RESULT(case.id, model, valid = (errors is empty), errors, COPY_EVIDENCE(kept, index), calls)
+
+procedure RUN_ARM_C(case, model, settings)          # planned; same settings as Arm B
+    indexed_note, index <- INDEX_LINES(case.text)
+    for attempt in 0..settings.max_retries:
+        cm, meta <- GENERATE(model, COMMON + CASE_MODEL_INSTRUCTION (+ RETRY_BLOCK), indexed_note, budget_cm)
+        errors <- VALIDATE_CASE_MODEL(cm, CASE_MODEL_SCHEMA, index)   # strict parse, schema, evidence IDs
+        WRITE_TRACE(...) ; if errors is empty: break
+    if errors not empty: WRITE_RESULT(case.id, model, valid=false, reason="case model invalid"); return
+    prompts <- [COMMON + CASE_MODEL_PREAMBLE + cm + CATALOGUE(g) for g in GROUPS(schema, size=16)]
+    outputs <- GENERATE_BATCH(model, prompts, indexed_note)            # one batch; retries per group as in Arm B
+    ... identical to RUN_ARM_B from group validation onwards, plus:
+    coherence_violations <- COHERENCE_RULES(merged)                  # reported, never corrected
+    contradictions_with_cm <- COMPARE(merged, cm)                    # counted for the audit
+\end{lstlisting}
+
+Arm A keeps the field-level valid entries of an invalid form, whereas Arm B discards a whole invalid group.
+Variable-level validity is therefore computed with the same field-level rule in both arms (Section~\ref{sec:mono}).

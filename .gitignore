@@ -11,3 +11,8 @@ documento_final/*.lof
 documento_final/*.lot
 documento_final/*.out
 documento_final/*.toc
+
+# Papers descargados para el manuscrito: PDF y texto completo con derechos de autor, solo uso local
+# (ver paper_harness/README.md). Se versionan solo INDEX.md y references.bib.
+paper_harness/referencias/pdf/
+paper_harness/referencias/md/

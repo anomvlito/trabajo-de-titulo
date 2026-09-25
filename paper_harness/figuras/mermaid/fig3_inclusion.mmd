@@ -1,0 +1,17 @@
+flowchart TD
+    A["275 de-identified ICU discharge summaries<br/>in the annotation platform"] --> B["50 summaries in the frozen cohort<br/>concordancia-50-v1"]
+    A -. "225 not in cohort<br/>(selection rule: to be documented)" .-> X1["Excluded from this study"]
+    B --> C["150 planned assignments<br/>3 per summary, 6 reviewers"]
+    C --> D["63 submitted annotations<br/>by 4 reviewers<br/>(data cut 23 Sep 2026)"]
+    D --> E0["7 summaries<br/>0 submissions"]
+    D --> E1["24 summaries<br/>1 submission"]
+    D --> E2["18 summaries<br/>2 submissions"]
+    D --> E3["1 summary<br/>3 submissions"]
+
+    B --> S1["Structural and evidence analyses<br/>all 50 summaries x 3 models x 2 arms"]
+    E1 --> S2["Agreement vs individual annotations<br/>43 summaries with at least 1 submission"]
+    E2 --> S2
+    E3 --> S2
+    E2 --> S3["Inter-annotator agreement<br/>19 summaries with at least 2 submissions"]
+    E3 --> S3
+    E3 --> S4["Majority reference possible<br/>1 summary (pipeline check only)"]

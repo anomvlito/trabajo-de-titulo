@@ -1,0 +1,82 @@
+\section{TRIPOD-LLM checklist}\label{app:tripod}
+
+Items and applicability codes are those of TRIPOD-LLM Table 2 and the abstract checklist (Table 3)
+\cite{gallifant2025tripodllm}. The guideline text mentions 19 main items and 50 subitems; the printed Table 2
+has 49 numbered rows, which are listed here. This study is classified as LLM methods (M, prompt engineering)
+and LLM evaluation (E); it is not an evaluation in a healthcare setting (H) and involves no model
+development (D). Information extraction is not a separate task category in TRIPOD-LLM; items for all tasks
+are applied, and item 7a is reported although its task codes do not list extraction. Status: \textbf{R},
+reported in this draft; \textbf{P}, partially reported or pending data; \textbf{NA}, not applicable (with reason).
+
+{\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.9cm}>{\raggedright\arraybackslash}p{6.1cm}>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{0.9cm}>{\raggedright\arraybackslash}p{3.2cm}}
+\toprule
+Item & Topic (abridged) & Location & Status & Note \\
+\midrule
+\endfirsthead
+\toprule
+Item & Topic (abridged) & Location & Status & Note \\
+\midrule
+\endhead
+1 & Title identifies LLM evaluation, task, population, outcome & Title & R & \\
+2 & Abstract per TRIPOD-LLM for abstracts & Abstract & P & Results pending \\
+3a & Healthcare context, rationale, existing approaches & \S\ref{sec:intro}, \S\ref{sec:related} & R & \\
+3b & Target population, intended use, intended users (E, H) & \S\ref{sec:intro}, \S\ref{sec:conclusion} & R & Research abstraction; no clinical use \\
+4 & Objectives, development vs.\ evaluation & \S\ref{sec:objectives} & R & \\
+5a & Data sources per dataset and rationale & \S\ref{sec:methods} (Setting) & P & Selection rule 275$\to$50 pending \\
+5b & Data points, distribution, languages, countries & \cref{tab:cohort} & R & Clinical descriptors pending decision \\
+5c & Dates of oldest and newest text & --- & P & \todoauthor{admission date range, aggregated} \\
+5d & Preprocessing and quality checks & \S\ref{sec:methods} (Setting) & R & Redaction, line grouping, hashes \\
+5e & Missing and imbalanced data & \S\ref{sec:reference}, \S\ref{sec:outcomes} & R & Unanswered, not submitted, failures \\
+6a & LLM name, version, last training date & \cref{tab:models} & P & Revisions and dates pending \\
+6b & Development process (M, D) & \cref{tab:models} & P & Cite model cards; no fine-tuning \\
+6c & Text generation: prompt engineering, consistency, seed, temperature, max tokens & \S\ref{sec:prompts}--\ref{sec:models} & R & $B_{\text{mono}}$ pending \\
+6d & Initial and post-processed output & \S\ref{sec:prompts}, \S\ref{sec:harness} & R & Raw output kept in traces \\
+6e & Classification thresholds (C, OF) & --- & NA & No probabilities or thresholds \\
+7a & Output quality metrics and error types & \S\ref{sec:outcomes}, \ref{app:errors} & R & \\
+7b & Relevance of metrics to downstream task (E, H) & \S\ref{sec:outcomes} & P & Expand in Discussion \\
+7c & Outcome definition, computation, metrics (E, H) & \S\ref{sec:outcomes}, \ref{app:stats} & R & Local models; no API dates \\
+7d & Assessor qualifications, instructions, agreement & \S\ref{sec:reference}, \S\ref{sec:outcomes} & P & Reviewer profile pending \\
+7e & Comparison with other LLMs, humans, standards & \S\ref{sec:stats} & R & Within-model arm comparison \\
+8a & Annotation guidelines with examples & \S\ref{sec:reference} & R & Manual versioned; share as supplement \\
+8b & Number of annotators, multiply annotated share, IAA & \S\ref{sec:res-annotation}, \cref{tab:iaa} & R & At data cut \\
+8c & Annotator background and experience & \S\ref{sec:reference} & P & \todoauthor{profile} \\
+9a & Prompt design, curation, selection & \S\ref{sec:prompts}, \S\ref{sec:separation} & R & \\
+9b & Data used to develop prompts & \S\ref{sec:separation} & R & Manual, schema, synthetic tests \\
+10 & Preprocessing before summarisation (SS) & --- & NA & No summarisation task \\
+11 & Instruction tuning or alignment (M, D) & --- & NA & None performed \\
+12 & Compute (M, D, E) & \S\ref{sec:models}, \cref{fig:cost} & P & Measured after runs \\
+13 & Ethics approval and consent & Declarations & P & \todoauthor{committee} \\
+14a & Funding & Declarations & P & \\
+14b & Conflicts of interest & Declarations & P & \\
+14c & Protocol access (H) & \ref{app:stats} & R & Not H; plan provided anyway \\
+14d & Registration (H) & --- & NA & Not H; \todoauthor{consider OSF registration} \\
+14e & Data availability & Declarations & P & \\
+14f & Code availability & Declarations & P & Public URL pending \\
+15 & Patient and public involvement (H) & --- & NA & Not H; state no involvement \\
+16a & Flow of documents and labels (E, H) & \cref{fig:flow} & R & \\
+16b & Characteristics per source and split (E, H) & \cref{tab:cohort} & R & Single source, no split \\
+16c & Clinical variables development vs.\ evaluation (E, H) & --- & NA & No development split \\
+16d & Participants and events per analysis (E, H) & \cref{fig:flow}, \ref{app:stats} & P & Final counts at data cut \\
+17 & Performance on pre-specified metrics & \S\ref{sec:results} & P & RESULTS\_PENDING \\
+18 & LLM updating & --- & NA & No updating \\
+19a & Interpretation incl.\ fairness and previous studies & \S\ref{sec:discussion} & P & \todoauthor{fairness: subgroup data not in input} \\
+19b & Limitations, bias, uncertainty, generalisability & \S\ref{sec:discussion} & R & \\
+19c & Data challenges: representation, missingness, bias (E, H) & \S\ref{sec:discussion} & R & \\
+19d & Intended use, input, end-user, autonomy (E, H) & \S\ref{sec:conclusion} & R & Human review required \\
+19e & Handling poor-quality input (E, H) & \S\ref{sec:harness} & R & Failures never imputed \\
+19f & User interaction and expertise (E, H) & --- & P & Describe reviewer role in use \\
+19g & Next steps & \S\ref{sec:discussion} & P & After results \\
+\midrule
+2a--2l & Abstract checklist: title, background, objectives, setting, data, LLM name/version, building steps (M, D), task, evaluation data and metrics, results, implications, registration (H) & Abstract & P & 2g NA (no building); 2j pending; 2l NA (not H) \\
+\bottomrule
+\end{longtable}
+}
+
+\paragraph{Other guidelines.} TRIPOD+AI~\cite{collins2024tripodai} was written primarily for non-generative prediction
+models; it is used for general items (data, reference standard, blinding of assessors, availability).
+CONSORT-AI~\cite{liu2020consortai} and SPIRIT-AI~\cite{rivera2020spiritai} apply to randomised trials and trial
+protocols. Because this study is retrospective and non-interventional, they are used only as transparency references:
+the AI system version (CONSORT-AI 5(i)), the handling of input data and of poor-quality input (5(ii)--5(iii)), the
+analysis of performance errors (19; SPIRIT-AI 22) and the pre-specification of the analysis before outcomes are seen.

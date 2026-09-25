@@ -1,0 +1,85 @@
+% Manuscript draft for internal review. Compile with: tectonic main.tex
+% Structure: secciones/*.tex (IMRaD), secciones/apendices/*.tex, figuras/png (from figuras/mermaid/*.mmd),
+% references.bib (verified metadata), referencias/md (full texts used to check every citation).
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{setspace}
+\usepackage[running]{lineno}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{listings}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+
+\onehalfspacing
+\setlength{\emergencystretch}{3em}
+\linenumbers
+\setlist{nosep,leftmargin=*}
+\captionsetup{font=small,labelfont=bf}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\renewcommand{\cellalign}{tl}
+
+% ---------- Reporting conventions ----------
+% \pending{...}: a quantity not yet measured. Never replace with a number that is not in a results JSON.
+\definecolor{pendingfg}{HTML}{9A3412}
+\definecolor{pendingbg}{HTML}{FFF7ED}
+\newcommand{\pending}[1]{\textcolor{pendingfg}{\textsf{[PENDING: #1]}}}
+\newcommand{\todoauthor}[1]{\textcolor{blue!60!black}{\textsf{[AUTHOR DECISION: #1]}}}
+\newtcolorbox{resultspending}[1][]{colback=pendingbg,colframe=pendingfg,fonttitle=\sffamily\bfseries,
+  title={RESULTS\_PENDING},#1}
+
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,frame=single,
+  literate={á}{{\'a}}1{é}{{\'e}}1{í}{{\'i}}1{ó}{{\'o}}1{ú}{{\'u}}1{ñ}{{\~n}}1{Á}{{\'A}}1{É}{{\'E}}1
+  {Í}{{\'I}}1{Ó}{{\'O}}1{Ú}{{\'U}}1{Ñ}{{\~N}}1{¿}{{?`}}1{¡}{{!`}}1{ü}{{\"u}}1{→}{{$\rightarrow$}}1{—}{{---}}1{…}{{\ldots}}1}
+
+\newcommand{\harness}{multi-call harness}
+\newcommand{\mono}{monolithic call}
+\newcommand{\formv}{\texttt{form199-v1}}
+
+\title{Monolithic, decomposed and case-model-guided LLM extraction of 199 ICU variables from Spanish
+discharge summaries: a paired comparison\\[0.5em]\large Draft for internal review --- not for submission}
+\author{\todoauthor{author list, affiliations and corresponding author}}
+\date{Draft of 23 September 2026}
+
+\begin{document}
+\maketitle
+
+\input{secciones/00_resumen}
+\input{secciones/01_introduccion}
+\input{secciones/02_estado_del_arte}
+\input{secciones/03_metodos}
+\input{secciones/04_resultados}
+\input{secciones/05_discusion}
+\input{secciones/06_conclusion}
+\input{secciones/07_declaraciones}
+
+\bibliographystyle{vancouver}
+\bibliography{references,references_extra}
+
+\clearpage
+\appendix
+\renewcommand{\thesection}{Appendix \Alph{section}}
+\input{secciones/apendices/A_prompts}
+\input{secciones/apendices/B_pseudocodigo}
+\input{secciones/apendices/C_tripod_llm}
+\input{secciones/apendices/D_matriz_errores}
+\input{secciones/apendices/E_protocolo_estadistico}
+
+\end{document}

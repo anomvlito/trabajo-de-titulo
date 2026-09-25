@@ -1,0 +1,82 @@
+{
+ "job": 98510,
+ "protocol": "form199-v1",
+ "note": "pipeline check only; superseded by v1.1 (strict parser)",
+ "model": "Gemma4",
+ "host_maxrss_kb": 33519900,
+ "elapsed": "00:51:56",
+ "runs": [
+  {
+   "strategy": "harness",
+   "cases": 1,
+   "valid_cases": 0,
+   "per_case": [
+    {
+     "valid": false,
+     "valid_fields": 199,
+     "missing_fields": 0,
+     "final_errors": {
+      "relation_negative_parent": 6
+     },
+     "n_final_errors": 6,
+     "calls": 20,
+     "units": 18,
+     "unit_outcomes": {
+      "valid_first_attempt": 16,
+      "recovered_after_retry": 2
+     },
+     "first_attempt_units_valid": 16,
+     "first_attempt_errors": {
+      "boolean_value": 2,
+      "boolean_missingness": 2
+     },
+     "finish_reasons": {
+      "json_complete": 20
+     },
+     "truncated_calls": 0,
+     "strict_json_calls": 0,
+     "parse_modes": {
+      "fenced": 20
+     },
+     "tokens_in": 104648,
+     "tokens_out": 14831,
+     "latency_s": 3002.7,
+     "tokens_per_s": {
+      "n": 20,
+      "sum": 101.08,
+      "median": 4.99,
+      "min": 4.57,
+      "max": 5.5
+     },
+     "gpu_used_gb_max": 72.43,
+     "tokens_in_per_call": {
+      "n": 20,
+      "sum": 104648,
+      "median": 5428.0,
+      "min": 3171,
+      "max": 6882
+     },
+     "tokens_out_per_call": {
+      "n": 20,
+      "sum": 14831,
+      "median": 966.5,
+      "min": 120,
+      "max": 1134
+     },
+     "boolean_values": {
+      "nonboolean_present": 3,
+      "false": 168,
+      "true": 6
+     },
+     "nonboolean_null_reasons": {
+      "no_documentado": 9,
+      "no_aplica": 12,
+      "opcional": 1
+     },
+     "evidence_items": 10,
+     "evidence_offsets_match": 10
+    }
+   ]
+  }
+ ]
+}

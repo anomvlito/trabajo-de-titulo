@@ -1,0 +1,122 @@
+\subsection{Related work}\label{sec:related}
+
+\paragraph{Single-call structured extraction.} Agrawal et al.\ showed that a general LLM, guided by a one-shot
+example in the target format and followed by short deterministic \emph{resolvers}, could extract clinical
+information such as medications and their status from English clinical snippets~\cite{agrawal2022fewshot}.
+The same work reported two difficulties that bear directly on long forms: it remained ``difficult to guide a
+LLM to match an exact schema'' when annotation guidelines span several pages, and prompts specialised for one
+status tended to produce an answer even when none was present, a bias toward non-empty outputs. Wiest et al.\
+ran Llama-2 models locally on 500 English history sections from MIMIC-IV to extract five binary features,
+with an output format in which all features appear in one JSON object~\cite{privacy2024structured}. Unconstrained JSON was ``inconsistent and
+defective'', so the authors enforced it with grammar-based sampling; the grammar also forced the model to
+write an excerpt before each answer, but excerpts were not checked against the source and a hallucinated
+excerpt was reported for the smallest model.
+
+\paragraph{Specification and multi-step pipelines.} Hein et al.\ extracted diagnoses, specimen-level labels and
+immunohistochemistry results from kidney-tumour pathology reports with a pipeline of segmentation prompts,
+a standardisation prompt and a Python step that produces a long table, refined over six iterations with a
+pathologist~\cite{iterativerefine2025}.\footnote{A preprint of the same study was posted under the title
+\emph{Prompts to Table}; it reports the same data and results and is not counted as a separate study.} Their
+error ontology separated model errors from annotation errors and from insufficient instructions (``schema
+issues''); major errors were more frequent in reports with many tests, and no inter-annotator agreement was
+measured because the reference was developed iteratively. The study illustrates that the specification of a
+long target, not only the prompt, is an object of development and must be reported.
+
+\paragraph{Decomposition strategies compared directly.} Several studies compare a single call with a decomposed
+alternative, with heterogeneous tasks and results. In LLM-IE, a sentence-by-sentence extractor achieved higher
+F1 than a single whole-document call on three English clinical corpora (for example 0.78 versus 0.44 for event
+extraction), mostly through recall, at about twice the GPU time per note; the authors recommend it for ``dense''
+tasks and the single call for ``sparse'' ones~\cite{llmie2025}. Fornasiere et al.\ compared zero-shot, few-shot
+and sequential prompting with a single 7B model on discharge summaries; sequential prompting did not outperform
+few-shot prompting for timeline extraction, and extraction of full medication details remained much harder
+than extraction of names~\cite{fornasiere2024medical}. Notably, they supplied the note with numbered rows and
+asked the model for the row supporting each extraction, the same principle as the line identifiers used here,
+but did not evaluate the correctness of those references. In a preprint benchmark of 15 open-weight models on
+Dutch, English and Czech pathology and radiology reports, a manually defined prompt graph of smaller sequential
+subtasks gave the largest mean gain over zero-shot prompting ($+12.7\%$), at 37.6~s per report versus 4.5~s for
+few-shot prompting; all other strategies requested the whole schema in one JSON call, with at most 22 fields per
+template~\cite{spaanderman2025structured}. Finally, CLEAR decomposed the input rather than the output: for each
+target variable it retrieved entity-anchored windows and called the model once per window, obtaining higher F1
+than full-note input with 71\% fewer input tokens and inference time reduced by 72\%~\cite{clinicalentityretrieval2024}.
+
+\paragraph{Reporting.} A scoping review of 34 studies on information extraction from radiology reports, which
+included no generative or prompt-based approaches, found that performance could not be compared across studies
+because of differences in data, number of concepts and metrics; 68\% of studies did not mention annotation
+guidelines, inter-annotator agreement values were given by 16 of 34, and code was available for 29\%
+\cite{scoping2024radiology}. TRIPOD-LLM now asks studies that evaluate LLMs to report prompt development and
+its data, inference settings, annotation guidelines, the proportion of multiply annotated data,
+inter-annotator agreement, annotator background and compute~\cite{gallifant2025tripodllm}.
+
+\paragraph{Gap.} Across these studies, decomposition has been applied to the input (sentences, retrieved
+windows), to the reasoning (segmentation then standardisation, prompt graphs) or to a review pass, and its
+reported benefits come with higher cost (\cref{tab:sota}). None of the studies reviewed here compares, on the
+same patients and models, a single call with an output-side decomposition by schema group for a form of the
+size used here: the largest schema requested in a single call among them has 22 fields, against 199 in this
+study. Evidence grounding was either not evaluated or limited to retrieval, and line-numbered evidence, where
+used, was not verified. The present study targets that gap with a paired design, verifiable line-level
+evidence, full execution logs and open-weight models on local infrastructure.
+
+\subsection{Objectives and hypotheses}\label{sec:objectives}
+
+\paragraph{Research question.} In a fixed cohort of Spanish discharge summaries of patients admitted to an
+adult ICU, how do three ways of requesting the same 199-variable form compare when the note, the rules, the
+output contract, the validator and the model are held constant: (A) a single call for the whole form;
+(B) 18 independent calls, one per group of related variables; and (C) the same 18 calls sharing an
+evidence-grounded model of the case built by a preliminary call? The comparison covers structural validity,
+evidence fidelity, clinical coherence across blocks, agreement with human annotators and cost, and asks
+whether any benefit of the shared case model depends on how much inference a variable requires and on the
+quality of the note.
+
+\paragraph{Pre-specified hypotheses.} The following are hypotheses, not findings. H1--H4 were specified
+before the pilot for Arms A and B. After the pilot, and before any output was compared with the human
+reference, H1 was refined to separate field-level failures from relation violations between groups, H1--H4
+were extended to Arm~C, and H5 and H6 were added (Section~\ref{sec:separation}); the original wording is
+kept in the protocol history.
+\begin{description}
+\item[H1 (structure).] Arms B and C have fewer truncated or unparseable outputs and fewer field-level
+failures than Arm A. Arm B has more cross-group relation violations than Arm A, because its groups are
+answered independently, and Arm C has fewer than Arm B.
+\item[H2 (evidence).] Arms B and C have a higher proportion of positive and uncertain answers supported by
+valid, relevant evidence lines than Arm A. Because all arms cite by line identifier, literal correspondence
+holds by construction; H2 concerns identifier validity, coverage and clinician-judged support.
+\item[H3 (agreement, primary).] Arm B is non-inferior to Arm A in agreement with the pre-specified human
+reference on the 174 boolean variables of eligible summaries; Arm C is non-inferior to Arm A.
+\item[H4 (cost).] Decomposition increases calls, input tokens and total computation per case (A $<$ B $<$ C
+in calls and input tokens); latency depends on the inference engine and is reported, not tested.
+\item[H5 (clinical coherence).] Arm C violates fewer pre-specified cross-block coherence rules per case than
+Arm B.
+\item[H6 (inference and note quality).] Arm C improves agreement over Arm B in the blocks that require
+inference across the episode (infections, organ failure, complications and ICU discharge), is non-inferior
+in medical history, and the improvement is larger in low-quality notes.
+\end{description}
+A single-case pilot is used only to test the pipeline, the instrumentation and the error handling;
+it does not contribute to the estimation of any effect.
+
+\begin{landscape}
+\begin{table}[p]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{\textbf{Studies used to position this work.} Information as reported by each paper; ``not reported''
+means the paper does not state it. IAA, inter-annotator agreement; Source:
+\texttt{referencias/INDEX.md} (full texts in \texttt{referencias/md}).}
+\label{tab:sota}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{2.3cm}YY>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{2.3cm}Y>{\raggedright\arraybackslash}p{1.3cm}Y}
+\toprule
+Study & Language; notes & Annotators (IAA) & Output schema & Prompt strategy & Models & Evidence validation & Main metric (example) & Code & Main limitation \\
+\midrule
+Agrawal 2022~\cite{agrawal2022fewshot} & English; clinical snippets, abstracts & 2 authors, adjudicated (no $\kappa$ for new sets) & Free text or lists mapped by resolvers; up to 5 medication attributes & One-shot guided prompts; one item, or medications with status, per prompt & GPT-3 (API) & Resolvers drop tokens absent from input & Medication extraction recall 0.90, precision 0.92 & Data released; code not reported & Hard to match an exact schema; non-empty answer bias \\
+Wiest 2024~\cite{privacy2024structured} & English; MIMIC-IV history sections (500) & 3 blinded experts, consensus (no coefficient) & 5 binary features, JSON with excerpt & Fixed prompt with grammar, all features in one JSON (calls per report not stated); zero/one-shot, definitions, excerpt-first & Llama-2 7B--70B, local & Excerpt requested, not checked; hallucinated excerpt reported & Accuracy 0.93--0.96 (70B, zero-shot with definitions) & Yes & English only; lower recall for implicit features \\
+Hein 2025~\cite{iterativerefine2025} & Not stated (English excerpts); kidney-tumour pathology reports & Data scientist, statistician, pathologist for ambiguity (no IAA) & JSON to long table; controlled vocabularies & Segmentation then standardisation, per feature or entity class; reasoning passed forward & GPT-4o (API); Llama 3.3 70B, Qwen2.5 72B local & None automated; human discrepancy review & Major error 0.99\%; internal macro-F1 0.99 & Yes & No IAA; no held-out benchmark over all fields \\
+Fornasiere 2024~\cite{fornasiere2024medical} & English (+ synthetic Italian); discharge summaries & Challenge gold standards (no new IAA) & Medications (5 fields); dated events & Zero-/few-shot single call; 3-turn sequential; whole vs chunked & Mistral 7B & Row numbers requested, not evaluated & Name F1 up to 0.683; timeline F1 0.790 few-shot vs 0.660 sequential & Pledged, no URL & One model; small datasets \\
+Hsu 2025 (LLM-IE)~\cite{llmie2025} & Not stated; i2b2/n2c2 clinical notes & Challenge gold standards & Frames with spans, attributes, relations & Whole document vs per sentence vs review pass; 8-shot & Llama-3.1-70B, self-hosted & Spans in frames; no dedicated verification & Event F1 0.78 per sentence vs 0.44 whole document; $\sim$2$\times$ GPU time & Yes & One model benchmarked \\
+Lopez 2025 (CLEAR)~\cite{clinicalentityretrieval2024} & Not stated; clinical notes, radiology reports & 5 physicians, 1 student ($\kappa$ 0.86 and 0.93) & 1 ternary label per variable; 18 variables & Per-variable entity retrieval; one call per retrieved chunk; 5-shot & 5 local models (up to 70B); GPT-4 (Azure) & Retrieval-level only & F1 0.90 vs 0.79 full note; 71\% fewer input tokens & Yes & Multi-chunk prompts and quantisation not tested \\
+Spaanderman 2025 (preprint)~\cite{spaanderman2025structured} & Dutch, English, Czech; pathology and radiology reports & Varies by use case (agreement 0.68--0.88 where measured) & Flat JSON, 4--22 fields per template & Zero/one/few-shot, CoT, self-consistency (single call) vs prompt graph & 15 open-weight, 1.5B--685B, local & None evaluated & Prompt graph $+12.7\%$ vs zero-shot; 37.6 vs 4.5~s per report & Yes & No quantisation study; mostly pathology \\
+Chen 2026 (two-stage)~\cite{psych2stage2026} & Mostly English; psychiatric discharge summaries (500) & Psychiatrist and NLP researcher, adjudicated ($\kappa$ 0.78) & Sentence events and times; 4 chart-level features & Per-sentence extraction, then one chart-level call on the intermediate list; vs direct and joint & 4 open 8B models, LoRA, local & Source sentence kept; not verified & Onset accuracy 0.73--0.77 vs 0.56--0.65 direct; no gain for counts & Not reported & Single hospital; 4 features \\
+Aal Abdulsalam 2026 (multi-agent)~\cite{cancerregistrymas2026} & Not stated; pathology and medical reports (628 evaluated) & Pathologists, senior adjudication ($\kappa$ 0.92) & 6 registry fields, closed labels, evidence quote & Chunking, retrieval, one agent per field, review, aggregation; vs direct prompting & Llama 3.3 70B, local & Quote requested, not checked & Grade F1 0.71$\to$0.78; T and M worse; mean F1 0.71 vs 0.74 & Yes & No ablation \\
+Pathak 2026 (preprint)~\cite{promptplanextract2026} & English; lung pathology reports (test 53) & 3 annotators and expert ($\kappa$ 0.81) & 13 CAP fields, JSON & Section mapper, planner metadata injected into parallel field executors, compiler & 5 open models & None & Micro-F1 0.83--0.89 vs 0.96 supervised & Not reported & No single-call baseline or ablation \\
+\midrule
+This study & Spanish; ICU discharge summaries (50) & 6 assigned, 4 submitting; $\kappa$ 0.76 on current cut & 199 typed variables with hierarchy and exclusions & 1 call vs 18 schema-group calls vs 18 calls sharing a validated case model & Gemma 4 31B, Llama 3.3 70B, Qwen 3.6 35B-A3B, local & Line IDs validated; text copied by software & \pending{paired differences} & Versioned & Single centre; reference incomplete \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\end{landscape}

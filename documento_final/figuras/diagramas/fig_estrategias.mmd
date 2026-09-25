@@ -1,0 +1,21 @@
+flowchart LR
+    E["Misma entrada<br/>epicrisis con líneas numeradas,<br/>formulario de 199 variables<br/>y reglas del manual"]
+
+    subgraph SA["Estrategia A: consulta única"]
+        A["1 llamada<br/>199 variables"]
+    end
+    subgraph SB["Estrategia B: harness"]
+        B["18 llamadas independientes<br/>de hasta 16 variables"]
+    end
+    subgraph SC["Estrategia C: harness con modelo del caso"]
+        C0["Modelo del caso<br/>con evidencia"] --> C1["18 llamadas<br/>+ modelo del caso"]
+    end
+
+    E --> A
+    E --> B
+    E --> C0
+
+    A --> V["Mismo validador<br/>tipos, evidencia,<br/>jerarquía, exclusiones"]
+    B --> V
+    C1 --> V
+    V --> H["Comparación pareada<br/>con la anotación humana"]

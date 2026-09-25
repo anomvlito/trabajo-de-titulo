@@ -1,0 +1,40 @@
+\section{Error taxonomy and matrix}\label{app:errors}
+
+Disagreements between a model and the concordant reference are classified by two clinician reviewers blinded to
+arm and model, using the categories below; a disagreement may receive more than one category. Inter-reviewer
+agreement on the taxonomy is reported. Categories are defined from the annotation manual so that they map to its
+rules.
+
+\begin{table}[h]
+\centering\small
+\caption{Error categories.}
+\begin{tabularx}{\textwidth}{lY}
+\toprule
+Category & Definition and example of rule involved \\
+\midrule
+Temporality: history vs.\ acute & A pre-existing condition coded as an acute event or vice versa (e.g.\ acute kidney injury
+coded as chronic kidney disease). \\
+Temporality: stay & Information from a later ICU stay or from the hospital discharge used for the first ICU stay. \\
+Negation & A negated or ruled-out finding coded as Yes, or an affirmed finding coded as No. \\
+Planned vs.\ performed & An indicated or planned intervention coded as performed. \\
+Support vs.\ failure & Organ support used as sole evidence of organ failure. \\
+Infection cascade & Fever, laboratory abnormality, colonisation or an isolated culture coded as infection without a
+diagnosis. \\
+Hierarchy & Violation of parent--child consistency or mutual exclusion. \\
+Prevalence / over-calling & Positive answers for findings not documented, typically rare variables. \\
+Evidence absent & Yes or ? without any valid evidence identifier. \\
+Evidence incorrect & Evidence identifiers valid but lines do not support the answer. \\
+Genuine ambiguity & The note supports more than one reading; reviewers judge the model answer defensible. \\
+Reference error & On review, the human reference is judged incorrect (reported, not used to change the reference
+without adjudication). \\
+Case-model propagation & (Arm C) The group answer follows an incorrect statement of the case model. \\
+Structural failure & Answer missing because of truncation, parse failure or an invalid group or form. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{resultspending}[title={Error matrix (RESULTS\_PENDING)}]
+Rows: categories above. Columns: model $\times$ arm. Cells: count and percentage of disagreements (denominator:
+disagreements with the concordant reference for that model and arm). A second matrix cross-tabulates Arm A and Arm B
+errors on the same patient--variable pairs (both correct, only A correct, only B correct, both wrong).
+\end{resultspending}

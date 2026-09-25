@@ -1,0 +1,18 @@
+flowchart TD
+    A["SLURM job: one model, loaded once<br/>verify cohort hashes, schema and manual"] --> C["Next discharge summary<br/>index non-empty lines E0001, E0002, ..."]
+    C --> G["Next variable group<br/>(18 groups, 2 to 16 keys)"]
+    G --> H{"Valid checkpoint with<br/>the same signature?"}
+    H -- no --> I["Prompt = common rules + group catalogue<br/>+ full indexed note<br/>greedy decoding, max 4096 new tokens"]
+    I --> K["Group validation: keys, types, choices,<br/>evidence IDs, doubt level<br/>(trace and checkpoint written)"]
+    K --> Q{"Group<br/>valid?"}
+    Q -- "no, retry<br/>(max 2)" --> R["Append validation errors<br/>and previous output"]
+    R --> I
+    Q -- "no, retries<br/>exhausted" --> F["Record failure;<br/>never impute No"]
+    Q -- yes --> N["Accept group output"]
+    H -- yes --> N
+    N --> Z{"More<br/>groups?"}
+    F --> Z
+    Z -- yes --> G
+    Z -- no --> V["Case-level validation of 199 fields:<br/>parent-child, mutual exclusion, discharge<br/>then copy evidence text and offsets by line ID"]
+    V --> X["results/patient_id.json<br/>valid = true / false"]
+    X -- "next case" --> C

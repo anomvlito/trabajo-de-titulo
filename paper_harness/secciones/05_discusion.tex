@@ -1,0 +1,143 @@
+\section{Discussion}\label{sec:discussion}
+
+\subsection{Principal findings}
+
+\pending{Summarise the paired differences for H1--H4 by model, with their confidence intervals, without
+ranking models and without extrapolating beyond this cohort and schema.} At the current data cut, the
+measured results concern the reference rather than the models. Pairwise agreement between reviewers on
+the 174 boolean variables was substantial overall ($\kappa=0.76$), but agreement on the presence of a
+finding (positive specific agreement 0.79) was lower than on its absence, and agreement was lowest for
+complications and infections, the blocks whose manual rules require the most interpretation (the
+infection cascade, colonisation versus infection, the severity threshold of delirium). Any model
+evaluated against this reference inherits that uncertainty, which bounds the agreement that can be
+expected and argues for reporting results by block.
+
+\subsection{Why decomposition may help}
+
+Four mechanisms favour the harness, and each maps onto a measured outcome. First, each call produces a
+short output, so the risk of reaching the token limit falls (H1). Second, validation is local: an error
+invalidates one group of at most 16 variables rather than the whole form, and the retry receives a
+short, specific error list (H1, retry recovery). Third, each prompt carries only the definitions of the
+requested variables, so the model does not need to keep 199 definitions in view while generating
+(H2, H3). Fourth, the harness is operationally robust: signed checkpoints allow a job interrupted by the
+scheduler to resume without repeating validated groups, which matters on a shared cluster with wall-time
+limits (H4).
+
+\subsection{Why decomposition may hurt}
+
+Decomposition also has costs and failure modes that this design is built to expose rather than to hide.
+The note is repeated in all 18 prompts, so input tokens and prefill time grow roughly with the number of
+groups (H4). Related variables are answered in separate calls: the infection cascade spans three groups, and
+51 of the 137 parent--child relations of the form (affecting 44 variables) and 3 of its 7 mutual-exclusion
+pairs cross group boundaries. The per-group retry cannot
+repair such inconsistencies, which are detected only when the groups are merged; the harness therefore
+may produce more case-level relation errors than a single call that sees the whole form. Each call is
+also asked, in isolation, to look for a small set of findings, which could bias it toward positive
+answers for rare variables, as observed with category-specific prompts in earlier
+work~\cite{agrawal2022fewshot}; the error taxonomy includes an over-calling category to detect this. Finally,
+the partition is mechanical, consecutive variables within a block, and was not optimised; a different
+grouping could change the results in either direction.
+
+\subsection{What a shared case model can and cannot add}
+
+Arm~C is designed to keep the advantages of decomposition (short outputs, local validation, batching) while
+restoring what independent calls lose: a common reading of the episode. Its expected benefit is concentrated
+where the pilot and the literature locate the difficulty. In a two-stage pipeline on psychiatric discharge
+summaries, an intermediate extraction of events and times improved over direct extraction mainly for the most
+inferential feature, the onset of the first episode~\cite{psych2stage2026}; in cancer registry abstraction, a
+multi-agent pipeline improved context-dependent variables such as tumour grade but not highly structured ones
+such as TNM stage~\cite{cancerregistrymas2026}. H6 therefore expects gains in infections, organ failure,
+complications and ICU discharge rather than in medical history, and larger gains in poorly documented notes,
+where information is scattered across sections or must be inferred. The case model also makes explicit whether
+an ICU stay occurred at all, which in Arm~B each group decided separately. The same studies caution that
+decomposition redistributes performance rather than improving it uniformly: in the cancer registry study
+short, standardised fields such as metastasis stage lost recall~\cite{cancerregistrymas2026}, and in the
+psychiatric study the intermediate layer did not help simple counts~\cite{psych2stage2026}. Its main risk is
+propagation. In document-level extraction, context injected into every chunk outperformed both no context and
+a single static summary, but an erroneous shared structure performed worse than no structure at all, with F1
+falling from 0.80 to 0.45~\cite{hisccg2026}; the designers of the first blackboard system similarly reported that
+focusing the search on low-level hypotheses whose credibility ratings were insufficiently accurate was
+ineffective and harmful~\cite{erman1980hearsay}. This is why the case model must cite the note, the groups must give priority to
+the note, the case model is audited by a clinician, and propagated errors are a category of the error
+taxonomy. \pending{interpret H5 and H6.}
+
+\subsection{Evidence by line identifier}
+
+Citing evidence by line identifier and copying the text in software removes one failure mode, the
+fabricated or paraphrased quotation, in both arms. It does not guarantee that the cited line supports the
+answer, and a line of a PDF-derived text can be too coarse (several findings on one line) or too fine (a
+sentence split across visual lines, or a table flattened into lines). For this reason evidence fidelity
+is measured as identifier validity, coverage and clinician-judged support, not as literal matching, which
+holds by construction. \pending{interpret H2 results.}
+
+\subsection{Relation to previous work}
+
+The direct comparisons available in the literature point in different directions and should not be read
+as a general rule. Splitting a note into sentences raised F1 substantially over a single whole-document call
+for dense entity extraction, at about twice the GPU time~\cite{llmie2025}; a prompt graph of sequential
+subtasks gave the largest mean gain over zero-shot prompting in a multilingual benchmark, at roughly eight
+times the time per report of few-shot prompting~\cite{spaanderman2025structured}; and sequential prompting did
+not outperform few-shot prompting for timeline extraction with a 7B model~\cite{fornasiere2024medical}. None of
+these studies decomposed a fixed schema of this size by output groups, so they motivate the hypotheses but do
+not predict the result. \pending{relate the measured differences to these findings.}
+
+Building an intermediate representation before the final extraction also has precedents. Clinical pipelines
+have extracted events and temporal information before predicting chart-level features~\cite{psych2stage2026}
+or reconstructing patient timelines~\cite{clinicirca2026}, and a pathology workflow passed the metadata of a planning step to parallel field extractors, although
+without testing whether that shared context helped~\cite{promptplanextract2026}. Outside medicine, blackboard architectures
+coordinated independent specialists through a shared data structure~\cite{erman1980hearsay,nii1986blackboard},
+an idea recently revived for multi-agent LLM systems~\cite{blackboardllm2025,blackboardmas2025}, and
+Skeleton-of-Thought generates a plan first and expands its parts in parallel~\cite{skeletonofthought2024}, the
+same computational pattern as Arm~C. What these works do not provide is a paired comparison, on the same
+patients and schema, between a single call, independent decomposed calls and decomposed calls that share a
+verified representation of the case.
+
+Two observations from earlier work are specific enough to be tested here. Agrawal et al.\ found that prompts
+specialised for one category tended to produce an answer even when none was present~\cite{agrawal2022fewshot};
+if the harness behaves similarly, it should show more positive answers for rare variables than the monolithic
+call, which the over-calling category of the error taxonomy and the per-block positive rates are designed to
+detect. Hein et al.\ observed more major errors in reports with many items to extract and argued that success
+depended on the clarity of the instructions~\cite{iterativerefine2025}; the instruction text here was derived
+from the annotators' manual rather than refined against the reference, which avoids overfitting the prompts
+to the reference but may leave ambiguities that only an error analysis will reveal.
+
+Other design choices in the literature address the same problems by different means. Grammar-constrained
+decoding guarantees well-formed JSON~\cite{privacy2024structured} and would remove parse failures from all
+arms, which is why parse success is reported separately from content validity. Entity-anchored retrieval
+reduces the input sent to each call~\cite{clinicalentityretrieval2024}; in the harness the full note is repeated
+in every call, so input-side decomposition is a natural complement to the output-side decomposition studied
+here. Line-numbered input for evidence has been used before~\cite{fornasiere2024medical}, and criterion-level
+decisions with sentence locations have been used for trial matching~\cite{trialgpt2024}; the difference here is
+that identifiers are validated, the quotation is copied by software and the support of the cited lines is
+assessed by clinicians.
+
+\subsection{Limitations}
+
+The study has a single centre, a single language and a single form, and 50 summaries; results may not
+transfer to other hospitals, note styles or schemas. The cohort was not screened for the presence of an ICU
+stay, and about a quarter of the summaries may not document one; the agreement analyses are restricted to
+eligible summaries, which reduces the sample. Arm~C and hypotheses H5 and H6 were added after the pilot; they
+were specified before any comparison with the human reference, but they were motivated by pilot observations.
+The evaluation engine may differ from the pilot engine in precision (FP8 instead of NF4) and in batching, so the
+pilot is not a calibration of the evaluation run. The human reference was incomplete at the data cut,
+reviewers did not use the ? option, and no adjudicated consensus exists; individual references attenuate
+absolute agreement, although they affect both arms equally. Positive findings are infrequent and 40
+boolean variables were never marked positive, so per-variable estimates are unstable or undefined. The
+model input is PDF-derived text grouped into visual lines, which can disorder tables or columns;
+de-identification relied on pattern-based redaction, which masked parts of clinical words in 3 of 655
+redacted segments, including a sedative drug name. The two arms necessarily differ in their output budget
+and in the length of their prompts; the pre-specified budgets and the sensitivity analysis at an equal
+per-call budget address this but cannot remove it. Greedy decoding on GPUs may not be bit-reproducible,
+especially when prompts are batched and kernels are not batch-invariant; the batch-invariant mode, the
+equivalence test and the repeatability subset address this, but only on the cases tested. Three models were evaluated, each with one run; conclusions about other models or sampling
+settings would require new runs. Finally, the paired design isolates the calling strategy but not its
+components (grouping, retries, per-group validation); the ablations without retries address only one of
+them.
+
+\subsection{Implications}
+
+\pending{State what the measured trade-off implies for the design of extraction pipelines for long clinical
+forms, limited to the measured outcomes.} Independently of the results, the protocol illustrates reporting
+practices that make such comparisons auditable: frozen inputs with hashes, evidence that cannot be
+fabricated, failures that are never converted into negative findings, and a reference whose agreement and
+missingness are reported before it is used.

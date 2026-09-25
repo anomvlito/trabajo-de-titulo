@@ -1,0 +1,39 @@
+\section*{Declarations}
+
+\subsection*{Ethics, privacy and governance}\label{sec:ethics}
+\todoauthor{state the ethics committee that approved or exempted the use of the de-identified discharge
+summaries (committee, protocol number, date) and whether informed consent was waived.} Discharge summaries were
+de-identified before loading into the annotation platform. Model inference ran only on institutional hardware with
+locally stored weights; no clinical text was sent to external services or commercial APIs. The human annotations
+were kept on a separate machine and never transferred to the inference cluster. Result files are written with
+owner-only permissions. This manuscript reports aggregate figures only; it contains no clinical text, patient
+identifiers, dates or reviewer identities, and any illustrative example must be synthetic or approved by the
+clinical team as non-identifying.
+
+\subsection*{Data availability}
+The discharge summaries and human annotations are clinical data of a public hospital and cannot be shared publicly.
+\todoauthor{describe the access route, if any, e.g.\ on reasonable request subject to institutional approval.}
+Aggregate, non-identifying results, including the cohort descriptors and agreement statistics reported here
+(\texttt{datos/cohort\_aggregates.json}), are released with the manuscript.
+
+\subsection*{Code availability}
+The protocol (\texttt{protocol.py}), runner, generated prompts, form schema, annotation manual, manifest with hashes,
+SLURM launch script and unit tests are versioned in the project repository
+\todoauthor{public URL and commit, or statement of availability}. The script that computes the cohort and agreement
+aggregates is \texttt{scripts/cohort\_aggregates.py}.
+
+\subsection*{Use of generative AI in manuscript preparation}
+\todoauthor{declare any use of AI assistants in drafting or editing this manuscript, as required by the target
+journal.}
+
+\subsection*{Funding}
+\todoauthor{funding sources.}
+
+\subsection*{Competing interests}
+\todoauthor{declare competing interests.}
+
+\subsection*{Author contributions}
+\todoauthor{CRediT roles.}
+
+\subsection*{Acknowledgements}
+\todoauthor{acknowledge the clinical annotators by role, and the computing infrastructure.}

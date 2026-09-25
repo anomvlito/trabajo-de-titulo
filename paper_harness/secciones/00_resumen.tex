@@ -1,0 +1,53 @@
+\begin{abstract}
+\noindent\textbf{Background.} Large language models (LLMs) can populate structured clinical forms from free
+text, but long forms force a design choice that is rarely evaluated directly: request every variable in one
+generation, or decompose the form into several calls whose outputs are validated and merged. Independent calls
+shorten outputs but lose a common reading of the clinical episode, which many variables require.
+
+\noindent\textbf{Objective.} To compare, on the same patients, models and 199-variable intensive care unit
+(ICU) form, three strategies: (A) a single monolithic call; (B) a schema-constrained harness of 18 independent
+calls of 2 to 16 variables each; and (C) the same harness in which a preliminary call builds an
+evidence-grounded model of the case (ICU stays, timeline, problem status, support, infections, outcome) shared
+by all group calls. Outcomes are structural validity, evidence fidelity, cross-block clinical coherence,
+agreement with human annotators and cost.
+
+\noindent\textbf{Methods.} Retrospective methodological study on a frozen cohort of 50 de-identified Spanish
+discharge summaries from the adult ICU of a public hospital in Chile. All strategies receive the full
+line-indexed note, the same annotation rules and the same output contract; evidence is returned as line
+identifiers and the quoted text is copied by software. Each strategy is run with three open-weight models on
+local infrastructure (Gemma~4 31B, Llama~3.3 70B and Qwen~3.6 35B-A3B) with greedy decoding. The primary
+comparison is non-inferiority of B versus A in agreement with a pre-defined human reference in summaries with a
+documented ICU stay; C versus B and C versus A are secondary. Differences are estimated within model with a
+patient-level paired bootstrap.
+
+\noindent\textbf{Results.} The cohort comprises 50 summaries (median 3 pages and approximately 6{,}000
+characters); 12 did not mention an ICU stay and are candidates for exclusion from agreement analyses. At the
+23 September 2026 data cut, 63 of 150 planned human annotations had been submitted by 4 reviewers; pairwise
+agreement on the 174 boolean variables was $\kappa=0.76$ (95\% CI 0.70--0.82; 19 summaries). In a single-case
+pilot with Gemma~4, both A and B returned all 199 variables without truncation; B took 39~min and left 6
+relation errors between independently answered groups, and A took 3~h~47~min and was valid after one retry.
+Comparative results are \pending{pending the evaluation run}.
+
+\noindent\textbf{Conclusions.} \pending{to be written after the pre-specified analysis. The conclusion must be
+limited to the measured paired differences, this cohort, this schema and these three models, and must not
+imply clinical use.}
+
+\medskip\noindent\textbf{Keywords:} clinical information extraction; large language models; prompt
+engineering; task decomposition; intermediate representation; structured output; discharge summaries;
+intensive care; Spanish; evidence grounding; reproducibility
+\end{abstract}
+
+\begin{tcolorbox}[colback=gray!5,colframe=gray!50,title=Alternative titles (for author selection),fonttitle=\sffamily\bfseries]
+\begin{enumerate}
+\item One call, eighteen, or eighteen with a shared case model? A paired evaluation of LLM extraction of a
+199-variable ICU form from Spanish discharge summaries.
+\item Monolithic, decomposed and case-model-guided extraction of ICU variables with open-weight LLMs: structure,
+evidence, coherence and cost.
+\item Does sharing a model of the episode make decomposed LLM extraction coherent? A paired study on Spanish ICU
+discharge summaries.
+\item Auditable extraction of 199 ICU variables with local LLMs: a within-patient comparison of three prompting
+strategies.
+\item From one long answer to many short ones: decomposition, shared context and cost in LLM form filling from
+ICU discharge summaries.
+\end{enumerate}
+\end{tcolorbox}

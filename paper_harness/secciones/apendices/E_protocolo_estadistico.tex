@@ -1,0 +1,47 @@
+\section{Statistical analysis plan}\label{app:stats}
+
+This plan is to be registered, with date and commit, before model outputs of the evaluation run are joined with
+the human reference. Any later change is reported as a deviation with its reason.
+
+\paragraph{E.1 Analysis sets.} \emph{Structural set}: all cases $\times$ 3 models $\times$ 3 arms.
+\emph{Eligible set}: summaries with a clinician-confirmed ICU stay; all agreement, coherence and H6 analyses use
+it, and results on ineligible summaries are reported separately. \emph{Individual reference
+set}: cases with at least one submitted annotation (43 at the data cut). \emph{Concordant reference set}: cases with at
+least two submissions (19 at the data cut), items with full agreement. \emph{Pilot}: one case, descriptive only.
+The analysis sets are recomputed at the final data cut, which is fixed \todoauthor{date} before joining.
+
+\paragraph{E.2 Estimands.} For each model $m$ and outcome $Y$, the estimands are the paired differences
+$\Delta^{BA}_m = Y_m^{B} - Y_m^{A}$ (primary), $\Delta^{CB}_m = Y_m^{C} - Y_m^{B}$ and $\Delta^{CA}_m = Y_m^{C} - Y_m^{A}$
+(secondary) on the same cases. Proportions are computed on pooled patient--variable pairs (or calls, or evidence
+identifiers, as stated per outcome) within the analysis set.
+
+\paragraph{E.3 Confidence intervals.} Paired percentile bootstrap resampling cases with replacement (5{,}000
+replicates, seed 20260923): in each replicate both arms are recomputed on the same resampled cases, preserving
+pairing and within-case correlation. For the individual reference, each case's submissions stay together and each
+case has equal weight. BCa intervals are reported as sensitivity if percentile intervals are asymmetric.
+
+\paragraph{E.4 Hypothesis tests.} H1 and H2: two-sided test of $\Delta_m = 0$ via the bootstrap distribution, with
+superiority of the decomposed arm claimed only if the 95\% CI excludes 0 in its favour. H3: non-inferiority, concluded if
+the lower 95\% bound of $\Delta_m$ in positive-class F1 exceeds $-\delta$; superiority is assessed only after
+non-inferiority. H4: estimation only. H5: superiority of C over B in coherence-rule violations per case. H6: superiority of C over
+B in positive-class F1 within the inferential blocks, non-inferiority in medical history, and an arm-by-quality
+interaction estimated in the mixed model of E.5 (C versus B, low versus other notes). Holm adjustment across
+models and comparisons within each hypothesis; secondary outcomes are exploratory, unadjusted and labelled as
+such.
+
+\paragraph{E.5 Mixed-effects sensitivity analysis.} For binary item-level outcomes (valid, correct): logistic mixed
+model $\text{logit}\,P(Y_{ijm}=1) = \beta_0 + \beta_1\,\text{arm} + u_i + v_j$ fitted per model, with random intercepts for
+patient $i$ and variable $j$; reported if the model converges without separation. A pooled model with
+$\text{arm}\times\text{model}$ interaction is descriptive.
+
+\paragraph{E.6 Handling of missing and special values.} Missing answers from truncation or failure count as invalid
+and, for agreement, as incorrect in the primary analysis; a complete-case sensitivity analysis restricted to pairs
+answered by both arms is reported. Model ? is analysed as error and as abstention (Section~\ref{sec:outcomes}). Human
+unanswered items and unsubmitted assignments are excluded, never treated as No.
+
+\paragraph{E.7 Multiplicity and variables.} The 199 variables are not independent units; no per-variable hypothesis
+tests are performed. Per-variable and per-block results are descriptive, shown with case-bootstrap CIs, and restricted
+to variables with at least \todoauthor{k} positive reference labels.
+
+\paragraph{E.8 Software.} Python \pending{version}; analysis code versioned with the protocol. \todoauthor{name the
+repository path of the analysis script once written.}

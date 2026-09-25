@@ -1,0 +1,29 @@
+flowchart LR
+    subgraph IN["Frozen input (concordancia-50-v1)"]
+        A["De-identified<br/>discharge summaries<br/>(SHA-256 per text)"]
+        S["Form schema<br/>199 variables"]
+        M["Annotation manual<br/>+ common rules"]
+    end
+
+    A --> IDX["Line indexing<br/>[E0001] ... [Ennnn]"]
+    S --> ARMS
+    M --> ARMS
+    IDX --> ARMS
+
+    subgraph ARMS["Three strategies, same model and decoding"]
+        direction TB
+        MONO["Arm A: monolithic<br/>1 call, 199 variables"]
+        HAR["Arm B: harness<br/>18 independent group calls"]
+        CM["Arm C: case model call<br/>(timeline, ICU stays, problems,<br/>support, infections, outcome)"] --> HARC["18 group calls<br/>+ shared case model"]
+    end
+
+    ARMS --> V["Same validator<br/>schema, types, evidence IDs,<br/>hierarchy, exclusions"]
+    V --> OUT["One result per<br/>patient_id x model x arm"]
+
+    subgraph REF["Human reference (never shown to models)"]
+        H["Individual submitted<br/>annotations"] --> C["Pre-specified<br/>reference rule"]
+    end
+
+    OUT --> J["Join on<br/>patient_id + variable key"]
+    C --> J
+    J --> E["Structural, evidence, coherence,<br/>agreement and cost metrics"]
